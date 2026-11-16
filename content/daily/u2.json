@@ -1,0 +1,157 @@
+[
+  {
+    "id": "daily.2.01", "review": "unreviewed",
+    "en": "I want to drink.",
+    "chunks": ["Bibere", "volō"],
+    "fill": "bibere",
+    "skills": ["volo.inf", "vocab.actions"],
+    "tag": "volō + infinitive",
+    "explain": "_volō_ ('I want') is followed by an infinitive: _bibere_ = 'to drink'. English 'I want to drink' becomes, almost word for word, 'to-drink I-want'. Either order is fine.",
+    "distractors": [
+      ["Bibō volō.", "After _volō_ you need the infinitive _bibere_, not the I-form _bibō_."],
+      ["Bibere vīs.", "_vīs_ = 'you want': 'You want to drink'."],
+      ["Edere volō.", "_edere_ = to eat: 'I want to eat'."]
+    ]
+  },
+  {
+    "id": "daily.2.02", "review": "unreviewed",
+    "en": "I want to eat.",
+    "chunks": ["Edere", "volō"],
+    "fill": "edere",
+    "skills": ["volo.inf", "vocab.actions"],
+    "tag": "volō + infinitive",
+    "explain": "_edere_ is the infinitive of _edō_, with the same -ere ending as _bibere_.",
+    "distractors": [
+      ["Edō volō.", "After _volō_ you need the infinitive _edere_."],
+      ["Edere vult.", "_vult_ = 'he/she wants': 'He/she wants to eat'."],
+      ["Bibere volō.", "_bibere_ = to drink: 'I want to drink'."]
+    ]
+  },
+  {
+    "id": "daily.2.03", "review": "unreviewed",
+    "en": "I want to sleep.",
+    "chunks": ["Dormīre", "volō"],
+    "fill": "dormīre",
+    "skills": ["volo.inf", "vocab.actions"],
+    "tag": "volō + infinitive",
+    "explain": "Verbs like _dormiō_ have an infinitive in -īre: _dormīre_ (note the long ī).",
+    "distractors": [
+      ["Dormiō volō.", "After _volō_ you need the infinitive _dormīre_."],
+      ["Dormīre vīs.", "_vīs_ = 'you want': 'You want to sleep'."],
+      ["Ambulāre volō.", "_ambulāre_ = to walk: 'I want to walk'."]
+    ]
+  },
+  {
+    "id": "daily.2.04", "review": "unreviewed",
+    "en": "I want to walk.",
+    "chunks": ["Ambulāre", "volō"],
+    "fill": "ambulāre",
+    "skills": ["volo.inf", "vocab.actions"],
+    "tag": "volō + infinitive",
+    "explain": "Verbs like _ambulō_ have an infinitive in -āre: _ambulāre_ (long ā).",
+    "distractors": [
+      ["Ambulō volō.", "After _volō_ you need the infinitive _ambulāre_."],
+      ["Ambulāre vult.", "_vult_ = 'he/she wants': 'He/she wants to walk'."],
+      ["Dormīre volō.", "_dormīre_ = to sleep: 'I want to sleep'."]
+    ]
+  },
+  {
+    "id": "daily.2.05", "review": "unreviewed",
+    "en": "I want to read.",
+    "chunks": ["Legere", "volō"],
+    "fill": "legere",
+    "skills": ["volo.inf", "vocab.actions"],
+    "tag": "volō + infinitive",
+    "explain": "_legere_ is the infinitive of _legō_, with the same -ere ending as _edere_ and _bibere_.",
+    "distractors": [
+      ["Legō volō.", "After _volō_ you need the infinitive _legere_."],
+      ["Legere vīs.", "_vīs_ = 'you want': 'You want to read'."],
+      ["Bibere volō.", "_bibere_ = to drink: 'I want to drink'."]
+    ]
+  },
+  {
+    "id": "daily.2.06", "review": "unreviewed",
+    "en": "I do not want to work.",
+    "chunks": ["Labōrāre", "nōlō"],
+    "accept": ["Labōrāre nōn volō.", "Nōn volō labōrāre."],
+    "fill": "nōlō",
+    "skills": ["volo.inf", "neg.non", "vocab.actions"],
+    "tag": "nōlō = I don't want",
+    "explain": "_nōlō_ is _nōn volō_ squeezed into one word, and it is the form Romans normally used. Like _volō_, it takes an infinitive. _nōn volō_ is also accepted.",
+    "distractors": [
+      ["Labōrāre volō.", "Without the negative, this says 'I want to work'."],
+      ["Labōrō nōlō.", "After _nōlō_ you need the infinitive _labōrāre_."],
+      ["Dormīre nōlō.", "_dormīre_ = to sleep: 'I don't want to sleep'."]
+    ]
+  },
+  {
+    "id": "daily.2.07", "review": "unreviewed",
+    "en": "After the meal I want to drink.",
+    "chunks": ["Post cibum", "bibere", "volō"],
+    "fill": "cibum",
+    "skills": ["prep.post_ante", "case.acc.obj", "volo.inf"],
+    "tag": "post + accusative = after",
+    "explain": "_post_ ('after') is followed by the accusative: _post cibum_ = after the food/meal. _ante_ ('before') works the same way.",
+    "distractors": [
+      ["Ante cibum bibere volō.", "_ante_ = before: 'Before the meal I want to drink'."],
+      ["Post cibus bibere volō.", "_post_ needs the accusative _cibum_, not the nominative _cibus_."],
+      ["Post cibum edere volō.", "_edere_ = to eat: 'After the meal I want to eat'."]
+    ]
+  },
+  {
+    "id": "daily.2.08", "review": "unreviewed",
+    "en": "After the drink I want to walk.",
+    "chunks": ["Post potum", "ambulāre", "volō"],
+    "fill": "potum",
+    "skills": ["prep.post_ante", "case.acc.obj", "volo.inf"],
+    "tag": "post + accusative = after",
+    "explain": "_potus_ ('a drink') is a fourth-declension noun. Its accusative singular is _potum_. _post_ takes the accusative.",
+    "distractors": [
+      ["Ante potum ambulāre volō.", "_ante_ = before: 'Before the drink I want to walk'."],
+      ["Post potus ambulāre volō.", "_post_ needs the accusative _potum_."],
+      ["Post potum dormīre volō.", "_dormīre_ = to sleep: 'After the drink I want to sleep'."]
+    ]
+  },
+  {
+    "id": "daily.2.09", "review": "unreviewed",
+    "en": "After sleep I want to eat.",
+    "chunks": ["Post somnum", "edere", "volō"],
+    "fill": "somnum",
+    "skills": ["prep.post_ante", "case.acc.obj", "volo.inf"],
+    "tag": "post + accusative = after",
+    "explain": "_somnus_ (sleep) is second declension. Accusative singular: _somnum_.",
+    "distractors": [
+      ["Ante somnum edere volō.", "_ante_ = before: 'Before sleep I want to eat'."],
+      ["Post somnus edere volō.", "_post_ needs the accusative _somnum_."],
+      ["Post somnum bibere volō.", "_bibere_ = to drink: 'After sleep I want to drink'."]
+    ]
+  },
+  {
+    "id": "daily.2.10", "review": "unreviewed",
+    "en": "After work I want to sleep.",
+    "chunks": ["Post labōrem", "dormīre", "volō"],
+    "fill": "labōrem",
+    "skills": ["prep.post_ante", "case.acc.obj", "volo.inf"],
+    "tag": "post + accusative = after",
+    "explain": "_labor_ (work) is a third-declension noun with the accusative _labōrem_. Don't confuse it with the verb _labōrō_ ('I work').",
+    "distractors": [
+      ["Post labōrō dormīre volō.", "_labōrō_ is a verb ('I work'). After _post_ you need the noun _labōrem_."],
+      ["Ante labōrem dormīre volō.", "_ante_ = before: 'Before work I want to sleep'."],
+      ["Post labōrem edere volō.", "_edere_ = to eat: 'After work I want to eat'."]
+    ]
+  },
+  {
+    "id": "daily.2.11", "review": "unreviewed",
+    "en": "Before the meal I want to wash.",
+    "chunks": ["Ante cibum", "lavāre", "volō"],
+    "fill": "Ante",
+    "skills": ["prep.post_ante", "case.acc.obj", "volo.inf"],
+    "tag": "ante + accusative = before",
+    "explain": "_ante_ ('before') takes the accusative, just like _post_. _lavāre_ means 'to wash' (here: to wash oneself).",
+    "distractors": [
+      ["Post cibum lavāre volō.", "_post_ = after: 'After the meal I want to wash'."],
+      ["Ante cibus lavāre volō.", "_ante_ needs the accusative _cibum_."],
+      ["Ante cibum bibere volō.", "_bibere_ = to drink: 'Before the meal I want to drink'."]
+    ]
+  }
+]

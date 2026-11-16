@@ -1,0 +1,158 @@
+[
+  {
+    "id": "core.1.01", "review": "unreviewed",
+    "en": "Rome is in Italy.",
+    "chunks": ["Rōma", "in Italiā", "est"],
+    "fill": "Italiā",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "in + ablative = where",
+    "explain": "_in_ takes the ablative to say where something is. _Italiā_ is the ablative singular of _Italia_ (first declension: -a becomes -ā). _Rōma_ is the subject and _est_ means 'is'.",
+    "distractors": [
+      ["Rōma in Italiā sunt.", "_sunt_ means 'are'. _Rōma_ is one city, so the verb is _est_."],
+      ["Rōma in Graeciā est.", "The grammar is fine, but _Graeciā_ means 'in Greece'."],
+      ["Italia in Rōmā est.", "Subject and place are swapped: that says 'Italy is in Rome'."]
+    ]
+  },
+  {
+    "id": "core.1.02", "review": "unreviewed",
+    "en": "Italy is in Europe.",
+    "chunks": ["Italia", "in Eurōpā", "est"],
+    "fill": "Eurōpā",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "in + ablative = where",
+    "explain": "Same pattern as before: _in_ + ablative (_Eurōpā_). Notice that _Italia_ (subject, nominative) and _Italiā_ (ablative) differ only by the macron, so macrons carry real information.",
+    "distractors": [
+      ["Italia in Eurōpā sunt.", "One subject, so _est_, not _sunt_."],
+      ["Italia in Āfricā est.", "Grammatically fine, but _Āfricā_ means 'in Africa'."],
+      ["Eurōpa in Italiā est.", "Swapped: that says 'Europe is in Italy'."]
+    ]
+  },
+  {
+    "id": "core.1.03", "review": "unreviewed",
+    "en": "Greece is in Europe.",
+    "chunks": ["Graecia", "in Eurōpā", "est"],
+    "fill": "est",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "est = is (one subject)",
+    "explain": "_Graecia_ is singular, so the verb is _est_ ('is').",
+    "distractors": [
+      ["Graecia in Eurōpā sunt.", "_sunt_ is plural ('are'). _Graecia_ is singular."],
+      ["Graecia in Asiā est.", "That says 'Greece is in Asia' (_Asiā_)."],
+      ["Eurōpa in Graeciā est.", "Swapped: 'Europe is in Greece'."]
+    ]
+  },
+  {
+    "id": "core.1.04", "review": "unreviewed",
+    "en": "Egypt is in Africa.",
+    "chunks": ["Aegyptus", "in Āfricā", "est"],
+    "fill": "Āfricā",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "in + ablative = where",
+    "explain": "_Aegyptus_ looks masculine (-us) but names a country, which is grammatically feminine. It doesn't matter yet: the verb is still _est_. _Āfricā_ is the ablative after _in_.",
+    "distractors": [
+      ["Aegyptus in Āfricā sunt.", "One subject: _est_."],
+      ["Aegyptus in Eurōpā est.", "That says 'Egypt is in Europe'."],
+      ["Āfrica in Aegyptō est.", "Swapped: 'Africa is in Egypt'. (_Aegyptō_ is the ablative of _Aegyptus_.)"]
+    ]
+  },
+  {
+    "id": "core.1.05", "review": "unreviewed",
+    "en": "The Nile is in Egypt.",
+    "chunks": ["Nīlus", "in Aegyptō", "est"],
+    "fill": "Aegyptō",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "ablative: -ā (1st decl.) vs -ō (2nd decl.)",
+    "explain": "_Aegyptus_ belongs to the second declension, so its ablative singular ends in -ō: _in Aegyptō_. First-declension words like _Italia_ end in -ā. Latin has no articles, so 'the Nile' is just _Nīlus_.",
+    "distractors": [
+      ["Nīlus in Aegyptō sunt.", "One subject: _est_."],
+      ["Nīlus in Italiā est.", "That says 'The Nile is in Italy'."],
+      ["Aegyptus in Nīlō est.", "Swapped: 'Egypt is in the Nile'."]
+    ]
+  },
+  {
+    "id": "core.1.06", "review": "unreviewed",
+    "en": "The Rhine is in Germany.",
+    "chunks": ["Rhēnus", "in Germāniā", "est"],
+    "fill": "Germāniā",
+    "skills": ["prep.in.abl", "sum.3sg", "vocab.geography"],
+    "tag": "in + ablative = where",
+    "explain": "_Germānia_ is first declension, so the ablative is _Germāniā_.",
+    "distractors": [
+      ["Rhēnus in Germāniā sunt.", "One subject: _est_."],
+      ["Rhēnus in Galliā est.", "That says 'The Rhine is in Gaul'."],
+      ["Germānia in Rhēnō est.", "Swapped: 'Germany is in the Rhine'."]
+    ]
+  },
+  {
+    "id": "core.1.07", "review": "unreviewed",
+    "en": "Athens is in Greece.",
+    "chunks": ["Athēnae", "in Graeciā", "sunt"],
+    "fill": "sunt",
+    "skills": ["prep.in.abl", "sum.3pl", "vocab.geography"],
+    "tag": "Athēnae is plural in Latin",
+    "explain": "The city name _Athēnae_ is grammatically plural (like English 'the Netherlands'), so the verb is _sunt_ ('are') even though English says 'Athens is'.",
+    "distractors": [
+      ["Athēnae in Graeciā est.", "_Athēnae_ is plural in form, so the verb must be plural: _sunt_."],
+      ["Athēnae in Italiā sunt.", "That says 'Athens is in Italy'."],
+      ["Graecia in Athēnīs est.", "Swapped: 'Greece is in Athens'. (_Athēnīs_ is the ablative plural.)"]
+    ]
+  },
+  {
+    "id": "core.1.08", "review": "unreviewed",
+    "en": "Rome and Athens are in Europe.",
+    "chunks": [["Rōma et Athēnae", "Athēnae et Rōma"], "in Eurōpā", "sunt"],
+    "fill": "sunt",
+    "skills": ["prep.in.abl", "sum.3pl", "vocab.geography"],
+    "tag": "two subjects → sunt",
+    "explain": "Two subjects joined by _et_ ('and') take a plural verb: _sunt_.",
+    "distractors": [
+      ["Rōma et Athēnae in Eurōpā est.", "Two subjects need the plural _sunt_."],
+      ["Rōma et Athēnae in Āfricā sunt.", "That says they are in Africa."],
+      ["Rōma et Athēnae in Graeciā sunt.", "That puts Rome in Greece as well."]
+    ]
+  },
+  {
+    "id": "core.1.09", "review": "unreviewed",
+    "en": "Italy and Greece are in Europe.",
+    "chunks": [["Italia et Graecia", "Graecia et Italia"], "in Eurōpā", "sunt"],
+    "fill": "Eurōpā",
+    "skills": ["prep.in.abl", "sum.3pl", "vocab.geography"],
+    "tag": "in + ablative = where",
+    "explain": "Two subjects, so _sunt_. The place after _in_ is ablative: _Eurōpā_. (_in_ + accusative, as in _Eurōpam_, would mean 'into Europe', movement towards.)",
+    "distractors": [
+      ["Italia et Graecia in Eurōpā est.", "Two subjects need _sunt_."],
+      ["Italia et Graecia in Āfricā sunt.", "That says they are in Africa."],
+      ["Italia et Graecia in Eurōpam sunt.", "_in_ + accusative means 'into'. To say where, use the ablative: _Eurōpā_."]
+    ]
+  },
+  {
+    "id": "core.1.10", "review": "unreviewed",
+    "en": "Egypt is not in Europe.",
+    "chunks": ["Aegyptus", ["in Eurōpā nōn est", "nōn in Eurōpā est"]],
+    "accept": ["In Eurōpā Aegyptus nōn est.", "Nōn est Aegyptus in Eurōpā."],
+    "fill": "nōn",
+    "skills": ["neg.non", "prep.in.abl", "sum.3sg"],
+    "tag": "nōn = not",
+    "explain": "_nōn_ ('not') usually stands right before the word it negates, most often the verb: _nōn est_.",
+    "distractors": [
+      ["Aegyptus in Eurōpā est.", "Without _nōn_ this says 'Egypt IS in Europe'."],
+      ["Aegyptus in Āfricā nōn est.", "That says 'Egypt is not in Africa'."],
+      ["Aegyptus in Eurōpā nōn sunt.", "One subject: _est_."]
+    ]
+  },
+  {
+    "id": "core.1.11", "review": "unreviewed",
+    "en": "Italy is not in Africa.",
+    "chunks": ["Italia", ["in Āfricā nōn est", "nōn in Āfricā est"]],
+    "accept": ["In Āfricā Italia nōn est.", "Nōn est Italia in Āfricā."],
+    "fill": "nōn",
+    "skills": ["neg.non", "prep.in.abl", "sum.3sg"],
+    "tag": "nōn = not",
+    "explain": "Same pattern: _nōn_ before the verb. A true statement makes a good sentence to repeat to yourself.",
+    "distractors": [
+      ["Italia in Āfricā est.", "Without _nōn_ this says 'Italy IS in Africa'."],
+      ["Italia in Eurōpā nōn est.", "That says 'Italy is not in Europe' (false!)."],
+      ["Āfrica in Italiā nōn est.", "Swapped: 'Africa is not in Italy'."]
+    ]
+  }
+]

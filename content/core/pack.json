@@ -1,0 +1,28 @@
+{
+  "id": "core",
+  "name": "Core grammar",
+  "blurb": "Follows the order of Lingua Latina per se illustrata, with original sentences. Starts at the very beginning.",
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Where things are",
+      "blurb": "est, sunt, and in + ablative (≈ LLPSI ch. I)",
+      "intro": "To say where something is, Latin uses _in_ plus the ablative case: _in Italiā_ = in Italy. _est_ means 'is' (one thing); _sunt_ means 'are' (several things). Latin has no word for 'a' or 'the'. Word order is flexible, but subject – place – verb is the usual pattern."
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "What and where?",
+      "blurb": "Questions with ubi / quid, and 'X is a Y' sentences",
+      "intro": "_ubi_ asks 'where?' and _quid_ asks 'what?'. To say what something is, put two nominatives together with _est_ or _sunt_: _Rōma urbs est_ (Rome is a city). When the subject is plural, the noun that describes it is plural too."
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Big and small",
+      "blurb": "Adjectives that agree with their noun",
+      "intro": "Adjectives like _magnus, -a, -um_ change their endings to match the noun they describe in gender, number and case. _urbs_ is feminine, so _urbs magna_; _fluvius_ is masculine, so _fluvius magnus_; plural: _urbēs magnae_, _fluviī magnī_. The gender comes from the noun, not from how it looks."
+    }
+  ]
+}

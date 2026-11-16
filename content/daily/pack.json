@@ -1,0 +1,28 @@
+{
+  "id": "daily",
+  "name": "Daily narration",
+  "blurb": "Things you can say to yourself as you go through your day: hungry, thirsty, eating, wanting, going.",
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "I am… I do…",
+      "blurb": "Hunger, thirst, tiredness and everyday actions in the I-form",
+      "intro": "A Latin verb ending tells you who is acting, so you rarely need a separate word for 'I'. The I-form ends in -ō (or -iō): _edō_ = I eat, _bibō_ = I drink, _dormiō_ = I sleep. Add _ego_ only for emphasis. The thing being eaten or drunk goes in the accusative: _cibum_ (food), _aquam_ (water). 'I am' is _sum_, and an adjective after it matches the speaker: _fessus sum_ (said by a man), _fessa sum_ (by a woman)."
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "I want to…",
+      "blurb": "volō / nōlō + infinitive, and post / ante + accusative",
+      "intro": "To say 'I want to drink', Latin uses _volō_ with an infinitive: _bibere volō_ (or _volō bibere_). 'I don't want to' is _nōlō_ + infinitive. The infinitive ends in -re: _bibere, edere, dormīre, ambulāre_. For 'after' and 'before' use _post_ and _ante_ with the accusative: _post cibum_ = after the meal; _ante cibum_ = before the meal."
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Narrating my day",
+      "blurb": "Sequence words, times of day, and going home",
+      "intro": "Link your actions with _prīmum_ (first), _deinde_ (then) and _postrēmō_ (finally). Times of day: _mane_ (in the morning), _nocte_ (at night), _hodiē_ (today). 'At home' is _domī_, and 'home' as a destination is _domum_ (no preposition): _domum eō_ = I go home."
+    }
+  ]
+}

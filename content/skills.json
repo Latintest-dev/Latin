@@ -1,0 +1,25 @@
+{
+  "prep.in.abl":        { "name": "in + ablative (where)", "pack": "core" },
+  "sum.3sg":            { "name": "est (is)", "pack": "core" },
+  "sum.3pl":            { "name": "sunt (are)", "pack": "core" },
+  "neg.non":            { "name": "nōn (not)", "pack": "core" },
+  "quest.ubi_quid":     { "name": "ubi / quid questions", "pack": "core" },
+  "noun.pred.nom":      { "name": "Predicate nouns (X is a Y)", "pack": "core" },
+  "noun.nom.pl":        { "name": "Plural nominative", "pack": "core" },
+  "adj.agree.gender":   { "name": "Adjective gender agreement", "pack": "core" },
+  "adj.agree.number":   { "name": "Adjective number agreement", "pack": "core" },
+  "vocab.geography":    { "name": "Places, rivers, islands", "pack": "core" },
+
+  "verb.1sg.pres":      { "name": "I-form of the verb (-ō / -iō)", "pack": "daily" },
+  "verb.person":        { "name": "Verb endings: I / you / he", "pack": "daily" },
+  "sum.1sg":            { "name": "sum (I am)", "pack": "daily" },
+  "adj.agree.speaker":  { "name": "Adjective matches the speaker", "pack": "daily" },
+  "case.acc.obj":       { "name": "Accusative object", "pack": "daily" },
+  "prep.post_ante":     { "name": "post / ante + accusative", "pack": "daily" },
+  "volo.inf":           { "name": "volō / nōlō + infinitive", "pack": "daily" },
+  "adv.sequence":       { "name": "prīmum, deinde, postrēmō", "pack": "daily" },
+  "time.when":          { "name": "Times of day (mane, nocte, hodiē)", "pack": "daily" },
+  "loc.home":           { "name": "domī / domum / eō (home)", "pack": "daily" },
+  "vocab.needs":        { "name": "Hunger, thirst, tiredness", "pack": "daily" },
+  "vocab.actions":      { "name": "Everyday actions", "pack": "daily" }
+}

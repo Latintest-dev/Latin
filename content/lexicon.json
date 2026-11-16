@@ -1,0 +1,91 @@
+[
+  {"id":"roma","lemma":"Rōma","pos":"noun","gender":"f","decl":1,"stem":"Rōm","number":"sg","gloss":"Rome"},
+  {"id":"italia","lemma":"Italia","pos":"noun","gender":"f","decl":1,"stem":"Itali","number":"sg","gloss":"Italy"},
+  {"id":"graecia","lemma":"Graecia","pos":"noun","gender":"f","decl":1,"stem":"Graeci","number":"sg","gloss":"Greece"},
+  {"id":"gallia","lemma":"Gallia","pos":"noun","gender":"f","decl":1,"stem":"Galli","number":"sg","gloss":"Gaul"},
+  {"id":"germania","lemma":"Germānia","pos":"noun","gender":"f","decl":1,"stem":"Germāni","number":"sg","gloss":"Germany"},
+  {"id":"britannia","lemma":"Britannia","pos":"noun","gender":"f","decl":1,"stem":"Britanni","number":"sg","gloss":"Britain"},
+  {"id":"europa","lemma":"Eurōpa","pos":"noun","gender":"f","decl":1,"stem":"Eurōp","number":"sg","gloss":"Europe"},
+  {"id":"africa","lemma":"Āfrica","pos":"noun","gender":"f","decl":1,"stem":"Āfric","number":"sg","gloss":"Africa"},
+  {"id":"asia","lemma":"Asia","pos":"noun","gender":"f","decl":1,"stem":"Asi","number":"sg","gloss":"Asia"},
+  {"id":"corsica","lemma":"Corsica","pos":"noun","gender":"f","decl":1,"stem":"Corsic","number":"sg","gloss":"Corsica"},
+  {"id":"sardinia","lemma":"Sardinia","pos":"noun","gender":"f","decl":1,"stem":"Sardini","number":"sg","gloss":"Sardinia"},
+  {"id":"athenae","lemma":"Athēnae","pos":"noun","gender":"f","decl":1,"stem":"Athēn","number":"pl","gloss":"Athens"},
+  {"id":"aegyptus","lemma":"Aegyptus","pos":"noun","gender":"f","decl":2,"stem":"Aegypt","number":"sg","gloss":"Egypt"},
+  {"id":"nilus","lemma":"Nīlus","pos":"noun","gender":"m","decl":2,"stem":"Nīl","number":"sg","gloss":"the Nile"},
+  {"id":"rhenus","lemma":"Rhēnus","pos":"noun","gender":"m","decl":2,"stem":"Rhēn","number":"sg","gloss":"the Rhine"},
+  {"id":"vesuvius","lemma":"Vesuvius","pos":"noun","gender":"m","decl":2,"stem":"Vesuvi","number":"sg","gloss":"Mount Vesuvius"},
+  {"id":"fluvius","lemma":"fluvius","pos":"noun","gender":"m","decl":2,"stem":"fluvi","gloss":"river"},
+  {"id":"insula","lemma":"īnsula","pos":"noun","gender":"f","decl":1,"stem":"īnsul","gloss":"island"},
+  {"id":"terra","lemma":"terra","pos":"noun","gender":"f","decl":1,"stem":"terr","gloss":"land, country"},
+  {"id":"aqua","lemma":"aqua","pos":"noun","gender":"f","decl":1,"stem":"aqu","gloss":"water"},
+  {"id":"cibus","lemma":"cibus","pos":"noun","gender":"m","decl":2,"stem":"cib","gloss":"food, meal"},
+  {"id":"liber","lemma":"liber","pos":"noun","gender":"m","decl":2,"stem":"libr","nomSg":"liber","gloss":"book"},
+  {"id":"somnus","lemma":"somnus","pos":"noun","gender":"m","decl":2,"stem":"somn","gloss":"sleep"},
+  {"id":"urbs","lemma":"urbs","pos":"noun","gender":"f","decl":3,"gloss":"city","forms":{
+    "nom.sg":"urbs","gen.sg":"urbis","dat.sg":"urbī","acc.sg":"urbem","abl.sg":"urbe",
+    "nom.pl":"urbēs","gen.pl":"urbium","dat.pl":"urbibus","acc.pl":"urbēs","abl.pl":"urbibus"}},
+  {"id":"mons","lemma":"mōns","pos":"noun","gender":"m","decl":3,"gloss":"mountain","forms":{
+    "nom.sg":"mōns","gen.sg":"montis","dat.sg":"montī","acc.sg":"montem","abl.sg":"monte",
+    "nom.pl":"montēs","gen.pl":"montium","dat.pl":"montibus","acc.pl":"montēs","abl.pl":"montibus"}},
+  {"id":"nox","lemma":"nox","pos":"noun","gender":"f","decl":3,"gloss":"night","forms":{
+    "nom.sg":"nox","gen.sg":"noctis","dat.sg":"noctī","acc.sg":"noctem","abl.sg":"nocte",
+    "nom.pl":"noctēs","gen.pl":"noctium","dat.pl":"noctibus","acc.pl":"noctēs","abl.pl":"noctibus"}},
+  {"id":"labor","lemma":"labor","pos":"noun","gender":"m","decl":3,"gloss":"work, labour","forms":{
+    "nom.sg":"labor","gen.sg":"labōris","dat.sg":"labōrī","acc.sg":"labōrem","abl.sg":"labōre",
+    "nom.pl":"labōrēs","gen.pl":"labōrum","dat.pl":"labōribus","acc.pl":"labōrēs","abl.pl":"labōribus"}},
+  {"id":"potus","lemma":"potus","pos":"noun","gender":"m","decl":4,"gloss":"drink","forms":{
+    "nom.sg":"potus","gen.sg":"potūs","dat.sg":"potuī","acc.sg":"potum","abl.sg":"potū",
+    "nom.pl":"potūs","gen.pl":"potuum","dat.pl":"potibus","acc.pl":"potūs","abl.pl":"potibus"}},
+
+  {"id":"ego","lemma":"ego","pos":"pron","gloss":"I","forms":{
+    "nom.sg":"ego","gen.sg":"meī","dat.sg":"mihi","acc.sg":"mē","abl.sg":"mē"}},
+
+  {"id":"magnus","lemma":"magnus","pos":"adj","decl":"1-2","stem":"magn","gloss":"big, great"},
+  {"id":"parvus","lemma":"parvus","pos":"adj","decl":"1-2","stem":"parv","gloss":"small"},
+  {"id":"longus","lemma":"longus","pos":"adj","decl":"1-2","stem":"long","gloss":"long"},
+  {"id":"altus","lemma":"altus","pos":"adj","decl":"1-2","stem":"alt","gloss":"high, tall"},
+  {"id":"fessus","lemma":"fessus","pos":"adj","decl":"1-2","stem":"fess","gloss":"tired"},
+  {"id":"laetus","lemma":"laetus","pos":"adj","decl":"1-2","stem":"laet","gloss":"happy"},
+
+  {"id":"sum","lemma":"sum","pos":"verb","gloss":"to be","forms":{
+    "pres.ind.act.1sg":"sum","pres.ind.act.2sg":"es","pres.ind.act.3sg":"est",
+    "pres.ind.act.1pl":"sumus","pres.ind.act.2pl":"estis","pres.ind.act.3pl":"sunt",
+    "pres.inf.act":"esse"}},
+  {"id":"volo","lemma":"volō","pos":"verb","gloss":"to want, to be willing","forms":{
+    "pres.ind.act.1sg":"volō","pres.ind.act.2sg":"vīs","pres.ind.act.3sg":"vult",
+    "pres.ind.act.1pl":"volumus","pres.ind.act.2pl":"vultis","pres.ind.act.3pl":"volunt",
+    "pres.inf.act":"velle"}},
+  {"id":"nolo","lemma":"nōlō","pos":"verb","gloss":"to not want","forms":{
+    "pres.ind.act.1sg":"nōlō","pres.ind.act.1pl":"nōlumus","pres.ind.act.3pl":"nōlunt",
+    "pres.inf.act":"nōlle"}},
+  {"id":"eo","lemma":"eō","pos":"verb","gloss":"to go","forms":{
+    "pres.ind.act.1sg":"eō","pres.ind.act.2sg":"īs","pres.ind.act.3sg":"it",
+    "pres.ind.act.1pl":"īmus","pres.ind.act.2pl":"ītis","pres.ind.act.3pl":"eunt",
+    "pres.inf.act":"īre"}},
+  {"id":"esurio","lemma":"esuriō","pos":"verb","conj":4,"stem":"esur","gloss":"to be hungry"},
+  {"id":"sitio","lemma":"sitiō","pos":"verb","conj":4,"stem":"sit","gloss":"to be thirsty"},
+  {"id":"dormio","lemma":"dormiō","pos":"verb","conj":4,"stem":"dorm","gloss":"to sleep"},
+  {"id":"edo","lemma":"edō","pos":"verb","conj":3,"stem":"ed","gloss":"to eat"},
+  {"id":"bibo","lemma":"bibō","pos":"verb","conj":3,"stem":"bib","gloss":"to drink"},
+  {"id":"lego","lemma":"legō","pos":"verb","conj":3,"stem":"leg","gloss":"to read"},
+  {"id":"surgo","lemma":"surgō","pos":"verb","conj":3,"stem":"surg","gloss":"to get up, to rise"},
+  {"id":"ambulo","lemma":"ambulō","pos":"verb","conj":1,"stem":"ambul","gloss":"to walk"},
+  {"id":"laboro","lemma":"labōrō","pos":"verb","conj":1,"stem":"labōr","gloss":"to work"},
+  {"id":"lavo","lemma":"lavō","pos":"verb","conj":1,"stem":"lav","gloss":"to wash"},
+
+  {"id":"in","lemma":"in","pos":"prep","form":"in","gloss":"in, on (+ ablative)"},
+  {"id":"post","lemma":"post","pos":"prep","form":"post","gloss":"after (+ accusative)"},
+  {"id":"ante","lemma":"ante","pos":"prep","form":"ante","gloss":"before (+ accusative)"},
+  {"id":"et","lemma":"et","pos":"conj","form":"et","gloss":"and"},
+  {"id":"non","lemma":"nōn","pos":"adv","form":"nōn","gloss":"not"},
+  {"id":"ubi","lemma":"ubi","pos":"adv","form":"ubi","gloss":"where?"},
+  {"id":"quid","lemma":"quid","pos":"pron","form":"quid","gloss":"what?"},
+  {"id":"deinde","lemma":"deinde","pos":"adv","form":"deinde","gloss":"then, next"},
+  {"id":"primum","lemma":"prīmum","pos":"adv","form":"prīmum","gloss":"first"},
+  {"id":"postremo","lemma":"postrēmō","pos":"adv","form":"postrēmō","gloss":"finally"},
+  {"id":"hodie","lemma":"hodiē","pos":"adv","form":"hodiē","gloss":"today"},
+  {"id":"mane","lemma":"mane","pos":"adv","form":"mane","gloss":"in the morning"},
+  {"id":"domi","lemma":"domī","pos":"adv","form":"domī","gloss":"at home"},
+  {"id":"domum","lemma":"domum","pos":"adv","form":"domum","gloss":"(to) home"}
+]
