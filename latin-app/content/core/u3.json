@@ -1,0 +1,142 @@
+[
+  {
+    "id": "core.3.01", "review": "unreviewed",
+    "en": "The Nile is a long river.",
+    "chunks": ["Nīlus", ["fluvius longus", "longus fluvius"], "est"],
+    "fill": "longus",
+    "skills": ["adj.agree.gender", "noun.pred.nom", "vocab.geography"],
+    "tag": "adjective agrees: masculine singular -us",
+    "explain": "_fluvius_ is masculine singular, so the adjective takes the masculine singular ending: _longus_.",
+    "distractors": [
+      ["Nīlus fluvius longa est.", "_longa_ is feminine; _fluvius_ is masculine, so _longus_."],
+      ["Nīlus fluvius longum est.", "_longum_ is neuter; _fluvius_ is masculine, so _longus_."],
+      ["Nīlus fluvius parvus est.", "_parvus_ = small: 'The Nile is a small river'."]
+    ]
+  },
+  {
+    "id": "core.3.02", "review": "unreviewed",
+    "en": "Rome is a big city.",
+    "chunks": ["Rōma", ["urbs magna", "magna urbs"], "est"],
+    "fill": "magna",
+    "skills": ["adj.agree.gender", "noun.pred.nom"],
+    "tag": "urbs is feminine → magna",
+    "explain": "_urbs_ ends in a consonant, so you can't tell its gender from the ending. You just have to learn that it is feminine, so the adjective is _magna_.",
+    "distractors": [
+      ["Rōma urbs magnus est.", "_magnus_ is masculine; _urbs_ is feminine, so _magna_."],
+      ["Rōma urbs magnum est.", "_magnum_ is neuter; _urbs_ is feminine."],
+      ["Rōma urbs parva est.", "_parva_ = small: 'Rome is a small city'."]
+    ]
+  },
+  {
+    "id": "core.3.03", "review": "unreviewed",
+    "en": "Britain is a big island.",
+    "chunks": ["Britannia", ["īnsula magna", "magna īnsula"], "est"],
+    "fill": "magna",
+    "skills": ["adj.agree.gender", "noun.pred.nom"],
+    "tag": "īnsula is feminine → magna",
+    "explain": "_īnsula_ is feminine singular, so the adjective is _magna_ (-a).",
+    "distractors": [
+      ["Britannia īnsula magnus est.", "_magnus_ is masculine; _īnsula_ is feminine."],
+      ["Britannia īnsula parva est.", "_parva_ = small: 'Britain is a small island'."],
+      ["Britannia īnsula magna sunt.", "One subject: _est_."]
+    ]
+  },
+  {
+    "id": "core.3.04", "review": "unreviewed",
+    "en": "Corsica is a small island.",
+    "chunks": ["Corsica", ["īnsula parva", "parva īnsula"], "est"],
+    "fill": "parva",
+    "skills": ["adj.agree.gender", "noun.pred.nom"],
+    "tag": "īnsula is feminine → parva",
+    "explain": "_īnsula_ is feminine, so _parva_ (-a).",
+    "distractors": [
+      ["Corsica īnsula parvus est.", "_parvus_ is masculine; _īnsula_ is feminine."],
+      ["Corsica īnsula magna est.", "_magna_ = big: 'Corsica is a big island'."],
+      ["Corsica īnsula parva sunt.", "One subject: _est_."]
+    ]
+  },
+  {
+    "id": "core.3.05", "review": "unreviewed",
+    "en": "Vesuvius is a high mountain.",
+    "chunks": ["Vesuvius", ["mōns altus", "altus mōns"], "est"],
+    "fill": "altus",
+    "skills": ["adj.agree.gender", "noun.pred.nom"],
+    "tag": "mōns is masculine → altus",
+    "explain": "_mōns_ is masculine, so the adjective is _altus_ (-us).",
+    "distractors": [
+      ["Vesuvius mōns alta est.", "_alta_ is feminine; _mōns_ is masculine."],
+      ["Vesuvius mōns altum est.", "_altum_ is neuter; _mōns_ is masculine."],
+      ["Vesuvius mōns parvus est.", "_parvus_ = small: 'Vesuvius is a small mountain'."]
+    ]
+  },
+  {
+    "id": "core.3.06", "review": "unreviewed",
+    "en": "Egypt is a big country.",
+    "chunks": ["Aegyptus", ["terra magna", "magna terra"], "est"],
+    "fill": "magna",
+    "skills": ["adj.agree.gender", "noun.pred.nom"],
+    "tag": "terra is feminine → magna",
+    "explain": "_terra_ ('land, country') is first declension and feminine, so _magna_.",
+    "distractors": [
+      ["Aegyptus terra magnus est.", "_magnus_ is masculine; _terra_ is feminine."],
+      ["Aegyptus terra parva est.", "_parva_ = small: 'Egypt is a small country'."],
+      ["Aegyptus terra magnum est.", "_magnum_ is neuter; _terra_ is feminine."]
+    ]
+  },
+  {
+    "id": "core.3.07", "review": "unreviewed",
+    "en": "Rome and Athens are big cities.",
+    "chunks": [["Rōma et Athēnae", "Athēnae et Rōma"], ["urbēs magnae", "magnae urbēs"], "sunt"],
+    "fill": "magnae",
+    "skills": ["adj.agree.number", "adj.agree.gender", "noun.nom.pl"],
+    "tag": "feminine plural: -ae",
+    "explain": "_urbēs_ is feminine plural, so the adjective is feminine plural: _magnae_ (-ae).",
+    "distractors": [
+      ["Rōma et Athēnae urbēs magna sunt.", "_magna_ is singular; _urbēs_ is plural, so _magnae_."],
+      ["Rōma et Athēnae urbēs magnī sunt.", "_magnī_ is masculine plural; _urbēs_ is feminine."],
+      ["Rōma et Athēnae urbēs parvae sunt.", "_parvae_ = small: 'small cities'."]
+    ]
+  },
+  {
+    "id": "core.3.08", "review": "unreviewed",
+    "en": "Corsica and Sardinia are small islands.",
+    "chunks": [["Corsica et Sardinia", "Sardinia et Corsica"], ["īnsulae parvae", "parvae īnsulae"], "sunt"],
+    "fill": "parvae",
+    "skills": ["adj.agree.number", "adj.agree.gender", "noun.nom.pl"],
+    "tag": "feminine plural: -ae",
+    "explain": "_īnsulae_ is feminine plural, so _parvae_.",
+    "distractors": [
+      ["Corsica et Sardinia īnsulae parva sunt.", "_parva_ is singular; _īnsulae_ is plural, so _parvae_."],
+      ["Corsica et Sardinia īnsulae parvī sunt.", "_parvī_ is masculine plural; _īnsulae_ is feminine."],
+      ["Corsica et Sardinia īnsulae magnae sunt.", "_magnae_ = big: 'big islands'."]
+    ]
+  },
+  {
+    "id": "core.3.09", "review": "unreviewed",
+    "en": "The Nile and the Rhine are long rivers.",
+    "chunks": [["Nīlus et Rhēnus", "Rhēnus et Nīlus"], ["fluviī longī", "longī fluviī"], "sunt"],
+    "fill": "longī",
+    "skills": ["adj.agree.number", "adj.agree.gender", "noun.nom.pl"],
+    "tag": "masculine plural: -ī",
+    "explain": "_fluviī_ is masculine plural (nominative -ī), so the adjective is _longī_.",
+    "distractors": [
+      ["Nīlus et Rhēnus fluviī longae sunt.", "_longae_ is feminine plural; _fluviī_ is masculine."],
+      ["Nīlus et Rhēnus fluvius longī sunt.", "Plural subject: the noun should be plural, _fluviī_."],
+      ["Nīlus et Rhēnus fluviī parvī sunt.", "_parvī_ = small: 'small rivers'."]
+    ]
+  },
+  {
+    "id": "core.3.10", "review": "unreviewed",
+    "en": "Rome is not a small city.",
+    "chunks": ["Rōma", ["urbs parva", "parva urbs"], "nōn est"],
+    "fill": "nōn",
+    "skills": ["neg.non", "adj.agree.gender", "noun.pred.nom"],
+    "tag": "nōn + adjective agreement",
+    "explain": "_nōn est_ negates the whole statement. _urbs_ is feminine, so _parva_.",
+    "distractors": [
+      ["Rōma urbs parva est.", "Without _nōn_: 'Rome IS a small city'."],
+      ["Rōma urbs parvus nōn est.", "_parvus_ is masculine; _urbs_ is feminine."],
+      ["Rōma urbs magna nōn est.", "_magna_ = big: 'Rome is not a big city' (false!)."]
+    ]
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "daily.3.01", "review": "unreviewed",
+    "en": "In the morning I get up.",
+    "chunks": ["Mane", "surgō"],
+    "fill": "Mane",
+    "skills": ["time.when", "verb.1sg.pres", "vocab.actions"],
+    "tag": "mane = in the morning",
+    "explain": "_mane_ is an adverb: 'in the morning'. _surgō_ = 'I get up, I rise'.",
+    "distractors": [
+      ["Mane surgis.", "_surgis_ is the 'you' form: 'In the morning you get up'."],
+      ["Mane dormiō.", "_dormiō_ = I sleep: 'In the morning I sleep'."],
+      ["Nocte surgō.", "_nocte_ = at night: 'At night I get up'."]
+    ]
+  },
+  {
+    "id": "daily.3.02", "review": "unreviewed",
+    "en": "First I drink water.",
+    "chunks": ["Prīmum", "aquam", "bibō"],
+    "fill": "Prīmum",
+    "skills": ["adv.sequence", "case.acc.obj", "verb.1sg.pres"],
+    "tag": "prīmum = first",
+    "explain": "_prīmum_ means 'first' and starts a sequence. The next step will be _deinde_ ('then').",
+    "distractors": [
+      ["Deinde aquam bibō.", "_deinde_ = then: 'Then I drink water'."],
+      ["Prīmum aquam bibis.", "_bibis_ is the 'you' form: 'First you drink water'."],
+      ["Prīmum aqua bibō.", "The thing drunk needs the accusative _aquam_."]
+    ]
+  },
+  {
+    "id": "daily.3.03", "review": "unreviewed",
+    "en": "Then I eat food.",
+    "chunks": ["Deinde", "cibum", "edō"],
+    "fill": "Deinde",
+    "skills": ["adv.sequence", "case.acc.obj", "verb.1sg.pres"],
+    "tag": "deinde = then",
+    "explain": "_deinde_ means 'then, next'.",
+    "distractors": [
+      ["Prīmum cibum edō.", "_prīmum_ = first: 'First I eat food'."],
+      ["Deinde cibum edunt.", "_edunt_ is the 'they' form: 'Then they eat food'."],
+      ["Deinde cibus edō.", "The thing eaten needs the accusative _cibum_."]
+    ]
+  },
+  {
+    "id": "daily.3.04", "review": "unreviewed",
+    "en": "Then I work.",
+    "chunks": ["Deinde", "labōrō"],
+    "fill": "labōrō",
+    "skills": ["adv.sequence", "verb.1sg.pres", "vocab.actions"],
+    "tag": "deinde = then",
+    "explain": "_labōrō_ = 'I work' (an -āre verb with the I-form in -ō).",
+    "distractors": [
+      ["Deinde labōrās.", "-ās is the 'you' ending: 'Then you work'."],
+      ["Prīmum labōrō.", "_prīmum_ = first: 'First I work'."],
+      ["Deinde dormiō.", "_dormiō_ = I sleep: 'Then I sleep'."]
+    ]
+  },
+  {
+    "id": "daily.3.05", "review": "unreviewed",
+    "en": "Finally I sleep.",
+    "chunks": ["Postrēmō", "dormiō"],
+    "fill": "Postrēmō",
+    "skills": ["adv.sequence", "verb.1sg.pres", "vocab.actions"],
+    "tag": "postrēmō = finally",
+    "explain": "_postrēmō_ means 'finally, last of all'.",
+    "distractors": [
+      ["Postrēmō dormīs.", "-īs is the 'you' ending: 'Finally you sleep'."],
+      ["Prīmum dormiō.", "_prīmum_ = first: 'First I sleep'."],
+      ["Postrēmō ambulō.", "_ambulō_ = I walk: 'Finally I walk'."]
+    ]
+  },
+  {
+    "id": "daily.3.06", "review": "unreviewed",
+    "en": "Today I work.",
+    "chunks": ["Hodiē", "labōrō"],
+    "fill": "Hodiē",
+    "skills": ["time.when", "verb.1sg.pres", "vocab.actions"],
+    "tag": "hodiē = today",
+    "explain": "_hodiē_ means 'today'.",
+    "distractors": [
+      ["Hodiē labōrās.", "-ās is the 'you' ending: 'Today you work'."],
+      ["Mane labōrō.", "_mane_ = in the morning: 'In the morning I work'."],
+      ["Hodiē dormiō.", "_dormiō_ = I sleep: 'Today I sleep'."]
+    ]
+  },
+  {
+    "id": "daily.3.07", "review": "unreviewed",
+    "en": "At night I sleep.",
+    "chunks": ["Nocte", "dormiō"],
+    "fill": "Nocte",
+    "skills": ["time.when", "verb.1sg.pres", "vocab.actions"],
+    "tag": "nocte = at night (ablative of nox)",
+    "explain": "_nocte_ is the ablative of _nox_ ('night'). The ablative can say when something happens: 'at night'.",
+    "distractors": [
+      ["Nox dormiō.", "_nox_ is the nominative: it would make 'night' the subject. To say 'at night' use _nocte_."],
+      ["Mane dormiō.", "_mane_ = in the morning: 'In the morning I sleep'."],
+      ["Nocte dormīs.", "-īs is the 'you' ending: 'At night you sleep'."]
+    ]
+  },
+  {
+    "id": "daily.3.08", "review": "unreviewed",
+    "en": "I am at home.",
+    "chunks": [["Domī sum", "Sum domī"]],
+    "fill": "Domī",
+    "skills": ["loc.home", "sum.1sg"],
+    "tag": "domī = at home",
+    "explain": "_domī_ is a special 'at home' form (a locative). It needs no preposition: not _in domō_ but simply _domī_.",
+    "distractors": [
+      ["Domum sum.", "_domum_ means 'to home', movement towards. To say you are at home use _domī_."],
+      ["Domī es.", "_es_ = 'you are': 'You are at home'."],
+      ["Domī sunt.", "_sunt_ = 'they are': 'They are at home'."]
+    ]
+  },
+  {
+    "id": "daily.3.09", "review": "unreviewed",
+    "en": "I go home.",
+    "chunks": ["Domum", "eō"],
+    "fill": "domum",
+    "skills": ["loc.home", "verb.1sg.pres", "vocab.actions"],
+    "tag": "domum = (to) home; eō = I go",
+    "explain": "_domum_ means 'home' as a destination, with no preposition. _eō_ ('I go') is irregular: eō, īs, it, īmus, ītis, eunt.",
+    "distractors": [
+      ["Domī eō.", "_domī_ = at home: it says where, not where to."],
+      ["Domum īs.", "_īs_ is the 'you' form: 'You go home'."],
+      ["Domum eunt.", "_eunt_ is the 'they' form: 'They go home'."]
+    ]
+  },
+  {
+    "id": "daily.3.10", "review": "unreviewed",
+    "en": "I want to go home.",
+    "chunks": ["Domum", "īre", "volō"],
+    "fill": "īre",
+    "skills": ["loc.home", "volo.inf"],
+    "tag": "volō + īre (infinitive of eō)",
+    "explain": "_īre_ is the infinitive of _eō_ ('to go'). After _volō_ you use the infinitive, and _domum_ stays as the destination.",
+    "distractors": [
+      ["Domum eō volō.", "After _volō_ you need the infinitive _īre_, not _eō_."],
+      ["Domī īre volō.", "_domī_ = at home: 'I want to go at home'. To say where to, use _domum_."],
+      ["Domum īre vult.", "_vult_ = 'he/she wants': 'He/she wants to go home'."]
+    ]
+  },
+  {
+    "id": "daily.3.11", "review": "unreviewed",
+    "en": "I drink water and then I walk.",
+    "la": "Aquam bibō et deinde ambulō.",
+    "accept": ["Bibō aquam et deinde ambulō.", "Aquam bibō, deinde ambulō.", "Bibō aquam, deinde ambulō."],
+    "fill": "deinde",
+    "skills": ["adv.sequence", "case.acc.obj", "verb.1sg.pres"],
+    "tag": "et deinde = and then",
+    "explain": "Two I-forms (_bibō_, _ambulō_) share one subject. _et deinde_ ('and then') links them; a comma plus _deinde_ works too.",
+    "distractors": [
+      ["Aquam bibō et deinde ambulās.", "_ambulās_ is the 'you' form: 'and then you walk'."],
+      ["Aquam bibō et prīmum ambulō.", "_prīmum_ = first: 'and first I walk'."],
+      ["Cibum edō et deinde ambulō.", "'I eat food and then I walk'."]
+    ]
+  },
+  {
+    "id": "daily.3.12", "review": "unreviewed",
+    "en": "I eat food and drink water.",
+    "la": "Cibum edō et aquam bibō.",
+    "accept": ["Edō cibum et bibō aquam.", "Edō cibum et aquam bibō.", "Cibum edō et bibō aquam."],
+    "fill": "aquam",
+    "skills": ["case.acc.obj", "verb.1sg.pres", "vocab.actions"],
+    "tag": "two actions, each with its own object",
+    "explain": "Each verb has its own accusative object: _cibum_ for _edō_, _aquam_ for _bibō_. Word order is flexible as long as the endings are right.",
+    "distractors": [
+      ["Cibum edō et aquam bibis.", "_bibis_ is the 'you' form: 'I eat food and you drink water'."],
+      ["Cibum edō et aqua bibō.", "The thing drunk needs the accusative _aquam_."],
+      ["Cibum edō et aquam edō.", "_edō_ = I eat: 'I eat food and eat water'."]
+    ]
+  }
+]
