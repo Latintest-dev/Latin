@@ -7,7 +7,7 @@ import { buildExport, mergeData, MAX_MISTAKES } from './transfer.js';
 export const DEFAULT_SETTINGS = {
   showMacrons: false,    // display macrons on Latin text
   strictMacrons: false,  // require macrons in typed answers
-  newPerPack: 2,         // new sentences introduced per track per session
+  newTotal: 6,           // new sentences introduced per session, shared between tracks
   upd: 0,
 };
 

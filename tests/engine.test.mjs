@@ -66,7 +66,7 @@ test('verb conjugations', () => {
 
 test('feature labels and diffs', () => {
   assert.equal(featureLabel('nom.sg'), 'nominative singular');
-  assert.equal(featureLabel('pres.ind.act.3pl'), '3rd person plural (present)');
+  assert.equal(featureLabel('pres.ind.act.3pl'), '3rd person plural (present tense)');
   assert.deepEqual(featureDiff('pres.ind.act.3sg', 'pres.ind.act.3pl'), [{ dim: 'person/number', from: '3sg', to: '3pl' }]);
   assert.deepEqual(featureDiff('nom.sg.f', 'nom.sg.m'), [{ dim: 'gender', from: 'f', to: 'm' }]);
 });
@@ -175,4 +175,127 @@ test('validator really catches problems', async () => {
   assert.match(text, /fill word "nonexistent" not found/);
   assert.match(text, /unknown skill no\.such\.skill/);
   assert.throws(() => generateForms({ id: 'v', pos: 'verb', conj: 9, stem: 'x' }), /Unknown conjugation/);
+});
+
+// ---------- tenses, commands, -ne, vocative (v0.2) ----------
+
+test('regular verbs get imperfect, future, perfect and command forms', () => {
+  const ambulo = generateForms({ id: 'a', pos: 'verb', conj: 1, stem: 'ambul', pf: 'ambulāv' });
+  assert.equal(ambulo['pres.ind.act.1sg'], 'ambulō');
+  assert.equal(ambulo['impf.ind.act.1sg'], 'ambulābam');
+  assert.equal(ambulo['fut.ind.act.1sg'], 'ambulābō');
+  assert.equal(ambulo['perf.ind.act.1sg'], 'ambulāvī');
+  assert.equal(ambulo['perf.ind.act.3pl'], 'ambulāvērunt');
+  assert.equal(ambulo['imp.act.2sg'], 'ambulā');
+  assert.equal(ambulo['imp.act.2pl'], 'ambulāte');
+
+  const video = generateForms({ id: 'v', pos: 'verb', conj: 2, stem: 'vid', pf: 'vīd' });
+  assert.equal(video['fut.ind.act.1sg'], 'vidēbō');
+  assert.equal(video['impf.ind.act.3sg'], 'vidēbat');
+
+  const lego = generateForms({ id: 'l', pos: 'verb', conj: 3, stem: 'leg', pf: 'lēg' });
+  assert.equal(lego['fut.ind.act.1sg'], 'legam');
+  assert.equal(lego['fut.ind.act.2sg'], 'legēs');
+  assert.equal(lego['impf.ind.act.1sg'], 'legēbam');
+  assert.equal(lego['perf.ind.act.2sg'], 'lēgistī');
+
+  const dormio = generateForms({ id: 'd', pos: 'verb', conj: 4, stem: 'dorm', pf: 'dormīv' });
+  assert.equal(dormio['fut.ind.act.1sg'], 'dormiam');
+  assert.equal(dormio['fut.ind.act.2sg'], 'dormiēs');
+  assert.equal(dormio['impf.ind.act.1sg'], 'dormiēbam');
+  assert.equal(dormio['imp.act.2sg'], 'dormī');
+  assert.equal(dormio['imp.act.2pl'], 'dormīte');
+
+  const facio = generateForms({ id: 'f', pos: 'verb', conj: '3io', stem: 'fac', pf: 'fēc' });
+  assert.equal(facio['fut.ind.act.1sg'], 'faciam');
+  assert.equal(facio['pres.ind.act.3pl'], 'faciunt');
+  assert.equal(facio['imp.act.2sg'], 'face');
+});
+
+test('a verb without a perfect stem simply has no perfect forms', () => {
+  const f = generateForms({ id: 'x', pos: 'verb', conj: 1, stem: 'am' });
+  assert.ok(!('perf.ind.act.1sg' in f));
+  assert.equal(f['fut.ind.act.1sg'], 'amābō');
+});
+
+test('irregular verbs: sum and eō in every tense', () => {
+  const sum = content.index.forms.get('sum');
+  assert.equal(sum['fut.ind.act.1sg'], 'erō');
+  assert.equal(sum['perf.ind.act.1sg'], 'fuī');
+  assert.equal(sum['impf.ind.act.3sg'], 'erat');
+  const eo = content.index.forms.get('eo');
+  assert.equal(eo['fut.ind.act.1sg'], 'ībō');
+  assert.equal(eo['perf.ind.act.1sg'], 'iī');
+});
+
+test('vocative: -us nouns change, others do not gain a vocative form', () => {
+  const f = content.index.forms.get('marcus');
+  assert.equal(f['voc.sg'], 'Mārce');
+  assert.ok(!('voc.sg' in content.index.forms.get('iulia')));
+  assert.equal(featureLabel('voc.sg'), 'vocative singular');
+});
+
+test('tense labels and diffs', () => {
+  assert.equal(featureLabel('perf.ind.act.1sg'), '1st person singular (perfect tense)');
+  assert.equal(featureLabel('fut.ind.act.3pl'), '3rd person plural (future tense)');
+  assert.equal(featureLabel('imp.act.2sg'), 'the command form (to one person)');
+  assert.deepEqual(featureDiff('pres.ind.act.1sg', 'perf.ind.act.1sg'), [{ dim: 'tense', from: 'pres', to: 'perf' }]);
+  assert.deepEqual(featureDiff('fut.ind.act.1sg', 'fut.ind.act.2sg'), [{ dim: 'person/number', from: '1sg', to: '2sg' }]);
+});
+
+test('question particle -ne is parsed off the word', () => {
+  const p = parseWord(content.index, 'Fessusne');
+  assert.ok(p.length && p.every((x) => x.enc === 'ne'));
+  assert.equal(p[0].lexId, 'fessus');
+  assert.ok(parseWord(content.index, 'valēsne').some((x) => x.lexId === 'valeo' && x.key === 'pres.ind.act.2sg'));
+  assert.ok(parseWord(content.index, 'Esne').some((x) => x.lexId === 'sum'));
+  // a real word ending in -ne is not mangled
+  assert.ok(parseWord(content.index, 'bene').every((x) => !x.enc));
+  assert.deepEqual(parseWord(content.index, 'xyzne'), []);
+});
+
+test('checker names tense mistakes', () => {
+  const it = content.itemsById.get('daily.4.02'); // Herī pānem ēdī.
+  const r = checkText(it.accepted, 'Heri panem edo', { strictMacrons: false }, content.index);
+  assert.equal(r.result, 'wrong');
+  assert.ok(r.tags.includes('tense:pres>perf'), r.tags.join(','));
+  assert.match(r.diag[0].msg, /present tense of .*needs the perfect tense/);
+});
+
+test('checker names a missing or extra -ne', () => {
+  const it = content.itemsById.get('roman.1.05'); // Fessusne es? (also accepts Esne fessus?)
+  assert.equal(checkText(it.accepted, 'fessusne es', {}, content.index).result, 'correct');
+  assert.equal(checkText(it.accepted, 'esne fessus?', {}, content.index).result, 'correct');
+  const r = checkText(it.accepted, 'Fessus es', {}, content.index);
+  assert.equal(r.result, 'wrong');
+  assert.ok(r.tags.includes('question:-ne'));
+  assert.match(r.diag[0].msg, /yes\/no question/);
+  const r2 = checkText(['Fessus sum.'], 'Fessusne sum', {}, content.index);
+  assert.ok(r2.tags.includes('question:-ne'));
+});
+
+test('future and perfect answers are told apart', () => {
+  const it = content.itemsById.get('daily.5.01'); // Crās labōrābō.
+  const r = checkText(it.accepted, 'Cras laboravi', {}, content.index);
+  assert.equal(r.result, 'wrong');
+  assert.ok(r.tags.includes('tense:perf>fut'), r.tags.join(','));
+});
+
+test('new content: situation and question items are well-formed', () => {
+  const items = [...content.itemsById.values()];
+  const sits = items.filter((i) => i.sit);
+  const qs = items.filter((i) => i.q);
+  assert.ok(sits.length >= 8 && qs.length >= 8);
+  for (const i of qs) assert.ok(!i.sit && i.la && i.en);
+  assert.ok(items.some((i) => i.modern && i.modernNote));
+});
+
+test('validator rejects bad new-style items', () => {
+  const bad = structuredClone(content);
+  const q = [...bad.itemsById.values()].find((i) => i.q);
+  q.q = 'Quid xyzzy agis?';
+  q.modern = true; // but no modernNote
+  const { errors } = validateLoaded(bad);
+  assert.ok(errors.some((e) => e.includes('unknown word "xyzzy"')));
+  assert.ok(errors.some((e) => e.includes('modernNote')));
 });

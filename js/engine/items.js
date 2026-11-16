@@ -70,3 +70,25 @@ export function blankSentence(item, blank = '_____') {
   toks[i] = m[1] + blank + m[3];
   return toks.join(' ');
 }
+
+/**
+ * How an item is put to the learner.
+ *   plain      the English sentence is the prompt (translate it)
+ *   situation  item.sit describes a situation in English ("Greet your friend"); answer in Latin
+ *   question   item.q is a Latin question; answer in Latin (no Latin->English multiple choice)
+ */
+export function promptKind(item) {
+  if (item.q) return 'question';
+  if (item.sit) return 'situation';
+  return 'plain';
+}
+
+/** The text shown as the prompt (English for plain/situation items, Latin for questions). */
+export function promptText(item) {
+  return item.q || item.sit || item.en;
+}
+
+/** Can this item be asked as "what does this Latin mean?" */
+export function allowsL2E(item) {
+  return !item.q;
+}

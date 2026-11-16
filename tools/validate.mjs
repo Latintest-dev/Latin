@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { loadContent } from '../js/core/content.js';
 import { PACKS } from '../js/modules/registry.js';
-import { normLoose, tokensLoose } from '../js/engine/latin.js';
+import { normLoose, tokensLoose, isKnownWord } from '../js/engine/latin.js';
 import { blankSentence } from '../js/engine/items.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -33,7 +33,7 @@ export function validateLoaded(content) {
   const checkWords = (id, label, text) => {
     if (text !== text.normalize('NFC')) err(id, `${label} is not NFC-normalised: ${text}`);
     for (const tok of tokensLoose(text)) {
-      if (!index.byNorm.has(tok)) err(id, `${label}: unknown word "${tok}" in "${text}"`);
+      if (!isKnownWord(index, tok)) err(id, `${label}: unknown word "${tok}" in "${text}"`);
     }
   };
 
@@ -46,6 +46,9 @@ export function validateLoaded(content) {
         const id = it.id;
         if (!id.startsWith(`${pack.id}.${unit.id}.`)) err(id, `id should start with ${pack.id}.${unit.id}.`);
         for (const f of ['en', 'la', 'tag', 'explain', 'fill']) if (!it[f]) err(id, `missing ${f}`);
+        if (it.q) checkWords(id, 'question', it.q);
+        if (it.q && it.sit) err(id, 'an item has either q (Latin question) or sit (situation), not both');
+        if (it.modern && !it.modernNote) err(id, 'modern items need a modernNote saying where the word comes from');
         if (!it.skills?.length) err(id, 'no skills');
         for (const s of it.skills || []) if (!skills[s]) err(id, `unknown skill ${s}`);
         const enKey = it.en.toLowerCase();

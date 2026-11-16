@@ -1,0 +1,174 @@
+[
+  {
+    "id": "roman.1.01", "review": "unreviewed",
+    "sit": "You meet your friend Marcus in the forum. Greet him.",
+    "en": "Hello, Marcus!",
+    "la": "Salvē, Mārce!",
+    "accept": ["Mārce, salvē!"],
+    "fill": "Mārce",
+    "skills": ["greet.basic", "case.voc"],
+    "tag": "salvē + name in the vocative",
+    "explain": "_Salvē_ is the standard greeting, literally 'be well'. When you speak to someone by name, the name takes the vocative: for -us nouns the ending becomes -e, so _Mārcus_ → _Mārce_.",
+    "distractors": [
+      ["Salvē, Mārcus!", "When you address someone, _Mārcus_ becomes _Mārce_ (vocative)."],
+      ["Valē, Mārce!", "_valē_ means goodbye, not hello."],
+      ["Salvēte, Mārce!", "_salvēte_ greets several people. To one person, say _salvē_."]
+    ]
+  },
+  {
+    "id": "roman.1.02", "review": "unreviewed",
+    "sit": "You are leaving. Say goodbye to Marcus.",
+    "en": "Goodbye, Marcus!",
+    "la": "Valē, Mārce!",
+    "accept": ["Mārce, valē!"],
+    "fill": "Valē",
+    "skills": ["greet.basic", "case.voc", "imp.2sg"],
+    "tag": "valē = goodbye (be well)",
+    "explain": "_Valē_ is the command form of _valeō_ ('be well'), used when parting. To several people: _valēte_.",
+    "distractors": [
+      ["Salvē, Mārce!", "_salvē_ is hello, not goodbye."],
+      ["Valēte, Mārce!", "_valēte_ is addressed to several people. To one person, say _valē_."],
+      ["Valē, Mārcus!", "Addressing someone needs the vocative _Mārce_."]
+    ]
+  },
+  {
+    "id": "roman.1.03", "review": "unreviewed",
+    "sit": "Ask your friend how he is.",
+    "en": "How are you? (Literally: “What are you doing?”)",
+    "la": "Quid agis?",
+    "accept": ["Valēsne?"],
+    "fill": "agis",
+    "skills": ["greet.basic", "quest.words"],
+    "tag": "Quid agis? = How are you?",
+    "explain": "Romans asked _Quid agis?_ ('What are you doing?') much as we say 'How are you?'. You can also ask _Valēsne?_ ('Are you well?'), where -ne turns the sentence into a question.",
+    "distractors": [
+      ["Quid agō?", "_agō_ is the 'I' form: 'What am I doing?'."],
+      ["Quid agunt?", "_agunt_ is 'they': 'What are they doing?'."],
+      ["Ubi agis?", "_ubi_ = where: 'Where are you doing?' doesn't work as a greeting."]
+    ]
+  },
+  {
+    "id": "roman.1.04", "review": "unreviewed",
+    "sit": "Tell your friend that you are well.",
+    "en": "I am well.",
+    "chunks": ["Bene", "valeō"],
+    "fill": "valeō",
+    "skills": ["idiom.feelings", "greet.basic"],
+    "tag": "valeō = I am well",
+    "explain": "_valeō_ means 'I am well, I am in good health'. Roman letters often began with a wish that you were well, using the same verb.",
+    "distractors": [
+      ["Bene valēs.", "_valēs_ is 'you are well'. To talk about yourself, use _valeō_."],
+      ["Male valeō.", "_male_ = badly: 'I am unwell'."],
+      ["Bene valuī.", "_valuī_ is the past: 'I was well'."]
+    ]
+  },
+  {
+    "id": "roman.1.05", "review": "unreviewed",
+    "sit": "Ask your friend whether he is tired.",
+    "en": "Are you tired?",
+    "la": "Fessusne es?",
+    "accept": ["Esne fessus?"],
+    "fill": "Fessusne",
+    "skills": ["quest.ne", "vocab.needs"],
+    "tag": "-ne makes a yes/no question",
+    "explain": "Add -ne to the first word to ask a yes/no question: _Fessusne es?_ or _Esne fessus?_. Without it, _Fessus es_ is a statement: 'You are tired.'",
+    "distractors": [
+      ["Fessumne es?", "After _es_ the adjective stays nominative: _fessus_, not _fessum_."],
+      ["Fessusne sum?", "_sum_ is 'I am': 'Am I tired?'."],
+      ["Fessus es.", "Without -ne this is a statement: 'You are tired.'"]
+    ]
+  },
+  {
+    "id": "roman.1.06", "review": "unreviewed",
+    "sit": "Someone has handed you a cup of water. Thank him.",
+    "en": "Thank you. (Literally: “I give thanks to you.”)",
+    "chunks": ["Grātiās", "tibi", "agō"],
+    "fill": "Grātiās",
+    "skills": ["idiom.thanks"],
+    "tag": "grātiās agere = to thank",
+    "explain": "Romans said 'I give thanks to you': _grātiās tibi agō_. The person you thank is in the dative (_tibi_). You can also just say _Grātiās!_.",
+    "distractors": [
+      ["Grātiās tū agō.", "'To you' needs the dative _tibi_, not the nominative _tū_."],
+      ["Grātiās mē agō.", "_mē_ means 'me'. The thanks go to 'you': _tibi_."],
+      ["Grātiās tibi agis.", "_agis_ is the 'you' form, so this says 'you give thanks to you'."]
+    ]
+  },
+  {
+    "id": "roman.1.07", "review": "unreviewed",
+    "sit": "Ask politely for water.",
+    "en": "Water, please.",
+    "la": "Aquam, quaesō.",
+    "accept": ["Quaesō, aquam."],
+    "fill": "Aquam",
+    "skills": ["idiom.thanks", "case.acc.obj"],
+    "tag": "quaesō = please (I ask)",
+    "explain": "_quaesō_ literally means 'I ask'. What you ask for is its object, so it goes in the accusative: _aquam_.",
+    "distractors": [
+      ["Aqua, quaesō.", "The thing asked for is an object: _aquam_, not _aqua_."],
+      ["Cibum, quaesō.", "_cibum_ = food: 'Food, please.'"],
+      ["Aquam, grātiās.", "_grātiās_ means 'thanks', not 'please'."]
+    ]
+  },
+  {
+    "id": "roman.1.08", "review": "unreviewed",
+    "sit": "Someone is speaking too fast. Say that you don't understand.",
+    "en": "I don't understand.",
+    "chunks": ["Nōn", "intellegō"],
+    "fill": "intellegō",
+    "skills": ["neg.non", "verb.1sg.pres"],
+    "tag": "intellegō = I understand",
+    "explain": "_intellegō_ means 'I understand'. Put _nōn_ in front to negate it.",
+    "distractors": [
+      ["Nōn intellegis.", "_intellegis_ is 'you': 'You don't understand.'"],
+      ["Intellegō.", "Without _nōn_ this means 'I understand.'"],
+      ["Nōn intellegunt.", "_intellegunt_ is 'they': 'They don't understand.'"]
+    ]
+  },
+  {
+    "id": "roman.1.09", "review": "unreviewed",
+    "sit": "Tell someone that your name is Marcus.",
+    "en": "My name is Marcus.",
+    "chunks": [["Mihi nōmen", "Nōmen mihi"], "est", "Mārcus"],
+    "accept": ["Nōmen meum est Mārcus.", "Nōmen meum Mārcus est."],
+    "fill": "Mihi",
+    "skills": ["idiom.nomen"],
+    "tag": "mihi nōmen est = my name is",
+    "explain": "Latin says 'to me the name is Marcus' (_mihi nōmen est_). The name stays in the nominative. _Nōmen meum est_ ('my name is') is also fine.",
+    "distractors": [
+      ["Mihi nōmen est Mārce.", "The name stays nominative (_Mārcus_). The vocative is only for calling someone."],
+      ["Mihi nōmina sunt Mārcus.", "_nōmina sunt_ is plural: 'names'. You have one name."],
+      ["Tibi nōmen est Mārcus.", "_tibi_ = to you: 'Your name is Marcus.'"]
+    ]
+  },
+  {
+    "id": "roman.1.10", "review": "unreviewed",
+    "sit": "Ask a stranger what his name is.",
+    "en": "What is your name?",
+    "la": "Quid tibi nōmen est?",
+    "fill": "tibi",
+    "skills": ["idiom.nomen", "quest.words"],
+    "tag": "tibi nōmen est = your name is",
+    "explain": "'What is your name?' is 'What is the name to you?': _Quid tibi nōmen est?_ The same dative pattern as _mihi nōmen est_.",
+    "distractors": [
+      ["Quid mihi nōmen est?", "_mihi_ = to me: 'What is my name?'."],
+      ["Quid tibi nōmina sunt?", "_nōmina sunt_ is plural: 'names'."],
+      ["Ubi tibi nōmen est?", "_ubi_ = where: 'Where is your name?'."]
+    ]
+  },
+  {
+    "id": "roman.1.11", "review": "unreviewed",
+    "sit": "Wish your friend a good night's sleep.",
+    "en": "Sleep well!",
+    "la": "Bene dormī!",
+    "accept": ["Dormī bene!"],
+    "fill": "dormī",
+    "skills": ["imp.2sg", "vocab.actions"],
+    "tag": "-ī / -ē = a command to one person",
+    "explain": "The command form to one person is the verb stem: _dormī_ (from _dormīre_), _valē_ (from _valēre_). To several people add -te: _dormīte_.",
+    "distractors": [
+      ["Bene dormīte!", "_dormīte_ is a command to several people."],
+      ["Bene dormis.", "_dormis_ is a statement: 'You sleep well.'"],
+      ["Male dormī!", "_male_ = badly: 'Sleep badly!'."]
+    ]
+  }
+]

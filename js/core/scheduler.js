@@ -45,8 +45,8 @@ export function strength(skill) {
   return skill.r.reduce((a, b) => a + b, 0) / skill.r.length;
 }
 
-export function exerciseTypeFor(lvl, rng = Math.random) {
-  if (lvl <= 0) return rng() < 0.5 ? 'mc_e2l' : 'mc_l2e';
+export function exerciseTypeFor(lvl, rng = Math.random, noL2E = false) {
+  if (lvl <= 0) return noL2E || rng() < 0.5 ? 'mc_e2l' : 'mc_l2e';
   if (lvl === 1) return 'fill';
   return 'write';
 }
@@ -60,8 +60,8 @@ function shuffle(arr, rng = Math.random) {
   return a;
 }
 
-export function makeEntry(itemId, lvl, learn, kind, rng = Math.random) {
-  return { itemId, lvl, learn, kind, type: exerciseTypeFor(lvl, rng) };
+export function makeEntry(itemId, lvl, learn, kind, rng = Math.random, item = null) {
+  return { itemId, lvl, learn, kind, type: exerciseTypeFor(lvl, rng, !!item?.q) };
 }
 
 /** Is unit number `ui` of a pack unlocked, given item states? */
@@ -114,13 +114,13 @@ function newItems(pack, itemStates, limit, onlyUnit) {
  * Build the list of exercises for a session.
  * modes: 'continue' (all tracks), 'unit' (scope {packId, unitId}), 'weak', 'mistakes'
  */
-export function buildQueue({ content, itemStates, skills, mistakes, now, mode, scope, newPerPack = 2, rng = Math.random }) {
+export function buildQueue({ content, itemStates, skills, mistakes, now, mode, scope, newTotal = 6, rng = Math.random }) {
   const queue = [];
   const entryFor = (it, kind) => {
     const st = itemStates[it.id];
     const lvl = st ? st.lvl : 0;
     const learn = !st || lvl < 2;
-    return makeEntry(it.id, lvl, learn, kind, rng);
+    return makeEntry(it.id, lvl, learn, kind, rng, it);
   };
 
   if (mode === 'continue') {
@@ -131,10 +131,21 @@ export function buildQueue({ content, itemStates, skills, mistakes, now, mode, s
     due.sort((a, b) => itemStates[a.id].due - itemStates[b.id].due);
     const dueTaken = due.slice(0, MAX_DUE);
     for (const it of dueTaken) queue.push(entryFor(it, 'review'));
-    // hold back new material when there is a big review backlog
-    const perPack = due.length > MAX_DUE ? 0 : newPerPack;
-    for (const pack of content.packs) {
-      for (const it of newItems(pack, itemStates, perPack)) queue.push(entryFor(it, 'new'));
+    // hold back new material when there is a big review backlog; otherwise share the
+    // session's new-sentence budget between tracks, one at a time, so adding tracks never
+    // makes sessions longer.
+    const budget = due.length > MAX_DUE ? 0 : newTotal;
+    const lists = content.packs.map((pack) => newItems(pack, itemStates, budget));
+    for (let round = 0, taken = 0; taken < budget; round++) {
+      let any = false;
+      for (const list of lists) {
+        if (round < list.length && taken < budget) {
+          queue.push(entryFor(list[round], 'new'));
+          taken++;
+          any = true;
+        }
+      }
+      if (!any) break;
     }
     if (!queue.length) {
       // nothing due, nothing new: practise ahead

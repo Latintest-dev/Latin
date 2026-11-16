@@ -5,7 +5,7 @@
 // wrong word...). Messages mark Latin words with _underscores_; the UI renders those in
 // italics and applies the macron setting.
 
-import { normLoose, normStrict, tokensLoose, tokensStrict, parseWord, featureLabel, featureDiff } from './latin.js';
+import { normLoose, normStrict, tokensLoose, tokensStrict, parseWord, featureLabel, featureDiff, labelOf } from './latin.js';
 
 /** Word-level edit alignment between user tokens u and expected tokens e. */
 export function align(u, e) {
@@ -51,6 +51,28 @@ function diagnoseSub(index, uNorm, eNorm, uShown, eShown) {
       const diff = featureDiff(a.key, b.key);
       if (!best || diff.length < best.diff.length) best = { a, b, diff };
     }
+  }
+  if (best && !best.diff.length && (best.a.enc || '') !== (best.b.enc || '')) {
+    const askedForNe = !!best.b.enc;
+    return {
+      type: 'enclitic',
+      user: uShown,
+      expected: eShown,
+      msg: askedForNe
+        ? `This is a yes/no question, so the question particle _-ne_ is added to the first word: _${eShown}_.`
+        : `_-ne_ turns a sentence into a yes/no question. Here you need a plain statement: _${eShown}_.`,
+      tags: ['question:-ne'],
+    };
+  }
+  if (best && best.diff.length === 1 && best.diff[0].dim === 'tense') {
+    const [d] = best.diff;
+    return {
+      type: 'form',
+      user: uShown,
+      expected: eShown,
+      msg: `_${uShown}_ is the ${labelOf(d.from)} tense of _${best.a.lemma}_, but this sentence needs the ${labelOf(d.to)} tense: _${eShown}_.`,
+      tags: [`tense:${d.from}>${d.to}`],
+    };
   }
   if (best && best.diff.length) {
     return {

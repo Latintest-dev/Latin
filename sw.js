@@ -2,7 +2,7 @@
 // writes sw.js. Every file is precached on install, so after the first load the whole app
 // works offline. Changing any file changes the cache name, which installs an updated copy.
 
-const CACHE = 'latin-c8b2e3b9d5';
+const CACHE = 'latin-19486c5996';
 const ASSETS = [
   "./",
   "content/core/pack.json",
@@ -13,7 +13,13 @@ const ASSETS = [
   "content/daily/u1.json",
   "content/daily/u2.json",
   "content/daily/u3.json",
+  "content/daily/u4.json",
+  "content/daily/u5.json",
   "content/lexicon.json",
+  "content/roman/pack.json",
+  "content/roman/u1.json",
+  "content/roman/u2.json",
+  "content/roman/u3.json",
   "content/skills.json",
   "css/app.css",
   "icons/icon-192.png",

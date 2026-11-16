@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { loadFromDisk } from '../tools/validate.mjs';
 import { createMemoryBackend } from '../js/core/storage.js';
 import { createStore } from '../js/core/store.js';
-import { applyResult, newItemState, buildQueue, summarize, unitUnlocked, strength, DAY, countKinds } from '../js/core/scheduler.js';
+import { applyResult, newItemState, buildQueue, summarize, unitUnlocked, strength, DAY, countKinds, makeEntry } from '../js/core/scheduler.js';
 import { SessionRunner } from '../js/core/session.js';
 import { buildExport, mergeData, validateExport } from '../js/core/transfer.js';
 
@@ -26,17 +26,39 @@ test('ladder: correct answers climb, then enter spaced review', () => {
   assert.equal(c.lvl, s.lvl); assert.equal(c.seen, s.seen);
 });
 
-test('a brand-new session introduces 2 sentences per track, first at MC level', async () => {
+test('a brand-new session shares its new-sentence budget between tracks, first at MC level', async () => {
   const store = await mkStore();
-  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'continue', newPerPack: 2 });
+  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'continue', newTotal: 4 });
   assert.equal(q.length, 4);
-  assert.deepEqual(q.map((e) => e.itemId), ['core.1.01', 'core.1.02', 'daily.1.01', 'daily.1.02']);
+  // taking turns: the first three come from three different tracks, the fourth starts the next round
+  const packs = q.map((e) => content.packOf.get(e.itemId));
+  assert.deepEqual(packs.slice(0, 3), ['core', 'daily', 'roman']);
+  assert.equal(packs[3], 'core');
+  assert.deepEqual(q.map((e) => e.itemId), ['core.1.01', 'daily.1.01', 'roman.1.01', 'core.1.02']);
   assert.ok(q.every((e) => e.lvl === 0 && e.learn && e.kind === 'new' && e.type.startsWith('mc_')));
+});
+
+test('the new-sentence budget is a total, not per track', async () => {
+  const store = await mkStore();
+  const six = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6 });
+  const two = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 2 });
+  assert.equal(six.length, 6);
+  assert.equal(two.length, 2);
+});
+
+test('Latin-question items are never asked as Latin -> English', async () => {
+  const store = await mkStore();
+  const qItems = [...content.itemsById.values()].filter((it) => it.q);
+  assert.ok(qItems.length >= 5);
+  for (let i = 0; i < 40; i++) {
+    const e = makeEntry(qItems[0].id, 0, true, 'new', Math.random, qItems[0]);
+    assert.equal(e.type, 'mc_e2l');
+  }
 });
 
 test('session runner: a new sentence is drilled up the ladder within the session', async () => {
   const store = await mkStore();
-  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'unit', scope: { packId: 'daily', unitId: '1' }, newPerPack: 2 });
+  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'unit', scope: { packId: 'daily', unitId: '1' }, newTotal: 4 });
   const runner = new SessionRunner({ queue: q, store, content, now });
   const id0 = runner.current.itemId;
   const seenLevels = [];
@@ -76,9 +98,9 @@ test('due items come back after their interval; backlog holds back new material'
   const store = await mkStore();
   const first = content.packs[0].units[0].items[0];
   store.putItem(first.id, { ...newItemState(), intro: true, lvl: 2, box: 1, due: clock + DAY });
-  let q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newPerPack: 2 });
+  let q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 4 });
   assert.ok(!q.some((e) => e.itemId === first.id)); // not yet due
-  q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock + 2 * DAY, mode: 'continue', newPerPack: 2 });
+  q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock + 2 * DAY, mode: 'continue', newTotal: 4 });
   assert.equal(q[0].itemId, first.id);
   assert.equal(q[0].kind, 'review');
   assert.equal(q[0].lvl, 2);
@@ -88,7 +110,7 @@ test('due items come back after their interval; backlog holds back new material'
   content.packs[0].units[0].items.concat(content.packs[0].units[1].items.slice(0, 1)).forEach((it) => {
     store2.putItem(it.id, { ...newItemState(), intro: true, lvl: 2, box: 1, due: clock - 1000 });
   });
-  q = buildQueue({ content, itemStates: store2.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newPerPack: 2 });
+  q = buildQueue({ content, itemStates: store2.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 4 });
   const kinds = countKinds(q);
   assert.equal(kinds.review, 10);
   assert.equal(kinds.fresh, 0);

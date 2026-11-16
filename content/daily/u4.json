@@ -1,0 +1,156 @@
+[
+  {
+    "id": "daily.4.01", "review": "unreviewed",
+    "en": "Today I slept well.",
+    "chunks": ["Hodiē", "bene", "dormīvī"],
+    "fill": "dormīvī",
+    "skills": ["verb.1sg.perf", "time.past", "vocab.actions"],
+    "tag": "-īvī = I (already) did it",
+    "explain": "_dormīvī_ is the perfect of _dormiō_: 'I slept'. The I-form of the perfect always ends in -ī. _bene_ = 'well'.",
+    "distractors": [
+      ["Hodiē bene dormiō.", "_dormiō_ is the present: 'Today I sleep well'. For something finished you need _dormīvī_."],
+      ["Hodiē bene dormīvistī.", "_dormīvistī_ is the 'you' form: 'Today you slept well'."],
+      ["Hodiē male dormīvī.", "_male_ = badly: 'Today I slept badly'."]
+    ]
+  },
+  {
+    "id": "daily.4.02", "review": "unreviewed",
+    "en": "Yesterday I ate bread.",
+    "chunks": ["Herī", "pānem", "ēdī"],
+    "fill": "ēdī",
+    "skills": ["verb.1sg.perf", "time.past", "case.acc.obj", "vocab.food"],
+    "tag": "ēdī = I ate",
+    "explain": "_herī_ = yesterday. The perfect of _edō_ is _ēdī_ (the stem changes: ed- → ēd-). The thing eaten is in the accusative: _pānem_ (from _pānis_).",
+    "distractors": [
+      ["Herī pānem edō.", "_edō_ is the present: 'Yesterday I eat bread'. Past needs _ēdī_."],
+      ["Herī pānis ēdī.", "The thing eaten needs the accusative _pānem_, not the nominative _pānis_."],
+      ["Herī pānem bibī.", "_bibī_ = I drank: 'Yesterday I drank bread'."]
+    ]
+  },
+  {
+    "id": "daily.4.03", "review": "unreviewed",
+    "en": "Yesterday I drank wine.",
+    "chunks": ["Herī", "vīnum", "bibī"],
+    "fill": "bibī",
+    "skills": ["verb.1sg.perf", "time.past", "case.acc.obj", "vocab.food"],
+    "tag": "bibī = I drank",
+    "explain": "_bibō_ (I drink) has the perfect _bibī_ (I drank): only the ending changes. _vīnum_ = wine.",
+    "distractors": [
+      ["Herī vīnum bibō.", "_bibō_ is the present: 'Yesterday I drink wine'."],
+      ["Herī vīnum bibistī.", "_bibistī_ is the 'you' form: 'Yesterday you drank wine'."],
+      ["Herī vīnum ēdī.", "_ēdī_ = I ate: 'Yesterday I ate wine'."]
+    ]
+  },
+  {
+    "id": "daily.4.04", "review": "unreviewed",
+    "en": "This morning I got up.",
+    "chunks": ["Hodiē", "māne", "surrēxī"],
+    "fill": "surrēxī",
+    "skills": ["verb.1sg.perf", "time.past", "vocab.actions"],
+    "tag": "surrēxī = I got up",
+    "explain": "_surgō_ has an irregular perfect: _surrēxī_. Perfect stems have to be learned with the verb, which is why they are worth drilling in whole sentences.",
+    "distractors": [
+      ["Hodiē māne surgō.", "_surgō_ is the present: 'This morning I get up'."],
+      ["Hodiē māne surrēxit.", "_surrēxit_ is the 'he/she' form: 'This morning he got up'."],
+      ["Herī māne surrēxī.", "_herī_ = yesterday: 'Yesterday morning I got up'."]
+    ]
+  },
+  {
+    "id": "daily.4.05", "review": "unreviewed",
+    "en": "Yesterday I walked to the forum.",
+    "chunks": ["Herī", "ad forum", "ambulāvī"],
+    "fill": "forum",
+    "skills": ["verb.1sg.perf", "time.past", "case.acc.obj"],
+    "tag": "ad + accusative = to, towards",
+    "explain": "_ad_ ('to, towards') takes the accusative: _ad forum_. Verbs in -āre make their perfect with -āvī: _ambulāvī_ = I walked.",
+    "distractors": [
+      ["Herī ad forō ambulāvī.", "_ad_ needs the accusative _forum_; _forō_ is the ablative."],
+      ["Herī ad forum ambulō.", "_ambulō_ is the present: 'Yesterday I walk to the forum'."],
+      ["Herī ad forum ambulāvit.", "_ambulāvit_ is the 'he/she' form: 'Yesterday he walked to the forum'."]
+    ]
+  },
+  {
+    "id": "daily.4.06", "review": "unreviewed",
+    "en": "I saw my friend.",
+    "chunks": [["Amīcum meum", "Meum amīcum"], "vīdī"],
+    "fill": "vīdī",
+    "skills": ["verb.1sg.perf", "case.acc.obj", "adj.agree.gender"],
+    "tag": "vīdī = I saw",
+    "explain": "_videō_ (I see) → _vīdī_ (I saw). The friend is the object, so _amīcum_ is accusative, and _meum_ ('my') copies its case, number and gender.",
+    "distractors": [
+      ["Amīcus meus vīdī.", "The friend is what I saw, so he needs the accusative _amīcum meum_, not the nominative."],
+      ["Amīcum meum videō.", "_videō_ is the present: 'I see my friend'."],
+      ["Amīcum meam vīdī.", "_meam_ is feminine, but _amīcum_ is masculine. It should be _meum_."]
+    ]
+  },
+  {
+    "id": "daily.4.07", "review": "unreviewed",
+    "en": "Yesterday I read a book.",
+    "chunks": ["Herī", "librum", "lēgī"],
+    "fill": "lēgī",
+    "skills": ["verb.1sg.perf", "time.past", "case.acc.obj"],
+    "tag": "lēgī = I read",
+    "explain": "_legō_ → _lēgī_: the vowel gets longer in the perfect. _librum_ is the accusative of _liber_ (book).",
+    "distractors": [
+      ["Herī librum legō.", "_legō_ is the present: 'Yesterday I read a book' needs the perfect _lēgī_."],
+      ["Herī liber lēgī.", "The thing read is the object, so it needs the accusative _librum_."],
+      ["Herī librum lēgistī.", "_lēgistī_ is the 'you' form: 'Yesterday you read a book'."]
+    ]
+  },
+  {
+    "id": "daily.4.08", "review": "unreviewed",
+    "en": "In the evening I had dinner.",
+    "chunks": ["Vesperī", "cēnāvī"],
+    "fill": "cēnāvī",
+    "skills": ["verb.1sg.perf", "time.past", "vocab.food"],
+    "tag": "cēnāvī = I had dinner",
+    "explain": "_vesperī_ = 'in the evening'. _cēnāre_ is 'to dine': the Romans' main meal, _cēna_, was eaten in the afternoon or evening.",
+    "distractors": [
+      ["Vesperī cēnō.", "_cēnō_ is the present: 'In the evening I have dinner'."],
+      ["Vesperī cēnāvistī.", "_cēnāvistī_ is the 'you' form: 'In the evening you had dinner'."],
+      ["Māne cēnāvī.", "_māne_ = in the morning: 'In the morning I had dinner'."]
+    ]
+  },
+  {
+    "id": "daily.4.09", "review": "unreviewed",
+    "en": "Yesterday I worked at home.",
+    "chunks": ["Herī", "domī", "labōrāvī"],
+    "fill": "labōrāvī",
+    "skills": ["verb.1sg.perf", "time.past", "loc.home"],
+    "tag": "domī = at home",
+    "explain": "_domī_ means 'at home' (where you are); _domum_ means 'to home' (where you are going). _labōrāvī_ = I worked.",
+    "distractors": [
+      ["Herī domum labōrāvī.", "_domum_ means 'to home' (motion towards). 'At home' is _domī_."],
+      ["Herī domī labōrō.", "_labōrō_ is the present: 'Yesterday I work at home'."],
+      ["Herī domī labōrāvistī.", "_labōrāvistī_ is the 'you' form: 'Yesterday you worked at home'."]
+    ]
+  },
+  {
+    "id": "daily.4.10", "review": "unreviewed",
+    "en": "First I washed, then I ate.",
+    "la": "Prīmum lāvī, deinde ēdī.",
+    "fill": "lāvī",
+    "skills": ["verb.1sg.perf", "adv.sequence"],
+    "tag": "past tense, in sequence",
+    "explain": "Both actions are finished, so both verbs are perfect: _lāvī_ (from _lavō_) and _ēdī_ (from _edō_). _prīmum … deinde_ keeps the order.",
+    "distractors": [
+      ["Prīmum ēdī, deinde lāvī.", "The order is reversed: 'First I ate, then I washed'."],
+      ["Prīmum lavō, deinde edō.", "Both verbs are present here: 'First I wash, then I eat'."],
+      ["Prīmum lāvī, deinde edō.", "The second verb is present (_edō_). Past needs _ēdī_."]
+    ]
+  },
+  {
+    "id": "daily.4.11", "review": "unreviewed",
+    "en": "I came home.",
+    "chunks": ["Domum", "vēnī"],
+    "fill": "vēnī",
+    "skills": ["verb.1sg.perf", "loc.home"],
+    "tag": "vēnī = I came",
+    "explain": "_veniō_ (I come) → _vēnī_ (I came). _domum_ ('home' as a destination) needs no preposition. Note that _veniō_ and _vēnī_ differ only in the long vowel and ending.",
+    "distractors": [
+      ["Domum veniō.", "_veniō_ is the present: 'I come home'."],
+      ["Domī vēnī.", "_domī_ = at home. For 'came home' (towards) you need _domum_."],
+      ["Domum vēnistī.", "_vēnistī_ is the 'you' form: 'You came home'."]
+    ]
+  }
+]

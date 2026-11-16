@@ -1,0 +1,162 @@
+[
+  {
+    "id": "roman.2.01", "review": "unreviewed",
+    "en": "I am twenty years old.",
+    "chunks": ["Vīgintī annōs", ["nātus", "nāta"], "sum"],
+    "fill": "annōs",
+    "skills": ["idiom.age", "case.acc.obj"],
+    "tag": "annōs nātus sum = I am … years old",
+    "explain": "Romans said 'I am born twenty years': _Vīgintī annōs nātus sum_. The years are accusative (_annōs_), and _nātus_ agrees with the speaker: _nāta_ for a woman.",
+    "distractors": [
+      ["Vīgintī annī nātus sum.", "The years are accusative: _annōs_, not _annī_."],
+      ["Vīgintī annōs nātus es.", "_es_ is 'you are': 'You are twenty years old.'"],
+      ["Vīgintī annōs nātus erō.", "_erō_ is the future: 'I will be twenty.'"]
+    ]
+  },
+  {
+    "id": "roman.2.02", "review": "unreviewed",
+    "sit": "Ask a friend how old he is.",
+    "en": "How old are you?",
+    "la": "Quot annōs nātus es?",
+    "accept": ["Quot annōs nāta es?"],
+    "fill": "annōs",
+    "skills": ["idiom.age", "quest.words"],
+    "tag": "Quot annōs nātus es? = how old are you?",
+    "explain": "Literally 'How many years born are you?'. _quot_ means 'how many' and never changes. Say _nāta_ when asking a woman.",
+    "distractors": [
+      ["Quot annī nātus es?", "The years need the accusative: _annōs_."],
+      ["Quot annōs nātus sum?", "_sum_ = I am: 'How old am I?'."],
+      ["Quot annōs nātus eris?", "_eris_ is the future: 'How old will you be?'."]
+    ]
+  },
+  {
+    "id": "roman.2.03", "review": "unreviewed",
+    "en": "I like the food.",
+    "chunks": ["Mihi", "cibus", "placet"],
+    "fill": "placet",
+    "skills": ["idiom.placet"],
+    "tag": "mihi placet = I like it (it pleases me)",
+    "explain": "Latin turns 'I like the food' around: 'the food is pleasing to me'. The thing you like is the subject (_cibus_, nominative) and you are in the dative (_mihi_).",
+    "distractors": [
+      ["Mihi cibum placet.", "The food is the subject of _placet_, so it is nominative: _cibus_."],
+      ["Mihi cibus placent.", "_placent_ is plural. One food, one 'it pleases': _placet_."],
+      ["Tibi cibus placet.", "_tibi_ = to you: 'You like the food.'"]
+    ]
+  },
+  {
+    "id": "roman.2.04", "review": "unreviewed",
+    "en": "I like Rome.",
+    "chunks": ["Mihi", "Rōma", "placet"],
+    "fill": "Rōma",
+    "skills": ["idiom.placet"],
+    "tag": "mihi placet = I like it",
+    "explain": "'Rome pleases me.' The city is the subject, so it stays nominative: _Rōma_.",
+    "distractors": [
+      ["Mihi Rōmam placet.", "The thing liked is the subject, so _Rōma_, not _Rōmam_."],
+      ["Mihi Rōma placent.", "_placent_ is plural. Rome is singular: _placet_."],
+      ["Tibi Rōma placet.", "_tibi_ = to you: 'You like Rome.'"]
+    ]
+  },
+  {
+    "id": "roman.2.05", "review": "unreviewed",
+    "en": "I don't like the wine.",
+    "chunks": ["Mihi", "vīnum", "nōn placet"],
+    "fill": "placet",
+    "skills": ["idiom.placet", "neg.non"],
+    "tag": "mihi nōn placet = I don't like it",
+    "explain": "Negate with _nōn_ before the verb: 'the wine does not please me'.",
+    "distractors": [
+      ["Mihi vīnum nōn placeō.", "_placeō_ would mean 'I please'. The wine is the one doing the pleasing: _placet_."],
+      ["Mihi vīnum nōn placent.", "_placent_ is plural. One wine: _placet_."],
+      ["Mihi vīnum placet.", "Without _nōn_ this means 'I like the wine.'"]
+    ]
+  },
+  {
+    "id": "roman.2.06", "review": "unreviewed",
+    "en": "I love Rome.",
+    "chunks": ["Rōmam", "amō"],
+    "fill": "amō",
+    "skills": ["case.acc.obj", "verb.1sg.pres"],
+    "tag": "amō = I love (stronger than placet)",
+    "explain": "_amō_ is the strong word: 'I love'. For ordinary liking, Romans said _mihi placet_. Here the one loved is the object: _Rōmam_.",
+    "distractors": [
+      ["Rōma amō.", "The one loved is the object: _Rōmam_ (accusative)."],
+      ["Rōmam amās.", "_amās_ is 'you': 'You love Rome.'"],
+      ["Rōmam amāvī.", "_amāvī_ is the past: 'I loved Rome.'"]
+    ]
+  },
+  {
+    "id": "roman.2.07", "review": "unreviewed",
+    "en": "I have a book.",
+    "chunks": ["Mihi", "liber", "est"],
+    "accept": ["Librum habeō.", "Habeō librum."],
+    "fill": "Mihi",
+    "skills": ["idiom.possession"],
+    "tag": "mihi est = I have (there is to me)",
+    "explain": "Romans often said 'a book is to me' (_mihi liber est_) instead of 'I have a book'. Both _mihi liber est_ and _librum habeō_ are good Latin.",
+    "distractors": [
+      ["Mihi librum est.", "The thing owned is the subject of _est_: _liber_ (nominative)."],
+      ["Mihi liber sunt.", "_sunt_ is plural. One book: _est_."],
+      ["Tibi liber est.", "_tibi_ = to you: 'You have a book.'"]
+    ]
+  },
+  {
+    "id": "roman.2.08", "review": "unreviewed",
+    "en": "Now I am cold.",
+    "chunks": ["Nunc", "frīgeō"],
+    "fill": "frīgeō",
+    "skills": ["idiom.feelings", "verb.1sg.pres"],
+    "tag": "frīgeō = I am cold",
+    "explain": "Romans used a verb for being cold, _frīgeō_, and another for being hot, _aestuō_, instead of 'to be' plus an adjective.",
+    "distractors": [
+      ["Nunc frīgēs.", "_frīgēs_ is 'you': 'Now you are cold.'"],
+      ["Nunc aestuō.", "_aestuō_ means 'I am hot'."],
+      ["Nunc frīgent.", "_frīgent_ is 'they': 'Now they are cold.'"]
+    ]
+  },
+  {
+    "id": "roman.2.09", "review": "unreviewed",
+    "sit": "Ask what time it is.",
+    "en": "What time is it?",
+    "la": "Quota hōra est?",
+    "fill": "Quota",
+    "skills": ["idiom.hour", "quest.words"],
+    "tag": "Quota hōra est? = what time is it?",
+    "explain": "Literally 'Which hour is it?'. _quota_ is the 'which in order?' adjective and agrees with _hōra_ (feminine). Romans counted the daylight hours from sunrise, so the sixth hour is about noon.",
+    "distractors": [
+      ["Quot hōra est?", "_quot_ means 'how many' and doesn't fit here. 'Which hour' is _quota hōra_."],
+      ["Quota hōra erit?", "_erit_ is the future: 'What time will it be?'."],
+      ["Quid hōra est?", "_quid_ = what: Romans asked 'which (in order)' hour, with _quota_."]
+    ]
+  },
+  {
+    "id": "roman.2.10", "review": "unreviewed",
+    "en": "It is the third hour.",
+    "chunks": [["Hōra tertia", "Tertia hōra"], "est"],
+    "fill": "tertia",
+    "skills": ["idiom.hour", "adj.agree.gender"],
+    "tag": "hōra tertia est = it is the third hour",
+    "explain": "Ordinal numbers (_tertia_ = third) agree with _hōra_, which is feminine. The third hour is mid-morning, since hour one starts at sunrise.",
+    "distractors": [
+      ["Hōra tertium est.", "_tertium_ is neuter. _hōra_ is feminine, so _tertia_."],
+      ["Hōra tertia erit.", "_erit_ is the future: 'It will be the third hour.'"],
+      ["Hōra sexta est.", "_sexta_ = sixth: 'It is the sixth hour' (about noon)."]
+    ]
+  },
+  {
+    "id": "roman.2.11", "review": "unreviewed",
+    "en": "I have a telephone.",
+    "chunks": ["Tēlephōnum", "habeō"],
+    "fill": "habeō",
+    "modern": true,
+    "modernNote": "Romans had no telephones. _tēlephōnum_ is a modern coinage from Greek _tēle_ ('far') and _phōnē_ ('voice'), of the kind collected in modern Latin vocabularies. Check a modern Latin dictionary before treating it as standard.",
+    "skills": ["modern.coinage", "case.acc.obj"],
+    "tag": "tēlephōnum = telephone (modern)",
+    "explain": "_habeō_ = I have. The thing you have is the object: _tēlephōnum_ (accusative; for neuter nouns it looks the same as the nominative).",
+    "distractors": [
+      ["Tēlephōnī habeō.", "_tēlephōnī_ is the genitive ('of a telephone'). The thing you have is the object, so _tēlephōnum_."],
+      ["Tēlephōnum habēs.", "_habēs_ is 'you': 'You have a telephone.'"],
+      ["Tēlephōnum habuī.", "_habuī_ is the past: 'I had a telephone.'"]
+    ]
+  }
+]

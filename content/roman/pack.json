@@ -1,0 +1,28 @@
+{
+  "id": "roman",
+  "name": "Like a Roman",
+  "blurb": "How Romans actually said things: greetings, manners and idioms, then questions and answers entirely in Latin.",
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Greetings and manners",
+      "blurb": "Salvē, valē, thanks, please, names, and yes/no questions",
+      "intro": "Romans greeted each other with _Salvē_ (to several people: _Salvēte_) and parted with _Valē_. Both are really commands: 'be well'. To ask how someone is, they said _Quid agis?_ (literally 'What are you doing?'). The ending -ne turns a statement into a yes/no question: _Fessusne es?_ = Are you tired? When you speak to someone by name, the name changes to the vocative: _Mārcus_ → _Mārce_. To say thanks, Romans said 'I give thanks to you': _Grātiās tibi agō_. In this unit you are often given a situation rather than an English sentence: say what a Roman would say."
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "How Romans say it",
+      "blurb": "Age, liking, having, the hour: Latin's own way of saying things",
+      "intro": "Latin often says things differently from English. 'I am twenty years old' is _Vīgintī annōs nātus sum_ ('I am born twenty years'). 'I like it' is _Mihi placet_ ('it is pleasing to me'): the thing you like is the subject and you are in the dative. 'I have a book' can be _Mihi liber est_ ('a book is to me'). 'I am cold' uses a verb: _frīgeō_. To ask the time, Romans said _Quota hōra est?_ ('Which hour is it?'). Don't translate word by word from English. Learn each pattern as a whole."
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Latin only",
+      "blurb": "Questions in Latin, answers in Latin",
+      "intro": "From here on the questions are in Latin and you answer in Latin. Don't translate into English first. Spot the question word (_quis_ who, _quid_ what, _ubi_ where, _quota_ which) and the verb ending, then answer with the matching form: _edis_ ('you eat') is answered by _edō_ ('I eat'). The English appears only after you answer, in case you need it."
+    }
+  ]
+}

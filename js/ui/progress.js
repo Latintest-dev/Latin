@@ -7,6 +7,7 @@ function tagLabel(tag, content) {
   if (tag === 'spelling') return 'Misspelled word';
   if (tag === 'extra-word') return 'Extra word';
   if (tag === 'missing-word') return 'Missing word';
+  if (tag === 'question:-ne') return 'Yes/no question ending -ne';
   const [kind, rest] = tag.split(':');
   if (kind === 'word') {
     const [a, b] = rest.split('>');

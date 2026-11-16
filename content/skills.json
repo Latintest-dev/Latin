@@ -21,5 +21,27 @@
   "time.when":          { "name": "Times of day (mane, nocte, hodiē)", "pack": "daily" },
   "loc.home":           { "name": "domī / domum / eō (home)", "pack": "daily" },
   "vocab.needs":        { "name": "Hunger, thirst, tiredness", "pack": "daily" },
-  "vocab.actions":      { "name": "Everyday actions", "pack": "daily" }
+  "vocab.actions":      { "name": "Everyday actions", "pack": "daily" },
+
+  "verb.1sg.perf":     { "name": "Past tense: I-form (-ī)", "pack": "daily" },
+  "time.past":         { "name": "herī / hodiē (past time)", "pack": "daily" },
+  "verb.1sg.fut":      { "name": "Future tense: I-form (-bō / -am)", "pack": "daily" },
+  "time.future":       { "name": "crās / mox / nunc (future time)", "pack": "daily" },
+  "sum.fut":           { "name": "erō (I will be)", "pack": "daily" },
+  "vocab.food":        { "name": "Food and drink", "pack": "daily" },
+
+  "greet.basic":       { "name": "Greetings: salvē, valē", "pack": "roman" },
+  "case.voc":          { "name": "Calling someone by name (vocative)", "pack": "roman" },
+  "imp.2sg":           { "name": "Commands: one person (-ē, -ī)", "pack": "roman" },
+  "quest.ne":          { "name": "Yes/no questions with -ne", "pack": "roman" },
+  "quest.words":       { "name": "Question words: quis, quid, quota, quot", "pack": "roman" },
+  "idiom.thanks":      { "name": "Thanks and please", "pack": "roman" },
+  "idiom.nomen":       { "name": "Name: mihi nōmen est…", "pack": "roman" },
+  "idiom.placet":      { "name": "Liking: mihi placet", "pack": "roman" },
+  "idiom.possession":  { "name": "Having: mihi est…", "pack": "roman" },
+  "idiom.age":         { "name": "Age: annōs nātus sum", "pack": "roman" },
+  "idiom.hour":        { "name": "Telling the hour", "pack": "roman" },
+  "idiom.feelings":    { "name": "Feeling hot, cold, well", "pack": "roman" },
+  "qa.reply":          { "name": "Answering questions in Latin", "pack": "roman" },
+  "modern.coinage":    { "name": "Modern coinages", "pack": "roman" }
 }

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "roman.3.01", "review": "unreviewed",
+    "q": "Quid agis?",
+    "en": "“How are you?” “I am well.”",
+    "la": "Bene valeō.",
+    "accept": ["Valeō.", "Bene valeō, grātiās."],
+    "fill": "valeō",
+    "skills": ["qa.reply", "greet.basic"],
+    "tag": "reply to Quid agis?",
+    "explain": "_Quid agis?_ ('What are you doing?') is the everyday 'How are you?'. A natural reply is _Bene valeō_ ('I am well'), perhaps with _grātiās_.",
+    "distractors": [
+      ["Bene valēs.", "_valēs_ means 'you are well'. Answer about yourself: _valeō_."],
+      ["Quid agis?", "That just repeats the question."],
+      ["Mihi nōmen est Mārcus.", "That answers a different question: 'What is your name?'"]
+    ]
+  },
+  {
+    "id": "roman.3.02", "review": "unreviewed",
+    "q": "Quis es?",
+    "en": "“Who are you?” “I am Marcus.”",
+    "chunks": ["Mārcus", "sum"],
+    "fill": "sum",
+    "skills": ["qa.reply", "quest.words", "sum.1sg"],
+    "tag": "reply to Quis es?",
+    "explain": "_quis_ = who. The question has _es_ ('you are'), so the answer has _sum_ ('I am'). The name is the nominative, because it is what you are.",
+    "distractors": [
+      ["Mārcus es.", "_es_ is 'you are'. About yourself: _sum_."],
+      ["Mārcum sum.", "After _sum_ the name stays nominative: _Mārcus_."],
+      ["Mārcus est.", "_est_ is 'he is'."]
+    ]
+  },
+  {
+    "id": "roman.3.03", "review": "unreviewed",
+    "q": "Quid tibi nōmen est?",
+    "en": "“What is your name?” “My name is Julia.”",
+    "chunks": [["Mihi nōmen", "Nōmen mihi"], "est", "Iūlia"],
+    "fill": "Iūlia",
+    "skills": ["qa.reply", "idiom.nomen"],
+    "tag": "reply to Quid tibi nōmen est?",
+    "explain": "The question has _tibi_ ('to you'); the answer swaps it for _mihi_ ('to me'). The name stays nominative.",
+    "distractors": [
+      ["Tibi nōmen est Iūlia.", "_tibi_ = to you: that says 'Your name is Julia.'"],
+      ["Mihi nōmen est Iūliam.", "The name stays nominative: _Iūlia_."],
+      ["Iūlia nōmen est.", "This says 'Julia is a name', without saying whose."]
+    ]
+  },
+  {
+    "id": "roman.3.04", "review": "unreviewed",
+    "q": "Quota hōra est?",
+    "en": "“What time is it?” “It is the third hour.”",
+    "chunks": [["Hōra tertia", "Tertia hōra"], "est"],
+    "fill": "tertia",
+    "skills": ["qa.reply", "idiom.hour"],
+    "tag": "reply to Quota hōra est?",
+    "explain": "The answer reuses _hōra_ and swaps _quota_ ('which?') for the number: _tertia_.",
+    "distractors": [
+      ["Hōra tertium est.", "_hōra_ is feminine, so _tertia_."],
+      ["Hōra tertia erit.", "_erit_ is the future: 'It will be the third hour.'"],
+      ["Quota hōra est?", "That just repeats the question."]
+    ]
+  },
+  {
+    "id": "roman.3.05", "review": "unreviewed",
+    "q": "Ubi est liber?",
+    "en": "“Where is the book?” “The book is at home.”",
+    "chunks": ["Liber", "domī", "est"],
+    "fill": "domī",
+    "skills": ["qa.reply", "loc.home", "quest.words"],
+    "tag": "reply to Ubi…?",
+    "explain": "_ubi_ asks 'where?', so the answer gives a place: _domī_ = at home.",
+    "distractors": [
+      ["Liber domum est.", "_domum_ means 'to home'. A place where something is: _domī_."],
+      ["Liber domī sunt.", "_sunt_ is plural. One book: _est_."],
+      ["Librum domī est.", "The book is the subject, so nominative _liber_."]
+    ]
+  },
+  {
+    "id": "roman.3.06", "review": "unreviewed",
+    "q": "Quid edis?",
+    "en": "“What are you eating?” “I am eating bread.”",
+    "chunks": ["Pānem", "edō"],
+    "accept": ["Pānem et cāseum edō.", "Cāseum edō.", "Edō cāseum."],
+    "fill": "Pānem",
+    "skills": ["qa.reply", "vocab.food", "case.acc.obj"],
+    "tag": "reply to Quid edis?",
+    "explain": "_quid_ = what. The question has _edis_ ('you eat'); the answer has _edō_ ('I eat') plus the thing eaten in the accusative: _pānem_.",
+    "distractors": [
+      ["Pānis edō.", "The thing eaten needs the accusative: _pānem_."],
+      ["Pānem edis.", "_edis_ is 'you': 'You eat bread.'"],
+      ["Pānem bibō.", "_bibō_ = I drink: 'I drink bread.'"]
+    ]
+  },
+  {
+    "id": "roman.3.07", "review": "unreviewed",
+    "q": "Quid bibis?",
+    "en": "“What are you drinking?” “I am drinking water.”",
+    "chunks": ["Aquam", "bibō"],
+    "accept": ["Vīnum bibō.", "Bibō vīnum."],
+    "fill": "Aquam",
+    "skills": ["qa.reply", "vocab.food", "case.acc.obj"],
+    "tag": "reply to Quid bibis?",
+    "explain": "Same pattern as _Quid edis?_: swap _bibis_ for _bibō_ and name the drink in the accusative.",
+    "distractors": [
+      ["Aqua bibō.", "The drink needs the accusative: _aquam_."],
+      ["Aquam bibis.", "_bibis_ is 'you': 'You drink water.'"],
+      ["Aquam edō.", "_edō_ = I eat: 'I eat water.'"]
+    ]
+  },
+  {
+    "id": "roman.3.08", "review": "unreviewed",
+    "q": "Fessusne es?",
+    "en": "“Are you tired?” “Yes, I am tired.”",
+    "la": "Ita, fessus sum.",
+    "accept": ["Fessus sum.", "Ita, sum fessus.", "Sum fessus."],
+    "fill": "fessus",
+    "skills": ["qa.reply", "quest.ne", "vocab.needs"],
+    "tag": "reply to a -ne question",
+    "explain": "A -ne question can be answered with _ita_ ('yes') or _minimē_ ('no'), or by repeating the verb: _sum_ (I am).",
+    "distractors": [
+      ["Ita, fessus es.", "_es_ is 'you are'. About yourself: _sum_."],
+      ["Ita, fessum sum.", "After _sum_ the adjective is nominative: _fessus_."],
+      ["Minimē, fessus sum.", "_minimē_ means 'no', but the rest says 'I am tired'. They contradict."]
+    ]
+  },
+  {
+    "id": "roman.3.09", "review": "unreviewed",
+    "q": "Quid herī ēgistī?",
+    "en": "“What did you do yesterday?” “I worked at home.”",
+    "chunks": ["Herī", "domī", "labōrāvī"],
+    "fill": "labōrāvī",
+    "skills": ["qa.reply", "verb.1sg.perf"],
+    "tag": "past-tense question and reply",
+    "explain": "_ēgistī_ is the perfect of _agō_ ('you did'). The reply uses a perfect too, in the I-form: _labōrāvī_.",
+    "distractors": [
+      ["Herī domī labōrō.", "_labōrō_ is the present. The question is about the past: _labōrāvī_."],
+      ["Crās domī labōrābō.", "_crās_ = tomorrow, but the question is about yesterday."],
+      ["Herī domum labōrāvī.", "_domum_ = to home. 'At home' is _domī_."]
+    ]
+  },
+  {
+    "id": "roman.3.10", "review": "unreviewed",
+    "q": "Quid crās agēs?",
+    "en": "“What will you do tomorrow?” “I will walk to the forum.”",
+    "chunks": ["Crās", "ad forum", "ambulābō"],
+    "fill": "ambulābō",
+    "skills": ["qa.reply", "verb.1sg.fut"],
+    "tag": "future-tense question and reply",
+    "explain": "_agēs_ is the future of _agō_ ('you will do'). The reply is a future in the I-form: _ambulābō_.",
+    "distractors": [
+      ["Crās ad forum ambulāvī.", "_ambulāvī_ is the past. The question asks about tomorrow."],
+      ["Herī ad forum ambulābō.", "_herī_ = yesterday, which doesn't fit a future verb."],
+      ["Crās ad forum ambulābis.", "_ambulābis_ is 'you': 'Tomorrow you will walk.'"]
+    ]
+  }
+]

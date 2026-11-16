@@ -5,7 +5,7 @@ import { latin, rich } from './format.js';
 import { buildQueue } from '../core/scheduler.js';
 import { SessionRunner } from '../core/session.js';
 import { checkText } from '../engine/checker.js';
-import { blankSentence } from '../engine/items.js';
+import { blankSentence, promptKind, promptText, allowsL2E } from '../engine/items.js';
 
 function shuffle(arr, rng = Math.random) {
   const a = [...arr];
@@ -31,7 +31,7 @@ export function mcOptions(entry, item, content, rng = Math.random) {
     const packId = content.packOf.get(item.id);
     const unitId = content.unitOf.get(item.id);
     const sibs = [...content.itemsById.values()].filter(
-      (o) => o.id !== item.id && content.packOf.get(o.id) === packId && o.en.toLowerCase() !== item.en.toLowerCase(),
+      (o) => o.id !== item.id && allowsL2E(o) && content.packOf.get(o.id) === packId && o.en.toLowerCase() !== item.en.toLowerCase(),
     );
     const sameUnit = sibs.filter((o) => content.unitOf.get(o.id) === unitId);
     const pool = sameUnit.length >= 3 ? sameUnit : sibs;
@@ -62,7 +62,7 @@ export function renderSession(root, app, params) {
     now: Date.now(),
     mode: params.mode,
     scope: params.scope,
-    newPerPack: st().newPerPack,
+    newTotal: st().newTotal,
   });
 
   if (!queue.length) {
@@ -103,6 +103,18 @@ export function renderSession(root, app, params) {
   };
 
   const chip = (text) => h('span', { class: 'chip' }, text);
+  const chips = (item) => h('div', { class: 'chips' }, chip(item.tag), item.modern ? h('span', { class: 'chip modern' }, 'modern coinage') : null);
+  const promptNode = (item) => {
+    const kind = promptKind(item);
+    return kind === 'question'
+      ? h('div', { class: 'prompt la' }, latin(item.q, st()))
+      : h('div', { class: `prompt${kind === 'situation' ? ' situation' : ''}` }, promptText(item));
+  };
+  const EYEBROW = {
+    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply' },
+    fill: { plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank' },
+    write: { plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin' },
+  };
 
   function header() {
     const pct = Math.round((runner.pos / runner.queue.length) * 100);
@@ -143,13 +155,18 @@ export function renderSession(root, app, params) {
   }
 
   function teach(body, entry, item) {
-    body.append(
-      h('p', { class: 'eyebrow' }, 'New sentence'),
-      h('div', { class: 'prompt' }, item.en),
+    const kind = promptKind(item);
+    // (native append() would print the word "null" for a missing piece, so filter first)
+    body.append(...[
+      h('p', { class: 'eyebrow' }, kind === 'question' ? 'New question and reply' : kind === 'situation' ? 'New situation' : 'New sentence'),
+      promptNode(item),
       h('div', { class: 'answer la' }, latin(item.la, st())),
-      chip(item.tag),
+      kind === 'plain' ? null : h('div', { class: 'gloss' }, item.en),
+      chips(item),
+      item.modern && item.modernNote ? h('p', { class: 'note' }, rich(item.modernNote, st(), { macrons: true })) : null,
       h('p', { class: 'explain' }, rich(item.explain, st(), { macrons: true })),
-      h('button', { class: 'btn primary', onclick: showFirst }, 'Got it'));
+      h('button', { class: 'btn primary', onclick: showFirst }, 'Got it'),
+    ].filter(Boolean));
     function showFirst() {
       setKey(null);
       clear(root);
@@ -165,9 +182,9 @@ export function renderSession(root, app, params) {
     const e2l = entry.type === 'mc_e2l';
     const opts = mcOptions(entry, item, content);
     body.append(
-      h('p', { class: 'eyebrow' }, e2l ? 'Choose the Latin' : 'What does this mean?'),
-      h('div', { class: 'prompt' }, e2l ? item.en : h('span', { class: 'la' }, latin(item.la, st()))),
-      chip(item.tag));
+      h('p', { class: 'eyebrow' }, e2l ? EYEBROW.mc_e2l[promptKind(item)] : 'What does this mean?'),
+      e2l ? promptNode(item) : h('div', { class: 'prompt' }, h('span', { class: 'la' }, latin(item.la, st()))),
+      chips(item));
     const list = h('div', { class: 'options' });
     const buttons = opts.map((o) => {
       const b = h('button', { class: 'opt', onclick: () => choose(o, b) },
@@ -195,10 +212,10 @@ export function renderSession(root, app, params) {
   function showText(body, entry, item) {
     const fill = entry.type === 'fill';
     body.append(
-      h('p', { class: 'eyebrow' }, fill ? 'Fill in the blank' : 'Write it in Latin'),
-      h('div', { class: 'prompt' }, item.en));
+      h('p', { class: 'eyebrow' }, EYEBROW[fill ? 'fill' : 'write'][promptKind(item)]),
+      promptNode(item));
     if (fill) body.append(h('div', { class: 'blank la' }, latin(blankSentence(item), st())));
-    body.append(chip(item.tag));
+    body.append(chips(item));
 
     const input = h('input', {
       type: 'text', class: 'ans', autocomplete: 'off', autocapitalize: 'none', autocorrect: 'off',

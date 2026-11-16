@@ -1,7 +1,7 @@
 import { h } from './dom.js';
 import { fmtDate } from './format.js';
 
-export const APP_VERSION = '0.1.0';
+export const APP_VERSION = '0.2.0';
 
 export function renderSettings(root, app) {
   const { store } = app;
@@ -53,8 +53,8 @@ export function renderSettings(root, app) {
   });
   const paste = h('textarea', { rows: 3, placeholder: 'Paste exported progress here', class: 'paste', 'aria-label': 'Paste exported progress' });
 
-  const newSel = h('select', { onchange: () => store.setSetting('newPerPack', Number(newSel.value)), 'aria-label': 'New sentences per track' },
-    [1, 2, 3, 4, 5].map((n) => h('option', { value: n, selected: n === s.settings.newPerPack }, String(n))));
+  const newSel = h('select', { onchange: () => store.setSetting('newTotal', Number(newSel.value)), 'aria-label': 'New sentences per session' },
+    [3, 4, 6, 8, 10, 12].map((n) => h('option', { value: n, selected: n === s.settings.newTotal }, String(n))));
 
   root.append(
     h('header', { class: 'page-head' }, h('h1', null, 'Settings')),
@@ -62,7 +62,7 @@ export function renderSettings(root, app) {
       toggle('showMacrons', 'Show macrons', 'Display long vowels (ā ē ī ō ū) in Latin sentences. Explanations always show them.'),
       toggle('strictMacrons', 'Require macrons in answers', 'When on, answers typed without the right macrons count as "almost".'),
       h('label', { class: 'toggle' },
-        h('span', null, h('strong', null, 'New sentences per track'), h('small', null, 'How many new sentences each track adds per session.')),
+        h('span', null, h('strong', null, 'New sentences per session'), h('small', null, 'Shared between your tracks, taking turns. Reviews always come first.')),
         newSel)),
 
     h('h2', null, 'Your data'),

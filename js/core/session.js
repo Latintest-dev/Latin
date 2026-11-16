@@ -60,11 +60,11 @@ export class SessionRunner {
 
     let follow = null;
     if (outcome.result === 'close') {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng);
+      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
     } else if (outcome.result === 'wrong') {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng);
+      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
     } else if (entry.learn && entry.lvl < 2) {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng);
+      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
     }
     if (follow) {
       follow.taught = true; // never show the teach card again for a retry or follow-up

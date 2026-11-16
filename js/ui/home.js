@@ -8,7 +8,7 @@ export function renderHome(root, app) {
   const s = store.state;
   const queue = buildQueue({
     content, itemStates: s.items, skills: s.skills, mistakes: s.mistakes, now,
-    mode: 'continue', newPerPack: s.settings.newPerPack,
+    mode: 'continue', newTotal: s.settings.newTotal,
   });
   const kinds = countKinds(queue);
   const started = Object.values(s.items).some((x) => x.intro);

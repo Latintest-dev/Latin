@@ -45,13 +45,18 @@ const ADJ = {
   n: ND2N,
 };
 
-// present indicative active endings (1sg..3pl) and present infinitive
+// Verb endings per conjugation. Present: 1sg..3pl. Imperfect and future are built from a
+// "thematic" stem part plus an ending; the perfect uses the verb's own perfect stem (`pf`).
+const BAM = ['bam', 'bās', 'bat', 'bāmus', 'bātis', 'bant'];
+const BO = ['bō', 'bis', 'bit', 'bimus', 'bitis', 'bunt'];
+const AM = ['am', 'ēs', 'et', 'ēmus', 'ētis', 'ent'];
+const PERF = ['ī', 'istī', 'it', 'imus', 'istis', 'ērunt'];
 const CONJ = {
-  1: { pres: ['ō', 'ās', 'at', 'āmus', 'ātis', 'ant'], inf: 'āre' },
-  2: { pres: ['eō', 'ēs', 'et', 'ēmus', 'ētis', 'ent'], inf: 'ēre' },
-  3: { pres: ['ō', 'is', 'it', 'imus', 'itis', 'unt'], inf: 'ere' },
-  '3io': { pres: ['iō', 'is', 'it', 'imus', 'itis', 'iunt'], inf: 'ere' },
-  4: { pres: ['iō', 'īs', 'it', 'īmus', 'ītis', 'iunt'], inf: 'īre' },
+  1: { pres: ['ō', 'ās', 'at', 'āmus', 'ātis', 'ant'], inf: 'āre', impf: BAM.map((x) => 'ā' + x), fut: BO.map((x) => 'ā' + x), imp: ['ā', 'āte'] },
+  2: { pres: ['eō', 'ēs', 'et', 'ēmus', 'ētis', 'ent'], inf: 'ēre', impf: BAM.map((x) => 'ē' + x), fut: BO.map((x) => 'ē' + x), imp: ['ē', 'ēte'] },
+  3: { pres: ['ō', 'is', 'it', 'imus', 'itis', 'unt'], inf: 'ere', impf: BAM.map((x) => 'ē' + x), fut: AM, imp: ['e', 'ite'] },
+  '3io': { pres: ['iō', 'is', 'it', 'imus', 'itis', 'iunt'], inf: 'ere', impf: BAM.map((x) => 'iē' + x), fut: AM.map((x) => 'i' + x), imp: ['e', 'ite'] },
+  4: { pres: ['iō', 'īs', 'it', 'īmus', 'ītis', 'iunt'], inf: 'īre', impf: BAM.map((x) => 'iē' + x), fut: AM.map((x) => 'i' + x), imp: ['ī', 'īte'] },
 };
 
 /**
@@ -71,6 +76,8 @@ export function generateForms(e) {
     const nums = e.number ? [e.number] : ['sg', 'pl'];
     for (const n of nums) CASES.forEach((c, i) => { f[`${c}.${n}`] = e.stem + tbl[n][i]; });
     if (e.nomSg && nums.includes('sg')) f['nom.sg'] = e.nomSg;
+    // vocative: only -us masculine nouns differ from the nominative (amīcus -> amīce)
+    if (e.decl === 2 && e.gender === 'm' && nums.includes('sg') && !e.nomSg) f['voc.sg'] = e.stem + 'e';
   } else if (e.pos === 'adj' && e.decl === '1-2') {
     for (const g of ['m', 'f', 'n']) {
       for (const n of ['sg', 'pl']) {
@@ -80,8 +87,15 @@ export function generateForms(e) {
   } else if (e.pos === 'verb' && e.conj) {
     const c = CONJ[e.conj];
     if (!c) throw new Error(`Unknown conjugation ${e.conj} for ${e.id}`);
-    PERSONS.forEach((p, i) => { f[`pres.ind.act.${p}`] = e.stem + c.pres[i]; });
+    PERSONS.forEach((p, i) => {
+      f[`pres.ind.act.${p}`] = e.stem + c.pres[i];
+      f[`impf.ind.act.${p}`] = e.stem + c.impf[i];
+      f[`fut.ind.act.${p}`] = e.stem + c.fut[i];
+      if (e.pf) f[`perf.ind.act.${p}`] = e.pf + PERF[i];
+    });
     f['pres.inf.act'] = e.stem + c.inf;
+    f['imp.act.2sg'] = e.stem + c.imp[0];
+    f['imp.act.2pl'] = e.stem + c.imp[1];
   }
   if (e.form) f.indecl = e.form;
   if (e.forms) Object.assign(f, e.forms);
@@ -91,17 +105,23 @@ export function generateForms(e) {
 // ---------- Feature labels ----------
 
 const LABEL = {
-  nom: 'nominative', gen: 'genitive', dat: 'dative', acc: 'accusative', abl: 'ablative', loc: 'locative',
+  nom: 'nominative', gen: 'genitive', dat: 'dative', acc: 'accusative', abl: 'ablative', loc: 'locative', voc: 'vocative',
+  pres: 'present', impf: 'imperfect', fut: 'future', perf: 'perfect',
   sg: 'singular', pl: 'plural', m: 'masculine', f: 'feminine', n: 'neuter',
   '1sg': '1st person singular', '2sg': '2nd person singular', '3sg': '3rd person singular',
   '1pl': '1st person plural', '2pl': '2nd person plural', '3pl': '3rd person plural',
 };
 
+const TENSES = ['pres', 'impf', 'fut', 'perf'];
+
 /** Human-friendly description of a feature key. */
 export function featureLabel(key) {
   if (key === 'indecl') return 'an unchanging word';
   if (key === 'pres.inf.act') return 'the present infinitive';
-  if (key.startsWith('pres.ind.act.')) return `${LABEL[key.slice(13)]} (present)`;
+  if (key === 'imp.act.2sg') return 'the command form (to one person)';
+  if (key === 'imp.act.2pl') return 'the command form (to several people)';
+  const m = key.match(/^(pres|impf|fut|perf)\.ind\.act\.(.+)$/);
+  if (m) return `${LABEL[m[2]]} (${LABEL[m[1]]} tense)`;
   return key.split('.').map((t) => LABEL[t] || t).join(' ');
 }
 
@@ -111,7 +131,8 @@ export function labelOf(token) {
 }
 
 function dimOf(token) {
-  if (CASES.includes(token) || token === 'loc') return 'case';
+  if (TENSES.includes(token)) return 'tense';
+  if (CASES.includes(token) || token === 'loc' || token === 'voc') return 'case';
   if (token === 'sg' || token === 'pl') return 'number';
   if (token === 'm' || token === 'f' || token === 'n') return 'gender';
   if (/^[123](sg|pl)$/.test(token)) return 'person/number';
@@ -156,7 +177,23 @@ export function buildIndex(lexicon) {
   return { lex, forms, byNorm };
 }
 
-/** All parses of a word (any macron/case state). */
+/**
+ * All parses of a word (any macron/case state).
+ * A word ending in the question particle -ne (valēsne, fessusne) is parsed as the word without it,
+ * with `enc: 'ne'` set on each parse.
+ */
 export function parseWord(index, word) {
-  return index.byNorm.get(normLoose(word)) || [];
+  const n = normLoose(word);
+  const direct = index.byNorm.get(n);
+  if (direct) return direct;
+  if (n.length > 3 && n.endsWith('ne')) {
+    const base = index.byNorm.get(n.slice(0, -2));
+    if (base) return base.map((p) => ({ ...p, enc: 'ne' }));
+  }
+  return [];
+}
+
+/** Is this word (after stripping macrons) something the lexicon can produce? */
+export function isKnownWord(index, word) {
+  return parseWord(index, word).length > 0;
 }

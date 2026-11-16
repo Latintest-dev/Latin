@@ -1,17 +1,25 @@
-# Latin: sentence-drill app (v0.1)
+# Latin: sentence-drill app (v0.2)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences. It runs in any
 modern browser on a phone or computer, stores progress on the device, and lets you export and import
 progress as a file. There is no server, no account and no tracking.
 
-## What v0.1 does
+## What it does
 
-- **Two tracks**, each with its own units and unlock order:
+- **Three tracks**, each with its own units and unlock order:
   - *Core grammar*: follows the order of Lingua Latina per se illustrata, starting at the very beginning
     (est/sunt and in + ablative; questions with ubi/quid; adjective agreement). Original sentences.
   - *Daily narration*: things you say to yourself through the day (hungry, thirsty, eating, "after the
-    meal I want to drink", going home). First-person verbs, accusative objects, volo/nolo + infinitive.
-- Each sentence climbs a ladder: **multiple choice** (English to Latin, or Latin to English), then
+    meal I want to drink", going home). First-person verbs, accusative objects, volo/nolo + infinitive,
+    and now the **past** ("Yesterday I ate bread") and **future** ("Tomorrow I will walk to the forum").
+  - *Like a Roman* (new in v0.2): how Romans actually said things. Greetings and manners, idioms
+    (*mihi placet*, *annōs nātus sum*, *Quota hōra est?*), then a **Latin-only** unit where the question
+    is in Latin and you reply in Latin.
+- **Three kinds of prompt.** Plain (translate this English sentence), **situation** ("You meet a friend.
+  Greet him."), and **Latin question** (answer in Latin; never asked as Latin→English). The English
+  appears only after you answer.
+- **Modern coinages** are marked with a red "modern coinage" tag and a note. Roman-style content is the default.
+- New sentences per session are a shared budget (Settings, default 6) that the tracks take turns filling.- Each sentence climbs a ladder: **multiple choice** (English to Latin, or Latin to English), then
   **fill in the blank**, then **write the whole sentence**. A mistake drops it a level and brings it back.
 - The grammar point appears only as a small tag. A short explanation shows after each answer.
 - Typed answers accept every listed word order, with or without macrons. Wrong words are diagnosed
@@ -64,9 +72,15 @@ updates itself the next time it is opened with a connection.
 
 1. Add any new words to `content/lexicon.json`. Regular nouns, adjectives and verbs need only a stem and
    class (see existing entries); irregular words list their forms.
+   Verbs take a perfect stem as `pf` (e.g. `"stem":"ambul","pf":"ambulāv"`); with it the generator
+   builds present, imperfect, future and perfect (active indicative), the infinitive and the commands.
+   Verbs without `pf` simply have no perfect forms. Nouns in -us get a vocative automatically.
 2. Add sentences to a unit file. Each item needs: `en`, `chunks` (or `la` + `accept`), `fill`, `skills`,
    `tag`, `explain`, and exactly three `distractors` as `[latin, why it's wrong]`. Mark Latin words in
    explanations with `_underscores_`.
+   Optional: `sit` (an English situation shown instead of `en`), or `q` (a Latin question; the item is
+   then the answer and `en` holds the English gloss of both), and `modern: true` with a `modernNote`
+   for modern coinages. `end` sets the final punctuation (default `.`).
    `chunks` lists the parts of the sentence; every ordering of the chunks is accepted. A chunk can offer
    alternatives, e.g. `["urbs magna", "magna urbs"]`.
 3. Run `node tools/validate.mjs`. It fails if any word isn't in the lexicon, a distractor is actually a

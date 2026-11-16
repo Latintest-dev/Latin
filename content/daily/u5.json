@@ -1,0 +1,156 @@
+[
+  {
+    "id": "daily.5.01", "review": "unreviewed",
+    "en": "Tomorrow I will work.",
+    "chunks": ["Crās", "labōrābō"],
+    "fill": "labōrābō",
+    "skills": ["verb.1sg.fut", "time.future", "vocab.actions"],
+    "tag": "-bō = I will (-āre / -ēre verbs)",
+    "explain": "_crās_ = tomorrow. For -āre verbs the future adds -bō to the stem: _labōrā-bō_ = I will work.",
+    "distractors": [
+      ["Crās labōrō.", "_labōrō_ is the present: 'Tomorrow I work'. The future is _labōrābō_."],
+      ["Crās labōrāvī.", "_labōrāvī_ is the past: 'Tomorrow I worked' makes no sense."],
+      ["Crās labōrābis.", "_labōrābis_ is the 'you' form: 'Tomorrow you will work'."]
+    ]
+  },
+  {
+    "id": "daily.5.02", "review": "unreviewed",
+    "en": "Soon I will eat.",
+    "chunks": ["Mox", "edam"],
+    "fill": "edam",
+    "skills": ["verb.1sg.fut", "time.future", "vocab.actions"],
+    "tag": "-am = I will (-ere / -īre verbs)",
+    "explain": "_mox_ = soon. Verbs in -ere and -īre make the future with -am in the I-form: _ed-am_ = I will eat.",
+    "distractors": [
+      ["Mox edō.", "_edō_ is the present: 'Soon I eat'."],
+      ["Mox ēdī.", "_ēdī_ is the past: 'Soon I ate'."],
+      ["Mox edēs.", "_edēs_ is the 'you' form: 'Soon you will eat'."]
+    ]
+  },
+  {
+    "id": "daily.5.03", "review": "unreviewed",
+    "en": "Soon I will drink water.",
+    "chunks": ["Mox", "aquam", "bibam"],
+    "fill": "bibam",
+    "skills": ["verb.1sg.fut", "time.future", "case.acc.obj"],
+    "tag": "bibam = I will drink",
+    "explain": "_bibō_ is a 3rd-conjugation verb, so its future I-form ends in -am: _bibam_. The water is the object: _aquam_.",
+    "distractors": [
+      ["Mox aquam bibō.", "_bibō_ is the present: 'Soon I drink water'."],
+      ["Mox aquam bibī.", "_bibī_ is the past: 'I drank'."],
+      ["Mox aqua bibam.", "The thing drunk needs the accusative _aquam_."]
+    ]
+  },
+  {
+    "id": "daily.5.04", "review": "unreviewed",
+    "en": "Tomorrow I will sleep.",
+    "chunks": ["Crās", "dormiam"],
+    "fill": "dormiam",
+    "skills": ["verb.1sg.fut", "time.future", "vocab.actions"],
+    "tag": "dormiam = I will sleep",
+    "explain": "_dormiō_ is a 4th-conjugation verb: the future I-form is _dormiam_ (stem _dormi-_ + -am).",
+    "distractors": [
+      ["Crās dormiō.", "_dormiō_ is the present: 'Tomorrow I sleep'."],
+      ["Crās dormīvī.", "_dormīvī_ is the past: 'I slept'."],
+      ["Crās dormiēs.", "_dormiēs_ is the 'you' form: 'Tomorrow you will sleep'."]
+    ]
+  },
+  {
+    "id": "daily.5.05", "review": "unreviewed",
+    "en": "Tomorrow I will walk to the forum.",
+    "chunks": ["Crās", "ad forum", "ambulābō"],
+    "fill": "ambulābō",
+    "skills": ["verb.1sg.fut", "time.future", "case.acc.obj"],
+    "tag": "ad + accusative = to",
+    "explain": "_ambulābō_ = I will walk. _ad forum_ = to the forum (accusative after _ad_).",
+    "distractors": [
+      ["Crās ad forum ambulāvī.", "_ambulāvī_ is the past: 'Tomorrow I walked' makes no sense."],
+      ["Crās ad forum ambulō.", "_ambulō_ is the present: 'Tomorrow I walk to the forum'."],
+      ["Crās ad forō ambulābō.", "_ad_ needs the accusative _forum_; _forō_ is the ablative."]
+    ]
+  },
+  {
+    "id": "daily.5.06", "review": "unreviewed",
+    "en": "Tomorrow I will read a book.",
+    "chunks": ["Crās", "librum", "legam"],
+    "fill": "legam",
+    "skills": ["verb.1sg.fut", "time.future", "case.acc.obj"],
+    "tag": "legam = I will read",
+    "explain": "_legō_ → _legam_ (future) and _lēgī_ (past). Three tenses, three different shapes of the I-form.",
+    "distractors": [
+      ["Crās librum legō.", "_legō_ is the present: 'Tomorrow I read a book'."],
+      ["Crās librum lēgī.", "_lēgī_ is the past: 'I read'."],
+      ["Crās liber legam.", "The thing read needs the accusative _librum_."]
+    ]
+  },
+  {
+    "id": "daily.5.07", "review": "unreviewed",
+    "en": "After the meal I will walk.",
+    "chunks": ["Post cibum", "ambulābō"],
+    "fill": "ambulābō",
+    "skills": ["verb.1sg.fut", "prep.post_ante", "case.acc.obj"],
+    "tag": "post + accusative = after",
+    "explain": "_post_ ('after') takes the accusative: _post cibum_. The verb is in the future: _ambulābō_.",
+    "distractors": [
+      ["Ante cibum ambulābō.", "_ante_ = before: 'Before the meal I will walk'."],
+      ["Post cibum ambulō.", "_ambulō_ is the present: 'After the meal I walk'."],
+      ["Post cibus ambulābō.", "_post_ needs the accusative _cibum_, not the nominative _cibus_."]
+    ]
+  },
+  {
+    "id": "daily.5.08", "review": "unreviewed",
+    "en": "Tomorrow I will be at home.",
+    "chunks": ["Crās", "domī", "erō"],
+    "fill": "erō",
+    "skills": ["sum.fut", "time.future", "loc.home"],
+    "tag": "erō = I will be",
+    "explain": "The future of _sum_ is irregular: _erō_ ('I will be'), _eris_, _erit_. _domī_ = at home.",
+    "distractors": [
+      ["Crās domī sum.", "_sum_ is the present: 'Tomorrow I am at home'."],
+      ["Crās domī fuī.", "_fuī_ is the past: 'Tomorrow I was at home'."],
+      ["Crās domum erō.", "_domum_ means 'to home'. For 'at home' use _domī_."]
+    ]
+  },
+  {
+    "id": "daily.5.09", "review": "unreviewed",
+    "en": "Soon I will go home.",
+    "chunks": ["Mox", "domum", "ībō"],
+    "fill": "ībō",
+    "skills": ["verb.1sg.fut", "loc.home", "time.future"],
+    "tag": "ībō = I will go",
+    "explain": "_eō_ (I go) has the future _ībō_. _domum_ is the destination, with no preposition.",
+    "distractors": [
+      ["Mox domum eō.", "_eō_ is the present: 'Soon I go home'."],
+      ["Mox domum iī.", "_iī_ is the past: 'Soon I went home' makes no sense."],
+      ["Mox domī ībō.", "_domī_ = at home, but _ībō_ needs a destination: _domum_."]
+    ]
+  },
+  {
+    "id": "daily.5.10", "review": "unreviewed",
+    "en": "Tomorrow I will see my friend.",
+    "chunks": ["Crās", ["amīcum meum", "meum amīcum"], "vidēbō"],
+    "fill": "vidēbō",
+    "skills": ["verb.1sg.fut", "time.future", "case.acc.obj"],
+    "tag": "vidēbō = I will see",
+    "explain": "_videō_ is a 2nd-conjugation verb, so its future adds -bō: _vidē-bō_.",
+    "distractors": [
+      ["Crās amīcum meum videō.", "_videō_ is the present: 'Tomorrow I see my friend'."],
+      ["Crās amīcum meum vīdī.", "_vīdī_ is the past: 'I saw'."],
+      ["Crās amīcus meus vidēbō.", "The friend is the object, so he needs the accusative _amīcum meum_."]
+    ]
+  },
+  {
+    "id": "daily.5.11", "review": "unreviewed",
+    "en": "Tomorrow I will not work.",
+    "chunks": ["Crās", "nōn labōrābō"],
+    "fill": "labōrābō",
+    "skills": ["verb.1sg.fut", "time.future", "neg.non"],
+    "tag": "nōn + future",
+    "explain": "_nōn_ goes right before the verb it negates: _nōn labōrābō_ = I will not work.",
+    "distractors": [
+      ["Crās nōn labōrō.", "_labōrō_ is the present: 'Tomorrow I don't work'."],
+      ["Crās nōn labōrāvī.", "_labōrāvī_ is the past: 'I did not work'."],
+      ["Crās nōn labōrābit.", "_labōrābit_ is the 'he/she' form: 'Tomorrow he will not work'."]
+    ]
+  }
+]

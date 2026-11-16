@@ -23,6 +23,20 @@
       "title": "Narrating my day",
       "blurb": "Sequence words, times of day, and going home",
       "intro": "Link your actions with _prīmum_ (first), _deinde_ (then) and _postrēmō_ (finally). Times of day: _mane_ (in the morning), _nocte_ (at night), _hodiē_ (today). 'At home' is _domī_, and 'home' as a destination is _domum_ (no preposition): _domum eō_ = I go home."
+    },
+    {
+      "id": "4",
+      "file": "u4.json",
+      "title": "What I did",
+      "blurb": "The perfect tense: I ate, I drank, I slept, I went",
+      "intro": "To say what you did, use the perfect tense. The I-form ends in -ī: _ēdī_ = I ate, _bibī_ = I drank, _dormīvī_ = I slept, _ambulāvī_ = I walked. The perfect stem has to be learned with each verb (_edō_ → _ēdī_, _surgō_ → _surrēxī_), so drill whole sentences rather than rules. Past-time words: _herī_ (yesterday), _hodiē_ (today). Don't confuse _edō_ (I eat) with _ēdī_ (I ate)."
+    },
+    {
+      "id": "5",
+      "file": "u5.json",
+      "title": "What I will do",
+      "blurb": "The future tense: I will walk, I will eat, I will be",
+      "intro": "To say what you will do, use the future tense. For -āre and -ēre verbs add -bō: _ambulābō_ = I will walk, _vidēbō_ = I will see. For -ere and -īre verbs the I-form ends in -am: _edam_ = I will eat, _bibam_ = I will drink, _dormiam_ = I will sleep. The future of _sum_ is _erō_. Time words: _crās_ (tomorrow), _mox_ (soon), _nunc_ (now)."
     }
   ]
 }
