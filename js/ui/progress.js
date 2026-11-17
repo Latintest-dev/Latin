@@ -30,8 +30,8 @@ export function renderProgress(root, app) {
     h('p', { class: 'sub' }, `${intro} of ${content.itemsById.size} sentences met · ${strong} known well`)));
 
   root.append(h('div', { class: 'btn-row' },
-    h('button', { class: 'btn', disabled: intro === 0, onclick: () => app.startSession({ mode: 'weak' }) }, 'Practise weak spots'),
-    h('button', { class: 'btn', disabled: s.mistakes.length === 0, onclick: () => app.startSession({ mode: 'mistakes' }) }, 'Practise my mistakes')));
+    h('button', { class: 'btn', disabled: intro === 0, onclick: () => app.startSession({ mode: 'weak' }) }, 'Practice weak spots'),
+    h('button', { class: 'btn', disabled: s.mistakes.length === 0, onclick: () => app.startSession({ mode: 'mistakes' }) }, 'Practice my mistakes')));
 
   // skills
   const rows = Object.entries(content.skills)

@@ -1,0 +1,225 @@
+{
+  "unit": {
+    "id": "10",
+    "title": "What used to happen",
+    "blurb": "The imperfect: used to, was doing",
+    "intro": "The imperfect tense describes what used to happen or was going on: -bam, -bās, -bat, -bāmus, -bātis, -bant (_amābam_, _habēbam_) or -ēbam, -ēbās… for -ere and -īre verbs (_edēbam_, _audiēbam_). Use it for habits (_cotīdiē_ = every day, _saepe_ = often) and for scenes you are describing: _puer pānem edēbat_ (the boy was eating bread). Use the perfect for a single finished event, the imperfect for a background or a habit."
+  },
+  "templates": [
+    {
+      "id": "habit-me",
+      "n": 12,
+      "skills": [
+        "verb.impf",
+        "time.habit",
+        "case.acc.obj"
+      ],
+      "tag": "habit: I / you / we / you all",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "impf.ind.act.{pn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cotidie",
+              "saepe"
+            ]
+          },
+          "form": "indecl"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {v:habitfull} {o:a}.",
+      "fill": [
+        "v",
+        "t",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: it describes a habit, “used to”. _{t}_ confirms it.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "habit-they",
+      "n": 12,
+      "skills": [
+        "verb.impf",
+        "time.habit",
+        "case.acc.obj"
+      ],
+      "tag": "habit: he / she / they",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "impf.ind.act.3{sn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cotidie",
+              "saepe"
+            ]
+          },
+          "form": "indecl"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {s} {v:habit} {o:a}.",
+      "fill": [
+        "v",
+        "s",
+        "t"
+      ],
+      "explain": "_{v}_ is {v.label}: a repeated action in the past. It agrees with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "was-doing",
+      "n": 12,
+      "skills": [
+        "verb.impf",
+        "case.acc.obj"
+      ],
+      "tag": "was doing (scene)",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "scribo",
+              "porto",
+              "emo",
+              "vendo",
+              "capio",
+              "facio",
+              "do",
+              "paro",
+              "monstro",
+              "narro",
+              "voco"
+            ]
+          },
+          "form": "impf.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o:a}.",
+      "fill": [
+        "v",
+        "s",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the action was in progress. It agrees with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

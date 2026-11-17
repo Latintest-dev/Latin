@@ -22,7 +22,7 @@ export function renderHome(root, app) {
       s.meta.lastExport ? 'It has been over a week since your last backup. Export your progress →' : 'Back up your progress: export a file in Settings →'));
   }
 
-  const label = kinds.review + kinds.fresh === 0 ? 'Practise' : started ? 'Continue' : 'Start learning';
+  const label = kinds.review + kinds.fresh === 0 ? 'Practice' : started ? 'Continue' : 'Start learning';
   const detail = kinds.review + kinds.fresh === 0
     ? 'Nothing is due. Revisit what you know.'
     : [kinds.review ? `${kinds.review} to review` : null, kinds.fresh ? `${kinds.fresh} new` : null].filter(Boolean).join(' · ');
@@ -39,7 +39,7 @@ export function renderHome(root, app) {
             h('h3', null, unit.title),
             h('p', { class: 'sub' }, rich(unit.blurb, s.settings, { macrons: true }))),
           unlocked
-            ? h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'unit', scope: { packId: pack.id, unitId: unit.id } }) }, introduced ? 'Practise' : 'Start')
+            ? h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'unit', scope: { packId: pack.id, unitId: unit.id } }) }, introduced ? 'Practice' : 'Start')
             : h('span', { class: 'lock', title: 'Introduce most of the previous unit first' }, '🔒')),
         h('div', { class: 'meter', 'aria-label': `${introduced} of ${total} met, ${strong} known` },
           h('div', { class: 'meter-seen', style: `width:${(introduced / total) * 100}%` }),

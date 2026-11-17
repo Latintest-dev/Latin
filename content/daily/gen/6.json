@@ -1,0 +1,124 @@
+{
+  "unit": {
+    "id": "6",
+    "title": "Who does what to what",
+    "blurb": "Subject, object and verb in whole sentences",
+    "intro": "A Latin sentence tells you who does what with word endings, not word order. The subject is nominative (_puer_), the thing acted on is accusative (_pānem_), and the verb ending agrees with the subject: _puer pānem edit_ (the boy eats bread), _puerī pānem edunt_ (the boys eat bread). Because the endings carry the meaning, the same sentence can be written in any order. With _ego_, _tū_ and _nōs_ left out, the verb ending alone says who it is: _pānem edō_, _pānem edis_."
+  },
+  "templates": [
+    {
+      "id": "svo",
+      "n": 14,
+      "skills": [
+        "verb.person",
+        "case.acc.obj"
+      ],
+      "tag": "subject, object and verb",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o}.",
+      "fill": [
+        "v",
+        "o",
+        "s"
+      ],
+      "explain": "_{s}_ is {s.label}, the subject; _{v}_ ({v.lemma}) is {v.label}, agreeing with it. _{o}_ is {o.label}: the thing the verb acts on.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "svo-me",
+      "n": 18,
+      "skills": [
+        "verb.person",
+        "case.acc.obj",
+        "verb.1sg.pres"
+      ],
+      "tag": "I / you / we / you all",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "{v:full} {o:a}.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_. The ending already says who is acting, so Latin needs no separate word for I, you or we. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

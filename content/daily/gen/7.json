@@ -1,0 +1,223 @@
+{
+  "unit": {
+    "id": "7",
+    "title": "Asking questions",
+    "blurb": "-ne questions, and \"What do you…?\"",
+    "intro": "To turn a statement into a yes/no question, add _-ne_ to the first word: _Edisne pānem?_ (Do you eat bread?). English needs 'do' or 'does'; Latin does not. To ask 'what?', use _quid_, and answer with the object: _Quid edis? Pānem edō._ Notice that the question uses the 'you' form (_edis_) and the answer the 'I' form (_edō_)."
+  },
+  "templates": [
+    {
+      "id": "ne-you",
+      "n": 10,
+      "skills": [
+        "quest.ne",
+        "verb.person",
+        "case.acc.obj"
+      ],
+      "tag": "-ne questions (you)",
+      "end": "?",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.2sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{v}ne",
+        "{o}"
+      ],
+      "en": "Do you {v:base} {o:a}?",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_-ne_ on the first word makes a yes/no question. _{v}_ is {v.label}: the “you” form. _{o}_ is the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "ne-he",
+      "n": 8,
+      "skills": [
+        "quest.ne",
+        "verb.person",
+        "case.acc.obj"
+      ],
+      "tag": "-ne questions (he / she)",
+      "end": "?",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.3sg"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{v}ne",
+        "{s}",
+        "{o}"
+      ],
+      "en": "Does {s} {v:base} {o:a}?",
+      "fill": [
+        "v",
+        "s",
+        "o"
+      ],
+      "explain": "_{v}ne_ puts the question mark on the verb. _{s}_ is the subject (nominative) and _{o}_ the object (accusative).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "ne-they",
+      "n": 8,
+      "skills": [
+        "quest.ne",
+        "verb.person",
+        "case.acc.obj",
+        "noun.nom.pl"
+      ],
+      "tag": "-ne questions (they)",
+      "end": "?",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.3pl"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.pl"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{v}ne",
+        "{s}",
+        "{o}"
+      ],
+      "en": "Do {s} {v:base} {o:a}?",
+      "fill": [
+        "v",
+        "s",
+        "o"
+      ],
+      "explain": "_{v}ne_ puts the question mark on the verb. _{s}_ is plural, so the verb is plural: _{v}_.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "what-do-you",
+      "n": 12,
+      "skills": [
+        "quest.words",
+        "qa.reply",
+        "case.acc.obj"
+      ],
+      "tag": "Quid …? and the answer",
+      "verb": "w",
+      "q": "Quid {v}?",
+      "enQ": "What do you {v:base}?",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "pres.ind.act.2sg",
+          "noFoil": true
+        },
+        "w": {
+          "same": "v",
+          "form": "pres.ind.act.1sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{w}"
+      ],
+      "en": "{w:full} {o:a}.",
+      "fill": [
+        "w",
+        "o"
+      ],
+      "explain": "_quid_ asks “what?”. The question uses _{v}_ (you); you answer about yourself with _{w}_ (I) and the object _{o}_.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

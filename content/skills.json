@@ -43,5 +43,21 @@
   "idiom.hour":        { "name": "Telling the hour", "pack": "roman" },
   "idiom.feelings":    { "name": "Feeling hot, cold, well", "pack": "roman" },
   "qa.reply":          { "name": "Answering questions in Latin", "pack": "roman" },
-  "modern.coinage":    { "name": "Modern coinages", "pack": "roman" }
+  "modern.coinage":    { "name": "Modern coinages", "pack": "roman" },
+  "noun.3decl":        { "name": "Third-declension nouns (pater, mīles, rēx)", "pack": "core" },
+  "poss.adj":          { "name": "my / your / our (meus, tuus, noster)", "pack": "core" },
+  "adj.3decl":         { "name": "Adjectives like fortis, trīstis", "pack": "core" },
+  "case.abl.place":    { "name": "Ablative for place (in hortō)", "pack": "core" },
+  "prep.abl":          { "name": "cum / sine + ablative", "pack": "core" },
+  "prep.motion":       { "name": "ad / in / ex: going to and from", "pack": "core" },
+  "prep.acc":          { "name": "per / trans / prope + accusative", "pack": "core" },
+  "num.cardinal":      { "name": "Numbers 2 to 10", "pack": "core" },
+  "vocab.town":        { "name": "Town, house and countryside words", "pack": "core" },
+
+  "verb.perf.person":  { "name": "Past tense: all persons", "pack": "daily" },
+  "verb.fut.person":   { "name": "Future tense: all persons", "pack": "daily" },
+  "verb.impf":         { "name": "Imperfect: was doing, used to", "pack": "daily" },
+  "time.habit":        { "name": "cotīdiē, saepe (habits)", "pack": "daily" },
+
+  "imp.2pl":           { "name": "Commands: several people (-te)", "pack": "roman" }
 }

@@ -1,0 +1,172 @@
+{
+  "unit": {
+    "id": "5",
+    "title": "Where, and with whom",
+    "blurb": "in + ablative, cum and sine",
+    "intro": "To say where someone does something, use _in_ plus the ablative: _puer in hortō ambulat_ (the boy walks in the garden). To say who is with you, or who is missing, use _cum_ (with) or _sine_ (without), which also take the ablative: _cum amīcō_, _sine amīcō_. Remember that Latin endings, not word order, do the work: the ablative ending is what tells you 'in the garden' rather than 'the garden' as an object."
+  },
+  "templates": [
+    {
+      "id": "in-place",
+      "n": 14,
+      "skills": [
+        "prep.in.abl",
+        "prep.in.abl",
+        "case.abl.place",
+        "vocab.town"
+      ],
+      "tag": "in + ablative",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "tags": [
+              "loc"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ],
+            "notIds": [
+              "insula"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "{s} {v} in {pl}.",
+      "fill": [
+        "pl",
+        "v",
+        "s"
+      ],
+      "explain": "_in_ + ablative says where something happens: _in {pl}_ = {pl.en}. _{v}_ agrees with the subject _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "pl": "after _in_ meaning “in” (where something is), the place goes in the ablative"
+      }
+    },
+    {
+      "id": "with-without",
+      "n": 14,
+      "skills": [
+        "prep.abl",
+        "prep.abl"
+      ],
+      "tag": "cum / sine + ablative",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "cn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "tags": [
+              "intrans"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "cw": {
+          "choice": [
+            {
+              "la": "cum",
+              "case": "abl",
+              "en": "with"
+            },
+            {
+              "la": "sine",
+              "case": "abl",
+              "en": "without"
+            }
+          ]
+        },
+        "c": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "differ": "s",
+          "form": "abl.{cn}",
+          "foils": [
+            "nom.{cn}",
+            "acc.{cn}",
+            "dat.{cn}"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{cw} {c}",
+        "{v}"
+      ],
+      "en": "{s} {v} {cw.en} {c}.",
+      "fill": [
+        "c",
+        "cw",
+        "v"
+      ],
+      "explain": "_{cw}_ means “{cw.en}” and is always followed by the ablative: _{cw} {c}_.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "c": "after _cum_ and _sine_ the noun goes in the ablative"
+      }
+    }
+  ]
+}

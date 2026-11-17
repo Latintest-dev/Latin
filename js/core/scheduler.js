@@ -148,7 +148,7 @@ export function buildQueue({ content, itemStates, skills, mistakes, now, mode, s
       if (!any) break;
     }
     if (!queue.length) {
-      // nothing due, nothing new: practise ahead
+      // nothing due, nothing new: practice ahead
       const all = content.packs.flatMap((p) => p.units.flatMap((u) => u.items)).filter((it) => itemStates[it.id]?.intro);
       for (const it of shuffle(all, rng).slice(0, 6)) queue.push(entryFor(it, 'practice'));
     }

@@ -1,0 +1,297 @@
+{
+  "unit": {
+    "id": "8",
+    "title": "Yesterday I…",
+    "blurb": "The past tense in every person",
+    "intro": "The perfect tense tells what happened and is finished. Its endings are the same for every verb: -ī (I), -istī (you), -it (he/she), -imus (we), -istis (you all), -ērunt (they). The stem changes from verb to verb, so learn it with the verb: _edō → ēdī_, _videō → vīdī_, _veniō → vēnī_, _amō → amāvī_. Put a time word first and you have a story: _Herī pānem ēdī._"
+  },
+  "templates": [
+    {
+      "id": "past-me",
+      "n": 14,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "past tense: I / you / we / you all",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "heri",
+              "hodie",
+              "mane",
+              "vesperi",
+              "tum",
+              "postea"
+            ]
+          },
+          "form": "indecl"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {v:full} {o:a}.",
+      "fill": [
+        "v",
+        "t",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_. _{t}_ places it in the past, so the perfect tense is right.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "past-they",
+      "n": 12,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "past tense: he / she / they",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "perf.ind.act.3{sn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "heri",
+              "hodie",
+              "mane",
+              "vesperi"
+            ]
+          },
+          "form": "indecl"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {s} {v} {o:a}.",
+      "fill": [
+        "v",
+        "s",
+        "t"
+      ],
+      "explain": "_{v}_ is {v.label}, agreeing with _{s}_ ({s.label}). The -it / -ērunt endings of the perfect are the same for all verbs.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "past-place",
+      "n": 10,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "prep.in.abl"
+      ],
+      "tag": "past tense with in + ablative",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "tags": [
+              "loc"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "heri",
+              "hodie",
+              "mane",
+              "vesperi"
+            ]
+          },
+          "form": "indecl"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ],
+            "notIds": [
+              "insula"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{t}",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "{t} {v:full} in {pl}.",
+      "fill": [
+        "v",
+        "pl",
+        "t"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_. _in {pl}_ uses the ablative for “in”.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    },
+    {
+      "id": "what-did-you",
+      "n": 8,
+      "skills": [
+        "quest.words",
+        "qa.reply",
+        "verb.perf.person",
+        "time.past"
+      ],
+      "tag": "Quid …? in the past",
+      "verb": "w",
+      "q": "Quid {v} {t}?",
+      "enQ": "What did you {v:base} {t}?",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "perf.ind.act.2sg",
+          "noFoil": true
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "heri",
+              "hodie"
+            ]
+          },
+          "form": "indecl",
+          "noFoil": true
+        },
+        "w": {
+          "same": "v",
+          "form": "perf.ind.act.1sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "{w}"
+      ],
+      "en": "{t} {w:full} {o:a}.",
+      "fill": [
+        "w",
+        "o",
+        "t"
+      ],
+      "explain": "The question uses _{v}_ (you, past); the answer uses _{w}_ (I, past) and the object _{o}_.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

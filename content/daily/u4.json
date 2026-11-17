@@ -61,8 +61,8 @@
     "chunks": ["Herī", "ad forum", "ambulāvī"],
     "fill": "forum",
     "skills": ["verb.1sg.perf", "time.past", "case.acc.obj"],
-    "tag": "ad + accusative = to, towards",
-    "explain": "_ad_ ('to, towards') takes the accusative: _ad forum_. Verbs in -āre make their perfect with -āvī: _ambulāvī_ = I walked.",
+    "tag": "ad + accusative = to, toward",
+    "explain": "_ad_ ('to, toward') takes the accusative: _ad forum_. Verbs in -āre make their perfect with -āvī: _ambulāvī_ = I walked.",
     "distractors": [
       ["Herī ad forō ambulāvī.", "_ad_ needs the accusative _forum_; _forō_ is the ablative."],
       ["Herī ad forum ambulō.", "_ambulō_ is the present: 'Yesterday I walk to the forum'."],
@@ -120,7 +120,7 @@
     "tag": "domī = at home",
     "explain": "_domī_ means 'at home' (where you are); _domum_ means 'to home' (where you are going). _labōrāvī_ = I worked.",
     "distractors": [
-      ["Herī domum labōrāvī.", "_domum_ means 'to home' (motion towards). 'At home' is _domī_."],
+      ["Herī domum labōrāvī.", "_domum_ means 'to home' (motion toward). 'At home' is _domī_."],
       ["Herī domī labōrō.", "_labōrō_ is the present: 'Yesterday I work at home'."],
       ["Herī domī labōrāvistī.", "_labōrāvistī_ is the 'you' form: 'Yesterday you worked at home'."]
     ]
@@ -149,7 +149,7 @@
     "explain": "_veniō_ (I come) → _vēnī_ (I came). _domum_ ('home' as a destination) needs no preposition. Note that _veniō_ and _vēnī_ differ only in the long vowel and ending.",
     "distractors": [
       ["Domum veniō.", "_veniō_ is the present: 'I come home'."],
-      ["Domī vēnī.", "_domī_ = at home. For 'came home' (towards) you need _domum_."],
+      ["Domī vēnī.", "_domī_ = at home. For 'came home' (toward) you need _domum_."],
       ["Domum vēnistī.", "_vēnistī_ is the 'you' form: 'You came home'."]
     ]
   }

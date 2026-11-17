@@ -1,0 +1,190 @@
+{
+  "unit": {
+    "id": "5",
+    "title": "What I like",
+    "blurb": "mihi placet / mihi placent",
+    "intro": "Latin does not say 'I like bread'. It says 'bread is pleasing to me': _mihi placet pānis_. The thing you like is the subject (nominative), and the person is in the dative (_mihi_ = to me, _tibi_ = to you). So the verb agrees with the thing: _placet_ for one (or something uncountable), _placent_ for several: _mihi placent ōva_ (I like eggs)."
+  },
+  "templates": [
+    {
+      "id": "like-pl",
+      "n": 14,
+      "skills": [
+        "idiom.placet",
+        "noun.nom.pl"
+      ],
+      "tag": "mihi placent + plural",
+      "subject": "o",
+      "verb": "v",
+      "slots": {
+        "d": {
+          "choice": [
+            {
+              "la": "mihi",
+              "en": "I",
+              "obj": "me"
+            },
+            {
+              "la": "tibi",
+              "en": "you",
+              "obj": "you"
+            }
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "placeo"
+            ]
+          },
+          "form": "pres.ind.act.3pl"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "edible",
+              "readable",
+              "animal",
+              "person",
+              "place",
+              "thing"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "nom.pl"
+        }
+      },
+      "chunks": [
+        "{d}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{d.en} like {o:a}.",
+      "fill": [
+        "v",
+        "o",
+        "d"
+      ],
+      "explain": "_{d}_ = “to {d.obj}” (dative). The thing liked, _{o}_, is the subject, so the verb is plural: _{v}_.",
+      "roles": {
+        "o": "it is the thing that pleases, so it is the subject: nominative"
+      }
+    },
+    {
+      "id": "like-mass",
+      "n": 12,
+      "skills": [
+        "idiom.placet"
+      ],
+      "tag": "mihi placet + food or drink",
+      "subject": "o",
+      "verb": "v",
+      "slots": {
+        "d": {
+          "choice": [
+            {
+              "la": "mihi",
+              "en": "I",
+              "obj": "me"
+            },
+            {
+              "la": "tibi",
+              "en": "you",
+              "obj": "you"
+            }
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "placeo"
+            ]
+          },
+          "form": "pres.ind.act.3sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "mass": true,
+            "tags": [
+              "edible",
+              "drinkable"
+            ]
+          },
+          "form": "nom.sg"
+        }
+      },
+      "chunks": [
+        "{d}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{d.en} like {o:a}.",
+      "fill": [
+        "v",
+        "o",
+        "d"
+      ],
+      "explain": "_{o}_ is the thing that pleases, so it is the subject and the verb is singular: _{v}_. The person is dative: _{d}_.",
+      "roles": {
+        "o": "it is the thing that pleases, so it is the subject: nominative"
+      }
+    },
+    {
+      "id": "like-inf",
+      "n": 10,
+      "skills": [
+        "idiom.placet",
+        "volo.inf"
+      ],
+      "tag": "mihi placet + infinitive",
+      "verb": "v",
+      "slots": {
+        "d": {
+          "choice": [
+            {
+              "la": "mihi",
+              "en": "I",
+              "obj": "me"
+            },
+            {
+              "la": "tibi",
+              "en": "you",
+              "obj": "you"
+            }
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "tags": [
+              "intrans"
+            ]
+          },
+          "form": "pres.inf.act",
+          "foils": [
+            "pres.ind.act.1sg",
+            "pres.ind.act.3sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{d}",
+        "placet",
+        "{v}"
+      ],
+      "en": "{d.en} like {v:inf}.",
+      "fill": [
+        "v",
+        "d"
+      ],
+      "explain": "To say what you like doing, use _placet_ + infinitive: _{d} placet {v}_ = “{d.en} like to {v.base}”.",
+      "roles": {}
+    }
+  ]
+}

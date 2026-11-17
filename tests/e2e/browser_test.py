@@ -180,7 +180,7 @@ with sync_playwright() as p:
     page.screenshot(path='/home/claude/e2e/shots/09-progress.png', full_page=True)
     check('progress page has no stray object text', '[object' not in page.inner_text('body'))
     # weak-spot session starts
-    page.click('button:has-text("Practise weak spots")'); page.wait_for_selector('.eyebrow')
+    page.click('button:has-text("Practice weak spots")'); page.wait_for_selector('.eyebrow')
     check('weak-spot session runs', page.query_selector('.exercise') is not None or page.query_selector('.card') is not None)
     n = play(page, by_prompt, by_la)
     check('weak-spot session completes', n > 3, f'{n} steps')

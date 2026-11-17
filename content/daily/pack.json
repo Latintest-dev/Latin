@@ -37,6 +37,46 @@
       "title": "What I will do",
       "blurb": "The future tense: I will walk, I will eat, I will be",
       "intro": "To say what you will do, use the future tense. For -āre and -ēre verbs add -bō: _ambulābō_ = I will walk, _vidēbō_ = I will see. For -ere and -īre verbs the I-form ends in -am: _edam_ = I will eat, _bibam_ = I will drink, _dormiam_ = I will sleep. The future of _sum_ is _erō_. Time words: _crās_ (tomorrow), _mox_ (soon), _nunc_ (now)."
+    },
+    {
+      "id": "6",
+      "file": "u6.json",
+      "title": "Who does what to what",
+      "blurb": "Subject, object and verb in whole sentences",
+      "intro": "A Latin sentence tells you who does what with word endings, not word order. The subject is nominative (_puer_), the thing acted on is accusative (_pānem_), and the verb ending agrees with the subject: _puer pānem edit_ (the boy eats bread), _puerī pānem edunt_ (the boys eat bread). Because the endings carry the meaning, the same sentence can be written in any order. With _ego_, _tū_ and _nōs_ left out, the verb ending alone says who it is: _pānem edō_, _pānem edis_.",
+      "generated": true
+    },
+    {
+      "id": "7",
+      "file": "u7.json",
+      "title": "Asking questions",
+      "blurb": "-ne questions, and \"What do you…?\"",
+      "intro": "To turn a statement into a yes/no question, add _-ne_ to the first word: _Edisne pānem?_ (Do you eat bread?). English needs 'do' or 'does'; Latin does not. To ask 'what?', use _quid_, and answer with the object: _Quid edis? Pānem edō._ Notice that the question uses the 'you' form (_edis_) and the answer the 'I' form (_edō_).",
+      "generated": true
+    },
+    {
+      "id": "8",
+      "file": "u8.json",
+      "title": "Yesterday I…",
+      "blurb": "The past tense in every person",
+      "intro": "The perfect tense tells what happened and is finished. Its endings are the same for every verb: -ī (I), -istī (you), -it (he/she), -imus (we), -istis (you all), -ērunt (they). The stem changes from verb to verb, so learn it with the verb: _edō → ēdī_, _videō → vīdī_, _veniō → vēnī_, _amō → amāvī_. Put a time word first and you have a story: _Herī pānem ēdī._",
+      "generated": true
+    },
+    {
+      "id": "9",
+      "file": "u9.json",
+      "title": "Tomorrow I will…",
+      "blurb": "The future tense in every person",
+      "intro": "The future tense says what will happen. For -āre and -ēre verbs it uses -bō, -bis, -bit, -bimus, -bitis, -bunt: _amābō_ (I will love), _habēbō_ (I will have). For -ere and -īre verbs the endings are -am, -ēs, -et, -ēmus, -ētis, -ent: _edam_ (I will eat), _audiam_ (I will hear). A time word like _crās_ (tomorrow) or _mox_ (soon) comes along to confirm it.",
+      "generated": true
+    },
+    {
+      "id": "10",
+      "file": "u10.json",
+      "title": "What used to happen",
+      "blurb": "The imperfect: used to, was doing",
+      "intro": "The imperfect tense describes what used to happen or was going on: -bam, -bās, -bat, -bāmus, -bātis, -bant (_amābam_, _habēbam_) or -ēbam, -ēbās… for -ere and -īre verbs (_edēbam_, _audiēbam_). Use it for habits (_cotīdiē_ = every day, _saepe_ = often) and for scenes you are describing: _puer pānem edēbat_ (the boy was eating bread). Use the perfect for a single finished event, the imperfect for a background or a habit.",
+      "generated": true
     }
   ]
 }

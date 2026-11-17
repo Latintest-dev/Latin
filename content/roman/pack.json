@@ -23,6 +23,22 @@
       "title": "Latin only",
       "blurb": "Questions in Latin, answers in Latin",
       "intro": "From here on the questions are in Latin and you answer in Latin. Don't translate into English first. Spot the question word (_quis_ who, _quid_ what, _ubi_ where, _quota_ which) and the verb ending, then answer with the matching form: _edis_ ('you eat') is answered by _edō_ ('I eat'). The English appears only after you answer, in case you need it."
+    },
+    {
+      "id": "4",
+      "file": "u4.json",
+      "title": "Giving orders",
+      "blurb": "Commands, vocative names, and nōlī…",
+      "intro": "A Roman parent, teacher or officer speaks in commands. To one person, the command is the verb's stem: _bibe!_ (drink!), _lege!_ (read!), _venī!_ (come!). To several people add -te: _bibite!_, _legite!_, _venīte!_. To forbid, use _nōlī_ (to one) or _nōlīte_ (to several) plus the infinitive: _nōlī bibere!_ = don't drink! When you speak to someone by name, the name takes the vocative: _Mārcus_ becomes _Mārce_.",
+      "generated": true
+    },
+    {
+      "id": "5",
+      "file": "u5.json",
+      "title": "What I like",
+      "blurb": "mihi placet / mihi placent",
+      "intro": "Latin does not say 'I like bread'. It says 'bread is pleasing to me': _mihi placet pānis_. The thing you like is the subject (nominative), and the person is in the dative (_mihi_ = to me, _tibi_ = to you). So the verb agrees with the thing: _placet_ for one (or something uncountable), _placent_ for several: _mihi placent ōva_ (I like eggs).",
+      "generated": true
     }
   ]
 }

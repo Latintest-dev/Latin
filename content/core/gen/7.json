@@ -1,0 +1,153 @@
+{
+  "unit": {
+    "id": "7",
+    "title": "How many?",
+    "blurb": "Numbers one to ten with plural nouns",
+    "intro": "Numbers from four to ten never change: _quattuor, quīnque, sex, septem, octō, novem, decem_. Two and three do change: _duo, duae, duo_ (two) and _trēs, trēs, tria_ (three) match the gender of what is counted. After a number, the noun stays in the case the sentence needs: _trēs puerī in hortō sunt_ (three boys are in the garden). _quot?_ asks 'how many?'."
+  },
+  "templates": [
+    {
+      "id": "count",
+      "n": 16,
+      "skills": [
+        "num.cardinal",
+        "noun.nom.pl",
+        "prep.in.abl"
+      ],
+      "tag": "number + plural noun",
+      "subject": "s",
+      "slots": {
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person",
+              "animal",
+              "wild"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "nom.pl"
+        },
+        "n": {
+          "pos": "adj",
+          "where": {
+            "allTags": [
+              "numeral"
+            ]
+          },
+          "form": "nom.pl.{s.gender}",
+          "foils": [
+            "nom.pl.m",
+            "nom.pl.f",
+            "nom.pl.n"
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "land"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{n} {s}",
+        "in {pl}",
+        "sunt"
+      ],
+      "en": "There are {n} {s:bare} in {pl}.",
+      "fill": [
+        "n",
+        "s",
+        "pl"
+      ],
+      "explain": "_{n}_ = {n.en}. The noun is plural (_{s}_) and the place goes after _in_ in the ablative: _in {pl}_.",
+      "roles": {
+        "n": "_duo_ and _trēs_ change to match the gender of the noun they count (_{s}_)",
+        "pl": "after _in_ (“in”) the place goes in the ablative"
+      }
+    },
+    {
+      "id": "how-many",
+      "n": 10,
+      "skills": [
+        "num.cardinal",
+        "quest.words",
+        "qa.reply"
+      ],
+      "tag": "Quot …? and the answer",
+      "subject": "s",
+      "q": "Quot {s} in {pl} sunt?",
+      "enQ": "How many {s:bare} are in {pl}?",
+      "slots": {
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person",
+              "animal",
+              "wild"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "nom.pl"
+        },
+        "n": {
+          "pos": "adj",
+          "where": {
+            "allTags": [
+              "numeral"
+            ]
+          },
+          "form": "nom.pl.{s.gender}",
+          "foils": [
+            "nom.pl.m",
+            "nom.pl.f",
+            "nom.pl.n"
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "land"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "abl.sg",
+          "noFoil": true
+        }
+      },
+      "chunks": [
+        "{n} {s}",
+        "in {pl}",
+        "sunt"
+      ],
+      "en": "There are {n} {s:bare} in {pl}.",
+      "fill": [
+        "n",
+        "s"
+      ],
+      "explain": "_quot?_ asks “how many?”. Answer with a number and the plural noun: _{n} {s}_.",
+      "roles": {
+        "n": "_duo_ and _trēs_ change to match the gender of the noun they count (_{s}_)"
+      }
+    }
+  ]
+}

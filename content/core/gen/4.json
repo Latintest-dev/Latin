@@ -1,0 +1,273 @@
+{
+  "unit": {
+    "id": "4",
+    "title": "Family and friends",
+    "blurb": "my / your / our, people, and 3rd-declension nouns",
+    "intro": "Possessives like _meus, -a, -um_ (my), _tuus_ (your) and _noster_ (our) are adjectives, so they agree with the noun in gender, number and case: _pater meus_ (my father), _māter mea_ (my mother), _frātrēs meī_ (my brothers). Some nouns follow a third pattern, the third declension: _pater, māter, mīles, rēx_ and _homō_ have different endings (_patrēs, mātrēs, mīlitēs_) which you will learn simply by meeting them. Adjectives such as _fortis_ (brave) and _tristis_ (sad) use the same endings for masculine and feminine."
+  },
+  "templates": [
+    {
+      "id": "kin-job",
+      "n": 12,
+      "skills": [
+        "noun.3decl",
+        "poss.adj",
+        "noun.pred.nom"
+      ],
+      "tag": "{poss} + family noun",
+      "subject": "s",
+      "verb": "b",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "b": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "sum"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "family"
+            ],
+            "gender": "m"
+          },
+          "form": "nom.{sn}"
+        },
+        "poss": {
+          "pos": "adj",
+          "where": {
+            "tags": [
+              "poss"
+            ]
+          },
+          "form": "nom.{sn}.{s.gender}",
+          "foils": [
+            "nom.{sn}.f",
+            "nom.{sn}.n",
+            "gen.{sn}.{s.gender}",
+            "acc.{sn}.{s.gender}"
+          ]
+        },
+        "p": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "senator",
+              "mercator",
+              "magister",
+              "agricola",
+              "nauta",
+              "miles",
+              "civis",
+              "discipulus",
+              "rex"
+            ]
+          },
+          "form": "nom.{sn}"
+        }
+      },
+      "chunks": [
+        "{s} {poss}",
+        "{p}",
+        "{b}"
+      ],
+      "en": "{poss.en} {s:bare} {b} {p:a}.",
+      "fill": [
+        "p",
+        "b",
+        "s"
+      ],
+      "explain": "_{poss}_ describes _{s}_, so it agrees with it: {poss.label}. _{p}_ says what the subject is, so it is nominative and, with a plural subject, plural.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "poss": "it has to agree with _{s}_ in gender, number and case",
+        "p": "it names what he is, so it must be nominative"
+      }
+    },
+    {
+      "id": "kin-adj",
+      "n": 16,
+      "skills": [
+        "poss.adj",
+        "adj.agree.gender",
+        "adj.3decl"
+      ],
+      "tag": "{poss} + family noun + adjective",
+      "subject": "s",
+      "verb": "b",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "b": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "sum"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "family"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "poss": {
+          "pos": "adj",
+          "where": {
+            "tags": [
+              "poss"
+            ]
+          },
+          "form": "nom.{sn}.{s.gender}",
+          "foils": [
+            "nom.{sn}.m",
+            "nom.{sn}.f",
+            "nom.{sn}.n"
+          ]
+        },
+        "a": {
+          "pos": "adj",
+          "where": {
+            "ids": [
+              "laetus",
+              "fessus",
+              "tristis",
+              "fortis",
+              "miser",
+              "clarus",
+              "nobilis",
+              "bonus",
+              "malus",
+              "pulcher",
+              "altus",
+              "magnus",
+              "parvus"
+            ]
+          },
+          "form": "nom.{sn}.{s.gender}",
+          "foils": [
+            "nom.{sn}.m",
+            "nom.{sn}.f",
+            "nom.{sn}.n"
+          ]
+        }
+      },
+      "chunks": [
+        "{s} {poss}",
+        "{a}",
+        "{b}"
+      ],
+      "en": "{poss.en} {s:bare} {b} {a}.",
+      "fill": [
+        "a",
+        "poss",
+        "b"
+      ],
+      "explain": "Both _{poss}_ and _{a}_ describe _{s}_ ({s.gender}), so they take its gender and number: {a.label}.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "poss": "it must agree with _{s}_ in gender and number",
+        "a": "it must agree with _{s}_ in gender and number"
+      }
+    },
+    {
+      "id": "people-adj",
+      "n": 16,
+      "skills": [
+        "noun.3decl",
+        "adj.3decl",
+        "adj.agree.gender"
+      ],
+      "tag": "3rd-declension noun + adjective",
+      "subject": "s",
+      "verb": "b",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "b": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "sum"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ],
+            "decl": 3,
+            "notTags": [
+              "family"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "a": {
+          "pos": "adj",
+          "where": {
+            "ids": [
+              "fortis",
+              "tristis",
+              "nobilis",
+              "laetus",
+              "fessus",
+              "clarus",
+              "miser",
+              "bonus",
+              "malus"
+            ]
+          },
+          "form": "nom.{sn}.{s.gender}",
+          "foils": [
+            "nom.{sn}.m",
+            "nom.{sn}.f",
+            "nom.{sn}.n"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{a}",
+        "{b}"
+      ],
+      "en": "{s} {b} {a}.",
+      "fill": [
+        "s",
+        "a",
+        "b"
+      ],
+      "explain": "_{s}_ is a third-declension noun ({s.label}). The adjective _{a}_ matches it: {a.label}.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "a": "it must agree with _{s}_ in gender and number"
+      }
+    }
+  ]
+}

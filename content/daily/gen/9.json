@@ -1,0 +1,287 @@
+{
+  "unit": {
+    "id": "9",
+    "title": "Tomorrow I will…",
+    "blurb": "The future tense in every person",
+    "intro": "The future tense says what will happen. For -āre and -ēre verbs it uses -bō, -bis, -bit, -bimus, -bitis, -bunt: _amābō_ (I will love), _habēbō_ (I will have). For -ere and -īre verbs the endings are -am, -ēs, -et, -ēmus, -ētis, -ent: _edam_ (I will eat), _audiam_ (I will hear). A time word like _crās_ (tomorrow) or _mox_ (soon) comes along to confirm it."
+  },
+  "templates": [
+    {
+      "id": "fut-me",
+      "n": 12,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "future: I / you / we / you all",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cras",
+              "mox",
+              "postea"
+            ]
+          },
+          "form": "indecl"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {v:full} {o:a}.",
+      "fill": [
+        "v",
+        "t",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_. _{t}_ looks ahead, so the future tense is right.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "fut-they",
+      "n": 10,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "future: he / she / they",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "fut.ind.act.3{sn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cras",
+              "mox"
+            ]
+          },
+          "form": "indecl"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {s} {v} {o:a}.",
+      "fill": [
+        "v",
+        "s",
+        "t"
+      ],
+      "explain": "_{v}_ is {v.label}, agreeing with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "fut-go",
+      "n": 8,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "prep.motion"
+      ],
+      "tag": "future: going somewhere",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "eo",
+              "venio",
+              "ambulo",
+              "curro"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cras",
+              "mox"
+            ]
+          },
+          "form": "indecl"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{t}",
+        "ad {pl}",
+        "{v}"
+      ],
+      "en": "{t} {v:full} to {pl}.",
+      "fill": [
+        "v",
+        "pl",
+        "t"
+      ],
+      "explain": "_ad_ + accusative = “to”: _ad {pl}_. _{v}_ is {v.label}.",
+      "roles": {
+        "pl": "after _ad_ (“to”) the place goes in the accusative"
+      }
+    },
+    {
+      "id": "what-will-you",
+      "n": 8,
+      "skills": [
+        "quest.words",
+        "qa.reply",
+        "verb.fut.person",
+        "time.future"
+      ],
+      "tag": "Quid …? in the future",
+      "verb": "w",
+      "q": "Quid {v} {t}?",
+      "enQ": "What will you {v:base} {t}?",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "hasObj": true
+          },
+          "form": "fut.ind.act.2sg",
+          "noFoil": true
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "cras",
+              "mox"
+            ]
+          },
+          "form": "indecl",
+          "noFoil": true
+        },
+        "w": {
+          "same": "v",
+          "form": "fut.ind.act.1sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "{w}"
+      ],
+      "en": "{t} {w:full} {o:a}.",
+      "fill": [
+        "w",
+        "o",
+        "t"
+      ],
+      "explain": "The question uses _{v}_ (you, future); the answer uses _{w}_ (I, future) and the object _{o}_.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

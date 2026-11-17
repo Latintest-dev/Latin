@@ -118,7 +118,7 @@
     "fill": "Eurōpā",
     "skills": ["prep.in.abl", "sum.3pl", "vocab.geography"],
     "tag": "in + ablative = where",
-    "explain": "Two subjects, so _sunt_. The place after _in_ is ablative: _Eurōpā_. (_in_ + accusative, as in _Eurōpam_, would mean 'into Europe', movement towards.)",
+    "explain": "Two subjects, so _sunt_. The place after _in_ is ablative: _Eurōpā_. (_in_ + accusative, as in _Eurōpam_, would mean 'into Europe', movement toward.)",
     "distractors": [
       ["Italia et Graecia in Eurōpā est.", "Two subjects need _sunt_."],
       ["Italia et Graecia in Āfricā sunt.", "That says they are in Africa."],

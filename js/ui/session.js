@@ -67,7 +67,7 @@ export function renderSession(root, app, params) {
 
   if (!queue.length) {
     root.append(h('div', { class: 'card center' },
-      h('p', null, 'Nothing to practise here yet.'),
+      h('p', null, 'Nothing to practice here yet.'),
       h('a', { class: 'btn primary', href: '#/' }, 'Back')));
     return;
   }

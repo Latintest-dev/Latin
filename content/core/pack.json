@@ -23,6 +23,38 @@
       "title": "Big and small",
       "blurb": "Adjectives that agree with their noun",
       "intro": "Adjectives like _magnus, -a, -um_ change their endings to match the noun they describe in gender, number and case. _urbs_ is feminine, so _urbs magna_; _fluvius_ is masculine, so _fluvius magnus_; plural: _urbēs magnae_, _fluviī magnī_. The gender comes from the noun, not from how it looks."
+    },
+    {
+      "id": "4",
+      "file": "u4.json",
+      "title": "Family and friends",
+      "blurb": "my / your / our, people, and 3rd-declension nouns",
+      "intro": "Possessives like _meus, -a, -um_ (my), _tuus_ (your) and _noster_ (our) are adjectives, so they agree with the noun in gender, number and case: _pater meus_ (my father), _māter mea_ (my mother), _frātrēs meī_ (my brothers). Some nouns follow a third pattern, the third declension: _pater, māter, mīles, rēx_ and _homō_ have different endings (_patrēs, mātrēs, mīlitēs_) which you will learn simply by meeting them. Adjectives such as _fortis_ (brave) and _tristis_ (sad) use the same endings for masculine and feminine.",
+      "generated": true
+    },
+    {
+      "id": "5",
+      "file": "u5.json",
+      "title": "Where, and with whom",
+      "blurb": "in + ablative, cum and sine",
+      "intro": "To say where someone does something, use _in_ plus the ablative: _puer in hortō ambulat_ (the boy walks in the garden). To say who is with you, or who is missing, use _cum_ (with) or _sine_ (without), which also take the ablative: _cum amīcō_, _sine amīcō_. Remember that Latin endings, not word order, do the work: the ablative ending is what tells you 'in the garden' rather than 'the garden' as an object.",
+      "generated": true
+    },
+    {
+      "id": "6",
+      "file": "u6.json",
+      "title": "To, from, through",
+      "blurb": "ad, in, ex, per, trans, prope + the right case",
+      "intro": "Prepositions decide the case. _in_ with the ablative means 'in', but _in_ with the accusative means 'into': _in hortō_ (in the garden) vs _in hortum_ (into the garden). _ad_ (to) and _per_ (through), _trans_ (across) and _prope_ (near) take the accusative; _ex_ (out of) takes the ablative. When you meet a new preposition, learn it together with its case.",
+      "generated": true
+    },
+    {
+      "id": "7",
+      "file": "u7.json",
+      "title": "How many?",
+      "blurb": "Numbers one to ten with plural nouns",
+      "intro": "Numbers from four to ten never change: _quattuor, quīnque, sex, septem, octō, novem, decem_. Two and three do change: _duo, duae, duo_ (two) and _trēs, trēs, tria_ (three) match the gender of what is counted. After a number, the noun stays in the case the sentence needs: _trēs puerī in hortō sunt_ (three boys are in the garden). _quot?_ asks 'how many?'.",
+      "generated": true
     }
   ]
 }

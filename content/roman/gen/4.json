@@ -1,0 +1,266 @@
+{
+  "unit": {
+    "id": "4",
+    "title": "Giving orders",
+    "blurb": "Commands, vocative names, and nōlī…",
+    "intro": "A Roman parent, teacher or officer speaks in commands. To one person, the command is the verb's stem: _bibe!_ (drink!), _lege!_ (read!), _venī!_ (come!). To several people add -te: _bibite!_, _legite!_, _venīte!_. To forbid, use _nōlī_ (to one) or _nōlīte_ (to several) plus the infinitive: _nōlī bibere!_ = don't drink! When you speak to someone by name, the name takes the vocative: _Mārcus_ becomes _Mārce_."
+  },
+  "templates": [
+    {
+      "id": "cmd-you",
+      "n": 12,
+      "skills": [
+        "imp.2sg",
+        "case.acc.obj"
+      ],
+      "tag": "command to one person",
+      "end": "!",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "scribo",
+              "porto",
+              "emo",
+              "vendo",
+              "capio",
+              "facio",
+              "do",
+              "paro",
+              "monstro",
+              "narro",
+              "voco"
+            ]
+          },
+          "form": "imp.act.2sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "{v} {o:a}!",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is the command to one person (from _{v.lemma}_). The object _{o}_ is accusative.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "cmd-name",
+      "n": 12,
+      "skills": [
+        "imp.2sg",
+        "case.voc",
+        "case.acc.obj"
+      ],
+      "tag": "command + name (vocative)",
+      "end": "!",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "m": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "name"
+            ],
+            "tags_": []
+          },
+          "form": "voc.sg",
+          "roles": {}
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "scribo",
+              "porto",
+              "emo",
+              "vendo",
+              "capio",
+              "facio",
+              "do",
+              "paro",
+              "monstro",
+              "narro",
+              "voco"
+            ]
+          },
+          "form": "imp.act.2sg"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{m},",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{m}, {v} {o:a}!",
+      "fill": [
+        "v",
+        "m",
+        "o"
+      ],
+      "explain": "When you speak to someone, their name takes the vocative: _{m}_. _{v}_ is the command to one person.",
+      "roles": {
+        "m": "you are speaking to this person, so the name takes the vocative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "cmd-all",
+      "n": 10,
+      "skills": [
+        "imp.2pl",
+        "case.acc.obj"
+      ],
+      "tag": "command to several people",
+      "end": "!",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "scribo",
+              "porto",
+              "emo",
+              "vendo",
+              "capio",
+              "facio",
+              "do",
+              "paro",
+              "monstro",
+              "narro",
+              "voco"
+            ]
+          },
+          "form": "imp.act.2pl"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "{v} {o:a}, all of you!",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is the command to several people: add -te to the single-person command.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "dont",
+      "n": 10,
+      "skills": [
+        "imp.2sg",
+        "volo.inf"
+      ],
+      "tag": "nōlī + infinitive (don't!)",
+      "end": "!",
+      "verb": "v",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "scribo",
+              "porto",
+              "emo",
+              "vendo",
+              "capio",
+              "facio",
+              "do",
+              "paro",
+              "monstro",
+              "narro",
+              "voco"
+            ]
+          },
+          "form": "pres.inf.act",
+          "foils": [
+            "pres.ind.act.1sg",
+            "imp.act.2sg",
+            "pres.ind.act.2sg"
+          ]
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "Nōlī {v}",
+        "{o}"
+      ],
+      "en": "Don't {v:base} {o:a}!",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_nōlī_ + infinitive forbids: _nōlī {v}_ = “don't {v.base}”. Use _nōlīte_ for several people.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

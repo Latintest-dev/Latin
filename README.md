@@ -1,4 +1,4 @@
-# Latin: sentence-drill app (v0.2)
+# Latin: sentence-drill app (v0.3)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences. It runs in any
 modern browser on a phone or computer, stores progress on the device, and lets you export and import
@@ -19,12 +19,14 @@ progress as a file. There is no server, no account and no tracking.
   Greet him."), and **Latin question** (answer in Latin; never asked as Latin→English). The English
   appears only after you answer.
 - **Modern coinages** are marked with a red "modern coinage" tag and a note. Roman-style content is the default.
+- **Generated lessons** (new in v0.3): about 400 extra sentences are built from templates and a tagged
+  vocabulary, so practice stays varied. See *Generated content* below.
 - New sentences per session are a shared budget (Settings, default 6) that the tracks take turns filling.- Each sentence climbs a ladder: **multiple choice** (English to Latin, or Latin to English), then
   **fill in the blank**, then **write the whole sentence**. A mistake drops it a level and brings it back.
 - The grammar point appears only as a small tag. A short explanation shows after each answer.
 - Typed answers accept every listed word order, with or without macrons. Wrong words are diagnosed
   ("*est* is 3rd person singular, but you need 3rd person plural: *sunt*"), and each mistake is logged.
-- Spaced review (1, 2, 4, 8, 16, 32 days), per-skill strength, "practise weak spots" and "practise my mistakes".
+- Spaced review (1, 2, 4, 8, 16, 32 days), per-skill strength, "practice weak spots" and "practice my mistakes".
 - Export / import progress (JSON). Import *merges*, so you can sync phone and computer by exporting from
   one and importing into the other.
 
@@ -65,6 +67,8 @@ updates itself the next time it is opened with a connection.
     content/skills.json      skill names for the progress screen
     content/<track>/         pack.json + unit files (u1.json, u2.json, ...)
     tools/validate.mjs       checks all content against the lexicon
+    tools/generate.mjs       builds sentences from templates (content/<track>/gen/*.json)
+    tools/gen/english.mjs    English renderer used by the generator
     tools/build.mjs          generates sw.js
     tests/                   unit tests (node --test) and a browser test (tests/e2e)
 
@@ -89,6 +93,37 @@ updates itself the next time it is opened with a connection.
 
 New track: create `content/<name>/pack.json` plus unit files and add one line to `js/modules/registry.js`.
 
+## Generated content
+
+Some units are not written by hand. They are built by `tools/generate.mjs` from **sentence templates**
+(`content/<track>/gen/<unit>.json`) and the tagged vocabulary in `content/lexicon.json`, and written out
+as ordinary unit files. The app never knows the difference, so every generated sentence goes through the
+same validator and answer checker as a hand-written one.
+
+    node tools/generate.mjs                       # rebuild every generated unit (then validate + build)
+    node tools/generate.mjs --sample svo 10       # print 10 samples of template "svo", write nothing
+
+A template names its slots and how the sentence is put together, for example:
+
+    "slots": { "sn": {"choice": ["sg","pl"]},
+               "v": {"pos":"verb", "where":{"hasObj":true}, "form":"pres.ind.act.3{sn}"},
+               "s": {"pos":"noun", "where":{"tags":["person"]}, "form":"nom.{sn}"},
+               "o": {"pos":"noun", "fits":"v", "form":"acc.sg"} },
+    "chunks": ["{s}", "{o}", "{v}"],  "en": "{s} {v} {o}."
+
+From that the generator derives the Latin, the English, three wrong options (each changes exactly one
+thing, such as another person of the verb, another case, another word, or another preposition) with an
+explanation for each, and a stable id (a hash of the Latin, so your progress survives regeneration).
+
+Why the sentences make sense: words carry tags (`person`, `edible`, `readable`, `land`, `indoor`, ...) and
+verbs list what they can take (`obj`) or where they happen (`loc`), so "the boy eats bread" is possible
+and "the boy eats the street" is not. Words also carry English forms (`en`) so the English comes out
+right ("the men", "bread", "ate", "were eating").
+
+Adding variety needs no code: add words to the lexicon with tags, and rerun the generator. Adding a
+lesson means writing a new `gen/<n>.json` file. Increase a template's `n` for more sentences.
+Read samples before you ship: generated Latin is checked mechanically, not by a teacher.
+
 ## Content review
 
 Every sentence is marked `"review": "unreviewed"`. The sentences, macrons and explanations were drafted
@@ -97,6 +132,7 @@ Use the **Report a problem** button in the app; flags are included in your expor
 
 ## Tests
 
-    node --test tests/*.test.mjs        # engine, scheduler, storage, import/export, content
+    node --test tests/*.test.mjs        # engine, scheduler, storage, import/export, content, generator
     node tools/validate.mjs             # content validation
     python3 tests/e2e/browser_test.py   # full browser run (needs Playwright + Chrome, app served on :8765)
+    python3 tests/e2e/generated_units_test.py   # plays every generated unit type in the browser

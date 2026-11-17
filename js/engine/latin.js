@@ -71,19 +71,42 @@ const CONJ = {
  */
 export function generateForms(e) {
   const f = {};
-  if (e.pos === 'noun' && e.decl) {
-    const tbl = e.decl === 1 ? ND1 : e.gender === 'n' ? ND2N : ND2M;
+  if (e.pos === 'noun' && e.decl && (e.decl !== 3 || e.stem)) {
     const nums = e.number ? [e.number] : ['sg', 'pl'];
-    for (const n of nums) CASES.forEach((c, i) => { f[`${c}.${n}`] = e.stem + tbl[n][i]; });
-    if (e.nomSg && nums.includes('sg')) f['nom.sg'] = e.nomSg;
-    // vocative: only -us masculine nouns differ from the nominative (amīcus -> amīce)
-    if (e.decl === 2 && e.gender === 'm' && nums.includes('sg') && !e.nomSg) f['voc.sg'] = e.stem + 'e';
+    if (e.decl === 3) {
+      // 3rd declension: `stem` is the genitive stem (rēg-), `nomSg` the nominative (rēx).
+      // istem: true gives -ium / -ia (and -ī in the ablative of neuters).
+      const neut = e.gender === 'n';
+      const sg = [e.nomSg, e.stem + 'is', e.stem + 'ī', neut ? e.nomSg : e.stem + 'em', e.stem + (neut && e.istem ? 'ī' : 'e')];
+      const pl = neut
+        ? [e.stem + (e.istem ? 'ia' : 'a'), e.stem + (e.istem ? 'ium' : 'um'), e.stem + 'ibus', e.stem + (e.istem ? 'ia' : 'a'), e.stem + 'ibus']
+        : [e.stem + 'ēs', e.stem + (e.istem ? 'ium' : 'um'), e.stem + 'ibus', e.stem + 'ēs', e.stem + 'ibus'];
+      for (const n of nums) CASES.forEach((c, i) => { f[`${c}.${n}`] = (n === 'sg' ? sg : pl)[i]; });
+    } else {
+      const tbl = e.decl === 1 ? ND1 : e.gender === 'n' ? ND2N : ND2M;
+      for (const n of nums) CASES.forEach((c, i) => { f[`${c}.${n}`] = e.stem + tbl[n][i]; });
+      if (e.nomSg && nums.includes('sg')) f['nom.sg'] = e.nomSg;
+      // vocative: only -us masculine nouns differ from the nominative (amīcus -> amīce)
+      if (e.decl === 2 && e.gender === 'm' && nums.includes('sg') && !e.nomSg) f['voc.sg'] = e.stem + 'e';
+    }
   } else if (e.pos === 'adj' && e.decl === '1-2') {
     for (const g of ['m', 'f', 'n']) {
       for (const n of ['sg', 'pl']) {
         CASES.forEach((c, i) => { f[`${c}.${n}.${g}`] = e.stem + ADJ[g][n][i]; });
       }
     }
+    if (e.nomSgM) f['nom.sg.m'] = e.nomSgM; // pulcher, noster, miser
+  } else if (e.pos === 'adj' && e.decl === '3-2') {
+    // two-termination 3rd-declension adjective: trīstis (m/f), trīste (n)
+    const st = e.stem;
+    const sgMF = [st + 'is', st + 'is', st + 'ī', st + 'em', st + 'ī'];
+    const sgN = [st + 'e', st + 'is', st + 'ī', st + 'e', st + 'ī'];
+    const plMF = [st + 'ēs', st + 'ium', st + 'ibus', st + 'ēs', st + 'ibus'];
+    const plN = [st + 'ia', st + 'ium', st + 'ibus', st + 'ia', st + 'ibus'];
+    CASES.forEach((c, i) => {
+      f[`${c}.sg.m`] = f[`${c}.sg.f`] = sgMF[i]; f[`${c}.sg.n`] = sgN[i];
+      f[`${c}.pl.m`] = f[`${c}.pl.f`] = plMF[i]; f[`${c}.pl.n`] = plN[i];
+    });
   } else if (e.pos === 'verb' && e.conj) {
     const c = CONJ[e.conj];
     if (!c) throw new Error(`Unknown conjugation ${e.conj} for ${e.id}`);

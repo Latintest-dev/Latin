@@ -1,0 +1,368 @@
+{
+  "unit": {
+    "id": "6",
+    "title": "To, from, through",
+    "blurb": "ad, in, ex, per, trans, prope + the right case",
+    "intro": "Prepositions decide the case. _in_ with the ablative means 'in', but _in_ with the accusative means 'into': _in hortō_ (in the garden) vs _in hortum_ (into the garden). _ad_ (to) and _per_ (through), _trans_ (across) and _prope_ (near) take the accusative; _ex_ (out of) takes the ablative. When you meet a new preposition, learn it together with its case."
+  },
+  "templates": [
+    {
+      "id": "motion",
+      "n": 16,
+      "skills": [
+        "prep.motion",
+        "case.acc.obj",
+        "vocab.town"
+      ],
+      "tag": "motion: ad / in / ex",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "ambulo",
+              "curro",
+              "eo",
+              "venio"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "pp": {
+          "choice": [
+            {
+              "la": "ad",
+              "case": "acc",
+              "en": "to"
+            },
+            {
+              "la": "in",
+              "case": "acc",
+              "en": "into"
+            },
+            {
+              "la": "ex",
+              "case": "abl",
+              "en": "out of"
+            }
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ],
+            "notIds": [
+              "insula"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "{pp.case}.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{pp} {pl}",
+        "{v}"
+      ],
+      "en": "{s} {v} {pp.en} {pl}.",
+      "fill": [
+        "pl",
+        "pp",
+        "v"
+      ],
+      "explain": "_{pp}_ means “{pp.en}” here and takes the {pl.case}: _{pp} {pl}_.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "pl": "after _{pp}_ (“{pp.en}”) the place goes in the {pl.case}"
+      }
+    },
+    {
+      "id": "return",
+      "n": 8,
+      "skills": [
+        "prep.motion",
+        "vocab.town"
+      ],
+      "tag": "redeō + ad / in",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "redeo"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "pp": {
+          "choice": [
+            {
+              "la": "ad",
+              "case": "acc",
+              "en": "to"
+            },
+            {
+              "la": "in",
+              "case": "acc",
+              "en": "into"
+            }
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ],
+            "notIds": [
+              "insula"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{pp} {pl}",
+        "{v}"
+      ],
+      "en": "{s} {v} {pp.en} {pl}.",
+      "fill": [
+        "pl",
+        "v",
+        "pp"
+      ],
+      "explain": "_redeō_ means “I go back”, so it is followed by _ad_ or _in_ + accusative, the direction you are going.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "pl": "after _{pp}_ meaning “{pp.en}” the place goes in the accusative"
+      }
+    },
+    {
+      "id": "path",
+      "n": 12,
+      "skills": [
+        "prep.acc",
+        "vocab.town"
+      ],
+      "tag": "per / trans / prope + accusative",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "ambulo",
+              "curro",
+              "venio",
+              "eo"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "pp": {
+          "choice": [
+            {
+              "la": "per",
+              "case": "acc",
+              "en": "through"
+            },
+            {
+              "la": "trans",
+              "case": "acc",
+              "en": "across"
+            },
+            {
+              "la": "prope",
+              "case": "acc",
+              "en": "near"
+            }
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "via",
+              "silva",
+              "ager",
+              "hortus",
+              "forum",
+              "urbs",
+              "circus"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{pp} {pl}",
+        "{v}"
+      ],
+      "en": "{s} {v} {pp.en} {pl}.",
+      "fill": [
+        "pl",
+        "pp",
+        "v"
+      ],
+      "explain": "_{pp}_ means “{pp.en}” and is followed by the accusative: _{pp} {pl}_.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "pl": "after _{pp}_ (“{pp.en}”) the noun goes in the accusative"
+      }
+    },
+    {
+      "id": "swim",
+      "n": 8,
+      "skills": [
+        "prep.acc",
+        "vocab.town"
+      ],
+      "tag": "swimming: trans / prope",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "nato"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "pp": {
+          "choice": [
+            {
+              "la": "trans",
+              "case": "acc",
+              "en": "across"
+            },
+            {
+              "la": "prope",
+              "case": "acc",
+              "en": "near"
+            }
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "water"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{pp} {pl}",
+        "{v}"
+      ],
+      "en": "{s} {v} {pp.en} {pl}.",
+      "fill": [
+        "pl",
+        "pp",
+        "v"
+      ],
+      "explain": "_{pp}_ means “{pp.en}” and is followed by the accusative: _{pp} {pl}_.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "pl": "after _{pp}_ (“{pp.en}”) the noun goes in the accusative"
+      }
+    }
+  ]
+}

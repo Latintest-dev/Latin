@@ -98,7 +98,7 @@ function diagnoseSub(index, uNorm, eNorm, uShown, eShown) {
     type: 'unknown',
     user: uShown,
     expected: eShown,
-    msg: `_${uShown}_ isn't a word I recognise. Check the spelling. The word needed was _${eShown}_.`,
+    msg: `_${uShown}_ isn't a word I recognize. Check the spelling. The word needed was _${eShown}_.`,
     tags: ['spelling'],
   };
 }
