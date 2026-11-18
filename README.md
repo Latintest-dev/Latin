@@ -1,4 +1,4 @@
-# Latin: sentence-drill app (v0.3)
+# Latin: sentence-drill app (v0.4)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences. It runs in any
 modern browser on a phone or computer, stores progress on the device, and lets you export and import
@@ -18,9 +18,14 @@ progress as a file. There is no server, no account and no tracking.
 - **Three kinds of prompt.** Plain (translate this English sentence), **situation** ("You meet a friend.
   Greet him."), and **Latin question** (answer in Latin; never asked as Latin→English). The English
   appears only after you answer.
+- **Latin questions show a cue** (v0.4): because a question like *Quid edis?* has no single right answer, a small
+  line under it says what to reply in English ("Reply: I eat bread"). You put that into Latin.
 - **Modern coinages** are marked with a red "modern coinage" tag and a note. Roman-style content is the default.
-- **Generated lessons** (new in v0.3): about 400 extra sentences are built from templates and a tagged
-  vocabulary, so practice stays varied. See *Generated content* below.
+- **Generated lessons** (v0.3, expanded in v0.4): about 700 sentences are built from templates and a tagged
+  vocabulary, so practice stays varied. v0.4 adds counting and telling the hour, the genitive (*liber puerī*),
+  the dative (*pater fīliō librum dat*), and a unit of new verbs. See *Generated content* below.
+- **Roman lessons** (v0.4): the Roman day and meals, hospitality and manners, and 12 famous sayings
+  (*Vēnī, vīdī, vīcī*; *Carpe diem*; *Mēns sāna in corpore sānō*), each with the grammar explained.
 - New sentences per session are a shared budget (Settings, default 6) that the tracks take turns filling.- Each sentence climbs a ladder: **multiple choice** (English to Latin, or Latin to English), then
   **fill in the blank**, then **write the whole sentence**. A mistake drops it a level and brings it back.
 - The grammar point appears only as a small tag. A short explanation shows after each answer.
@@ -102,6 +107,7 @@ same validator and answer checker as a hand-written one.
 
     node tools/generate.mjs                       # rebuild every generated unit (then validate + build)
     node tools/generate.mjs --sample svo 10       # print 10 samples of template "svo", write nothing
+    node tools/generate.mjs --fresh               # throw away shipped sentences and regenerate from scratch (resets ids)
 
 A template names its slots and how the sentence is put together, for example:
 
@@ -122,6 +128,10 @@ right ("the men", "bread", "ate", "were eating").
 
 Adding variety needs no code: add words to the lexicon with tags, and rerun the generator. Adding a
 lesson means writing a new `gen/<n>.json` file. Increase a template's `n` for more sentences.
+
+Generation is **append-only**: sentences already shipped are kept with the same ids, and raising `n` or adding
+vocabulary only appends new ones, so your saved progress is never orphaned. Use `--fresh` only when you want
+to start a unit over.
 Read samples before you ship: generated Latin is checked mechanically, not by a teacher.
 
 ## Content review

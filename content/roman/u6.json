@@ -1,0 +1,381 @@
+[
+  {
+    "id": "roman.6.01",
+    "review": "unreviewed",
+    "q": "Quandō ientāculum edis?",
+    "en": "“When do you eat breakfast?” “I eat breakfast in the morning.”",
+    "chunks": [
+      "māne",
+      "ientāculum",
+      "edō"
+    ],
+    "fill": "edō",
+    "skills": [
+      "qa.reply",
+      "time.daily"
+    ],
+    "tag": "when do you eat breakfast?",
+    "explain": "_quandō?_ asks “when?”. _māne_ = in the morning, and the ending of _edō_ says “I”. Romans ate a light _ientāculum_ (bread, cheese, maybe fruit) early.",
+    "distractors": [
+      [
+        "Māne ientāculum edis.",
+        "_edis_ is “you eat”. Answer about yourself: _edō_."
+      ],
+      [
+        "Vesperī ientāculum edō.",
+        "_vesperī_ means “in the evening”. Breakfast is in the morning: _māne_."
+      ],
+      [
+        "Māne ientāculum edit.",
+        "_edit_ is “he eats”. About yourself: _edō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.02",
+    "review": "unreviewed",
+    "q": "Quid māne edis?",
+    "en": "“What do you eat in the morning?” “I eat bread and cheese.”",
+    "chunks": [
+      "pānem et caseum",
+      "edō"
+    ],
+    "fill": "caseum",
+    "skills": [
+      "qa.reply",
+      "case.acc.obj",
+      "time.daily"
+    ],
+    "tag": "bread and cheese for breakfast",
+    "explain": "_quid?_ asks “what?”, so the answer is the thing you eat: the object, accusative. _pānem et caseum_ are both accusative.",
+    "distractors": [
+      [
+        "Pānis et caseus edō.",
+        "_pānis_ and _caseus_ are nominative (subjects). What you eat is the object: accusative _pānem et caseum_."
+      ],
+      [
+        "Pānem et caseum edunt.",
+        "_edunt_ is “they eat”. About yourself: _edō_."
+      ],
+      [
+        "Pānem et caseum edit.",
+        "_edit_ is “he eats”. About yourself: _edō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.03",
+    "review": "unreviewed",
+    "en": "I eat lunch at noon.",
+    "chunks": [
+      "merīdiē",
+      "prandium",
+      "edō"
+    ],
+    "fill": "merīdiē",
+    "skills": [
+      "time.daily",
+      "case.acc.obj"
+    ],
+    "tag": "prandium at noon",
+    "explain": "_merīdiē_ = at noon (literally “at midday”). _prandium_ is the light lunch, accusative because it is what you eat.",
+    "distractors": [
+      [
+        "Merīdiē prandium edimus.",
+        "_edimus_ is “we eat”. The English says “I”: _edō_."
+      ],
+      [
+        "Merīdiē ientāculum edō.",
+        "_ientāculum_ is breakfast. Lunch is _prandium_."
+      ],
+      [
+        "Merīdiē prandium edis.",
+        "_edis_ is “you eat”. For “I”: _edō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.04",
+    "review": "unreviewed",
+    "en": "We eat dinner at the ninth hour.",
+    "chunks": [
+      "hōrā nōnā",
+      "cēnam",
+      "edimus"
+    ],
+    "fill": "edimus",
+    "skills": [
+      "time.hours",
+      "time.daily",
+      "case.acc.obj"
+    ],
+    "tag": "cēna at the ninth hour",
+    "explain": "“At” an hour takes the ablative: _hōrā nōnā_. The _cēna_ was the main meal, in the afternoon. _edimus_ is “we eat”.",
+    "distractors": [
+      [
+        "Hōram nōnam cēnam edimus.",
+        "“At” an hour uses the ablative: _hōrā nōnā_, not the accusative."
+      ],
+      [
+        "Hōrā nōnā cēna edimus.",
+        "_cēna_ is nominative. What you eat is the object: accusative _cēnam_."
+      ],
+      [
+        "Hōrā nōnā cēnam edō.",
+        "_edō_ is “I eat”. For “we”: _edimus_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.05",
+    "review": "unreviewed",
+    "en": "We sleep at night and work by day.",
+    "chunks": [
+      "nocte dormīmus",
+      "interdiū labōrāmus"
+    ],
+    "fill": "dormīmus",
+    "skills": [
+      "time.daily",
+      "verb.person"
+    ],
+    "tag": "night and day",
+    "explain": "_nocte_ is ablative: “at night”. _interdiū_ means “by day”. Both verbs end in _-mus_: “we”.",
+    "distractors": [
+      [
+        "Nox dormīmus, interdiū labōrāmus.",
+        "“At night” is the ablative: _nocte_. _nox_ is nominative."
+      ],
+      [
+        "Nocte dormītis, interdiū labōrāmus.",
+        "_dormītis_ is “you all sleep”. For “we”: _dormīmus_."
+      ],
+      [
+        "Nocte dormīmus, interdiū labōrō.",
+        "_labōrō_ is “I work”. For “we”: _labōrāmus_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.06",
+    "review": "unreviewed",
+    "en": "At the fourth hour I go to the forum.",
+    "chunks": [
+      "hōrā quārtā",
+      "ad forum",
+      "eō"
+    ],
+    "fill": "eō",
+    "skills": [
+      "time.hours",
+      "prep.motion",
+      "time.daily"
+    ],
+    "tag": "to the forum at the fourth hour",
+    "explain": "_hōrā quārtā_ = at the fourth hour (ablative). _ad_ + accusative = to: _ad forum_. _eō_ is “I go”.",
+    "distractors": [
+      [
+        "Hōram quārtam ad forum eō.",
+        "“At” an hour uses the ablative: _hōrā quārtā_, not the accusative."
+      ],
+      [
+        "Hōrā quārtā ad forō eō.",
+        "_ad_ (“to”) takes the accusative: _forum_."
+      ],
+      [
+        "Hōrā quārtā ad forum īs.",
+        "_īs_ is “you go”. For “I”: _eō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.07",
+    "review": "unreviewed",
+    "en": "At the eighth hour I go to the baths.",
+    "chunks": [
+      "hōrā octāvā",
+      "ad thermās",
+      "eō"
+    ],
+    "fill": "thermās",
+    "skills": [
+      "time.hours",
+      "prep.motion",
+      "time.daily"
+    ],
+    "tag": "to the baths at the eighth hour",
+    "explain": "The baths (_thermae_) were where Romans met, exercised and relaxed in the afternoon. _thermae_ is plural, so after _ad_ it becomes accusative plural _thermās_.",
+    "distractors": [
+      [
+        "Hōrā octāvā ad thermae eō.",
+        "_thermae_ is nominative. After _ad_ use the accusative: _thermās_."
+      ],
+      [
+        "Hōrā octāvā ad thermās eunt.",
+        "_eunt_ is “they go”. For “I”: _eō_."
+      ],
+      [
+        "Hōram octāvam ad thermās eō.",
+        "“At” an hour uses the ablative: _hōrā octāvā_, not the accusative."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.08",
+    "review": "unreviewed",
+    "en": "I wash before dinner.",
+    "chunks": [
+      "ante cēnam",
+      "lavō"
+    ],
+    "fill": "cēnam",
+    "skills": [
+      "time.daily",
+      "prep.acc"
+    ],
+    "tag": "wash before dinner",
+    "explain": "_ante_ (“before”) always takes the accusative: _ante cēnam_.",
+    "distractors": [
+      [
+        "Ante cēnā lavō.",
+        "_ante_ takes the accusative: _cēnam_."
+      ],
+      [
+        "Post cēnam lavō.",
+        "_post_ means “after”. “Before” is _ante_."
+      ],
+      [
+        "Ante cēnam lavās.",
+        "_lavās_ is “you wash”. For “I”: _lavō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.09",
+    "review": "unreviewed",
+    "en": "After dinner I sleep in bed.",
+    "chunks": [
+      "post cēnam",
+      "in lectō",
+      "dormiō"
+    ],
+    "fill": "lectō",
+    "skills": [
+      "time.daily",
+      "prep.acc",
+      "prep.in.abl"
+    ],
+    "tag": "sleep after dinner",
+    "explain": "_post_ (“after”) takes the accusative: _post cēnam_. _in_ + ablative = in: _in lectō_.",
+    "distractors": [
+      [
+        "Post cēnam in lectum dormiō.",
+        "Where you sleep is _in_ + ablative: _in lectō_."
+      ],
+      [
+        "Post cēnā in lectō dormiō.",
+        "_post_ takes the accusative: _cēnam_."
+      ],
+      [
+        "Post cēnam in lectō dormīs.",
+        "_dormīs_ is “you sleep”. For “I”: _dormiō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.10",
+    "review": "unreviewed",
+    "q": "Quid ad cēnam edis?",
+    "en": "“What do you eat for dinner?” “I eat eggs and fish.”",
+    "chunks": [
+      "ōva et piscem",
+      "edō"
+    ],
+    "fill": "piscem",
+    "skills": [
+      "qa.reply",
+      "case.acc.obj",
+      "time.daily"
+    ],
+    "tag": "eggs and fish for dinner",
+    "explain": "_ad cēnam_ = for dinner, at dinner. The answer is what you eat, so accusative: _ōva_ (plural of _ōvum_) and _piscem_.",
+    "distractors": [
+      [
+        "Ōva et piscis edō.",
+        "_piscis_ is nominative. What you eat is accusative: _piscem_."
+      ],
+      [
+        "Ōva et piscem edunt.",
+        "_edunt_ is “they eat”. For “I”: _edō_."
+      ],
+      [
+        "Ōva et piscem edis.",
+        "_edis_ is “you eat”. For “I”: _edō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.11",
+    "review": "unreviewed",
+    "en": "In the evening I sit in the garden.",
+    "chunks": [
+      "vesperī",
+      "in hortō",
+      "sedeō"
+    ],
+    "fill": "hortō",
+    "skills": [
+      "time.daily",
+      "prep.in.abl",
+      "case.abl.place"
+    ],
+    "tag": "evening in the garden",
+    "explain": "_vesperī_ = in the evening. _in hortō_: place where, so ablative.",
+    "distractors": [
+      [
+        "Vesperī in hortum sedeō.",
+        "Place where takes _in_ + ablative: _hortō_."
+      ],
+      [
+        "Māne in hortō sedeō.",
+        "_māne_ is “in the morning”. “In the evening” is _vesperī_."
+      ],
+      [
+        "Vesperī in hortō sedēs.",
+        "_sedēs_ is “you sit”. For “I”: _sedeō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.6.12",
+    "review": "unreviewed",
+    "en": "I work in the forum by day.",
+    "chunks": [
+      "interdiū",
+      "in forō",
+      "labōrō"
+    ],
+    "fill": "labōrō",
+    "skills": [
+      "time.daily",
+      "prep.in.abl",
+      "time.habit"
+    ],
+    "tag": "work in the forum by day",
+    "explain": "_interdiū_ = during the day. _in forō_ = in the forum (ablative).",
+    "distractors": [
+      [
+        "Interdiū in forum labōrō.",
+        "Place where takes _in_ + ablative: _forō_."
+      ],
+      [
+        "Nocte in forō labōrō.",
+        "_nocte_ means “at night”. “By day” is _interdiū_."
+      ],
+      [
+        "Interdiū in forō labōrat.",
+        "_labōrat_ is “he works”. For “I”: _labōrō_."
+      ]
+    ]
+  }
+]

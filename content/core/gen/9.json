@@ -1,0 +1,269 @@
+{
+  "unit": {
+    "id": "9",
+    "title": "Whose is it?",
+    "blurb": "The genitive: of the boy, of the boys",
+    "intro": "The genitive case says who owns something or who is related to someone. It is the “'s” of English: _liber puerī_ (the boy's book), _liber puerōrum_ (the boys' book), _fīlia Mārcī_ (Marcus's daughter). First-declension genitive: _-ae_ (singular), _-ārum_ (plural). Second declension: _-ī_ and _-ōrum_. Third declension: _-is_ and _-um_. _Cuius?_ asks “whose?”."
+  },
+  "templates": [
+    {
+      "id": "whose-book",
+      "n": 20,
+      "skills": [
+        "case.gen.poss",
+        "noun.gen"
+      ],
+      "tag": "genitive: owner",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "t": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "readable",
+              "goods",
+              "furniture",
+              "animal",
+              "gift"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "gen.{on}",
+          "foils": [
+            "nom.{on}",
+            "acc.{on}",
+            "dat.{on}"
+          ]
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "est"
+      ],
+      "en": "It is {o:poss} {t:bare}.",
+      "fill": [
+        "o",
+        "t"
+      ],
+      "explain": "_{o}_ is {o.label}: it says whose _{t}_ it is, like “'s” in English.",
+      "roles": {
+        "o": "it says who owns the thing (“of the …”), so it must be genitive",
+        "t": "it is the thing being talked about, the subject, so it must be nominative"
+      }
+    },
+    {
+      "id": "whose-qa",
+      "n": 14,
+      "skills": [
+        "case.gen.poss",
+        "quest.words",
+        "qa.reply"
+      ],
+      "tag": "Cuius …? and the answer",
+      "q": "Cuius {t} est?",
+      "enQ": "Whose {t:bare} is it?",
+      "slots": {
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "t": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "readable",
+              "goods",
+              "furniture",
+              "animal",
+              "gift"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "gen.{on}",
+          "foils": [
+            "nom.{on}",
+            "acc.{on}",
+            "dat.{on}"
+          ]
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{o}",
+        "est"
+      ],
+      "en": "It is {o:poss} {t:bare}.",
+      "fill": [
+        "o"
+      ],
+      "explain": "_cuius?_ asks “whose?”, so the answer is a genitive: _{o}_ ({o.label}).",
+      "roles": {
+        "o": "it says who owns the thing (“of the …”), so it must be genitive"
+      }
+    },
+    {
+      "id": "kin-of-m",
+      "n": 12,
+      "skills": [
+        "case.gen.poss",
+        "noun.3decl"
+      ],
+      "tag": "Name + relative + genitive (male)",
+      "slots": {
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "name"
+            ],
+            "ids": [
+              "marcus",
+              "titus",
+              "paulus"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "f": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "family"
+            ],
+            "gender": "m"
+          },
+          "form": "nom.sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "name"
+            ],
+            "notTags": [
+              "place"
+            ]
+          },
+          "differ": "s",
+          "form": "gen.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg",
+            "dat.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{f}",
+        "{o}",
+        "est"
+      ],
+      "en": "{s} is {o:poss} {f:bare}.",
+      "fill": [
+        "o",
+        "f"
+      ],
+      "explain": "_{o}_ is {o.label}: “{s:bare} is the {f:bare} of {o:bare}”. Latin puts the owner in the genitive and the relative in the nominative.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it says whose relative he is (“of …”), so it must be genitive"
+      }
+    },
+    {
+      "id": "kin-of-f",
+      "n": 12,
+      "skills": [
+        "case.gen.poss",
+        "noun.3decl"
+      ],
+      "tag": "Name + relative + genitive (female)",
+      "slots": {
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "name"
+            ],
+            "ids": [
+              "iulia",
+              "cornelia",
+              "livia",
+              "claudia",
+              "flavia"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "f": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "family"
+            ],
+            "gender": "f"
+          },
+          "form": "nom.sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "name"
+            ],
+            "notTags": [
+              "place"
+            ]
+          },
+          "differ": "s",
+          "form": "gen.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg",
+            "dat.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{f}",
+        "{o}",
+        "est"
+      ],
+      "en": "{s} is {o:poss} {f:bare}.",
+      "fill": [
+        "o",
+        "f"
+      ],
+      "explain": "_{o}_ is {o.label}: “{s:bare} is the {f:bare} of {o:bare}”. Latin puts the owner in the genitive and the relative in the nominative.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it says whose relative she is (“of …”), so it must be genitive"
+      }
+    }
+  ]
+}

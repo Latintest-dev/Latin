@@ -1,0 +1,255 @@
+{
+  "unit": {
+    "id": "11",
+    "title": "More verbs",
+    "blurb": "dīcō, mittō, dūcō, doceō, rogō, inveniō and friends",
+    "intro": "Time to widen your verb list. Some of these follow patterns you know (_iuvō, rogō, imperō_ are like _amō_; _doceō, respondeō, timeō_ are like _videō_), and some are third conjugation like _legō_: _dīcō, mittō, dūcō, quaerō, discō, vincō, dīvidō_. Remember the irregular commands _dīc!_ and _dūc!_, with no final -e."
+  },
+  "templates": [
+    {
+      "id": "nv-pres",
+      "n": 26,
+      "skills": [
+        "verb.person",
+        "case.acc.obj",
+        "vocab.verbs2"
+      ],
+      "tag": "new verbs: present",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dico",
+              "mitto",
+              "peto",
+              "duco",
+              "doceo",
+              "iuvo",
+              "rogo",
+              "respondeo",
+              "quaero",
+              "invenio",
+              "specto",
+              "divido",
+              "disco",
+              "vinco",
+              "impero",
+              "timeo"
+            ],
+            "hasObj": true
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o:a}.",
+      "fill": [
+        "v",
+        "o",
+        "s"
+      ],
+      "explain": "_{v}_ ({v.lemma}) is {v.label}, agreeing with _{s}_ ({s.label}). _{o}_ is {o.label}, the object.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "nv-perf",
+      "n": 22,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "vocab.verbs2"
+      ],
+      "tag": "new verbs: past",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dico",
+              "mitto",
+              "peto",
+              "duco",
+              "doceo",
+              "iuvo",
+              "rogo",
+              "respondeo",
+              "quaero",
+              "invenio",
+              "specto",
+              "divido",
+              "disco",
+              "vinco",
+              "impero",
+              "timeo"
+            ],
+            "hasObj": true
+          },
+          "form": "perf.ind.act.3{sn}"
+        },
+        "t": {
+          "pos": "adv",
+          "where": {
+            "ids": [
+              "heri",
+              "hodie",
+              "mane",
+              "vesperi"
+            ]
+          },
+          "form": "indecl"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{t}",
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{t} {s} {v} {o:a}.",
+      "fill": [
+        "v",
+        "s",
+        "t"
+      ],
+      "explain": "_{v}_ is {v.label}, agreeing with _{s}_ ({s.label}). Many third-conjugation verbs change their stem in the perfect, so learn it with the verb.",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "nv-me",
+      "n": 22,
+      "skills": [
+        "verb.person",
+        "case.acc.obj",
+        "vocab.verbs2"
+      ],
+      "tag": "new verbs: I / you / we / you all",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "2sg",
+            "1pl",
+            "2pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dico",
+              "mitto",
+              "peto",
+              "duco",
+              "doceo",
+              "iuvo",
+              "rogo",
+              "respondeo",
+              "quaero",
+              "invenio",
+              "specto",
+              "divido",
+              "disco",
+              "vinco",
+              "impero",
+              "timeo"
+            ],
+            "hasObj": true
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.{on}"
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "{v:full} {o:a}.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_. The ending already says who is acting. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    }
+  ]
+}

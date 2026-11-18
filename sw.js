@@ -2,22 +2,29 @@
 // writes sw.js. Every file is precached on install, so after the first load the whole app
 // works offline. Changing any file changes the cache name, which installs an updated copy.
 
-const CACHE = 'latin-7ab7e66fb6';
+const CACHE = 'latin-4552374732';
 const ASSETS = [
   "./",
+  "content/core/gen/10.json",
   "content/core/gen/4.json",
   "content/core/gen/5.json",
   "content/core/gen/6.json",
   "content/core/gen/7.json",
+  "content/core/gen/8.json",
+  "content/core/gen/9.json",
   "content/core/pack.json",
   "content/core/u1.json",
+  "content/core/u10.json",
   "content/core/u2.json",
   "content/core/u3.json",
   "content/core/u4.json",
   "content/core/u5.json",
   "content/core/u6.json",
   "content/core/u7.json",
+  "content/core/u8.json",
+  "content/core/u9.json",
   "content/daily/gen/10.json",
+  "content/daily/gen/11.json",
   "content/daily/gen/6.json",
   "content/daily/gen/7.json",
   "content/daily/gen/8.json",
@@ -25,6 +32,7 @@ const ASSETS = [
   "content/daily/pack.json",
   "content/daily/u1.json",
   "content/daily/u10.json",
+  "content/daily/u11.json",
   "content/daily/u2.json",
   "content/daily/u3.json",
   "content/daily/u4.json",
@@ -42,6 +50,9 @@ const ASSETS = [
   "content/roman/u3.json",
   "content/roman/u4.json",
   "content/roman/u5.json",
+  "content/roman/u6.json",
+  "content/roman/u7.json",
+  "content/roman/u8.json",
   "content/skills.json",
   "css/app.css",
   "icons/icon-192.png",

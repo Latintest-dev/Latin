@@ -1,7 +1,7 @@
 import { h } from './dom.js';
 import { fmtDate } from './format.js';
 
-export const APP_VERSION = '0.3.0';
+export const APP_VERSION = '0.4.0';
 
 export function renderSettings(root, app) {
   const { store } = app;

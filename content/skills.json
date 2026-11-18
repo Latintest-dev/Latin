@@ -59,5 +59,13 @@
   "verb.impf":         { "name": "Imperfect: was doing, used to", "pack": "daily" },
   "time.habit":        { "name": "cotīdiē, saepe (habits)", "pack": "daily" },
 
-  "imp.2pl":           { "name": "Commands: several people (-te)", "pack": "roman" }
+  "imp.2pl":           { "name": "Commands: several people (-te)", "pack": "roman" },
+  "time.hours": { "name": "Telling the hour (hōra + ordinal)", "pack": "core" },
+  "case.gen.poss": { "name": "Genitive: whose? (of the …)", "pack": "core" },
+  "noun.gen": { "name": "Genitive endings", "pack": "core" },
+  "case.dat.indirect": { "name": "Dative: to whom? (indirect object)", "pack": "core" },
+  "vocab.verbs2": { "name": "More verbs: dīcō, mittō, dūcō …", "pack": "daily" },
+  "saying": { "name": "Famous Latin sayings", "pack": "roman" },
+  "hospitality": { "name": "Welcoming and manners", "pack": "roman" },
+  "time.daily": { "name": "The Roman day and meals", "pack": "roman" }
 }

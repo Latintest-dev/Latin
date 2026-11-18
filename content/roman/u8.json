@@ -1,0 +1,330 @@
+[
+  {
+    "id": "roman.8.01",
+    "review": "unreviewed",
+    "en": "I came, I saw, I conquered.",
+    "la": "Vēnī, vīdī, vīcī.",
+    "fill": "vīcī",
+    "skills": [
+      "saying",
+      "verb.perf.person"
+    ],
+    "tag": "Caesar",
+    "explain": "Julius Caesar's famous report after a quick victory. All three verbs are perfect, 1st person singular: _-ī_. Notice _vēnī_ (from _veniō_), _vīdī_ (_videō_), _vīcī_ (_vincō_): the stems change in the perfect.",
+    "distractors": [
+      [
+        "Vēnit, vīdit, vīcit.",
+        "_-it_ is “he”. Caesar says “I”: _-ī_."
+      ],
+      [
+        "Veniō, videō, vincō.",
+        "These are present tense: “I come, I see, I conquer”. The saying looks back: perfect _vēnī, vīdī, vīcī_."
+      ],
+      [
+        "Vēnī, vīdī, vīcistī.",
+        "_vīcistī_ is “you conquered”. For “I”: _vīcī_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.02",
+    "review": "unreviewed",
+    "en": "Seize the day.",
+    "la": "Carpe diem.",
+    "fill": "carpe",
+    "skills": [
+      "saying",
+      "imp.2sg"
+    ],
+    "tag": "Horace",
+    "explain": "_carpe_ is the command to one person from _carpō_. _diem_ is the accusative singular of _diēs_ (day).",
+    "distractors": [
+      [
+        "Carpō diem.",
+        "_carpō_ is “I seize”. The command is _carpe_."
+      ],
+      [
+        "Carpite diem.",
+        "_carpite_ is to several people. To one person: _carpe_."
+      ],
+      [
+        "Carpe diēs.",
+        "_diēs_ is plural (“days”). The saying is singular: _diem_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.03",
+    "review": "unreviewed",
+    "en": "Time flies.",
+    "la": "Tempus fugit.",
+    "fill": "fugit",
+    "skills": [
+      "saying",
+      "verb.person"
+    ],
+    "tag": "tempus fugit",
+    "explain": "_tempus_ (time) is a neuter noun with a nominative that looks like an accusative. _fugit_ means “flees, flies”, and agrees with it: 3rd person singular.",
+    "distractors": [
+      [
+        "Tempora fugiunt.",
+        "_tempora_ is plural (“times”). The saying is singular: _tempus fugit_."
+      ],
+      [
+        "Tempus fugis.",
+        "_fugis_ is “you flee”. With _tempus_ (“it”): _fugit_."
+      ],
+      [
+        "Tempus fugiō.",
+        "_fugiō_ is “I flee”. With _tempus_ (“it”): _fugit_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.04",
+    "review": "unreviewed",
+    "en": "Beware of the dog.",
+    "la": "Cavē canem.",
+    "fill": "cavē",
+    "skills": [
+      "saying",
+      "imp.2sg",
+      "case.acc.obj"
+    ],
+    "tag": "sign on a Roman doorway",
+    "explain": "A real warning on Roman doorways. _cavē_ is the command to one person, and _cavēre_ takes the accusative: _canem_.",
+    "distractors": [
+      [
+        "Cavēte canem.",
+        "_cavēte_ is to several people. To one person: _cavē_."
+      ],
+      [
+        "Cavē canis.",
+        "_canis_ is nominative. After _cavē_ use the accusative: _canem_."
+      ],
+      [
+        "Caveō canem.",
+        "_caveō_ is “I beware”. The command is _cavē_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.05",
+    "review": "unreviewed",
+    "en": "Make haste slowly.",
+    "la": "Festīnā lentē.",
+    "fill": "festīnā",
+    "skills": [
+      "saying",
+      "imp.2sg"
+    ],
+    "tag": "Augustus",
+    "explain": "A favorite motto of the emperor Augustus. _festīnā_ is the command to one person from _festīnō_, and _lentē_ is an adverb, so it never changes.",
+    "distractors": [
+      [
+        "Festīnāte lentē.",
+        "_festīnāte_ is to several people. To one person: _festīnā_."
+      ],
+      [
+        "Festīnō lentē.",
+        "_festīnō_ is “I hurry”. The command is _festīnā_."
+      ],
+      [
+        "Festīnat lentē.",
+        "_festīnat_ is “he hurries”. The command is _festīnā_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.06",
+    "review": "unreviewed",
+    "en": "To err is human.",
+    "la": "Errāre hūmānum est.",
+    "fill": "hūmānum",
+    "skills": [
+      "saying",
+      "adj.agree.gender"
+    ],
+    "tag": "errāre hūmānum est",
+    "explain": "When the subject is an infinitive (_errāre_, “to err”), the adjective is neuter: _hūmānum_. Latin treats “to err” as a thing, neuter singular.",
+    "distractors": [
+      [
+        "Errāre hūmānus est.",
+        "_hūmānus_ is masculine. An infinitive subject takes the neuter: _hūmānum_."
+      ],
+      [
+        "Errō hūmānum est.",
+        "_errō_ is “I err”. “To err” is the infinitive: _errāre_."
+      ],
+      [
+        "Errāmus hūmānum est.",
+        "_errāmus_ is “we err”. “To err” is the infinitive: _errāre_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.07",
+    "review": "unreviewed",
+    "en": "Art is long, life is short.",
+    "la": "Ars longa, vīta brevis.",
+    "fill": "brevis",
+    "skills": [
+      "saying",
+      "adj.agree.gender",
+      "adj.3decl"
+    ],
+    "tag": "Hippocrates, in Latin",
+    "explain": "Both nouns are feminine, so _longa_ goes with _ars_ and _brevis_ with _vīta_. _brevis_ is a 3rd-declension adjective: the same form for masculine and feminine.",
+    "distractors": [
+      [
+        "Ars longus, vīta brevis.",
+        "_ars_ is feminine, so the adjective is _longa_."
+      ],
+      [
+        "Ars longa, vīta breve.",
+        "_breve_ is neuter. _vīta_ is feminine: _brevis_."
+      ],
+      [
+        "Ars longa, vīta brevēs.",
+        "_brevēs_ is plural. _vīta_ is singular: _brevis_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.08",
+    "review": "unreviewed",
+    "en": "Fortune favors the bold.",
+    "la": "Fortūna audācēs iuvat.",
+    "fill": "audācēs",
+    "skills": [
+      "saying",
+      "case.acc.obj"
+    ],
+    "tag": "fortūna audācēs iuvat",
+    "explain": "_fortūna_ is the subject (nominative), and _iuvat_ (helps) agrees with it. _audācēs_ is accusative plural, “the bold”, the ones who are helped. In Latin, _iuvō_ takes the accusative.",
+    "distractors": [
+      [
+        "Fortūna audācēs iuvant.",
+        "_fortūna_ is singular, so the verb is _iuvat_."
+      ],
+      [
+        "Fortūna audācibus iuvat.",
+        "_iuvō_ takes the accusative: _audācēs_."
+      ],
+      [
+        "Fortūnam audācēs iuvat.",
+        "The subject is nominative: _fortūna_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.09",
+    "review": "unreviewed",
+    "en": "We learn not for school but for life.",
+    "la": "Nōn scholae, sed vītae discimus.",
+    "fill": "discimus",
+    "skills": [
+      "saying",
+      "case.dat.indirect"
+    ],
+    "tag": "Seneca (adapted)",
+    "explain": "_scholae_ and _vītae_ are datives: “for school, for life”. _nōn … sed_ = not … but. _discimus_ is “we learn”.",
+    "distractors": [
+      [
+        "Nōn scholam, sed vītam discimus.",
+        "“For” (the purpose or beneficiary) is the dative: _scholae_ and _vītae_."
+      ],
+      [
+        "Nōn scholae, sed vītae discō.",
+        "_discō_ is “I learn”. For “we”: _discimus_."
+      ],
+      [
+        "Nōn scholae, sed vītae discunt.",
+        "_discunt_ is “they learn”. For “we”: _discimus_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.10",
+    "review": "unreviewed",
+    "en": "If you want peace, prepare for war.",
+    "la": "Sī vīs pācem, parā bellum.",
+    "fill": "parā",
+    "skills": [
+      "saying",
+      "imp.2sg",
+      "case.acc.obj"
+    ],
+    "tag": "sī vīs pācem",
+    "explain": "_sī_ = if, _vīs_ = you want. _pācem_ is the accusative of _pāx_ (the thing wanted). _parā_ is the command to one person.",
+    "distractors": [
+      [
+        "Sī vīs pāx, parā bellum.",
+        "_vīs_ takes an object: the accusative _pācem_."
+      ],
+      [
+        "Sī vīs pācem, parō bellum.",
+        "_parō_ is “I prepare”. The command is _parā_."
+      ],
+      [
+        "Sī vīs pācem, parāte bellum.",
+        "_parāte_ is to several people. To one person: _parā_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.11",
+    "review": "unreviewed",
+    "en": "Divide and rule.",
+    "la": "Dīvide et imperā.",
+    "fill": "imperā",
+    "skills": [
+      "saying",
+      "imp.2sg"
+    ],
+    "tag": "dīvide et imperā",
+    "explain": "Two commands to one person: _dīvide_ (from _dīvidō_) and _imperā_ (from _imperō_). Third-conjugation commands end in _-e_; first-conjugation ones in _-ā_.",
+    "distractors": [
+      [
+        "Dīvidit et imperat.",
+        "These are “he divides and rules”. The saying is a command: _dīvide et imperā_."
+      ],
+      [
+        "Dīvidite et imperāte.",
+        "These are for several people. To one person: _dīvide et imperā_."
+      ],
+      [
+        "Dīvidō et imperō.",
+        "These are “I divide and rule”. The saying is a command: _dīvide et imperā_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.8.12",
+    "review": "unreviewed",
+    "en": "A healthy mind in a healthy body.",
+    "la": "Mēns sāna in corpore sānō.",
+    "fill": "sānō",
+    "skills": [
+      "saying",
+      "adj.agree.gender",
+      "prep.in.abl"
+    ],
+    "tag": "mēns sāna in corpore sānō",
+    "explain": "_mēns_ is feminine, so _sāna_. _corpus_ is neuter and here ablative after _in_: _corpore_, so the adjective is _sānō_ too.",
+    "distractors": [
+      [
+        "Mēns sāna in corpus sānum.",
+        "_in_ meaning “in” takes the ablative: _corpore sānō_."
+      ],
+      [
+        "Mēns sānus in corpore sānō.",
+        "_mēns_ is feminine: _sāna_."
+      ],
+      [
+        "Mēns sāna in corpore sānum.",
+        "The adjective must match _corpore_ (ablative): _sānō_."
+      ]
+    ]
+  }
+]

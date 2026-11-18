@@ -55,6 +55,30 @@
       "blurb": "Numbers one to ten with plural nouns",
       "intro": "Numbers from four to ten never change: _quattuor, quīnque, sex, septem, octō, novem, decem_. Two and three do change: _duo, duae, duo_ (two) and _trēs, trēs, tria_ (three) match the gender of what is counted. After a number, the noun stays in the case the sentence needs: _trēs puerī in hortō sunt_ (three boys are in the garden). _quot?_ asks 'how many?'.",
       "generated": true
+    },
+    {
+      "id": "8",
+      "file": "u8.json",
+      "title": "Counting and time",
+      "blurb": "One, eleven to twenty, and telling the hour",
+      "intro": "_ūnus, ūna, ūnum_ (one) is declined like an adjective: _ūnus puer_, _ūna puella_. The numbers eleven to twenty never change, like four to ten: _ūndecim, duodecim, trēdecim_ and on up to _vīgintī_ (twenty). To ask the time, say _Quota hōra est?_ (literally “what number hour is it?”) and answer with an ordinal number, which agrees with _hōra_: _Hōra tertia est_ (it is the third hour). To say AT an hour, put _hōra_ and the ordinal in the ablative: _hōrā tertiā_.",
+      "generated": true
+    },
+    {
+      "id": "9",
+      "file": "u9.json",
+      "title": "Whose is it?",
+      "blurb": "The genitive: of the boy, of the boys",
+      "intro": "The genitive case says who owns something or who is related to someone. It is the “'s” of English: _liber puerī_ (the boy's book), _liber puerōrum_ (the boys' book), _fīlia Mārcī_ (Marcus's daughter). First-declension genitive: _-ae_ (singular), _-ārum_ (plural). Second declension: _-ī_ and _-ōrum_. Third declension: _-is_ and _-um_. _Cuius?_ asks “whose?”.",
+      "generated": true
+    },
+    {
+      "id": "10",
+      "file": "u10.json",
+      "title": "Giving and telling",
+      "blurb": "The dative: to whom?",
+      "intro": "The dative case marks the person who receives something, the indirect object, “to” or “for”: _pater fīliō librum dat_ (the father gives a book to the son). Endings: first declension _-ae_ / _-īs_, second _-ō_ / _-īs_, third _-ī_ / _-ibus_. The pronouns have their own forms: _mihi_ (to me), _tibi_ (to you), _nōbīs_ (to us), _vōbīs_ (to you all). _Cui?_ asks “to whom?”.",
+      "generated": true
     }
   ]
 }

@@ -169,6 +169,7 @@ function poolFor(slot, tpl, infos, picks, { ignoreFits = false } = {}) {
     if (w.notIds && w.notIds.includes(e.id)) return false;
     if (w.mass && !e.en?.mass) return false;
     if (w.hasObj && !(e.obj || []).length) return false;
+    if (w.dat && !e.dat) return false;
     if (w.noObj && (e.obj || []).length) return false;
     if (e.forms[key] === undefined || !formOk(e, key)) return false;
     if (slot.pos === 'verb' && !e.en && !e.gloss) return false;
@@ -423,22 +424,30 @@ function interleave(lists) {
   return out;
 }
 
-export async function generateUnit(packId, gen, otherItems) {
+/**
+ * Build one unit. `kept` are sentences already shipped from an earlier run: they are never changed or dropped
+ * (so saved progress stays valid), and templates only generate the sentences still missing to reach their `n`.
+ */
+export async function generateUnit(packId, gen, otherItems, kept = []) {
+  const laOf = (i) => normLoose(i.la ?? i.chunks?.map((c) => (Array.isArray(c) ? c[0] : c)).join(' ') + (i.end ?? '.')) + '|' + (i.q ? normLoose(i.q) : '');
   const ctx = {
-    seenLa: new Set(otherItems.map((i) => normLoose(i.la ?? i.chunks?.map((c) => (Array.isArray(c) ? c[0] : c)).join(' ')) + '|' + (i.q ? normLoose(i.q) : ''))),
-    seenEn: new Set(otherItems.map((i) => i.en.toLowerCase())),
+    seenLa: new Set([...otherItems, ...kept].map(laOf)),
+    seenEn: new Set([...otherItems, ...kept].map((i) => i.en.toLowerCase())),
   };
-  const lists = gen.templates.map((tpl) => generateTemplate(tpl, ctx));
-  const items = interleave(lists);
-  const usedIds = new Set();
-  items.forEach((it) => {
+  const tplIds = new Set(gen.templates.map((t) => t.id));
+  const keep = kept.filter((i) => tplIds.has(i.gen));
+  const have = (id) => keep.filter((i) => i.gen === id).length;
+  const lists = gen.templates.map((tpl) => (tpl.n - have(tpl.id) > 0 ? generateTemplate({ ...tpl, n: tpl.n - have(tpl.id) }, ctx) : []));
+  const fresh = interleave(lists);
+  const usedIds = new Set(keep.map((i) => i.id));
+  fresh.forEach((it) => {
     let h = hash(normLoose(it._la) + (it.q ? normLoose(it.q) : '')).toString(36).padStart(6, '0').slice(0, 6);
-    while (usedIds.has(h)) h = hash(h + 'x').toString(36).slice(0, 6);
-    usedIds.add(h);
+    while (usedIds.has(`${packId}.${gen.unit.id}.${h}`)) h = hash(h + 'x').toString(36).slice(0, 6);
     it.id = `${packId}.${gen.unit.id}.${h}`;
+    usedIds.add(it.id);
     delete it._la;
   });
-  return items;
+  return [...keep, ...fresh];
 }
 
 // ---------- command line ----------
@@ -474,12 +483,14 @@ async function main() {
         }
         return;
       }
-      const items = await generateUnit(packId, gen, others);
+      let kept = [];
+      if (!args.includes('--fresh')) kept = await readUnitItems(unitFile);
+      const items = await generateUnit(packId, gen, others, kept);
       await writeFile(path.join(ROOT, 'content', packId, unitFile), '[\n' + items.map((i) => '  ' + JSON.stringify(i)).join(',\n') + '\n]\n');
       const entry = { id: gen.unit.id, file: unitFile, title: gen.unit.title, blurb: gen.unit.blurb, intro: gen.unit.intro, generated: true };
       const at = pack.units.findIndex((u) => u.id === gen.unit.id);
       if (at >= 0) pack.units[at] = entry; else pack.units.push(entry);
-      console.log(`${packId}.${gen.unit.id} ${gen.unit.title}: ${items.length} sentences from ${gen.templates.length} templates`);
+      console.log(`${packId}.${gen.unit.id} ${gen.unit.title}: ${items.length} sentences (${items.length - kept.filter((k) => gen.templates.some((t) => t.id === k.gen)).length} new)`);
       total += items.length;
     }
     // units are taught in numeric order, whatever order the files were read in

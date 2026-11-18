@@ -8,7 +8,7 @@
   "templates": [
     {
       "id": "cmd-you",
-      "n": 12,
+      "n": 26,
       "skills": [
         "imp.2sg",
         "case.acc.obj"
@@ -67,7 +67,7 @@
     },
     {
       "id": "cmd-name",
-      "n": 12,
+      "n": 24,
       "skills": [
         "imp.2sg",
         "case.voc",
@@ -141,7 +141,7 @@
     },
     {
       "id": "cmd-all",
-      "n": 10,
+      "n": 22,
       "skills": [
         "imp.2pl",
         "case.acc.obj"
@@ -200,7 +200,7 @@
     },
     {
       "id": "dont",
-      "n": 10,
+      "n": 20,
       "skills": [
         "imp.2sg",
         "volo.inf"

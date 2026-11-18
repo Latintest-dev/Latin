@@ -77,6 +77,14 @@
       "blurb": "The imperfect: used to, was doing",
       "intro": "The imperfect tense describes what used to happen or was going on: -bam, -bās, -bat, -bāmus, -bātis, -bant (_amābam_, _habēbam_) or -ēbam, -ēbās… for -ere and -īre verbs (_edēbam_, _audiēbam_). Use it for habits (_cotīdiē_ = every day, _saepe_ = often) and for scenes you are describing: _puer pānem edēbat_ (the boy was eating bread). Use the perfect for a single finished event, the imperfect for a background or a habit.",
       "generated": true
+    },
+    {
+      "id": "11",
+      "file": "u11.json",
+      "title": "More verbs",
+      "blurb": "dīcō, mittō, dūcō, doceō, rogō, inveniō and friends",
+      "intro": "Time to widen your verb list. Some of these follow patterns you know (_iuvō, rogō, imperō_ are like _amō_; _doceō, respondeō, timeō_ are like _videō_), and some are third conjugation like _legō_: _dīcō, mittō, dūcō, quaerō, discō, vincō, dīvidō_. Remember the irregular commands _dīc!_ and _dūc!_, with no final -e.",
+      "generated": true
     }
   ]
 }

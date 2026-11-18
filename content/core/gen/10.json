@@ -1,0 +1,242 @@
+{
+  "unit": {
+    "id": "10",
+    "title": "Giving and telling",
+    "blurb": "The dative: to whom?",
+    "intro": "The dative case marks the person who receives something, the indirect object, “to” or “for”: _pater fīliō librum dat_ (the father gives a book to the son). Endings: first declension _-ae_ / _-īs_, second _-ō_ / _-īs_, third _-ī_ / _-ibus_. The pronouns have their own forms: _mihi_ (to me), _tibi_ (to you), _nōbīs_ (to us), _vōbīs_ (to you all). _Cui?_ asks “to whom?”."
+  },
+  "templates": [
+    {
+      "id": "give-to",
+      "n": 26,
+      "skills": [
+        "case.dat.indirect",
+        "case.acc.obj",
+        "verb.person"
+      ],
+      "tag": "subject, recipient (dative), object, verb",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "rn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "dat": true
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "r": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "differ": "s",
+          "form": "dat.{rn}",
+          "foils": [
+            "nom.{rn}",
+            "acc.{rn}",
+            "gen.{rn}"
+          ]
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.sg"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{r}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o:a} to {r}.",
+      "fill": [
+        "r",
+        "o",
+        "v"
+      ],
+      "explain": "_{r}_ is {r.label}: the person who receives. _{o}_ is the accusative object (the thing given), and _{v}_ agrees with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "r": "it is the person who receives the thing (the indirect object, “to …”), so it must be dative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "give-me",
+      "n": 20,
+      "skills": [
+        "case.dat.indirect",
+        "case.acc.obj",
+        "verb.person"
+      ],
+      "tag": "mihi / tibi / nōbīs / vōbīs",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "dat": true
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "r": {
+          "choice": [
+            {
+              "la": "mihi",
+              "en": "me"
+            },
+            {
+              "la": "tibi",
+              "en": "you"
+            },
+            {
+              "la": "nōbīs",
+              "en": "us"
+            },
+            {
+              "la": "vōbīs",
+              "en": "you all"
+            }
+          ]
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.sg"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{r}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {r.en} {o:a}.",
+      "fill": [
+        "r",
+        "o",
+        "v"
+      ],
+      "explain": "_{r}_ is the dative of the pronoun: “to {r.en}”. _{o}_ is the object being given, and _{v}_ agrees with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "to-whom",
+      "n": 12,
+      "skills": [
+        "case.dat.indirect",
+        "quest.words",
+        "qa.reply"
+      ],
+      "tag": "Cui …? and the answer",
+      "subject": "s",
+      "verb": "v",
+      "q": "Cui {s} {o} {v}?",
+      "enQ": "To whom does {s} {v:base} {o:a}?",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "dat": true
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "r": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "differ": "s",
+          "form": "dat.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg",
+            "gen.sg"
+          ]
+        },
+        "o": {
+          "pos": "noun",
+          "fits": "v",
+          "form": "acc.sg"
+        }
+      },
+      "chunks": [
+        "{s}",
+        "{r}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o:a} to {r}.",
+      "fill": [
+        "r"
+      ],
+      "explain": "_cui?_ asks “to whom?”, so the answer is a dative: _{r}_ ({r.label}).",
+      "roles": {
+        "r": "it is the person who receives the thing (the indirect object, “to …”), so it must be dative"
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "unit": {
+    "id": "8",
+    "title": "Counting and time",
+    "blurb": "One, eleven to twenty, and telling the hour",
+    "intro": "_ūnus, ūna, ūnum_ (one) is declined like an adjective: _ūnus puer_, _ūna puella_. The numbers eleven to twenty never change, like four to ten: _ūndecim, duodecim, trēdecim_ and on up to _vīgintī_ (twenty). To ask the time, say _Quota hōra est?_ (literally “what number hour is it?”) and answer with an ordinal number, which agrees with _hōra_: _Hōra tertia est_ (it is the third hour). To say AT an hour, put _hōra_ and the ordinal in the ablative: _hōrā tertiā_."
+  },
+  "templates": [
+    {
+      "id": "one",
+      "n": 14,
+      "skills": [
+        "num.cardinal",
+        "adj.agree.gender",
+        "prep.in.abl"
+      ],
+      "tag": "ūnus (one)",
+      "subject": "s",
+      "slots": {
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person",
+              "animal",
+              "wild"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "nom.sg"
+        },
+        "n": {
+          "pos": "adj",
+          "where": {
+            "ids": [
+              "unus"
+            ]
+          },
+          "form": "nom.sg.{s.gender}",
+          "foils": [
+            "nom.sg.m",
+            "nom.sg.f",
+            "nom.sg.n"
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "land"
+            ],
+            "notTags": [
+              "name"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{n} {s}",
+        "in {pl}",
+        "est"
+      ],
+      "en": "There is one {s:bare} in {pl}.",
+      "fill": [
+        "n",
+        "s",
+        "pl"
+      ],
+      "explain": "_{n}_ is the form of _ūnus_ that matches _{s}_ ({s.gender}): {n.label}. The place goes after _in_ in the ablative: _in {pl}_.",
+      "roles": {
+        "n": "_ūnus_ must match the gender of the noun it counts (_{s}_)",
+        "pl": "after _in_ (“in”) the place goes in the ablative"
+      }
+    },
+    {
+      "id": "what-hour",
+      "n": 10,
+      "skills": [
+        "time.hours",
+        "quest.words",
+        "qa.reply"
+      ],
+      "tag": "Quota hōra est? and the answer",
+      "q": "Quota hōra est?",
+      "enQ": "What time is it?",
+      "slots": {
+        "o": {
+          "pos": "adj",
+          "where": {
+            "tags": [
+              "ordinal"
+            ]
+          },
+          "form": "nom.sg.f",
+          "foils": [
+            "nom.sg.m",
+            "nom.sg.n",
+            "abl.sg.f"
+          ]
+        }
+      },
+      "chunks": [
+        "hōra",
+        "{o}",
+        "est"
+      ],
+      "en": "It is the {o.en} hour.",
+      "fill": [
+        "o"
+      ],
+      "explain": "_hōra_ is feminine, so the ordinal agrees with it: _{o}_ ({o.label}). Latin counts the hour: _hōra {o}_ = the {o.en} hour.",
+      "roles": {
+        "o": "it must agree with _hōra_ (feminine singular)"
+      }
+    },
+    {
+      "id": "at-hour",
+      "n": 16,
+      "skills": [
+        "time.hours",
+        "case.abl.place",
+        "prep.in.abl"
+      ],
+      "tag": "hōrā + ordinal (at the … hour)",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "tags": [
+              "loc"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ]
+          },
+          "form": "nom.{sn}"
+        },
+        "o": {
+          "pos": "adj",
+          "where": {
+            "tags": [
+              "ordinal"
+            ]
+          },
+          "form": "abl.sg.f",
+          "foils": [
+            "nom.sg.f",
+            "acc.sg.f",
+            "abl.sg.m"
+          ]
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "place"
+            ],
+            "notIds": [
+              "insula"
+            ]
+          },
+          "fits": "v",
+          "fitsOn": "loc",
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "hōrā {o}",
+        "{s}",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "At the {o.en} hour {s} {v} in {pl}.",
+      "fill": [
+        "o",
+        "pl",
+        "v"
+      ],
+      "explain": "“At” a time is the ablative: _hōrā {o}_ = at the {o.en} hour. _in {pl}_ says where, and _{v}_ agrees with _{s}_ ({s.label}).",
+      "roles": {
+        "s": "it is the subject of the sentence, so it must be nominative",
+        "o": "saying “at” an hour uses the ablative, and the ordinal must agree with _hōrā_",
+        "pl": "after _in_ (“in”) the place goes in the ablative"
+      }
+    }
+  ]
+}

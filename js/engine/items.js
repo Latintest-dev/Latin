@@ -88,6 +88,18 @@ export function promptText(item) {
   return item.q || item.sit || item.en;
 }
 
+/**
+ * For a Latin question, the answer is usually a fact the question cannot tell you ("What are you eating?"
+ * has no single right reply), so the learner is told what to say in English and puts it into Latin.
+ * `item.cue` wins; otherwise it is the second quoted part of the English gloss: “Q” “A”.
+ */
+export function cueText(item) {
+  if (!item.q) return null;
+  if (item.cue) return item.cue;
+  const m = /“[^”]*”\s*“([^”]*)”/.exec(item.en || '');
+  return m ? m[1] : null;
+}
+
 /** Can this item be asked as "what does this Latin mean?" */
 export function allowsL2E(item) {
   return !item.q;

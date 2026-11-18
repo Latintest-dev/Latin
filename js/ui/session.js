@@ -5,7 +5,7 @@ import { latin, rich } from './format.js';
 import { buildQueue } from '../core/scheduler.js';
 import { SessionRunner } from '../core/session.js';
 import { checkText } from '../engine/checker.js';
-import { blankSentence, promptKind, promptText, allowsL2E } from '../engine/items.js';
+import { blankSentence, promptKind, promptText, allowsL2E, cueText } from '../engine/items.js';
 
 function shuffle(arr, rng = Math.random) {
   const a = [...arr];
@@ -106,8 +106,9 @@ export function renderSession(root, app, params) {
   const chips = (item) => h('div', { class: 'chips' }, chip(item.tag), item.modern ? h('span', { class: 'chip modern' }, 'modern coinage') : null);
   const promptNode = (item) => {
     const kind = promptKind(item);
+    const cue = cueText(item);
     return kind === 'question'
-      ? h('div', { class: 'prompt la' }, latin(item.q, st()))
+      ? h('div', { class: 'prompt-wrap' }, h('div', { class: 'prompt la' }, latin(item.q, st())), cue ? h('div', { class: 'cue' }, 'Reply: ', h('em', {}, cue)) : null)
       : h('div', { class: `prompt${kind === 'situation' ? ' situation' : ''}` }, promptText(item));
   };
   const EYEBROW = {

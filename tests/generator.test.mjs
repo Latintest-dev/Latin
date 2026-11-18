@@ -130,3 +130,31 @@ test('units are listed in numeric order, so the unlock chain follows the lessons
     assert.deepEqual(ids, [...ids].sort((a, b) => a - b), `${pack.id}: ${ids}`);
   }
 });
+
+test('new vocabulary: ūnus, irregular imperatives, dative flags, sayings words', () => {
+  assert.equal(forms('unus')['gen.sg.m'], 'ūnīus');
+  assert.equal(forms('unus')['dat.sg.f'], 'ūnī');
+  assert.equal(forms('dico')['imp.act.2sg'], 'dīc');
+  assert.equal(forms('duco')['imp.act.2sg'], 'dūc');
+  assert.equal(forms('dies')['acc.sg'], 'diem');
+  assert.equal(forms('audax')['acc.sg.m'], 'audācem');
+  for (const id of ['do', 'mitto', 'monstro', 'narro', 'vendo', 'lego']) assert.ok(lexicon.find((e) => e.id === id).dat, `${id} takes a dative`);
+});
+
+test('regeneration is append-only: shipped sentences and their ids are kept; raising n only adds', async () => {
+  const unitFile = path.join(ROOT, 'content/core/u9.json');
+  const shipped = JSON.parse(await readFile(unitFile, 'utf8'));
+  const items = shipped.items ?? shipped;
+  const gen = JSON.parse(await readFile(path.join(ROOT, 'content/core/gen/9.json'), 'utf8'));
+  const others = content.packs.flatMap((p) => p.units.flatMap((u) => (p.id === 'core' && u.id === '9' ? [] : u.items ?? [])));
+  // same templates: nothing changes
+  const again = await generateUnit('core', gen, others, items);
+  assert.deepEqual(again.map((i) => i.id), items.map((i) => i.id));
+  // more sentences wanted: the old ones come first, unchanged, and the extras are new
+  const bigger = { ...gen, templates: gen.templates.map((t) => ({ ...t, n: t.n + 4 })) };
+  const more = await generateUnit('core', bigger, others, items);
+  assert.ok(more.length > items.length);
+  const ids = new Set(more.map((i) => i.id));
+  assert.equal(ids.size, more.length, 'ids stay unique');
+  for (const old of items) assert.ok(ids.has(old.id), `${old.id} kept`);
+});

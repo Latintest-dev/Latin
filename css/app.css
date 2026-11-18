@@ -206,3 +206,9 @@ details summary { cursor: pointer; color: var(--muted); font-size: 15px; margin-
   padding: 10px 0; border-radius: 10px; font-weight: 600; font-size: 15px; color: var(--muted);
 }
 #nav a.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
+/* English cue under a Latin question: what you are replying */
+.prompt-wrap { margin: 4px 0 12px; }
+.prompt-wrap .prompt { margin-bottom: 6px; }
+.cue { font: 15px/1.35 var(--sans); color: var(--muted, #6b6b6b); }
+.cue em { font-style: italic; color: inherit; }

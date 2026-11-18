@@ -1,0 +1,291 @@
+[
+  {
+    "id": "roman.7.01",
+    "review": "unreviewed",
+    "en": "Hello, guest! Come in.",
+    "la": "Salvē, hospes! Intrā.",
+    "fill": "intrā",
+    "skills": [
+      "hospitality",
+      "imp.2sg"
+    ],
+    "tag": "welcome a guest",
+    "explain": "To one person: _Salvē_ and _intrā_. Both are commands to a single person. A guest (_hospes_) was sacred to a Roman, and the host welcomed him warmly.",
+    "distractors": [
+      [
+        "Salvēte, hospes! Intrā.",
+        "_salvēte_ is to several people. One guest: _salvē_."
+      ],
+      [
+        "Salvē, hospes! Intrāte.",
+        "_intrāte_ is to several people. One guest: _intrā_."
+      ],
+      [
+        "Salvē, hospitem! Intrā.",
+        "When you speak to someone, use the vocative: _hospes_, not the accusative _hospitem_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.02",
+    "review": "unreviewed",
+    "en": "Sit down, please.",
+    "la": "Sedē, quaesō.",
+    "fill": "sedē",
+    "skills": [
+      "hospitality",
+      "imp.2sg"
+    ],
+    "tag": "ask a guest to sit",
+    "explain": "_sedē_ is the command to one person (from _sedeō_), and _quaesō_ means “please” (literally “I ask”).",
+    "distractors": [
+      [
+        "Sedēte, quaesō.",
+        "_sedēte_ is to several people. To one person: _sedē_."
+      ],
+      [
+        "Sedeō, quaesō.",
+        "_sedeō_ is “I sit”. A command is _sedē_."
+      ],
+      [
+        "Sedet, quaesō.",
+        "_sedet_ is “he sits”. A command to one person is _sedē_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.03",
+    "review": "unreviewed",
+    "en": "Drink some wine, friend!",
+    "la": "Vīnum bibe, amīce!",
+    "fill": "bibe",
+    "skills": [
+      "hospitality",
+      "imp.2sg",
+      "case.acc.obj"
+    ],
+    "tag": "offer wine",
+    "explain": "_bibe_ is the command to one person from _bibō_. _vīnum_ is the object, accusative. _amīce_ is the vocative of _amīcus_.",
+    "distractors": [
+      [
+        "Vīnum bibite, amīce!",
+        "_bibite_ is to several people. To one friend: _bibe_."
+      ],
+      [
+        "Vīna bibe, amīce!",
+        "_vīna_ is plural (“wines”). For “some wine”: _vīnum_."
+      ],
+      [
+        "Vīnum bibit, amīce!",
+        "_bibit_ is “he drinks”. A command to one person is _bibe_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.04",
+    "review": "unreviewed",
+    "en": "I am preparing dinner for you.",
+    "chunks": [
+      "cēnam",
+      "tibi",
+      "parō"
+    ],
+    "fill": "tibi",
+    "skills": [
+      "hospitality",
+      "case.dat.indirect"
+    ],
+    "tag": "dinner for you",
+    "explain": "_tibi_ is the dative of _tū_: “to you, for you”. _cēnam_ is the object, accusative.",
+    "distractors": [
+      [
+        "Cēnam tē parō.",
+        "_tē_ is “you” as an object. “For you” is the dative: _tibi_."
+      ],
+      [
+        "Cēna tibi parō.",
+        "_cēna_ is nominative. The thing you prepare is accusative: _cēnam_."
+      ],
+      [
+        "Cēnam tibi parās.",
+        "_parās_ is “you prepare”. For “I”: _parō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.05",
+    "review": "unreviewed",
+    "q": "Sitisne?",
+    "en": "“Are you thirsty?” “Yes, I am thirsty.”",
+    "la": "Etiam, sitiō.",
+    "fill": "sitiō",
+    "skills": [
+      "qa.reply",
+      "hospitality"
+    ],
+    "tag": "yes, I am thirsty",
+    "explain": "_etiam_ means “yes” (literally “even so”). The question has _-s_ (you), so the answer has _-ō_ (I): _sitiō_.",
+    "distractors": [
+      [
+        "Etiam, sitis.",
+        "_sitis_ is “you are thirsty”. About yourself: _sitiō_."
+      ],
+      [
+        "Etiam, sitit.",
+        "_sitit_ is “he is thirsty”. About yourself: _sitiō_."
+      ],
+      [
+        "Minimē, sitiō.",
+        "_minimē_ means “no”, but the answer here is yes: _etiam_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.06",
+    "review": "unreviewed",
+    "en": "We thank you all, friends!",
+    "chunks": [
+      "grātiās",
+      "vōbīs",
+      "agimus",
+      "amīcī"
+    ],
+    "end": "!",
+    "fill": "vōbīs",
+    "skills": [
+      "hospitality",
+      "case.dat.indirect",
+      "case.voc"
+    ],
+    "tag": "thank everyone",
+    "explain": "Romans said “we give thanks to you”: _grātiās vōbīs agimus_. _vōbīs_ is the dative of “you all”, and _amīcī_ is the vocative plural.",
+    "distractors": [
+      [
+        "Grātiās tibi agimus, amīcī!",
+        "_tibi_ is “to you” (one person). To several people: _vōbīs_."
+      ],
+      [
+        "Grātiās vōbīs agō, amīcī!",
+        "_agō_ is “I give”. For “we”: _agimus_."
+      ],
+      [
+        "Grātiās vōbīs agimus, amīcus!",
+        "When you speak to several people, use the vocative plural: _amīcī_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.07",
+    "review": "unreviewed",
+    "q": "Visne bibere?",
+    "en": "“Do you want to drink?” “Gladly!”",
+    "la": "Libenter!",
+    "fill": "libenter",
+    "skills": [
+      "qa.reply",
+      "hospitality"
+    ],
+    "tag": "gladly!",
+    "explain": "_vīs_ means “you want”, and _-ne_ makes it a question. _libenter_ is an adverb (“gladly”), so it never changes its ending.",
+    "distractors": [
+      [
+        "Mox!",
+        "_mox_ means “soon”. “Gladly” is _libenter_."
+      ],
+      [
+        "Lente!",
+        "_lentē_ means “slowly”. “Gladly” is _libenter_."
+      ],
+      [
+        "Minimē!",
+        "_minimē_ means “not at all”. The answer is yes: _libenter_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.08",
+    "review": "unreviewed",
+    "en": "Hello, friends! Come in.",
+    "la": "Salvēte, amīcī! Intrāte.",
+    "fill": "intrāte",
+    "skills": [
+      "hospitality",
+      "imp.2pl"
+    ],
+    "tag": "welcome several friends",
+    "explain": "To several people: _salvēte_ and _intrāte_. The ending _-te_ marks a command to a group.",
+    "distractors": [
+      [
+        "Salvē, amīcī! Intrāte.",
+        "_salvē_ is to one person. To several: _salvēte_."
+      ],
+      [
+        "Salvēte, amīcī! Intrā.",
+        "_intrā_ is to one person. To several: _intrāte_."
+      ],
+      [
+        "Salvēte, amīcus! Intrāte.",
+        "Speaking to several people: vocative plural _amīcī_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.09",
+    "review": "unreviewed",
+    "en": "Welcome! (literally, “You have come well!”)",
+    "la": "Bene vēnistī!",
+    "fill": "vēnistī",
+    "skills": [
+      "hospitality",
+      "verb.perf.person"
+    ],
+    "tag": "welcome (you came well)",
+    "explain": "Romans said _Bene vēnistī!_ (“You have come well”) to welcome someone, a perfect tense where English uses “welcome”. _vēnistī_ is the perfect of _veniō_, 2nd person singular.",
+    "distractors": [
+      [
+        "Bene vēnit!",
+        "_vēnit_ is “he came”. To one person: _vēnistī_."
+      ],
+      [
+        "Bene vēnī!",
+        "_vēnī_ is “I came”. To one person: _vēnistī_."
+      ],
+      [
+        "Bene vēnistis!",
+        "_vēnistis_ is to several people. To one person: _vēnistī_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.7.10",
+    "review": "unreviewed",
+    "en": "I give you wine and bread.",
+    "chunks": [
+      "vīnum et pānem",
+      "tibi",
+      "dō"
+    ],
+    "fill": "tibi",
+    "skills": [
+      "hospitality",
+      "case.dat.indirect",
+      "case.acc.obj"
+    ],
+    "tag": "wine and bread for you",
+    "explain": "_tibi_ is the dative of _tū_: the person who receives. _vīnum et pānem_ are accusative: the things given.",
+    "distractors": [
+      [
+        "Vīnum et pānem tē dō.",
+        "_tē_ is “you” as an object. The person who receives is dative: _tibi_."
+      ],
+      [
+        "Vīnum et pānis tibi dō.",
+        "_pānis_ is nominative. The thing given is accusative: _pānem_."
+      ],
+      [
+        "Vīnum et pānem tibi dat.",
+        "_dat_ is “he gives”. For “I”: _dō_."
+      ]
+    ]
+  }
+]

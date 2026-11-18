@@ -39,6 +39,27 @@
       "blurb": "mihi placet / mihi placent",
       "intro": "Latin does not say 'I like bread'. It says 'bread is pleasing to me': _mihi placet pānis_. The thing you like is the subject (nominative), and the person is in the dative (_mihi_ = to me, _tibi_ = to you). So the verb agrees with the thing: _placet_ for one (or something uncountable), _placent_ for several: _mihi placent ōva_ (I like eggs).",
       "generated": true
+    },
+    {
+      "id": "6",
+      "file": "u6.json",
+      "title": "The Roman day and meals",
+      "blurb": "When Romans ate, washed, worked and slept",
+      "intro": "A Roman day followed the sun. Romans split daylight into twelve hours (_hōrae_), counted from sunrise, so the hours were longer in summer. They ate a light _ientāculum_ (breakfast) in the morning, a quick _prandium_ at noon, and the main meal, the _cēna_, in the afternoon or evening, often after a visit to the _thermae_ (the baths). To say AT an hour use the ablative: _hōrā quārtā_. _ante_ (before) and _post_ (after) take the accusative: _ante cēnam_, _post cēnam_."
+    },
+    {
+      "id": "7",
+      "file": "u7.json",
+      "title": "Hospitality and manners",
+      "blurb": "Welcoming guests, offering food and drink, saying thanks",
+      "intro": "Hospitality (_hospitium_) mattered deeply in Roman life: a guest was almost sacred. You welcome one person with commands in the singular (_Intrā, sedē, bibe_) and several people with the plural (_Intrāte, sedēte, bibite_). _quaesō_ means “please”. When you speak directly to someone, their name or title goes in the vocative: _amīce_ (to one friend), _amīcī_ (to several)."
+    },
+    {
+      "id": "8",
+      "file": "u8.json",
+      "title": "Famous sayings",
+      "blurb": "Twelve Latin sayings still used today, and the grammar inside them",
+      "intro": "Many Latin phrases are still alive in English, law and mottos. They make excellent grammar practice because they are short and the grammar is exactly what you have been learning: commands (_carpe_, _cavē_, _dīvide_), the perfect tense (_vēnī, vīdī, vīcī_), the accusative object, and adjectives that agree (_ars longa, vīta brevis_). In this unit, translate each saying and spot the grammar."
     }
   ]
 }

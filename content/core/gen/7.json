@@ -8,7 +8,7 @@
   "templates": [
     {
       "id": "count",
-      "n": 16,
+      "n": 34,
       "skills": [
         "num.cardinal",
         "noun.nom.pl",
@@ -81,7 +81,7 @@
     },
     {
       "id": "how-many",
-      "n": 10,
+      "n": 22,
       "skills": [
         "num.cardinal",
         "quest.words",
