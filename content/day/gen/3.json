@@ -4,8 +4,8 @@
     "title": "What I did yesterday",
     "blurb": "Retell yesterday in the past tense",
     "intro": "To tell what you did, use the perfect tense and put _herī_ (yesterday) first. For “I” the ending is always _-ī_: _surrēxī_ (I got up), _lāvī_ (I washed), _ēdī_ (I ate), _vīdī_ (I saw), _iī_ (I went), _dormīvī_ (I slept). The stem changes from verb to verb, so each one is worth learning as a pair: _surgō / surrēxī_.",
-    "narrate": true,
-    "ordered": true
+    "ordered": true,
+    "play": "narrate"
   },
   "templates": [
     {

@@ -1,0 +1,35 @@
+{
+  "id": "talk",
+  "name": "Conversations",
+  "blurb": "Short conversations where you play one side: you see what the other person says, and reply in Latin.",
+  "requires": {
+    "pack": "roman",
+    "unit": "3"
+  },
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Meeting people",
+      "blurb": "A friend, a neighbor, a new acquaintance",
+      "intro": "A conversation is a chain: someone speaks, you answer, they answer you. Each exercise is one turn. You see what the other person says, in Latin, with the earlier lines of the conversation above it, and you put your reply into Latin. The English under the Latin tells you what to say. Handy for keeping a conversation going: _Et tū?_ (And you?) hands the question back. When you have met most of this unit, press **Play it** to run each conversation from its first line.",
+      "play": "dialogue"
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "Shops, streets and invitations",
+      "blurb": "Buying bread, asking the way, dinner at a friend's",
+      "intro": "In shops and on the street you mostly ask for things and follow directions. A lot of it comes from _volō_ + infinitive (_pānem emere volō_, I want to buy bread), the accusative for the thing you want, and _quaesō_ (please). The same few question words (_quid_, _ubi_, _quō_, _quandō_) come back in every conversation, so notice what each one asks for.",
+      "play": "dialogue"
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Home, plans and your Latin",
+      "blurb": "Evening at home, today and tomorrow, talking about Latin",
+      "intro": "At home you talk about how you feel and about what you did and will do. Watch the tense in each answer: _labōrō_ (I work, now), _labōrāvī_ (I worked), _labōrābō_ (I will work). The ending _-ō_ is always “I”, so your answers about yourself nearly always end in _-ō_ or _-ī_ or _-ābō_. The last conversation is the one you will have most: talking about your own Latin.",
+      "play": "dialogue"
+    }
+  ]
+}

@@ -258,5 +258,25 @@
   "talk": {
     "name": "Conversation and repair phrases",
     "pack": "roman"
+  },
+  "swap.person": {
+    "name": "Change it: the person (we, you, they)",
+    "pack": "swap"
+  },
+  "swap.tense": {
+    "name": "Change it: yesterday and tomorrow",
+    "pack": "swap"
+  },
+  "swap.number": {
+    "name": "Change it: one or many",
+    "pack": "swap"
+  },
+  "swap.question": {
+    "name": "Change it: a question, or “not”",
+    "pack": "swap"
+  },
+  "talk.convo": {
+    "name": "Whole conversations",
+    "pack": "talk"
   }
 }

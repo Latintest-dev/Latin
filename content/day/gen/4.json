@@ -4,8 +4,8 @@
     "title": "What I will do tomorrow",
     "blurb": "Plan tomorrow in the future tense",
     "intro": "To say what you will do, use the future tense with _crās_ (tomorrow). For -āre and -ēre verbs the “I” ending is _-bō_: _lavābō_ (I will wash), _vidēbō_ (I will see). For -ere and -īre verbs it is _-am_: _edam_ (I will eat), _dormiam_ (I will sleep). _eō_ is irregular: _ībō_ (I will go).",
-    "narrate": true,
-    "ordered": true
+    "ordered": true,
+    "play": "narrate"
   },
   "templates": [
     {

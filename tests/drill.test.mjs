@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { loadFromDisk } from '../tools/validate.mjs';
 import { createMemoryBackend } from '../js/core/storage.js';
 import { createStore } from '../js/core/store.js';
-import { buildQueue, newItemState, speedLimitMs, SPEED_COUNT, DAY } from '../js/core/scheduler.js';
+import { newItemState, unitUnlocked, summarize, DAY } from '../js/core/scheduler.js';
+import { buildQueue, speedLimitMs, SPEED_COUNT, CHAIN_COUNT, MODES, replayMode } from '../js/core/modes.js';
 import { SessionRunner } from '../js/core/session.js';
 import { dayKey, bump, streak, mergeActivity, today } from '../js/core/activity.js';
 import { mergeData } from '../js/core/transfer.js';
@@ -51,8 +52,8 @@ test('a drill answer (practiceok) counts as practice but never moves the review 
   const store = await mkStore();
   const id = [...content.itemsById.keys()][0];
   store.putItem(id, { ...known, box: 3, due: clock + 8 * DAY, fast: 1 });
-  const runner = new SessionRunner({ queue: [{ itemId: id, lvl: 2, learn: false, kind: 'speed', type: 'write', speed: true }], store, content, now });
-  runner.record({ result: 'practiceok', fast: true, given: 'x', expected: 'x' });
+  const runner = new SessionRunner({ queue: [{ itemId: id, lvl: 2, learn: false, kind: 'speed', mode: 'speed', type: 'write', nosched: true, timed: true }], store, content, now });
+  runner.record({ result: 'correct', fast: true, given: 'x', expected: 'x' });
   const st = store.getItem(id);
   assert.equal(st.box, 3); assert.equal(st.due, clock + 8 * DAY);
   assert.equal(st.fast, 2); assert.equal(st.ok >= 1, true);
@@ -67,7 +68,7 @@ test('speed round: ten known sentences, write level, those answered fast least o
   ids.forEach((id, i) => store.putItem(id, { ...known, fast: i < 20 ? 3 : 0 }));
   const q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'speed' });
   assert.equal(q.length, SPEED_COUNT);
-  assert.ok(q.every((e) => e.speed && e.type === 'write' && !e.learn));
+  assert.ok(q.every((e) => e.mode === 'speed' && e.timed && e.nosched && e.type === 'write' && !e.learn));
   const fastNever = new Set(ids.slice(20));
   assert.ok(q.every((e) => fastNever.has(e.itemId)), 'the ten never-fast sentences are chosen');
   assert.ok(speedLimitMs('Māne surgō.') > 8000);
@@ -85,18 +86,18 @@ test('narrate: the met sentences of a script, in order, without scheduling', asy
   const store = await mkStore();
   const pack = content.packs.find((p) => p.id === 'day');
   const unit = pack.units[0];
-  assert.ok(unit.narrate, 'the morning script is flagged as narratable');
+  assert.equal(unit.play, 'narrate', 'the morning script is flagged as narratable');
   unit.items.slice(0, 5).forEach((it) => store.putItem(it.id, { ...known }));
   const q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'narrate', scope: { packId: 'day', unitId: unit.id } });
   assert.deepEqual(q.map((e) => e.itemId), unit.items.slice(0, 5).map((i) => i.id));
-  assert.ok(q.every((e, i) => e.nosched && e.type === 'write' && e.step === i + 1 && e.of === 5));
+  assert.ok(q.every((e, i) => e.mode === 'narrate' && e.nosched && e.type === 'write' && e.step === i + 1 && e.of === 5));
 });
 
 test('the day scripts keep the order they were written in', () => {
   const pack = content.packs.find((p) => p.id === 'day');
   const firstWords = pack.units[0].items.map((i) => i.la.split(' ')[0].toLowerCase());
   assert.equal(firstWords[0], 'māne');
-  assert.ok(pack.units.every((u) => u.narrate));
+  assert.ok(pack.units.every((u) => u.play === 'narrate'));
   assert.deepEqual(pack.units.map((u) => u.id), ['1', '2', '3', '4']);
 });
 

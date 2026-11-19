@@ -4,8 +4,8 @@
     "title": "My morning",
     "blurb": "Narrate the first half of your day, step by step",
     "intro": "This track teaches you to narrate your day to yourself, out loud, in the first person. In Latin the verb ending says “I”, so you rarely need a separate word: _surgō_ = I get up, _bibō_ = I drink, _lavō_ = I wash. Say each step as you do it in real life. When you have met most of a unit, press **Narrate it** on the Learn page to retell the whole sequence in order and read it back as a paragraph.",
-    "narrate": true,
-    "ordered": true
+    "ordered": true,
+    "play": "narrate"
   },
   "templates": [
     {

@@ -1,0 +1,47 @@
+{
+  "id": "swap",
+  "name": "Change it",
+  "blurb": "Take a sentence you know and change one thing: who does it, when, how many, a question. The quickest way to make endings automatic.",
+  "requires": {
+    "pack": "daily",
+    "unit": "6"
+  },
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Who is doing it?",
+      "blurb": "Take “I” and make it “we”, “you”, “he”, “they”",
+      "intro": "Here you do what language teachers call a pattern drill: take a sentence you know and change one thing. In this unit the one thing is the person. Latin shows who is acting in the verb ending, so the rest of the sentence stays put: _Pānem edō_ (I eat bread) becomes _Pānem edimus_ (we eat bread). The endings: -ō = I, -s = you, -t = he or she, -mus = we, -tis = you all, -nt = they. Each sentence is shown in Latin with an instruction; answer in Latin. When you have met most of the unit, press **Run the drill** to turn the same sentences over again.",
+      "generated": true,
+      "play": "swap"
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "Yesterday and tomorrow",
+      "blurb": "Take what you do now and say it about yesterday or tomorrow",
+      "intro": "Same drill, new change: the time. Start from what you do now and move it. For yesterday, use the perfect tense and put _herī_ first: _Pānem edō_ becomes _Herī pānem ēdī_. For tomorrow, use the future tense and put _crās_ first: _Crās pānem edam_. The stem often changes in the perfect (_edō_ / _ēdī_, _legō_ / _lēgī_), so learn the verbs in pairs. Press **Run the drill** when you have met most of them.",
+      "generated": true,
+      "play": "swap"
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "One or many?",
+      "blurb": "Turn one boy into many boys, one book into many books",
+      "intro": "This drill changes the number. When the subject becomes plural, the verb must follow: _Puer librum legit_ (the boy reads a book) becomes _Puerī librum legunt_ (the boys read a book). When only the object becomes plural, the verb stays as it is: _Puer librōs legit_ (the boy reads books). Remember the plural endings: nominative _-ī_ or _-ae_ or _-ēs_, accusative _-ōs_ or _-ās_ or _-ēs_. Press **Run the drill** when you have met most of them.",
+      "generated": true,
+      "play": "swap"
+    },
+    {
+      "id": "4",
+      "file": "u4.json",
+      "title": "Ask it, or say “not”",
+      "blurb": "Turn a statement into a question, or into “not”",
+      "intro": "Two more changes you will use all the time. To ask a yes/no question, add _-ne_ to the first word: _Edis pānem_ (you eat bread) becomes _Edisne pānem?_ (do you eat bread?). To say “not”, put _nōn_ right before the verb: _Pānem nōn edis_ (you do not eat bread). Press **Run the drill** when you have met most of them.",
+      "generated": true,
+      "play": "swap"
+    }
+  ]
+}

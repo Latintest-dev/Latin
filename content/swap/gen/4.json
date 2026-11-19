@@ -1,0 +1,123 @@
+{
+  "unit": {
+    "id": "4",
+    "title": "Ask it, or say “not”",
+    "blurb": "Turn a statement into a question, or into “not”",
+    "play": "swap",
+    "ordered": true,
+    "intro": "Two more changes you will use all the time. To ask a yes/no question, add _-ne_ to the first word: _Edis pānem_ (you eat bread) becomes _Edisne pānem?_ (do you eat bread?). To say “not”, put _nōn_ right before the verb: _Pānem nōn edis_ (you do not eat bread). Press **Run the drill** when you have met most of them."
+  },
+  "templates": [
+    {
+      "id": "ask",
+      "n": 10,
+      "skills": [
+        "swap.question",
+        "quest.ne",
+        "neg.non"
+      ],
+      "tag": "question or “not”",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "2sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "video",
+              "scribo",
+              "audio",
+              "porto",
+              "emo",
+              "habeo",
+              "paro",
+              "vendo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "notMass": true
+          },
+          "fits": "v",
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "base": {
+        "pn": "2sg"
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "fill": [
+        "v",
+        "o"
+      ],
+      "roles": {
+        "o": "it is the object (the thing acted on), so it stays accusative"
+      },
+      "changes": [
+        {
+          "label": "Make it a question",
+          "chunks": [
+            "{v}ne",
+            "{o}"
+          ],
+          "end": "?",
+          "en": "Do you {v.base} {o:a}?",
+          "explain": "_-ne_ on the first word turns a statement into a yes/no question: _{v}ne_. Nothing else changes.",
+          "foilsExtra": [
+            {
+              "chunks": [
+                "{v}",
+                "{o}"
+              ],
+              "end": "?",
+              "why": "Without _-ne_ this is still a statement. Add _-ne_ to the first word to ask: _{v}ne_."
+            }
+          ]
+        },
+        {
+          "label": "Say you do not",
+          "chunks": [
+            "{o}",
+            "nōn {v}"
+          ],
+          "en": "You do not {v.base} {o:a}.",
+          "explain": "_nōn_ means “not” and goes right before the verb: _nōn {v}_.",
+          "foilsExtra": [
+            {
+              "chunks": [
+                "{o}",
+                "{v} nōn"
+              ],
+              "why": "_nōn_ goes before the verb it negates: _nōn {v}_."
+            },
+            {
+              "chunks": [
+                "{o}",
+                "{v}"
+              ],
+              "why": "That is the sentence you were given, with no “not”. To negate, put _nōn_ before the verb: _nōn {v}_."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

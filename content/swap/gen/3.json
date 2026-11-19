@@ -1,0 +1,123 @@
+{
+  "unit": {
+    "id": "3",
+    "title": "One or many?",
+    "blurb": "Turn one boy into many boys, one book into many books",
+    "play": "swap",
+    "ordered": true,
+    "intro": "This drill changes the number. When the subject becomes plural, the verb must follow: _Puer librum legit_ (the boy reads a book) becomes _Puerī librum legunt_ (the boys read a book). When only the object becomes plural, the verb stays as it is: _Puer librōs legit_ (the boy reads books). Remember the plural endings: nominative _-ī_ or _-ae_ or _-ēs_, accusative _-ōs_ or _-ās_ or _-ēs_. Press **Run the drill** when you have met most of them."
+  },
+  "templates": [
+    {
+      "id": "number",
+      "n": 8,
+      "skills": [
+        "swap.number",
+        "noun.nom.pl",
+        "case.acc.obj"
+      ],
+      "tag": "one or many",
+      "subject": "s",
+      "verb": "v",
+      "slots": {
+        "sn": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "on": {
+          "choice": [
+            "sg",
+            "pl"
+          ]
+        },
+        "s": {
+          "pos": "noun",
+          "where": {
+            "tags": [
+              "person"
+            ],
+            "notMass": true
+          },
+          "form": "nom.{sn}"
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "video",
+              "scribo",
+              "audio",
+              "porto",
+              "emo",
+              "habeo",
+              "paro",
+              "vendo"
+            ]
+          },
+          "form": "pres.ind.act.3{sn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "notMass": true
+          },
+          "fits": "v",
+          "form": "acc.{on}",
+          "foils": [
+            "nom.{on}",
+            "abl.{on}",
+            "gen.{on}"
+          ]
+        }
+      },
+      "base": {
+        "sn": "sg",
+        "on": "sg"
+      },
+      "chunks": [
+        "{s}",
+        "{o}",
+        "{v}"
+      ],
+      "en": "{s} {v} {o:a}.",
+      "fill": [
+        "s",
+        "v",
+        "o"
+      ],
+      "roles": {
+        "s": "it is the subject, so it must be nominative",
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      },
+      "changes": [
+        {
+          "label": "Make the subject plural",
+          "set": {
+            "sn": "pl"
+          },
+          "explain": "A plural subject needs a plural verb: _{s}_ is {s.label}, so the verb is {v.label}: _{v}_. The object _{o}_ stays as it was."
+        },
+        {
+          "label": "Make the object plural",
+          "set": {
+            "on": "pl"
+          },
+          "explain": "Only the object is plural, so the verb stays singular (_{v}_) and the object becomes {o.label}: _{o}_."
+        },
+        {
+          "label": "Make both plural",
+          "set": {
+            "sn": "pl",
+            "on": "pl"
+          },
+          "explain": "Everything is plural: the subject _{s}_ is {s.label}, the verb _{v}_ is {v.label}, and the object _{o}_ is {o.label}."
+        }
+      ]
+    }
+  ]
+}

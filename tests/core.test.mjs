@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { loadFromDisk } from '../tools/validate.mjs';
 import { createMemoryBackend } from '../js/core/storage.js';
 import { createStore } from '../js/core/store.js';
-import { applyResult, newItemState, buildQueue, summarize, unitUnlocked, strength, DAY, countKinds, makeEntry } from '../js/core/scheduler.js';
+import { applyResult, newItemState, summarize, unitUnlocked, strength, DAY, countKinds, makeEntry } from '../js/core/scheduler.js';
+import { buildQueue } from '../js/core/modes.js';
 import { SessionRunner } from '../js/core/session.js';
 import { buildExport, mergeData, validateExport } from '../js/core/transfer.js';
 

@@ -10,7 +10,7 @@
       "blurb": "Narrate the first half of your day, step by step",
       "intro": "This track teaches you to narrate your day to yourself, out loud, in the first person. In Latin the verb ending says “I”, so you rarely need a separate word: _surgō_ = I get up, _bibō_ = I drink, _lavō_ = I wash. Say each step as you do it in real life. When you have met most of a unit, press **Narrate it** on the Learn page to retell the whole sequence in order and read it back as a paragraph.",
       "generated": true,
-      "narrate": true
+      "play": "narrate"
     },
     {
       "id": "2",
@@ -19,7 +19,7 @@
       "blurb": "Narrate the second half of your day",
       "intro": "The same pattern carries you through the rest of the day: a time word (_post prandium_ = after lunch, _vesperī_ = in the evening, _nocte_ = at night), then what you do. Notice how often you need only the verb: _dormiō_ is a whole sentence. When you speak about yourself, keep to short sentences and join them with _deinde_ (then) and _tum_ (then, next).",
       "generated": true,
-      "narrate": true
+      "play": "narrate"
     },
     {
       "id": "3",
@@ -28,7 +28,7 @@
       "blurb": "Retell yesterday in the past tense",
       "intro": "To tell what you did, use the perfect tense and put _herī_ (yesterday) first. For “I” the ending is always _-ī_: _surrēxī_ (I got up), _lāvī_ (I washed), _ēdī_ (I ate), _vīdī_ (I saw), _iī_ (I went), _dormīvī_ (I slept). The stem changes from verb to verb, so each one is worth learning as a pair: _surgō / surrēxī_.",
       "generated": true,
-      "narrate": true
+      "play": "narrate"
     },
     {
       "id": "4",
@@ -37,7 +37,7 @@
       "blurb": "Plan tomorrow in the future tense",
       "intro": "To say what you will do, use the future tense with _crās_ (tomorrow). For -āre and -ēre verbs the “I” ending is _-bō_: _lavābō_ (I will wash), _vidēbō_ (I will see). For -ere and -īre verbs it is _-am_: _edam_ (I will eat), _dormiam_ (I will sleep). _eō_ is irregular: _ībō_ (I will go).",
       "generated": true,
-      "narrate": true
+      "play": "narrate"
     }
   ]
 }

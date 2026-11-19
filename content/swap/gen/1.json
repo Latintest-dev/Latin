@@ -1,0 +1,115 @@
+{
+  "unit": {
+    "id": "1",
+    "title": "Who is doing it?",
+    "blurb": "Take “I” and make it “we”, “you”, “he”, “they”",
+    "play": "swap",
+    "ordered": true,
+    "intro": "Here you do what language teachers call a pattern drill: take a sentence you know and change one thing. In this unit the one thing is the person. Latin shows who is acting in the verb ending, so the rest of the sentence stays put: _Pānem edō_ (I eat bread) becomes _Pānem edimus_ (we eat bread). The endings: -ō = I, -s = you, -t = he or she, -mus = we, -tis = you all, -nt = they. Each sentence is shown in Latin with an instruction; answer in Latin. When you have met most of the unit, press **Run the drill** to turn the same sentences over again."
+  },
+  "templates": [
+    {
+      "id": "person",
+      "n": 8,
+      "skills": [
+        "swap.person",
+        "verb.person",
+        "case.acc.obj"
+      ],
+      "tag": "change the person",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg",
+            "1pl",
+            "2sg",
+            "3sg",
+            "3pl",
+            "2pl"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "video",
+              "scribo",
+              "audio",
+              "porto",
+              "emo",
+              "habeo",
+              "paro",
+              "vendo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "notMass": true
+          },
+          "fits": "v",
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "base": {
+        "pn": "1sg"
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "{v:full} {o:a}.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_ (“{v.full}”). The ending tells the person: -ō = I, -s = you, -t = he or she, -mus = we, -tis = you all, -nt = they. _{o}_ is {o.label}, the object, so it does not change.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it stays accusative"
+      },
+      "changes": [
+        {
+          "label": "Say it for “we”",
+          "set": {
+            "pn": "1pl"
+          }
+        },
+        {
+          "label": "Say it for “you” (one person)",
+          "set": {
+            "pn": "2sg"
+          }
+        },
+        {
+          "label": "Say it for “he” or “she”",
+          "set": {
+            "pn": "3sg"
+          }
+        },
+        {
+          "label": "Say it for “they”",
+          "set": {
+            "pn": "3pl"
+          }
+        },
+        {
+          "label": "Say it for “you all”",
+          "set": {
+            "pn": "2pl"
+          }
+        }
+      ]
+    }
+  ]
+}

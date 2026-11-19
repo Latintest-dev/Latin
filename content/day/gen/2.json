@@ -4,8 +4,8 @@
     "title": "My afternoon and evening",
     "blurb": "Narrate the second half of your day",
     "intro": "The same pattern carries you through the rest of the day: a time word (_post prandium_ = after lunch, _vesperī_ = in the evening, _nocte_ = at night), then what you do. Notice how often you need only the verb: _dormiō_ is a whole sentence. When you speak about yourself, keep to short sentences and join them with _deinde_ (then) and _tum_ (then, next).",
-    "narrate": true,
-    "ordered": true
+    "ordered": true,
+    "play": "narrate"
   },
   "templates": [
     {

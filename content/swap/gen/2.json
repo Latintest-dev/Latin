@@ -1,0 +1,129 @@
+{
+  "unit": {
+    "id": "2",
+    "title": "Yesterday and tomorrow",
+    "blurb": "Take what you do now and say it about yesterday or tomorrow",
+    "play": "swap",
+    "ordered": true,
+    "intro": "Same drill, new change: the time. Start from what you do now and move it. For yesterday, use the perfect tense and put _herī_ first: _Pānem edō_ becomes _Herī pānem ēdī_. For tomorrow, use the future tense and put _crās_ first: _Crās pānem edam_. The stem often changes in the perfect (_edō_ / _ēdī_, _legō_ / _lēgī_), so learn the verbs in pairs. Press **Run the drill** when you have met most of them."
+  },
+  "templates": [
+    {
+      "id": "time",
+      "n": 10,
+      "skills": [
+        "swap.tense",
+        "verb.perf.person",
+        "verb.fut.person",
+        "time.when"
+      ],
+      "tag": "change the time",
+      "verb": "v",
+      "slots": {
+        "tn": {
+          "choice": [
+            "pres",
+            "perf",
+            "fut"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo",
+              "bibo",
+              "lego",
+              "video",
+              "scribo",
+              "audio",
+              "porto",
+              "emo",
+              "habeo",
+              "paro",
+              "vendo"
+            ]
+          },
+          "form": "{tn}.ind.act.1sg"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "notMass": true
+          },
+          "fits": "v",
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "base": {
+        "tn": "pres"
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "fill": [
+        "v",
+        "o"
+      ],
+      "roles": {
+        "o": "it is the object (the thing acted on), so it stays accusative"
+      },
+      "changes": [
+        {
+          "label": "Say it about yesterday",
+          "set": {
+            "tn": "perf"
+          },
+          "chunks": [
+            "herī",
+            "{o}",
+            "{v}"
+          ],
+          "en": "Yesterday {v:full} {o:a}.",
+          "tag": "yesterday: perfect tense",
+          "explain": "For something finished, use the perfect tense: _{v}_ is {v.label} of _{v.lemma}_ (“{v.full}”). _herī_ means “yesterday”. _{o}_ stays accusative, the object.",
+          "foilsExtra": [
+            {
+              "chunks": [
+                "crās",
+                "{o}",
+                "{v}"
+              ],
+              "why": "_crās_ means “tomorrow”, but _{v}_ is in the perfect tense (it already happened). For yesterday: _herī_."
+            }
+          ]
+        },
+        {
+          "label": "Say it about tomorrow",
+          "set": {
+            "tn": "fut"
+          },
+          "chunks": [
+            "crās",
+            "{o}",
+            "{v}"
+          ],
+          "en": "Tomorrow {v:full} {o:a}.",
+          "tag": "tomorrow: future tense",
+          "explain": "For something still to come, use the future tense: _{v}_ is {v.label} of _{v.lemma}_ (“{v.full}”). _crās_ means “tomorrow”. _{o}_ stays accusative, the object.",
+          "foilsExtra": [
+            {
+              "chunks": [
+                "herī",
+                "{o}",
+                "{v}"
+              ],
+              "why": "_herī_ means “yesterday”, but _{v}_ is in the future tense (it has not happened yet). For tomorrow: _crās_."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

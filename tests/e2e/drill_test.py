@@ -1,118 +1,165 @@
-import json, unicodedata, time
-from playwright.sync_api import sync_playwright
+"""Speed round, narrate, change-it drill, conversations, replay buttons, linked and paused tracks, words page, goal."""
+import json
+from lib import *
 
-BASE = 'http://127.0.0.1:8765/'
-def strip(s):
-    return unicodedata.normalize('NFC', ''.join(c for c in unicodedata.normalize('NFD', s) if c not in '̄̆'))
-errors, checks = [], []
-def check(name, cond, extra=''):
-    checks.append((name, bool(cond)))
-    print(('PASS ' if cond else 'FAIL ') + name + (f'  [{extra}]' if extra else ''))
-
-KNOWN = "{lvl:2, box:3, due:Date.now()+8*864e5, intro:true, seen:5, ok:5, bad:0, last:Date.now(), upd:Date.now()}"
+check = Checks()
+SNAP = "() => JSON.stringify(Object.fromEntries(Object.entries(window.__app.store.state.items).map(([k,v]) => [k,[v.box,v.due]])))"
 
 with sync_playwright() as p:
-    b = p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
-    page = b.new_context(viewport={'width': 390, 'height': 844}).new_page()
-    page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
-    page.on('pageerror', lambda e: errors.append(str(e)))
-    page.goto(BASE); page.wait_for_selector('h1')
+    browser, ctx, page, errors = launch(p)
+    open_app(page)
+    idx = Index(page)
 
-    # --- fresh start: today strip, speed round locked
+    # --- fresh start
     txt = page.inner_text('.today')
     check('home shows today strip', '0' in txt and 'answers today' in txt and 'No streak yet' in txt, txt.replace('\n', ' | '))
     check('speed round locked at first', page.is_disabled('.btn.speed'))
-    check('four tracks listed', page.locator('section.pack').count() == 4, str(page.locator('section.pack h2').all_inner_texts()))
+    check('six tracks listed', page.locator('section.pack').count() == 6, str(page.locator('section.pack h2').all_inner_texts()))
+    replay_btns = '.unit-btns button:is(:has-text("Narrate it"), :has-text("Run the drill"), :has-text("Play it"))'
+    check('no replay buttons before anything is learned', page.locator(replay_btns).count() == 0)
 
-    # --- know the whole morning script and several other sentences
-    page.evaluate("""async () => { const a = window.__app, s = a.store;
-      const day = a.content.packs.find(p => p.id === 'day');
-      for (const it of day.units[0].items) s.putItem(it.id, %s);
-      const core = [...a.content.itemsById.values()].filter(i => i.id.startsWith('core.1.')).slice(0, 6);
-      for (const it of core) s.putItem(it.id, %s); await s.flush(); }""" % (KNOWN, KNOWN))
-    page.goto(BASE); page.wait_for_selector('h1')
+    # --- know the morning script, the first swap unit and some other sentences
+    unlock(page, 'swap', '1')
+    page.evaluate("""async () => { const a = window.__app, s = a.store, t = Date.now();
+      const known = {lvl:2, box:3, due:t + 8*864e5, intro:true, seen:5, ok:5, bad:0, last:t, upd:t};
+      const unit = (pack, n) => a.content.packs.find(p => p.id === pack).units.find(u => u.id === String(n));
+      for (const [pack, n] of [['day', 1], ['swap', 1]]) for (const it of unit(pack, n).items) s.putItem(it.id, known);
+      for (const it of [...a.content.itemsById.values()].filter(i => i.id.startsWith('core.1.')).slice(0, 6)) s.putItem(it.id, known);
+      await s.flush(); }""")
+    open_app(page)
     check('speed round unlocked', not page.is_disabled('.btn.speed'))
-    narr = page.locator('.unit-btns button:has-text("Narrate it")')
-    check('Narrate it appears on met scripts only', narr.count() == 1, f'{narr.count()} buttons')
+    check('Narrate it appears on the met script', page.locator('.unit-btns button:has-text("Narrate it")').count() == 1)
+    check('Run the drill appears on the met change-it unit', page.locator('.unit-btns button:has-text("Run the drill")').count() == 1)
+    check('Play it does not appear before its conversation is met', page.locator('.unit-btns button:has-text("Play it")').count() == 0)
 
-    # --- speed round: timer, correct answers do not move the schedule
-    before = page.evaluate("() => JSON.stringify(Object.fromEntries(Object.entries(window.__app.store.state.items).map(([k,v]) => [k,[v.box,v.due]])))")
+    # --- speed round: timer; correct answers do not move the schedule
+    before = json.loads(page.evaluate(SNAP))
     page.click('.btn.speed')
     page.wait_for_selector('.eyebrow')
     check('speed round shows a countdown bar', page.query_selector('.timer .timer-fill') is not None)
     check('speed eyebrow', 'speed round' in page.inner_text('.eyebrow').lower(), page.inner_text('.eyebrow'))
-    items = page.evaluate("() => [...window.__app.content.itemsById.values()].map(i => ({id:i.id, la:i.la, q:i.q||'', en:i.en, prompt:i.q||i.sit||i.en}))")
-    by_prompt = {}
-    for i in items: by_prompt.setdefault(strip(i['prompt']), []).append(i)
     answered = 0
-    while True:
-        page.wait_for_selector('.eyebrow, .feedback')
-        eb = page.inner_text('.eyebrow').strip().lower()
-        if eb == 'speed round complete': break
-        pr = strip(page.inner_text('.prompt').strip())
-        cand = by_prompt[pr]
-        if len(cand) > 1:  # same question, different answers: use the cue
-            cue = strip(page.inner_text('.cue em')) if page.query_selector('.cue em') else ''
-            cand = [c for c in cand if strip(c['en']).endswith(cue + '”')] or cand
-        page.fill('.ans', strip(cand[0]['la'])); page.keyboard.press('Enter')
+    while screen(page) != 'done' and answered < 14:
+        answer(page, idx, screen(page))
         page.wait_for_selector('.feedback'); answered += 1
         page.click('.feedback .btn.primary')
-        if answered > 14: break
     check('speed round ends after ten', answered == 10, str(answered))
     summ = page.inner_text('.card')
     check('summary says in time', 'in time' in summ, summ.replace('\n', ' | ')[:120])
-    after = page.evaluate("() => JSON.stringify(Object.fromEntries(Object.entries(window.__app.store.state.items).map(([k,v]) => [k,[v.box,v.due]])))")
-    b4, af = json.loads(before), json.loads(after)
-    check('speed round left every box and due date alone', all(af[k] == b4[k] for k in b4), '')
+    after = json.loads(page.evaluate(SNAP))
+    check('speed round left every box and due date alone', all(after[k] == before[k] for k in before))
     fast = page.evaluate("() => Object.values(window.__app.store.state.items).filter(v => v.fast).length")
     check('fast answers recorded', fast == 10, str(fast))
     check('summary shows progress toward the goal', 'Today: 10 of 20' in summ, summ.replace('\n', ' | ')[-80:])
 
     # --- timeout counts as a miss
-    page.evaluate("() => window.__app.startSession({mode:'speed'})")
+    start(page, mode='speed')
     page.wait_for_selector('.timer')
-    page.evaluate("() => { /* make time pass quickly */ const f = document.querySelector('.timer-fill'); }")
     page.wait_for_selector('.feedback', timeout=40000)
     fb = page.inner_text('.feedback')
     check('running out of time is a miss with a note', 'Not quite' in fb and 'Time ran out' in fb, fb.replace('\n', ' | ')[:140])
-    page.goto(BASE); page.wait_for_selector('h1')
+    open_app(page)
+    check('streak starts at one day', '1-day streak' in page.inner_text('.today'), page.inner_text('.today').replace('\n', ' | '))
 
-    # --- streak shows after practice
-    txt = page.inner_text('.today')
-    check('streak starts at one day', '1-day streak' in txt, txt.replace('\n', ' | '))
-
-    # --- narrate the morning
+    # --- narrate the morning (capital letters at sentence starts are fine: the paragraph is read, not matched)
     page.locator('.unit-btns button:has-text("Narrate it")').first.click()
     page.wait_for_selector('.eyebrow')
     check('narration starts at step 1 of 12', 'step 1 of 12' in page.inner_text('.eyebrow').lower(), page.inner_text('.eyebrow'))
-    day = page.evaluate("() => window.__app.content.packs.find(p => p.id==='day').units[0].items.map(i => ({la:i.la, en:i.en}))")
-    for i, it in enumerate(day):
+    day = page.evaluate("() => window.__app.content.packs.find(p => p.id==='day').units[0].items.map(i => i.la)")
+    for i, la in enumerate(day):
         page.wait_for_selector('.eyebrow')
-        check_step = f'step {i+1} of 12' in page.inner_text('.eyebrow').lower()
-        if not check_step: check(f'narration step order {i+1}', False, page.inner_text('.eyebrow')); break
-        page.fill('.ans', strip(it['la'])); page.keyboard.press('Enter')
+        if f'step {i+1} of 12' not in page.inner_text('.eyebrow').lower():
+            check(f'narration step order {i+1}', False, page.inner_text('.eyebrow')); break
+        page.fill('.ans', strip(la)); page.keyboard.press('Enter')
         page.wait_for_selector('.feedback'); page.click('.feedback .btn.primary')
     page.wait_for_selector('.script')
     sc = page.inner_text('.script-la')
-    check('narration ends with the full paragraph in order', sc.startswith('mane surgo') and sc.rstrip().endswith('edo.'), sc[:80])
+    check('narration ends with the full paragraph in order', sc.lower().startswith('mane surgo') and sc.rstrip().endswith('edo.'), sc[:80])
     check('paragraph has all twelve sentences', sc.count('.') == 12, str(sc.count('.')))
+
+    # --- the "Change it" drill: grouped by base sentence, follows each sentence's own level, no schedule changes
+    open_app(page)
+    before = json.loads(page.evaluate(SNAP))
+    page.locator('.unit-btns button:has-text("Run the drill")').first.click()
+    page.wait_for_selector('.eyebrow')
+    eb = page.inner_text('.eyebrow').lower()
+    check('drill eyebrow counts the steps', eb.startswith('change it, 1 of '), eb)
+    check('drill shows the Latin and the instruction', page.query_selector('.prompt.la') is not None and page.query_selector('.cue.change em') is not None)
+    n_drill = int(eb.split(' of ')[1])
+    check('drill is at least a dozen changes', n_drill >= 12, str(n_drill))
+    steps = 0
+    while screen(page) != 'done' and steps < 40:
+        answer(page, idx, screen(page)); page.wait_for_selector('.feedback'); steps += 1
+        page.click('.feedback .btn.primary')
+    check('drill plays through with correct answers', steps == n_drill, f'{steps} of {n_drill}')
+    check('drill ends with its own title', 'drill complete' in page.inner_text('.card.center').lower(), page.inner_text('.card.center')[:60])
+    after = json.loads(page.evaluate(SNAP))
+    check('drill left every box and due date alone', all(after[k] == before[k] for k in before))
+
+    # --- conversations: locked behind the Roman track, then unlocked; transcript and bubbles; replay
+    open_app(page)
+    talk = page.locator('section.pack', has=page.locator('h2:has-text("Conversations")'))
+    check('conversation track is listed', talk.count() == 1)
+    lock_txt = talk.locator('.unit .lock').first.get_attribute('title') if talk.locator('.unit .lock').count() else ''
+    check('conversations start locked', talk.locator('.unit.locked').count() == 3, str(talk.locator('.unit.locked').count()))
+    check('the lock says what to finish first', 'Like a Roman' in lock_txt, lock_txt)
+    unlock(page, 'talk', '1')
+    open_app(page)
+    start(page, mode='unit', scope={'packId': 'talk', 'unitId': '1'})
+    page.wait_for_selector('.card .btn.primary'); page.click('.card .btn.primary')
+    page.wait_for_selector('.eyebrow')
+    check('first conversation line is a new question and reply', page.inner_text('.eyebrow').lower() == 'new question and reply', page.inner_text('.eyebrow'))
+    check('the scene is shown before the first line', page.query_selector('.dlg .scene') is not None)
+    page.click('.btn.primary:has-text("Got it")')
+    page.wait_for_selector('.eyebrow')
+    play(page, idx, max_steps=60)
+    # play the conversation straight through: know the unit, then Play it
+    open_app(page)
+    know(page, "() => window.__app.content.packs.find(p => p.id === 'talk').units[0].items.map(i => i.id)")
+    open_app(page)
+    check('Play it appears once the conversation is met', page.locator('.unit-btns button:has-text("Play it")').count() >= 1)
+    page.locator('.unit-btns button:has-text("Play it")').first.click()
+    page.wait_for_selector('.eyebrow')
+    check('conversation eyebrow counts the lines', page.inner_text('.eyebrow').lower().startswith('conversation, line 1 of '), page.inner_text('.eyebrow'))
+    saw_bubbles = 0
+    def each(kind):
+        global saw_bubbles
+        if page.locator('.dlg .bubble').count() >= 2: saw_bubbles += 1
+    play(page, idx, max_steps=60, each=each)
+    check('later lines show the lines before them as bubbles', saw_bubbles >= 3, str(saw_bubbles))
+    check('conversation recap is a transcript with an English toggle', page.query_selector('.dlg-recap .bubble.them') is not None and page.query_selector('.dlg-recap details') is not None)
+    check('conversation ends with its own title', 'conversation complete' in page.inner_text('.card.center').lower())
+
+    # --- pausing a track: Settings toggle, badge on Learn, and the new-sentence rotation skips it
+    page.goto(BASE + '#/settings'); page.wait_for_selector('.toggle')
+    page.uncheck('input[aria-label="New sentences from Change it"]')
+    page.evaluate("() => window.__app.store.flush()")
+    paused = page.evaluate("() => window.__app.store.state.settings.pausedPacks")
+    check('pausing a track is stored', paused == ['swap'], str(paused))
+    open_app(page)
+    check('paused track is badged on Learn', page.locator('.paused').count() >= 1)
+    new_packs = lambda paused: page.evaluate("""async (paused) => { const m = await import('/js/core/modes.js'); const a = window.__app;
+      const q = m.buildQueue({content: a.content, itemStates: a.store.state.items, skills: a.store.state.skills, mistakes: a.store.state.mistakes,
+        now: Date.now(), mode: 'continue', newTotal: 30, paused, rng: () => 0.5});
+      return [...new Set(q.filter(e => e.kind === 'new').map(e => a.content.packOf.get(e.itemId)))]; }""", paused)
+    with_all, with_paused = new_packs([]), new_packs(paused)
+    check('without pausing, the paused track offers new sentences', paused[0] in with_all, f'{with_all}')
+    check('a paused track offers no new sentences', paused[0] not in with_paused and len(with_paused) >= 1, f'{with_paused}')
+    page.evaluate("() => window.__app.store.setSetting('pausedPacks', [])")
 
     # --- words page
     page.goto(BASE + '#/words'); page.wait_for_selector('.wordlist')
     page.fill('input[type=search]', 'wash')
-    page.wait_for_selector('.word')
-    page.click('.word summary')
-    page.wait_for_selector('table.forms')
+    page.wait_for_selector('.word'); page.click('.word summary'); page.wait_for_selector('table.forms')
     t = page.inner_text('table.forms')
     check('verb table shows persons, tenses and English', 'lavō' in t and 'I wash' in t and 'lāvī' in t and 'lavābō' in t, t.replace('\n', ' | ')[:160])
-    page.fill('input[type=search]', 'hospes'); page.wait_for_selector('.word'); page.click('.word summary')
-    page.wait_for_selector('table.forms')
+    page.fill('input[type=search]', 'hospes'); page.wait_for_selector('.word'); page.click('.word summary'); page.wait_for_selector('table.forms')
     t = page.inner_text('table.forms')
     check('noun table shows cases', 'hospitis' in t and 'hospitibus' in t, t.replace('\n', ' | ')[:120])
     page.click('.pill:has-text("Verbs")'); page.fill('input[type=search]', '')
     check('verb filter lists many verbs', page.locator('.word').count() >= 50, str(page.locator('.word').count()))
 
-    # --- settings goal and export of activity
+    # --- settings goal and the export of activity
     page.goto(BASE + '#/settings'); page.wait_for_selector('select')
     page.select_option('select[aria-label="Daily goal in answers"]', '10')
     page.goto(BASE); page.wait_for_selector('.today')
@@ -120,6 +167,5 @@ with sync_playwright() as p:
     snap = page.evaluate("() => window.__app.store.snapshot()")
     check('export contains activity', snap.get('activity') and sum(v['n'] for v in snap['activity'].values()) >= 22, str(snap.get('activity')))
     check('no console/page errors', not errors, str(errors[:3]))
-ok = sum(1 for _, c in checks if c)
-print(f'{ok}/{len(checks)} checks passed')
-raise SystemExit(0 if ok == len(checks) else 1)
+    browser.close()
+check.done()
