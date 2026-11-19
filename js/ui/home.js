@@ -1,6 +1,7 @@
 import { h } from './dom.js';
 import { rich, DAYS } from './format.js';
-import { buildQueue, countKinds, summarize, NARRATE_MIN } from '../core/scheduler.js';
+import { countKinds, summarize } from '../core/scheduler.js';
+import { buildQueue, MODES, REPLAY_MIN, replayMode } from '../core/modes.js';
 import { streak, today } from '../core/activity.js';
 
 export function renderHome(root, app) {
@@ -9,7 +10,7 @@ export function renderHome(root, app) {
   const s = store.state;
   const queue = buildQueue({
     content, itemStates: s.items, skills: s.skills, mistakes: s.mistakes, now,
-    mode: 'continue', newTotal: s.settings.newTotal,
+    mode: 'continue', newTotal: s.settings.newTotal, paused: s.settings.pausedPacks || [],
   });
   const kinds = countKinds(queue);
   const started = Object.values(s.items).some((x) => x.intro);
@@ -46,10 +47,11 @@ export function renderHome(root, app) {
   }, h('span', null, 'Speed round'), h('small', null, knownCount < 4 ? 'Unlocks once you can write four sentences' : 'Ten sentences you know, against the clock')));
 
   for (const { pack, units } of summarize(content, s.items, now)) {
+    const paused = (s.settings.pausedPacks || []).includes(pack.id);
     root.append(h('section', { class: 'pack' },
-      h('h2', null, pack.name),
+      h('h2', null, pack.name, paused ? h('span', { class: 'paused' }, 'paused') : null),
       h('p', { class: 'sub' }, pack.blurb),
-      units.map(({ unit, total, introduced, strong, due, unlocked }) => h('div', { class: `card unit ${unlocked ? '' : 'locked'}` },
+      units.map(({ unit, total, introduced, strong, due, unlocked, lock }) => h('div', { class: `card unit ${unlocked ? '' : 'locked'}` },
         h('div', { class: 'unit-top' },
           h('div', null,
             h('h3', null, unit.title),
@@ -57,10 +59,10 @@ export function renderHome(root, app) {
           unlocked
             ? h('div', { class: 'unit-btns' },
               h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'unit', scope: { packId: pack.id, unitId: unit.id } }) }, introduced ? 'Practice' : 'Start'),
-              unit.narrate && introduced / total >= NARRATE_MIN
-                ? h('button', { class: 'btn small primary', onclick: () => app.startSession({ mode: 'narrate', scope: { packId: pack.id, unitId: unit.id } }) }, 'Narrate it')
+              replayMode(unit) && introduced / total >= REPLAY_MIN
+                ? h('button', { class: 'btn small primary', onclick: () => app.startSession({ mode: unit.play, scope: { packId: pack.id, unitId: unit.id } }) }, MODES[unit.play].replay)
                 : null)
-            : h('span', { class: 'lock', title: 'Introduce most of the previous unit first' }, '🔒')),
+            : h('span', { class: 'lock', title: lock }, '🔒')),
         h('div', { class: 'meter', 'aria-label': `${introduced} of ${total} met, ${strong} known` },
           h('div', { class: 'meter-seen', style: `width:${(introduced / total) * 100}%` }),
           h('div', { class: 'meter-strong', style: `width:${(strong / total) * 100}%` })),

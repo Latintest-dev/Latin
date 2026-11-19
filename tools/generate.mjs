@@ -10,7 +10,7 @@
 //           choice slots {"choice":["sg","pl"]}  or objects: {"choice":[{"la":"ad","case":"acc","en":"to"}]}
 //   chunks  Latin chunk patterns ("{t}", "ad {p}"); every ordering of the chunks is accepted
 //   en      English pattern ("{t} I {v} {o:a}.")
-//   Everything else (distractors, explanations, ids) is derived. See README, "Generated content".
+//   Everything else (distractors, explanations, ids) is derived. See docs/CONTENT.md, "Generated content".
 //
 // Distractors are built by changing ONE thing in the correct sentence (the form of one word, one word
 // for another, a preposition) and explaining the change, so every wrong option teaches something.
@@ -89,6 +89,7 @@ function meta(info, prop) {
     case 'case': return labelOf(info.key.split('.')[0]);
     case 'en': return info.en();
     case 'base': return renderVerb(info.entry, info.key, 'base');
+    case 'full': return renderVerb(info.entry, info.key, 'full');
     default: throw new Error(`unknown slot property .${prop}`);
   }
 }
@@ -168,6 +169,7 @@ function poolFor(slot, tpl, infos, picks, { ignoreFits = false } = {}) {
     if (slot.differ && picks[slot.differ]?.id === e.id) return false;
     if (w.notIds && w.notIds.includes(e.id)) return false;
     if (w.mass && !e.en?.mass) return false;
+    if (w.notMass && (e.en?.mass || e.en?.name)) return false;
     if (w.hasObj && !(e.obj || []).length) return false;
     if (w.dat && !e.dat) return false;
     if (w.noObj && (e.obj || []).length) return false;
@@ -243,7 +245,7 @@ function describeKeyChange(tpl, name, infos, badInfos, goodKey, badKey) {
 function makeDistractors(tpl, picks, infos, goodEn, accepted, rng) {
   const goodLa = canonical(renderChunks(tpl, infos), tpl.end ?? '.');
   const end = tpl.end ?? '.';
-  const candidates = { verb: [], noun: [], swap: [] };
+  const candidates = { extra: [], verb: [], noun: [], swap: [] };
   const seen = new Set([normLoose(goodLa), ...accepted]);
   const add = (group, over, newPicks, reasonFn) => {
     const bi = buildInfos(tpl, newPicks, over);
@@ -302,16 +304,25 @@ function makeDistractors(tpl, picks, infos, goodEn, accepted, rng) {
     }
   }
 
-  // choose: one verb-form foil, one noun-form foil, one swap, then anything
+  // wrong options written into the template (for mistakes no single slot change makes, like leaving out "nōn")
+  for (const fx of tpl.foilsExtra || []) {
+    const la = canonical(fx.chunks.map((p) => [fill(p, infos, 'la')]), fx.end ?? end);
+    const n = normLoose(la);
+    if (seen.has(n) || candidates.extra.some((c) => c.n === n)) continue;
+    candidates.extra.push({ la, n, bi: infos, reasonFn: () => fill(fx.why, infos, 'ex') });
+  }
+
+  // choose: any written-in option first, then one verb-form foil, one noun-form foil, one swap, then anything
   const chosen = [];
   const take = (list) => {
     const options = list.filter((c) => !chosen.some((x) => x.n === c.n));
     if (options.length) chosen.push(pick(options, rng));
   };
+  take(candidates.extra);
   take(candidates.verb);
   take(candidates.noun);
   take(candidates.swap);
-  const rest = shuffle([...candidates.verb, ...candidates.noun, ...candidates.swap], rng);
+  const rest = shuffle([...candidates.extra, ...candidates.verb, ...candidates.noun, ...candidates.swap], rng);
   for (const c of rest) { if (chosen.length >= 3) break; if (!chosen.some((x) => x.n === c.n)) chosen.push(c); }
   if (chosen.length < 3) return null;
   return shuffle(chosen.slice(0, 3), rng).map((c) => [c.la, c.reasonFn(c.bi)]);
@@ -343,77 +354,135 @@ function defaultFoils(key, allKeys) {
 
 const usageKey = (name, p) => `${name}:${p?.id ?? (typeof p === 'object' ? JSON.stringify(p) : p)}`;
 
+/**
+ * Build one item from a full assignment of slots, or return null if it does not work out (a form is missing, the
+ * sentence repeats one already made, no three wrong options could be found). Does not touch `ctx`: the caller
+ * records what it keeps, so a group of items can be accepted or dropped together.
+ */
+function makeItem(tpl, picks, infos, ctx, rng, fillIndex, taken = { la: new Set(), en: new Set() }) {
+  const chunkAlts = renderChunks(tpl, infos, true);
+  const end = tpl.end ?? '.';
+  const la = canonical(chunkAlts, end);
+  const q = tpl.q ? cap(fill(tpl.q, infos, 'la')) + (tpl.q.endsWith('?') ? '' : '?') : null;
+  const dedupeKey = normLoose(la) + '|' + (q ? normLoose(q) : '');
+  if (ctx.seenLa.has(dedupeKey) || taken.la.has(dedupeKey)) return null;
+  const enA = englishOf(tpl, infos);
+  const enQ = tpl.enQ ? cap(fill(tpl.enQ, infos, 'en')).replace(/\s+/g, ' ') : null;
+  const enFull = q ? `“${enQ}” “${enA}”` : enA;
+  if (ctx.seenEn.has(enFull.toLowerCase()) || taken.en.has(enFull.toLowerCase())) return null;
+
+  const raw = { chunks: chunkAlts.map((a) => (a.length > 1 ? a : a[0])), end };
+  const accepted = prepareItem({ id: 'x', ...raw, la: undefined }).accepted.map(normLoose);
+  const distractors = makeDistractors(tpl, picks, infos, enA, new Set(accepted), rng);
+  if (!distractors) return null;
+
+  // choose the blank
+  const fills = [].concat(tpl.fill ?? tpl.verb ?? 'v');
+  const fillName = fills[fillIndex % fills.length];
+  // a verb with -ne attached ("Edisne") is blanked as one word
+  const neSlots = new Set(tpl.chunks.flat().flatMap((pt) => [...pt.matchAll(/\{(\w+)\}ne\b/g)].map((m) => m[1])));
+  const fillWord = infos[fillName].la + (neSlots.has(fillName) ? 'ne' : '');
+  if (/\s/.test(fillWord) || !la.toLowerCase().includes(fillWord.toLowerCase())) return null;
+
+  const item = { id: null, review: 'unreviewed', gen: tpl.id };
+  if (q) item.q = q;
+  if (tpl.sit) item.sit = fill(tpl.sit, infos, 'en');
+  item.en = enFull;
+  item.chunks = raw.chunks;
+  if (end !== '.') item.end = end;
+  item.fill = fillWord;
+  const altForms = (tpl.slots[fillName].alts || []).map((k) => infos[fillName].entry?.forms[fillKey(k, infos)]).filter((x) => x && x !== fillWord);
+  if (altForms.length) item.fillAlt = altForms;
+  item.skills = tpl.skills;
+  item.tag = fill(tpl.tag, infos, 'ex');
+  item.explain = fill(tpl.explain, infos, 'ex');
+  item.distractors = distractors;
+  if (tpl.modern) { item.modern = true; item.modernNote = tpl.modernNote; }
+  item._la = la;
+  return { item, dedupeKey, enKey: enFull.toLowerCase() };
+}
+
+/** Pick a value for every slot in order (cheapest-used first, then at random). Returns {picks, infos} or null. */
+function pickSlots(tpl, names, usage, rng, fixed = {}) {
+  const picks = {};
+  const infos = {};
+  for (const name of names) {
+    const slot = tpl.slots[name];
+    const pool = name in fixed ? [fixed[name]] : poolFor(slot, tpl, infos, picks);
+    if (!pool.length) return null;
+    const cost = (c) => usage.get(usageKey(name, c)) ?? 0;
+    const min = Math.min(...pool.map(cost));
+    picks[name] = pick(pool.filter((c) => cost(c) === min), rng);
+    const info = makeInfo(slot, picks[name], undefined, infos);
+    if (!info) return null;
+    infos[name] = info;
+  }
+  return { picks, infos };
+}
+
 function generateTemplate(tpl, ctx) {
+  if (tpl.changes) return generateFrames(tpl, ctx);
   const rng = mulberry32(hash(tpl.id));
   const usage = new Map();
   const items = [];
   const n = tpl.n ?? 12;
   const names = Object.keys(tpl.slots);
   for (let attempt = 0; attempt < n * 80 && items.length < n; attempt++) {
-    const picks = {};
-    let infos = {};
-    let ok = true;
-    for (const name of names) {
-      const slot = tpl.slots[name];
-      const pool = poolFor(slot, tpl, infos, picks);
-      if (!pool.length) { ok = false; break; }
-      const cost = (c) => usage.get(usageKey(name, c)) ?? 0;
-      const min = Math.min(...pool.map(cost));
-      picks[name] = pick(pool.filter((c) => cost(c) === min), rng);
-      const info = makeInfo(slot, picks[name], undefined, infos);
-      if (!info) { ok = false; break; }
-      infos[name] = info;
-    }
-    if (!ok) continue;
-
-    const chunkAlts = renderChunks(tpl, infos, true);
-    const end = tpl.end ?? '.';
-    const la = canonical(chunkAlts, end);
-    const q = tpl.q ? cap(fill(tpl.q, infos, 'la')) + (tpl.q.endsWith('?') ? '' : '?') : null;
-    const dedupeKey = normLoose(la) + '|' + (q ? normLoose(q) : '');
-    if (ctx.seenLa.has(dedupeKey)) continue;
-    const enA = englishOf(tpl, infos);
-    const enQ = tpl.enQ ? cap(fill(tpl.enQ, infos, 'en')).replace(/\s+/g, ' ') : null;
-    const enFull = q ? `“${enQ}” “${enA}”` : enA;
-    if (ctx.seenEn.has(enFull.toLowerCase())) continue;
-
-    const raw = { chunks: chunkAlts.map((a) => (a.length > 1 ? a : a[0])), end };
-    const accepted = prepareItem({ id: 'x', ...raw, la: undefined }).accepted.map(normLoose);
-    const distractors = makeDistractors(tpl, picks, infos, enA, new Set(accepted), rng);
-    if (!distractors) continue;
-
-    // choose the blank
-    const fills = [].concat(tpl.fill ?? tpl.verb ?? 'v');
-    const fillName = fills[items.length % fills.length];
-    // a verb with -ne attached ("Edisne") is blanked as one word
-    const neSlots = new Set(tpl.chunks.flat().flatMap((pt) => [...pt.matchAll(/\{(\w+)\}ne\b/g)].map((m) => m[1])));
-    const fillWord = infos[fillName].la + (neSlots.has(fillName) ? 'ne' : '');
-    if (/\s/.test(fillWord) || !la.toLowerCase().includes(fillWord.toLowerCase())) continue;
-
-    const item = { id: null, review: 'unreviewed', gen: tpl.id };
-    if (q) item.q = q;
-    if (tpl.sit) item.sit = fill(tpl.sit, infos, 'en');
-    item.en = enFull;
-    item.chunks = raw.chunks;
-    if (end !== '.') item.end = end;
-    item.fill = fillWord;
-    const altForms = (tpl.slots[fillName].alts || []).map((k) => infos[fillName].entry?.forms[fillKey(k, infos)]).filter((x) => x && x !== fillWord);
-    if (altForms.length) item.fillAlt = altForms;
-    item.skills = tpl.skills;
-    item.tag = fill(tpl.tag, infos, 'ex');
-    item.explain = fill(tpl.explain, infos, 'ex');
-    item.distractors = distractors;
-    if (tpl.modern) { item.modern = true; item.modernNote = tpl.modernNote; }
-
-    ctx.seenLa.add(dedupeKey);
-    ctx.seenEn.add(enFull.toLowerCase());
-    for (const [name, p] of Object.entries(picks)) usage.set(usageKey(name, p), (usage.get(usageKey(name, p)) ?? 0) + 1);
-    item._la = la;
-    items.push(item);
+    const chosen = pickSlots(tpl, names, usage, rng);
+    if (!chosen) continue;
+    const made = makeItem(tpl, chosen.picks, chosen.infos, ctx, rng, items.length);
+    if (!made) continue;
+    ctx.seenLa.add(made.dedupeKey);
+    ctx.seenEn.add(made.enKey);
+    for (const [name, p] of Object.entries(chosen.picks)) usage.set(usageKey(name, p), (usage.get(usageKey(name, p)) ?? 0) + 1);
+    items.push(made.item);
   }
   if (items.length < Math.min(n, tpl.minItems ?? 4)) {
     throw new Error(`template ${tpl.id}: could only build ${items.length} of ${n} items`);
   }
+  return items;
+}
+
+/**
+ * "Change it" templates. One base sentence (a "frame") is built from the slots with the choice slots set by `base`;
+ * then one item per entry of `changes`, each setting some choice slots differently (`set`) and optionally its own
+ * `chunks`, `en`, `end`, `explain`, `tag`, `fill`, `skills`, `foilsExtra`. Each item asks: "here is the base, now change it".
+ * The base sentence is `from` (chunk patterns; default: the template's `chunks`), shown to the learner in Latin.
+ * A frame is kept only if every change works, so the changes to one base always come together. `n` counts frames.
+ */
+function generateFrames(tpl, ctx) {
+  const rng = mulberry32(hash(tpl.id));
+  const usage = new Map();
+  const items = [];
+  const frames = tpl.n ?? 6;
+  const names = Object.keys(tpl.slots);
+  const baseFixed = tpl.base ?? {};
+  let built = 0;
+  for (let attempt = 0; attempt < frames * 80 && built < frames; attempt++) {
+    const chosen = pickSlots(tpl, names, usage, rng, baseFixed);
+    if (!chosen) continue;
+    const fromTpl = { ...tpl, chunks: tpl.from ?? tpl.chunks };
+    const from = canonical(renderChunks(fromTpl, chosen.infos), tpl.end ?? '.');
+    const taken = { la: new Set([normLoose(from) + '|']), en: new Set() }; // a change must differ from its own base
+    const frameItems = [];
+    let ok = true;
+    for (const c of tpl.changes) {
+      const picks = { ...chosen.picks, ...(c.set ?? {}) };
+      const tplC = { ...tpl, ...Object.fromEntries(['chunks', 'en', 'end', 'explain', 'tag', 'fill', 'skills', 'foilsExtra'].filter((k) => c[k] !== undefined).map((k) => [k, c[k]])) };
+      const infos = buildInfos(tplC, picks);
+      const made = infos && makeItem(tplC, picks, infos, ctx, rng, items.length + frameItems.length, taken);
+      if (!made) { ok = false; break; }
+      made.item.swap = { from, change: fill(c.label, infos, 'ex') };
+      taken.la.add(made.dedupeKey);
+      taken.en.add(made.enKey);
+      frameItems.push(made);
+    }
+    if (!ok) continue;
+    for (const m of frameItems) { ctx.seenLa.add(m.dedupeKey); ctx.seenEn.add(m.enKey); items.push(m.item); }
+    for (const [name, p] of Object.entries(chosen.picks)) usage.set(usageKey(name, p), (usage.get(usageKey(name, p)) ?? 0) + 1);
+    built++;
+  }
+  if (built < Math.min(frames, tpl.minItems ?? 2)) throw new Error(`template ${tpl.id}: could only build ${built} of ${frames} frames`);
   return items;
 }
 
@@ -436,7 +505,11 @@ export async function generateUnit(packId, gen, otherItems, kept = []) {
   };
   const tplIds = new Set(gen.templates.map((t) => t.id));
   const keep = kept.filter((i) => tplIds.has(i.gen));
-  const have = (id) => keep.filter((i) => i.gen === id).length;
+  // a template's progress: sentences made so far (for a "change it" template: base sentences, since each has several items)
+  const have = (id) => {
+    const mine = keep.filter((i) => i.gen === id);
+    return gen.templates.find((t) => t.id === id)?.changes ? new Set(mine.map((i) => i.swap?.from)).size : mine.length;
+  };
   const lists = gen.templates.map((tpl) => (tpl.n - have(tpl.id) > 0 ? generateTemplate({ ...tpl, n: tpl.n - have(tpl.id) }, ctx) : []));
   // an ordered unit (a narration script) keeps its templates in the order written; others are mixed
   const fresh = gen.unit.ordered ? lists.flat() : interleave(lists);
@@ -493,7 +566,7 @@ async function main() {
       if (!args.includes('--fresh')) kept = await readUnitItems(unitFile);
       const items = await generateUnit(packId, gen, others, kept);
       await writeFile(path.join(ROOT, 'content', packId, unitFile), '[\n' + items.map((i) => '  ' + JSON.stringify(i)).join(',\n') + '\n]\n');
-      const entry = { id: gen.unit.id, file: unitFile, title: gen.unit.title, blurb: gen.unit.blurb, intro: gen.unit.intro, generated: true, ...(gen.unit.narrate ? { narrate: true } : {}) };
+      const entry = { id: gen.unit.id, file: unitFile, title: gen.unit.title, blurb: gen.unit.blurb, intro: gen.unit.intro, generated: true, ...(gen.unit.play ? { play: gen.unit.play } : {}) };
       const at = pack.units.findIndex((u) => u.id === gen.unit.id);
       if (at >= 0) pack.units[at] = entry; else pack.units.push(entry);
       console.log(`${packId}.${gen.unit.id} ${gen.unit.title}: ${items.length} sentences (${items.length - kept.filter((k) => gen.templates.some((t) => t.id === k.gen)).length} new)`);

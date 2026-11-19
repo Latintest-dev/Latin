@@ -9,4 +9,6 @@ export const PACKS = [
   { id: 'daily', path: 'content/daily/pack.json' },
   { id: 'roman', path: 'content/roman/pack.json' },
   { id: 'day', path: 'content/day/pack.json' },
+  { id: 'swap', path: 'content/swap/pack.json' },
+  { id: 'talk', path: 'content/talk/pack.json' },
 ];

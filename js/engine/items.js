@@ -40,14 +40,20 @@ export function unique(list) {
   return [...new Set(list)];
 }
 
-/** Adds `la` (canonical) and `accepted` (all accepted full sentences) to an item. */
+const capFirst = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/**
+ * Adds `la` (canonical) and `accepted` (all accepted full sentences) to an item.
+ * Sentences built from chunks start with a capital letter, as a written sentence should (answers are checked
+ * without regard to case, so this is only how they look).
+ */
 export function prepareItem(raw) {
   const it = { ...raw };
   const end = it.end ?? '.';
   if (it.chunks) {
-    const canonical = it.chunks.map((c) => (Array.isArray(c) ? c[0] : c)).join(' ') + end;
+    const canonical = capFirst(it.chunks.map((c) => (Array.isArray(c) ? c[0] : c)).join(' ') + end);
     it.la = canonical;
-    it.accepted = unique([canonical, ...expandChunks(it.chunks, end), ...(it.accept || [])]);
+    it.accepted = unique([canonical, ...expandChunks(it.chunks, end).map(capFirst), ...(it.accept || [])]);
   } else {
     if (!it.la) throw new Error(`Item ${it.id} has neither chunks nor la`);
     it.accepted = unique([it.la, ...(it.accept || [])]);
@@ -76,28 +82,42 @@ export function blankSentence(item, blank = '_____') {
  *   plain      the English sentence is the prompt (translate it)
  *   situation  item.sit describes a situation in English ("Greet your friend"); answer in Latin
  *   question   item.q is a Latin question; answer in Latin (no Latin->English multiple choice)
+ *   swap       item.swap = {from, change}: a Latin sentence and an instruction ("Say it for “we”"); answer in Latin
  */
 export function promptKind(item) {
   if (item.q) return 'question';
+  if (item.swap) return 'swap';
   if (item.sit) return 'situation';
   return 'plain';
 }
 
-/** The text shown as the prompt (English for plain/situation items, Latin for questions). */
+/** The text shown as the prompt (English for plain/situation items, Latin for questions and swaps). */
 export function promptText(item) {
-  return item.q || item.sit || item.en;
+  return item.q || item.swap?.from || item.sit || item.en;
 }
 
 /**
+ * The line under a Latin prompt.
  * For a Latin question, the answer is usually a fact the question cannot tell you ("What are you eating?"
  * has no single right reply), so the learner is told what to say in English and puts it into Latin.
  * `item.cue` wins; otherwise it is the second quoted part of the English gloss: “Q” “A”.
+ * For a swap it is the instruction ("Say it for “we”").
  */
 export function cueText(item) {
+  if (item.swap) return item.swap.change;
   if (!item.q) return null;
   if (item.cue) return item.cue;
   const m = /“[^”]*”\s*“([^”]*)”/.exec(item.en || '');
   return m ? m[1] : null;
+}
+
+/**
+ * What makes an item's prompt unique. English prompts must not repeat across the app (two different Latin answers to
+ * the same English would be ambiguous); a swap is identified by its Latin sentence and its instruction instead.
+ */
+export function promptKey(item) {
+  if (item.swap) return `${item.swap.from}|${item.swap.change}`.toLowerCase();
+  return item.en.toLowerCase();
 }
 
 /** Can this item be asked as "what does this Latin mean?" */

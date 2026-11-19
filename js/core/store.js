@@ -10,6 +10,7 @@ export const DEFAULT_SETTINGS = {
   strictMacrons: false,  // require macrons in typed answers
   newTotal: 6,           // new sentences introduced per session, shared between tracks
   dailyGoal: 20,         // answers per day that count as a full day of practice
+  pausedPacks: [],       // tracks left out of Continue's new sentences (their reviews still come up)
   upd: 0,
 };
 

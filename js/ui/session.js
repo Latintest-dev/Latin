@@ -1,8 +1,11 @@
 // Practice session screen: teach card -> multiple choice -> fill in the blank -> write.
+// Drill modes (speed round, narration, conversations, change-it) only differ in wording and summary: see ui/modes.js.
 
 import { h, clear } from './dom.js';
 import { latin, rich } from './format.js';
-import { buildQueue, speedLimitMs } from '../core/scheduler.js';
+import { buildQueue, speedLimitMs } from '../core/modes.js';
+import { priorTurns, sceneOf } from '../core/content.js';
+import { PRESENT } from './modes.js';
 import { SessionRunner } from '../core/session.js';
 import { checkText } from '../engine/checker.js';
 import { today as todayCount0 } from '../core/activity.js';
@@ -65,6 +68,7 @@ export function renderSession(root, app, params) {
     mode: params.mode,
     scope: params.scope,
     newTotal: st().newTotal,
+    paused: st().pausedPacks || [],
   });
 
   if (!queue.length) {
@@ -108,15 +112,28 @@ export function renderSession(root, app, params) {
   const chips = (item) => h('div', { class: 'chips' }, chip(item.tag), item.modern ? h('span', { class: 'chip modern' }, 'modern coinage') : null);
   const promptNode = (item) => {
     const kind = promptKind(item);
-    const cue = cueText(item);
-    return kind === 'question'
-      ? h('div', { class: 'prompt-wrap' }, h('div', { class: 'prompt la' }, latin(item.q, st())), cue ? h('div', { class: 'cue' }, 'Reply: ', h('em', {}, cue)) : null)
-      : h('div', { class: `prompt${kind === 'situation' ? ' situation' : ''}` }, promptText(item));
+    if (kind === 'question' || kind === 'swap') {
+      const cue = cueText(item);
+      return h('div', { class: 'prompt-wrap' },
+        h('div', { class: 'prompt la' }, latin(promptText(item), st())),
+        cue ? h('div', { class: `cue${kind === 'swap' ? ' change' : ''}` }, kind === 'question' ? 'Reply: ' : null, h('em', {}, cue)) : null);
+    }
+    return h('div', { class: `prompt${kind === 'situation' ? ' situation' : ''}` }, promptText(item));
   };
+  // A turn of a conversation shows the lines before it, so a reply is always an answer to something.
+  const bubble = (side, text) => h('div', { class: `bubble ${side}` }, h('span', { class: 'la' }, latin(text, st())));
+  const transcript = (item) => {
+    if (!item.dlg) return null;
+    const scene = sceneOf(content, item);
+    const lines = priorTurns(content, item).flatMap((t) => [bubble('them', t.q), bubble('you', t.la)]);
+    if (!scene && !lines.length) return null;
+    return h('div', { class: 'dlg' }, scene ? h('p', { class: 'scene' }, scene) : null, ...lines);
+  };
+  const promptBlock = (item) => [transcript(item), promptNode(item)].filter(Boolean);
   const EYEBROW = {
-    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply' },
-    fill: { plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank' },
-    write: { plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin' },
+    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply', swap: 'Change it: choose the Latin' },
+    fill: { plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank', swap: 'Change it: fill in the blank' },
+    write: { plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin', swap: 'Change it: write it in Latin' },
   };
 
   function header() {
@@ -161,8 +178,8 @@ export function renderSession(root, app, params) {
     const kind = promptKind(item);
     // (native append() would print the word "null" for a missing piece, so filter first)
     body.append(...[
-      h('p', { class: 'eyebrow' }, kind === 'question' ? 'New question and reply' : kind === 'situation' ? 'New situation' : 'New sentence'),
-      promptNode(item),
+      h('p', { class: 'eyebrow' }, { question: 'New question and reply', situation: 'New situation', swap: 'New change' }[kind] || 'New sentence'),
+      ...promptBlock(item),
       h('div', { class: 'answer la' }, latin(item.la, st())),
       kind === 'plain' ? null : h('div', { class: 'gloss' }, item.en),
       chips(item),
@@ -184,9 +201,10 @@ export function renderSession(root, app, params) {
   function showMc(body, entry, item) {
     const e2l = entry.type === 'mc_e2l';
     const opts = mcOptions(entry, item, content);
+    const present = PRESENT[entry.mode];
     body.append(
-      h('p', { class: 'eyebrow' }, e2l ? EYEBROW.mc_e2l[promptKind(item)] : 'What does this mean?'),
-      e2l ? promptNode(item) : h('div', { class: 'prompt' }, h('span', { class: 'la' }, latin(item.la, st()))),
+      h('p', { class: 'eyebrow' }, present ? present.eyebrow(entry) : e2l ? EYEBROW.mc_e2l[promptKind(item)] : 'What does this mean?'),
+      ...(e2l ? promptBlock(item) : [h('div', { class: 'prompt' }, h('span', { class: 'la' }, latin(item.la, st())))]),
       chips(item));
     const list = h('div', { class: 'options' });
     const buttons = opts.map((o) => {
@@ -214,10 +232,9 @@ export function renderSession(root, app, params) {
 
   function showText(body, entry, item) {
     const fill = entry.type === 'fill';
-    const eyebrow = entry.speed ? 'Speed round: write it'
-      : entry.kind === 'narrate' ? `Your day, step ${entry.step} of ${entry.of}`
-        : EYEBROW[fill ? 'fill' : 'write'][promptKind(item)];
-    body.append(h('p', { class: 'eyebrow' }, eyebrow), promptNode(item));
+    const present = PRESENT[entry.mode];
+    const eyebrow = present ? present.eyebrow(entry) : EYEBROW[fill ? 'fill' : 'write'][promptKind(item)];
+    body.append(h('p', { class: 'eyebrow' }, eyebrow), ...promptBlock(item));
     if (fill) body.append(h('div', { class: 'blank la' }, latin(blankSentence(item), st())));
     body.append(chips(item));
 
@@ -243,9 +260,9 @@ export function renderSession(root, app, params) {
     body.append(input, macrons, go);
     setTimeout(() => input.focus(), 50);
 
-    // speed round: a bar runs down; when it empties the answer is checked as it stands
+    // timed entries (the speed round): a bar runs down; when it empties the answer is checked as it stands
     let ticker = null;
-    if (entry.speed) {
+    if (entry.timed) {
       const limit = speedLimitMs(item.la);
       const t0 = Date.now();
       const fillBar = h('div', { class: 'timer-fill' });
@@ -285,11 +302,10 @@ export function renderSession(root, app, params) {
   }
 
   function finish(body, entry, item, out) {
-    // drills that must not move the review schedule record a right answer as 'practiceok'
-    const drill = entry.speed || entry.nosched;
+    // (the runner knows a drill entry must not move the review schedule)
     runner.record({
-      result: drill && out.result === 'correct' ? 'practiceok' : out.result,
-      fast: !!entry.speed && !out.late,
+      result: out.result,
+      fast: !!entry.timed && !out.late,
       given: out.given, expected: out.expected, diag: out.diag, tags: out.tags,
     });
     const s = st();
@@ -343,20 +359,14 @@ export function renderSession(root, app, params) {
     const { ok, bad, wrongItems } = runner.stats();
     const total = ok + bad;
     const s = st();
-    const speed = params.mode === 'speed';
-    const narrate = params.mode === 'narrate';
-    const script = narrate ? [...new Set(queue.map((e) => content.itemsById.get(e.itemId)))] : [];
+    const present = PRESENT[params.mode];
+    const recap = present?.recap?.({ queue, content, settings: s });
     const goal = s.dailyGoal;
     const doneToday = todayCount(store.state.activity, Date.now());
     root.append(h('div', { class: 'card center' },
-      h('p', { class: 'eyebrow' }, speed ? 'Speed round complete' : narrate ? 'Your day, in Latin' : 'Session complete'),
-      h('h2', null, !total ? 'Done' : speed ? `${ok} of ${total} in time` : narrate ? `${ok} of ${total} right first time` : `${ok} of ${total} right first time`),
-      narrate && script.length
-        ? h('div', { class: 'script' },
-          h('p', { class: 'la script-la' }, latin(script.map((it) => it.la).join(' '), s)),
-          h('details', null, h('summary', null, 'English'), h('p', { class: 'script-en' }, script.map((it) => it.en).join(' '))),
-          h('p', { class: 'sub' }, 'Now read it aloud, then tell yourself your own day the same way.'))
-        : null,
+      h('p', { class: 'eyebrow' }, present?.done || 'Session complete'),
+      h('h2', null, !total ? 'Done' : present?.score ? present.score(ok, total) : `${ok} of ${total} right first time`),
+      recap || null,
       h('p', { class: 'meta' }, `Today: ${doneToday} of ${goal} answers`),
       wrongItems.length
         ? h('div', { class: 'tricky' },

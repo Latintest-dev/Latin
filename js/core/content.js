@@ -30,7 +30,32 @@ export async function loadContent(fetchJson, registry) {
     }
     packs.push({ ...meta, units });
   }
+  // A track can wait for a unit of another track (`requires: {pack, unit}` in its pack.json).
+  for (const pack of packs) {
+    if (!pack.requires) continue;
+    const other = packs.find((p) => p.id === pack.requires.pack);
+    const unit = other?.units.find((u) => u.id === pack.requires.unit);
+    if (!unit) throw new Error(`Pack ${pack.id} requires ${pack.requires.pack}.${pack.requires.unit}, which does not exist`);
+    pack.gate = { unit, packName: other.name };
+  }
   return { lexicon, skills, index, packs, itemsById, unitOf, packOf };
+}
+
+/** The earlier turns of the conversation an item belongs to (empty for ordinary items), in order. */
+export function priorTurns(content, item) {
+  if (!item.dlg) return [];
+  const pack = content.packs.find((p) => p.id === content.packOf.get(item.id));
+  const unit = pack.units.find((u) => u.id === content.unitOf.get(item.id));
+  return unit.items.filter((o) => o.dlg === item.dlg && o.turn < item.turn).sort((a, b) => a.turn - b.turn);
+}
+
+/** The opening situation of the conversation an item belongs to ("You meet a friend in the forum."), or null. */
+export function sceneOf(content, item) {
+  if (!item.dlg) return null;
+  if (item.scene) return item.scene;
+  const pack = content.packs.find((p) => p.id === content.packOf.get(item.id));
+  const unit = pack.units.find((u) => u.id === content.unitOf.get(item.id));
+  return unit.items.find((o) => o.dlg === item.dlg && o.turn === 1)?.scene ?? null;
 }
 
 export const browserFetchJson = async (path) => {

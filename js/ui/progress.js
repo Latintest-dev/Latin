@@ -72,7 +72,10 @@ export function renderProgress(root, app) {
       const mc = m.type?.startsWith('mc_');
       return h('div', { class: 'card mistake' },
         h('div', { class: 'meta' }, fmtDate(m.t)),
-        h('div', { class: 'gloss' }, it ? it.en : m.itemId),
+        // a change-it slip shows what was asked (the Latin and the instruction), since the English alone does not say
+        it?.swap
+          ? h('div', { class: 'gloss swap-ask' }, h('span', { class: 'la' }, latin(it.swap.from, settings)), ' → ', h('em', null, it.swap.change), h('small', null, ` (${it.en})`))
+          : h('div', { class: 'gloss' }, it ? it.en : m.itemId),
         h('div', null, 'You chose/wrote: ', h('i', { class: 'la' }, mc && m.type === 'mc_e2l' ? latin(m.given, settings) : m.given)),
         h('div', null, 'Correct: ', h('i', { class: 'la' }, mc && m.type === 'mc_l2e' ? m.expected : latin(m.expected, settings))),
         (m.diag || []).slice(0, 2).map((d) => h('p', { class: 'explain' }, rich(d, settings, { macrons: true }))));

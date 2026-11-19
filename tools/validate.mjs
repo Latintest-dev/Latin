@@ -9,7 +9,8 @@ import path from 'node:path';
 import { loadContent } from '../js/core/content.js';
 import { PACKS } from '../js/modules/registry.js';
 import { normLoose, tokensLoose, isKnownWord } from '../js/engine/latin.js';
-import { blankSentence } from '../js/engine/items.js';
+import { blankSentence, promptKey } from '../js/engine/items.js';
+import { MODES } from '../js/core/modes.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -30,6 +31,24 @@ export function validateLoaded(content) {
   const { index, skills, packs } = content;
   const err = (id, msg) => errors.push(`${id}: ${msg}`);
 
+  // Conversations: each turn is a Latin question (what the other person says) with your reply; turns are numbered 1..n.
+  const checkDialogues = (pack, unit) => {
+    const byDlg = new Map();
+    for (const it of unit.items) {
+      if (!it.dlg) continue;
+      if (!it.q) err(it.id, 'a conversation turn needs q (what the other person says)');
+      if (!Number.isInteger(it.turn)) err(it.id, 'a conversation turn needs a whole-number turn');
+      if (!byDlg.has(it.dlg)) byDlg.set(it.dlg, []);
+      byDlg.get(it.dlg).push(it);
+    }
+    for (const [dlg, turns] of byDlg) {
+      const nums = turns.map((t) => t.turn);
+      if (nums.some((n, i) => n !== i + 1)) err(`${pack.id}.${unit.id}`, `conversation "${dlg}": turns must be 1, 2, 3... in order (found ${nums.join(',')})`);
+      if (!turns[0].scene) err(turns[0].id, `conversation "${dlg}": turn 1 needs a scene (the situation, in English)`);
+    }
+    if (unit.play === 'dialogue' && !byDlg.size) err(`${pack.id}.${unit.id}`, 'a unit with play: "dialogue" has no conversations');
+  };
+
   const checkWords = (id, label, text) => {
     if (text !== text.normalize('NFC')) err(id, `${label} is not NFC-normalised: ${text}`);
     for (const tok of tokensLoose(text)) {
@@ -37,24 +56,32 @@ export function validateLoaded(content) {
     }
   };
 
-  // English prompts are unique across the whole app: the same prompt with two different Latin answers would be ambiguous
-  const enSeen = new Set();
+  // Prompts are unique across the whole app: the same prompt with two different Latin answers would be ambiguous.
+  // (A prompt is the English sentence, or for a "change it" item its Latin sentence plus its instruction.)
+  const promptSeen = new Set();
   for (const pack of packs) {
     pack.units.forEach((unit, ui) => {
       if (unit.items.length < 4) err(`${pack.id}.${unit.id}`, 'unit has fewer than 4 items (needed for Latin->English choices)');
       if (!unit.intro) err(`${pack.id}.${unit.id}`, 'missing unit intro');
+      if (unit.play && !MODES[unit.play]?.replay) err(`${pack.id}.${unit.id}`, `play: "${unit.play}" is not a mode with a replay button`);
+      checkDialogues(pack, unit);
       for (const it of unit.items) {
         const id = it.id;
         if (!id.startsWith(`${pack.id}.${unit.id}.`)) err(id, `id should start with ${pack.id}.${unit.id}.`);
         for (const f of ['en', 'la', 'tag', 'explain', 'fill']) if (!it[f]) err(id, `missing ${f}`);
         if (it.q) checkWords(id, 'question', it.q);
         if (it.q && it.sit) err(id, 'an item has either q (Latin question) or sit (situation), not both');
+        if (it.swap) {
+          if (it.q || it.sit) err(id, 'a swap item cannot also have q or sit');
+          if (!it.swap.from || !it.swap.change) err(id, 'swap needs from (the Latin base sentence) and change (the instruction)');
+          else checkWords(id, 'swap.from', it.swap.from);
+        }
         if (it.modern && !it.modernNote) err(id, 'modern items need a modernNote saying where the word comes from');
         if (!it.skills?.length) err(id, 'no skills');
         for (const s of it.skills || []) if (!skills[s]) err(id, `unknown skill ${s}`);
-        const enKey = it.en.toLowerCase();
-        if (enSeen.has(enKey)) err(id, `duplicate English sentence: ${it.en}`);
-        enSeen.add(enKey);
+        const key = promptKey(it);
+        if (promptSeen.has(key)) err(id, `duplicate prompt: ${it.swap ? `${it.swap.from} (${it.swap.change})` : it.en}`);
+        promptSeen.add(key);
 
         it.accepted.forEach((a) => checkWords(id, 'accepted', a));
         if (it.accepted.length > 200) warnings.push(`${id}: ${it.accepted.length} accepted variants`);

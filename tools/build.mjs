@@ -13,7 +13,7 @@ async function walk(dir) {
   const out = [];
   for (const e of await readdir(path.join(ROOT, dir), { withFileTypes: true })) {
     const rel = `${dir}/${e.name}`;
-    if (e.isDirectory()) out.push(...await walk(rel));
+    if (e.isDirectory()) { if (e.name !== 'gen') out.push(...await walk(rel)); }   // generator templates are build inputs, not app files
     else out.push(rel);
   }
   return out;
@@ -34,4 +34,9 @@ const assets = ['./', ...files];
 const tpl = await readFile(path.join(ROOT, 'sw.template.js'), 'utf8');
 const out = tpl.replace('__CACHE__', cache).replace('__ASSETS__', JSON.stringify(assets, null, 2));
 await writeFile(path.join(ROOT, 'sw.js'), out);
+// one place for the version: js/version.js (package.json just follows it)
+const version = /APP_VERSION\s*=\s*'([^']+)'/.exec(await readFile(path.join(ROOT, 'js/version.js'), 'utf8'))[1];
+const pkgPath = path.join(ROOT, 'package.json');
+const pkg = JSON.parse(await readFile(pkgPath, 'utf8'));
+if (pkg.version !== version) { pkg.version = version; await writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n'); }
 console.log(`sw.js written: cache ${cache}, ${assets.length} files precached.`);

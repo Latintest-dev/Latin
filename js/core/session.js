@@ -31,28 +31,30 @@ export class SessionRunner {
   }
 
   /**
-   * outcome = { result: 'correct'|'wrong'|'close', given, expected, diag: [{msg,...}], tags: [] }
+   * outcome = { result: 'correct'|'wrong'|'close', fast?: bool, given, expected, diag: [{msg,...}], tags: [] }
    */
   record(outcome) {
     const entry = this.current;
     const item = this.content.itemsById.get(entry.itemId);
     const t = this.now();
     const st0 = this.store.getItem(entry.itemId) || newItemState();
-    // 'practiceok' = a correct answer in a drill that must not move the review schedule
-    // (speed rounds, narration): count it, but leave the box and due date alone.
-    const good = outcome.result === 'correct' || outcome.result === 'practiceok';
-    const st1 = outcome.result === 'practiceok'
+    // A drill entry (`nosched`) counts a correct answer as practice only: it adds to the tallies but leaves the
+    // box and due date alone, so speed rounds, narration and the like can be repeated freely. A wrong answer in a
+    // drill is treated like any other wrong answer. ('practiceok' may also be passed in directly.)
+    const result = entry.nosched && outcome.result === 'correct' ? 'practiceok' : outcome.result;
+    const good = result === 'correct' || result === 'practiceok';
+    const st1 = result === 'practiceok'
       ? { ...st0, intro: true, seen: st0.seen + 1, ok: st0.ok + 1, last: t, fast: (st0.fast || 0) + (outcome.fast ? 1 : 0) }
-      : applyResult(st0, outcome.result, t);
+      : applyResult(st0, result, t);
     this.store.putItem(entry.itemId, st1);
     this.answered++;
 
-    if (outcome.result !== 'close') {
+    if (result !== 'close') {
       this.store.recordSkills(item.skills, good);
       this.store.recordActivity?.(good);
       if (!this.firstTry.has(entry.itemId)) this.firstTry.set(entry.itemId, good);
     }
-    if (outcome.result === 'wrong') {
+    if (result === 'wrong') {
       this.store.addMistake({
         itemId: entry.itemId,
         type: entry.type,
@@ -64,13 +66,13 @@ export class SessionRunner {
       });
     }
 
+    // A retry is an ordinary practice entry: it climbs the ladder like any other, whatever drill the miss came from.
+    const retryKind = entry.mode ? 'practice' : entry.kind;
     let follow = null;
-    if (outcome.result === 'close') {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
-    } else if (outcome.result === 'wrong') {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
-    } else if (entry.learn && entry.lvl < 2 && outcome.result !== 'practiceok') {
-      follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
+    if (result === 'close' || result === 'wrong') {
+      follow = makeEntry(entry.itemId, st1.lvl, true, retryKind, this.rng, item);
+    } else if (entry.learn && entry.lvl < 2 && result !== 'practiceok') {
+      follow = makeEntry(entry.itemId, st1.lvl, true, retryKind, this.rng, item);
     }
     if (follow) {
       follow.taught = true; // never show the teach card again for a retry or follow-up

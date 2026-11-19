@@ -1,7 +1,8 @@
 import { h } from './dom.js';
 import { fmtDate } from './format.js';
+import { APP_VERSION } from '../version.js';
 
-export const APP_VERSION = '0.5.0';
+export { APP_VERSION };
 
 export function renderSettings(root, app) {
   const { store } = app;
@@ -59,6 +60,19 @@ export function renderSettings(root, app) {
   const goalSel = h('select', { onchange: () => store.setSetting('dailyGoal', Number(goalSel.value)), 'aria-label': 'Daily goal in answers' },
     [10, 20, 30, 50, 80].map((n) => h('option', { value: n, selected: n === (s.settings.dailyGoal || 20) }, String(n))));
 
+  // which tracks bring in new sentences (reviews of anything already met always come up)
+  const trackToggle = (pack) => {
+    const input = h('input', {
+      type: 'checkbox', checked: !(store.state.settings.pausedPacks || []).includes(pack.id), 'aria-label': `New sentences from ${pack.name}`,
+      onchange: () => {
+        const paused = new Set(store.state.settings.pausedPacks || []);
+        if (input.checked) paused.delete(pack.id); else paused.add(pack.id);
+        store.setSetting('pausedPacks', [...paused]);
+      },
+    });
+    return h('label', { class: 'toggle' }, h('span', null, h('strong', null, pack.name), h('small', null, pack.blurb)), input);
+  };
+
   root.append(
     h('header', { class: 'page-head' }, h('h1', null, 'Settings')),
     h('div', { class: 'card' },
@@ -70,6 +84,11 @@ export function renderSettings(root, app) {
       h('label', { class: 'toggle' },
         h('span', null, h('strong', null, 'Daily goal'), h('small', null, 'Answers per day that make a full day. A little every day beats a lot once a week.')),
         goalSel)),
+
+    h('h2', null, 'Tracks'),
+    h('div', { class: 'card' },
+      h('p', { class: 'sub' }, 'Untick a track to stop it adding new sentences to Continue while you focus on another. You still review what you have already met, and you can open any unit from the Learn page.'),
+      ...app.content.packs.map(trackToggle)),
 
     h('h2', null, 'Your data'),
     h('div', { class: 'card' },
