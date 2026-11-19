@@ -1,71 +1,262 @@
 {
-  "prep.in.abl":        { "name": "in + ablative (where)", "pack": "core" },
-  "sum.3sg":            { "name": "est (is)", "pack": "core" },
-  "sum.3pl":            { "name": "sunt (are)", "pack": "core" },
-  "neg.non":            { "name": "nōn (not)", "pack": "core" },
-  "quest.ubi_quid":     { "name": "ubi / quid questions", "pack": "core" },
-  "noun.pred.nom":      { "name": "Predicate nouns (X is a Y)", "pack": "core" },
-  "noun.nom.pl":        { "name": "Plural nominative", "pack": "core" },
-  "adj.agree.gender":   { "name": "Adjective gender agreement", "pack": "core" },
-  "adj.agree.number":   { "name": "Adjective number agreement", "pack": "core" },
-  "vocab.geography":    { "name": "Places, rivers, islands", "pack": "core" },
-
-  "verb.1sg.pres":      { "name": "I-form of the verb (-ō / -iō)", "pack": "daily" },
-  "verb.person":        { "name": "Verb endings: I / you / he", "pack": "daily" },
-  "sum.1sg":            { "name": "sum (I am)", "pack": "daily" },
-  "adj.agree.speaker":  { "name": "Adjective matches the speaker", "pack": "daily" },
-  "case.acc.obj":       { "name": "Accusative object", "pack": "daily" },
-  "prep.post_ante":     { "name": "post / ante + accusative", "pack": "daily" },
-  "volo.inf":           { "name": "volō / nōlō + infinitive", "pack": "daily" },
-  "adv.sequence":       { "name": "prīmum, deinde, postrēmō", "pack": "daily" },
-  "time.when":          { "name": "Times of day (mane, nocte, hodiē)", "pack": "daily" },
-  "loc.home":           { "name": "domī / domum / eō (home)", "pack": "daily" },
-  "vocab.needs":        { "name": "Hunger, thirst, tiredness", "pack": "daily" },
-  "vocab.actions":      { "name": "Everyday actions", "pack": "daily" },
-
-  "verb.1sg.perf":     { "name": "Past tense: I-form (-ī)", "pack": "daily" },
-  "time.past":         { "name": "herī / hodiē (past time)", "pack": "daily" },
-  "verb.1sg.fut":      { "name": "Future tense: I-form (-bō / -am)", "pack": "daily" },
-  "time.future":       { "name": "crās / mox / nunc (future time)", "pack": "daily" },
-  "sum.fut":           { "name": "erō (I will be)", "pack": "daily" },
-  "vocab.food":        { "name": "Food and drink", "pack": "daily" },
-
-  "greet.basic":       { "name": "Greetings: salvē, valē", "pack": "roman" },
-  "case.voc":          { "name": "Calling someone by name (vocative)", "pack": "roman" },
-  "imp.2sg":           { "name": "Commands: one person (-ē, -ī)", "pack": "roman" },
-  "quest.ne":          { "name": "Yes/no questions with -ne", "pack": "roman" },
-  "quest.words":       { "name": "Question words: quis, quid, quota, quot", "pack": "roman" },
-  "idiom.thanks":      { "name": "Thanks and please", "pack": "roman" },
-  "idiom.nomen":       { "name": "Name: mihi nōmen est…", "pack": "roman" },
-  "idiom.placet":      { "name": "Liking: mihi placet", "pack": "roman" },
-  "idiom.possession":  { "name": "Having: mihi est…", "pack": "roman" },
-  "idiom.age":         { "name": "Age: annōs nātus sum", "pack": "roman" },
-  "idiom.hour":        { "name": "Telling the hour", "pack": "roman" },
-  "idiom.feelings":    { "name": "Feeling hot, cold, well", "pack": "roman" },
-  "qa.reply":          { "name": "Answering questions in Latin", "pack": "roman" },
-  "modern.coinage":    { "name": "Modern coinages", "pack": "roman" },
-  "noun.3decl":        { "name": "Third-declension nouns (pater, mīles, rēx)", "pack": "core" },
-  "poss.adj":          { "name": "my / your / our (meus, tuus, noster)", "pack": "core" },
-  "adj.3decl":         { "name": "Adjectives like fortis, trīstis", "pack": "core" },
-  "case.abl.place":    { "name": "Ablative for place (in hortō)", "pack": "core" },
-  "prep.abl":          { "name": "cum / sine + ablative", "pack": "core" },
-  "prep.motion":       { "name": "ad / in / ex: going to and from", "pack": "core" },
-  "prep.acc":          { "name": "per / trans / prope + accusative", "pack": "core" },
-  "num.cardinal":      { "name": "Numbers 2 to 10", "pack": "core" },
-  "vocab.town":        { "name": "Town, house and countryside words", "pack": "core" },
-
-  "verb.perf.person":  { "name": "Past tense: all persons", "pack": "daily" },
-  "verb.fut.person":   { "name": "Future tense: all persons", "pack": "daily" },
-  "verb.impf":         { "name": "Imperfect: was doing, used to", "pack": "daily" },
-  "time.habit":        { "name": "cotīdiē, saepe (habits)", "pack": "daily" },
-
-  "imp.2pl":           { "name": "Commands: several people (-te)", "pack": "roman" },
-  "time.hours": { "name": "Telling the hour (hōra + ordinal)", "pack": "core" },
-  "case.gen.poss": { "name": "Genitive: whose? (of the …)", "pack": "core" },
-  "noun.gen": { "name": "Genitive endings", "pack": "core" },
-  "case.dat.indirect": { "name": "Dative: to whom? (indirect object)", "pack": "core" },
-  "vocab.verbs2": { "name": "More verbs: dīcō, mittō, dūcō …", "pack": "daily" },
-  "saying": { "name": "Famous Latin sayings", "pack": "roman" },
-  "hospitality": { "name": "Welcoming and manners", "pack": "roman" },
-  "time.daily": { "name": "The Roman day and meals", "pack": "roman" }
+  "prep.in.abl": {
+    "name": "in + ablative (where)",
+    "pack": "core"
+  },
+  "sum.3sg": {
+    "name": "est (is)",
+    "pack": "core"
+  },
+  "sum.3pl": {
+    "name": "sunt (are)",
+    "pack": "core"
+  },
+  "neg.non": {
+    "name": "nōn (not)",
+    "pack": "core"
+  },
+  "quest.ubi_quid": {
+    "name": "ubi / quid questions",
+    "pack": "core"
+  },
+  "noun.pred.nom": {
+    "name": "Predicate nouns (X is a Y)",
+    "pack": "core"
+  },
+  "noun.nom.pl": {
+    "name": "Plural nominative",
+    "pack": "core"
+  },
+  "adj.agree.gender": {
+    "name": "Adjective gender agreement",
+    "pack": "core"
+  },
+  "adj.agree.number": {
+    "name": "Adjective number agreement",
+    "pack": "core"
+  },
+  "vocab.geography": {
+    "name": "Places, rivers, islands",
+    "pack": "core"
+  },
+  "verb.1sg.pres": {
+    "name": "I-form of the verb (-ō / -iō)",
+    "pack": "daily"
+  },
+  "verb.person": {
+    "name": "Verb endings: I / you / he",
+    "pack": "daily"
+  },
+  "sum.1sg": {
+    "name": "sum (I am)",
+    "pack": "daily"
+  },
+  "adj.agree.speaker": {
+    "name": "Adjective matches the speaker",
+    "pack": "daily"
+  },
+  "case.acc.obj": {
+    "name": "Accusative object",
+    "pack": "daily"
+  },
+  "prep.post_ante": {
+    "name": "post / ante + accusative",
+    "pack": "daily"
+  },
+  "volo.inf": {
+    "name": "volō / nōlō + infinitive",
+    "pack": "daily"
+  },
+  "adv.sequence": {
+    "name": "prīmum, deinde, postrēmō",
+    "pack": "daily"
+  },
+  "time.when": {
+    "name": "Times of day (mane, nocte, hodiē)",
+    "pack": "daily"
+  },
+  "loc.home": {
+    "name": "domī / domum / eō (home)",
+    "pack": "daily"
+  },
+  "vocab.needs": {
+    "name": "Hunger, thirst, tiredness",
+    "pack": "daily"
+  },
+  "vocab.actions": {
+    "name": "Everyday actions",
+    "pack": "daily"
+  },
+  "verb.1sg.perf": {
+    "name": "Past tense: I-form (-ī)",
+    "pack": "daily"
+  },
+  "time.past": {
+    "name": "herī / hodiē (past time)",
+    "pack": "daily"
+  },
+  "verb.1sg.fut": {
+    "name": "Future tense: I-form (-bō / -am)",
+    "pack": "daily"
+  },
+  "time.future": {
+    "name": "crās / mox / nunc (future time)",
+    "pack": "daily"
+  },
+  "sum.fut": {
+    "name": "erō (I will be)",
+    "pack": "daily"
+  },
+  "vocab.food": {
+    "name": "Food and drink",
+    "pack": "daily"
+  },
+  "greet.basic": {
+    "name": "Greetings: salvē, valē",
+    "pack": "roman"
+  },
+  "case.voc": {
+    "name": "Calling someone by name (vocative)",
+    "pack": "roman"
+  },
+  "imp.2sg": {
+    "name": "Commands: one person (-ē, -ī)",
+    "pack": "roman"
+  },
+  "quest.ne": {
+    "name": "Yes/no questions with -ne",
+    "pack": "roman"
+  },
+  "quest.words": {
+    "name": "Question words: quis, quid, quota, quot",
+    "pack": "roman"
+  },
+  "idiom.thanks": {
+    "name": "Thanks and please",
+    "pack": "roman"
+  },
+  "idiom.nomen": {
+    "name": "Name: mihi nōmen est…",
+    "pack": "roman"
+  },
+  "idiom.placet": {
+    "name": "Liking: mihi placet",
+    "pack": "roman"
+  },
+  "idiom.possession": {
+    "name": "Having: mihi est…",
+    "pack": "roman"
+  },
+  "idiom.age": {
+    "name": "Age: annōs nātus sum",
+    "pack": "roman"
+  },
+  "idiom.hour": {
+    "name": "Telling the hour",
+    "pack": "roman"
+  },
+  "idiom.feelings": {
+    "name": "Feeling hot, cold, well",
+    "pack": "roman"
+  },
+  "qa.reply": {
+    "name": "Answering questions in Latin",
+    "pack": "roman"
+  },
+  "modern.coinage": {
+    "name": "Modern coinages",
+    "pack": "roman"
+  },
+  "noun.3decl": {
+    "name": "Third-declension nouns (pater, mīles, rēx)",
+    "pack": "core"
+  },
+  "poss.adj": {
+    "name": "my / your / our (meus, tuus, noster)",
+    "pack": "core"
+  },
+  "adj.3decl": {
+    "name": "Adjectives like fortis, trīstis",
+    "pack": "core"
+  },
+  "case.abl.place": {
+    "name": "Ablative for place (in hortō)",
+    "pack": "core"
+  },
+  "prep.abl": {
+    "name": "cum / sine + ablative",
+    "pack": "core"
+  },
+  "prep.motion": {
+    "name": "ad / in / ex: going to and from",
+    "pack": "core"
+  },
+  "prep.acc": {
+    "name": "per / trans / prope + accusative",
+    "pack": "core"
+  },
+  "num.cardinal": {
+    "name": "Numbers 2 to 10",
+    "pack": "core"
+  },
+  "vocab.town": {
+    "name": "Town, house and countryside words",
+    "pack": "core"
+  },
+  "verb.perf.person": {
+    "name": "Past tense: all persons",
+    "pack": "daily"
+  },
+  "verb.fut.person": {
+    "name": "Future tense: all persons",
+    "pack": "daily"
+  },
+  "verb.impf": {
+    "name": "Imperfect: was doing, used to",
+    "pack": "daily"
+  },
+  "time.habit": {
+    "name": "cotīdiē, saepe (habits)",
+    "pack": "daily"
+  },
+  "imp.2pl": {
+    "name": "Commands: several people (-te)",
+    "pack": "roman"
+  },
+  "time.hours": {
+    "name": "Telling the hour (hōra + ordinal)",
+    "pack": "core"
+  },
+  "case.gen.poss": {
+    "name": "Genitive: whose? (of the …)",
+    "pack": "core"
+  },
+  "noun.gen": {
+    "name": "Genitive endings",
+    "pack": "core"
+  },
+  "case.dat.indirect": {
+    "name": "Dative: to whom? (indirect object)",
+    "pack": "core"
+  },
+  "vocab.verbs2": {
+    "name": "More verbs: dīcō, mittō, dūcō …",
+    "pack": "daily"
+  },
+  "saying": {
+    "name": "Famous Latin sayings",
+    "pack": "roman"
+  },
+  "hospitality": {
+    "name": "Welcoming and manners",
+    "pack": "roman"
+  },
+  "time.daily": {
+    "name": "The Roman day and meals",
+    "pack": "roman"
+  },
+  "talk": {
+    "name": "Conversation and repair phrases",
+    "pack": "roman"
+  }
 }

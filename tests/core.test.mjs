@@ -30,11 +30,11 @@ test('a brand-new session shares its new-sentence budget between tracks, first a
   const store = await mkStore();
   const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'continue', newTotal: 4 });
   assert.equal(q.length, 4);
-  // taking turns: the first three come from three different tracks, the fourth starts the next round
+  // taking turns: one from each track, then the next round starts over
   const packs = q.map((e) => content.packOf.get(e.itemId));
-  assert.deepEqual(packs.slice(0, 3), ['core', 'daily', 'roman']);
-  assert.equal(packs[3], 'core');
-  assert.deepEqual(q.map((e) => e.itemId), ['core.1.01', 'daily.1.01', 'roman.1.01', 'core.1.02']);
+  assert.deepEqual(packs, ['core', 'daily', 'roman', 'day']);
+  assert.deepEqual(q.map((e) => e.itemId), ['core.1.01', 'daily.1.01', 'roman.1.01', q[3].itemId]);
+  assert.ok(q[3].itemId.startsWith('day.1.'));
   assert.ok(q.every((e) => e.lvl === 0 && e.learn && e.kind === 'new' && e.type.startsWith('mc_')));
 });
 

@@ -14,6 +14,11 @@ export const INTERVAL_DAYS = [0, 1, 2, 4, 8, 16, 32];
 export const STRONG_BOX = 3;      // box at/above which a sentence counts as "known"
 export const UNLOCK_RATIO = 0.8;  // share of previous unit that must be introduced
 export const MAX_DUE = 10;
+export const SPEED_COUNT = 10;     // sentences in a speed round
+export const NARRATE_MIN = 0.8;    // share of a script that must be met before "Narrate it" appears
+
+/** Seconds allowed for a typed answer in a speed round: generous for phone typing, tight enough to need recall. */
+export function speedLimitMs(la) { return 8000 + 450 * String(la).length; }
 
 export function newItemState() {
   return { lvl: 0, box: 0, due: 0, intro: false, seen: 0, ok: 0, bad: 0, last: 0, upd: 0 };
@@ -173,6 +178,18 @@ export function buildQueue({ content, itemStates, skills, mistakes, now, mode, s
     }
     scored.sort((a, b) => a.score - b.score);
     for (const { it } of scored.slice(0, 8)) queue.push(entryFor(it, 'practice'));
+  } else if (mode === 'speed') {
+    // Automaticity drill: sentences you can already write. Those you have answered fast least often come first.
+    const known = [...content.itemsById.values()].filter((it) => itemStates[it.id]?.intro && itemStates[it.id].lvl >= 2);
+    const pool = known.length >= 4 ? known : [...content.itemsById.values()].filter((it) => itemStates[it.id]?.intro);
+    const ranked = shuffle(pool, rng).sort((a, b) => (itemStates[a.id].fast || 0) - (itemStates[b.id].fast || 0));
+    for (const it of ranked.slice(0, SPEED_COUNT)) queue.push({ itemId: it.id, lvl: 2, learn: false, kind: 'speed', type: 'write', speed: true });
+  } else if (mode === 'narrate') {
+    // Retell a whole script in order (a unit of the "Narrate your day" track). Does not move review dates.
+    const pack = content.packs.find((p) => p.id === scope.packId);
+    const unit = pack.units.find((u) => u.id === scope.unitId);
+    const seen = unit.items.filter((it) => itemStates[it.id]?.intro);
+    seen.forEach((it, i) => queue.push({ itemId: it.id, lvl: 2, learn: false, kind: 'narrate', type: 'write', nosched: true, step: i + 1, of: seen.length }));
   } else if (mode === 'mistakes') {
     const ids = [];
     for (let i = mistakes.length - 1; i >= 0 && ids.length < 8; i--) {

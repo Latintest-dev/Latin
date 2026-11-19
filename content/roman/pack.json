@@ -60,6 +60,13 @@
       "title": "Famous sayings",
       "blurb": "Twelve Latin sayings still used today, and the grammar inside them",
       "intro": "Many Latin phrases are still alive in English, law and mottos. They make excellent grammar practice because they are short and the grammar is exactly what you have been learning: commands (_carpe_, _cavē_, _dīvide_), the perfect tense (_vēnī, vīdī, vīcī_), the accusative object, and adjectives that agree (_ars longa, vīta brevis_). In this unit, translate each saying and spot the grammar."
+    },
+    {
+      "id": "9",
+      "file": "u9.json",
+      "title": "Small talk",
+      "blurb": "Where you are from, your family, and what to say when you do not understand",
+      "intro": "Small talk is where a language starts to feel alive. You will ask and answer the questions strangers ask: where are you from, where do you live, how old are you, do you have brothers or sisters. And you will learn the sentences every learner needs most: _Nōn intellegō_ (I do not understand), _Dīc iterum, quaesō_ (say it again, please), _Lentē dīc, quaesō_ (speak slowly, please). Use them freely: Romans were used to people who spoke Latin as a second language."
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Latin: sentence-drill app (v0.4)
+# Latin: sentence-drill app (v0.5)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences. It runs in any
 modern browser on a phone or computer, stores progress on the device, and lets you export and import
@@ -6,7 +6,7 @@ progress as a file. There is no server, no account and no tracking.
 
 ## What it does
 
-- **Three tracks**, each with its own units and unlock order:
+- **Four tracks**, each with its own units and unlock order:
   - *Core grammar*: follows the order of Lingua Latina per se illustrata, starting at the very beginning
     (est/sunt and in + ablative; questions with ubi/quid; adjective agreement). Original sentences.
   - *Daily narration*: things you say to yourself through the day (hungry, thirsty, eating, "after the
@@ -15,9 +15,25 @@ progress as a file. There is no server, no account and no tracking.
   - *Like a Roman* (new in v0.2): how Romans actually said things. Greetings and manners, idioms
     (*mihi placet*, *annōs nātus sum*, *Quota hōra est?*), then a **Latin-only** unit where the question
     is in Latin and you reply in Latin.
+    v0.4 and v0.5 add the Roman day and meals, hospitality, famous sayings, and a *Small talk* unit
+    (where you are from, family, and *Nōn intellegō. Dīc iterum, quaesō.*).
+  - *Narrate your day* (new in v0.5): first-person scripts for a whole day in the present, the past and the
+    future, built to be retold in order. See *Drills for speed and habit* below.
 - **Three kinds of prompt.** Plain (translate this English sentence), **situation** ("You meet a friend.
   Greet him."), and **Latin question** (answer in Latin; never asked as Latin→English). The English
   appears only after you answer.
+- **Drills for speed and habit** (new in v0.5):
+  - **Daily goal and streak.** The Learn page shows today's answers against a goal (default 20, change it in
+    Settings) and your streak of consecutive days. Many short days beat a few long ones.
+  - **Speed round.** Ten sentences you can already write, typed against a countdown. Answering in time builds
+    automatic recall; running out of time counts as a miss. It never moves your review dates, so it is safe to
+    do as often as you like. Sentences you have answered fast least often come up first.
+  - **Narrate it.** The *Narrate your day* track is a set of ordered scripts (morning, afternoon and evening,
+    yesterday, tomorrow). Learn the sentences normally; once you have met most of a script, **Narrate it**
+    has you retell the whole sequence in order from English prompts, then shows it back as one paragraph to
+    read aloud.
+  - **Words.** A look-up page: every verb in four tenses and six persons with English, nouns by case, so you
+    can build sentences about your real day.
 - **Latin questions show a cue** (v0.4): because a question like *Quid edis?* has no single right answer, a small
   line under it says what to reply in English ("Reply: I eat bread"). You put that into Latin.
 - **Modern coinages** are marked with a red "modern coinage" tag and a note. Roman-style content is the default.

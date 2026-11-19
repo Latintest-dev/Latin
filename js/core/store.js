@@ -3,11 +3,13 @@
 // Call `await store.flush()` when you need to be sure everything is written.
 
 import { buildExport, mergeData, MAX_MISTAKES } from './transfer.js';
+import { bump, trim } from './activity.js';
 
 export const DEFAULT_SETTINGS = {
   showMacrons: false,    // display macrons on Latin text
   strictMacrons: false,  // require macrons in typed answers
   newTotal: 6,           // new sentences introduced per session, shared between tracks
+  dailyGoal: 20,         // answers per day that count as a full day of practice
   upd: 0,
 };
 
@@ -32,6 +34,7 @@ export async function createStore(backend, { now = () => Date.now() } = {}) {
     skills: {},
     mistakes: [],
     flags: [],
+    activity: {},
     meta: {},
   });
 
@@ -41,6 +44,7 @@ export async function createStore(backend, { now = () => Date.now() } = {}) {
   state.skills = raw.skills || {};
   state.mistakes = (raw.mistakes || []).sort((a, b) => a.t - b.t);
   state.flags = (raw.flags || []).sort((a, b) => a.t - b.t);
+  state.activity = raw.meta?.activity || {};
   state.meta = { created: raw.meta?.created, lastExport: raw.meta?.lastExport };
   if (!state.meta.created) {
     state.meta.created = now();
@@ -88,6 +92,13 @@ export async function createStore(backend, { now = () => Date.now() } = {}) {
       return rec;
     },
 
+    /** Count one answer toward today's total (and the streak). */
+    recordActivity(ok) {
+      const t = now();
+      state.activity = trim(bump(state.activity, t, ok), t);
+      put('meta', 'activity', state.activity);
+    },
+
     addFlag(f) {
       const rec = { ...f, id: f.id || makeId('f', now()), t: f.t || now() };
       state.flags.push(rec);
@@ -113,6 +124,7 @@ export async function createStore(backend, { now = () => Date.now() } = {}) {
       state.skills = merged.skills;
       state.mistakes = merged.mistakes;
       state.flags = merged.flags;
+      state.activity = merged.activity;
       state.settings = { ...DEFAULT_SETTINGS, ...merged.settings };
       // rewrite everything (data is small)
       await pending;
@@ -122,6 +134,7 @@ export async function createStore(backend, { now = () => Date.now() } = {}) {
       for (const m of state.mistakes) put('mistakes', m.id, m);
       for (const f of state.flags) put('flags', f.id, f);
       put('meta', 'settings', state.settings);
+      put('meta', 'activity', state.activity);
       put('meta', 'created', state.meta.created);
       if (state.meta.lastExport) put('meta', 'lastExport', state.meta.lastExport);
       await pending;

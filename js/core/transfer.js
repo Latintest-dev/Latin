@@ -6,6 +6,8 @@
 //   mistakes/flags : union by id
 //   settings       : newer `upd` wins
 
+import { mergeActivity } from './activity.js';
+
 export const APP_ID = 'latin-app';
 export const SCHEMA = 1;
 export const MAX_MISTAKES = 500;
@@ -20,6 +22,7 @@ export function buildExport(state, now) {
     skills: state.skills,
     mistakes: state.mistakes,
     flags: state.flags,
+    activity: state.activity || {},
   };
 }
 
@@ -42,6 +45,7 @@ export function mergeData(state, incoming) {
     settings: state.settings,
     mistakes: [...state.mistakes],
     flags: [...state.flags],
+    activity: mergeActivity(state.activity || {}, incoming.activity || {}),
   };
   const summary = { items: 0, skills: 0, mistakes: 0, flags: 0, settings: false };
 

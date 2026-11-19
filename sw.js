@@ -2,7 +2,7 @@
 // writes sw.js. Every file is precached on install, so after the first load the whole app
 // works offline. Changing any file changes the cache name, which installs an updated copy.
 
-const CACHE = 'latin-4552374732';
+const CACHE = 'latin-e739d477e6';
 const ASSETS = [
   "./",
   "content/core/gen/10.json",
@@ -41,6 +41,15 @@ const ASSETS = [
   "content/daily/u7.json",
   "content/daily/u8.json",
   "content/daily/u9.json",
+  "content/day/gen/1.json",
+  "content/day/gen/2.json",
+  "content/day/gen/3.json",
+  "content/day/gen/4.json",
+  "content/day/pack.json",
+  "content/day/u1.json",
+  "content/day/u2.json",
+  "content/day/u3.json",
+  "content/day/u4.json",
   "content/lexicon.json",
   "content/roman/gen/4.json",
   "content/roman/gen/5.json",
@@ -53,12 +62,14 @@ const ASSETS = [
   "content/roman/u6.json",
   "content/roman/u7.json",
   "content/roman/u8.json",
+  "content/roman/u9.json",
   "content/skills.json",
   "css/app.css",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon.svg",
   "index.html",
+  "js/core/activity.js",
   "js/core/content.js",
   "js/core/scheduler.js",
   "js/core/session.js",
@@ -76,6 +87,7 @@ const ASSETS = [
   "js/ui/progress.js",
   "js/ui/session.js",
   "js/ui/settings.js",
+  "js/ui/words.js",
   "manifest.webmanifest"
 ];
 

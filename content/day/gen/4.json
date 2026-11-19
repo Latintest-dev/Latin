@@ -1,0 +1,649 @@
+{
+  "unit": {
+    "id": "4",
+    "title": "What I will do tomorrow",
+    "blurb": "Plan tomorrow in the future tense",
+    "intro": "To say what you will do, use the future tense with _crās_ (tomorrow). For -āre and -ēre verbs the “I” ending is _-bō_: _lavābō_ (I will wash), _vidēbō_ (I will see). For -ere and -īre verbs it is _-am_: _edam_ (I will eat), _dormiam_ (I will sleep). _eō_ is irregular: _ībō_ (I will go).",
+    "narrate": true,
+    "ordered": true
+  },
+  "templates": [
+    {
+      "id": "f1",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "surgo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        }
+      },
+      "chunks": [
+        "crās māne",
+        "{v}"
+      ],
+      "en": "Tomorrow morning I will get up.",
+      "fill": [
+        "v"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it.",
+      "roles": {}
+    },
+    {
+      "id": "f2",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "bibo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "aqua"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will drink water.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f3",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "lavo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "manus"
+            ]
+          },
+          "form": "acc.pl",
+          "foils": [
+            "nom.pl",
+            "gen.pl",
+            "abl.pl"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will wash my hands.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f4",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "ientaculum"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will eat breakfast.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f5",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "lego"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "epistula"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will read a letter.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f6",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "prep.motion"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "eo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "forum"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "ad {pl}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will go to the forum.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _ad {pl}_ takes the accusative: motion towards.",
+      "roles": {
+        "pl": "after _ad_ (“to”) the place goes in the accusative"
+      }
+    },
+    {
+      "id": "f7",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "video"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "amicus"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will see a friend.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f8",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "prep.in.abl"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "laboro"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "forum"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will work in the forum.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    },
+    {
+      "id": "f9",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "prep.motion"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "eo"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "thermae"
+            ]
+          },
+          "form": "acc.pl",
+          "foils": [
+            "nom.pl",
+            "abl.pl"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "ad {pl}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will go to the baths.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _ad {pl}_ takes the accusative: motion towards.",
+      "roles": {
+        "pl": "after _ad_ (“to”) the place goes in the accusative"
+      }
+    },
+    {
+      "id": "f10",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "paro"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "cena"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will prepare dinner.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f11",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "case.acc.obj"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "narro"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "fabula"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will tell a story.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "f12",
+      "n": 1,
+      "skills": [
+        "verb.fut.person",
+        "time.future",
+        "prep.in.abl"
+      ],
+      "tag": "my day (future)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dormio"
+            ]
+          },
+          "form": "fut.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "lectus"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "crās",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "Tomorrow I will sleep in bed.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    }
+  ]
+}

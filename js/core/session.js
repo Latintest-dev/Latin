@@ -38,13 +38,19 @@ export class SessionRunner {
     const item = this.content.itemsById.get(entry.itemId);
     const t = this.now();
     const st0 = this.store.getItem(entry.itemId) || newItemState();
-    const st1 = applyResult(st0, outcome.result, t);
+    // 'practiceok' = a correct answer in a drill that must not move the review schedule
+    // (speed rounds, narration): count it, but leave the box and due date alone.
+    const good = outcome.result === 'correct' || outcome.result === 'practiceok';
+    const st1 = outcome.result === 'practiceok'
+      ? { ...st0, intro: true, seen: st0.seen + 1, ok: st0.ok + 1, last: t, fast: (st0.fast || 0) + (outcome.fast ? 1 : 0) }
+      : applyResult(st0, outcome.result, t);
     this.store.putItem(entry.itemId, st1);
     this.answered++;
 
     if (outcome.result !== 'close') {
-      this.store.recordSkills(item.skills, outcome.result === 'correct');
-      if (!this.firstTry.has(entry.itemId)) this.firstTry.set(entry.itemId, outcome.result === 'correct');
+      this.store.recordSkills(item.skills, good);
+      this.store.recordActivity?.(good);
+      if (!this.firstTry.has(entry.itemId)) this.firstTry.set(entry.itemId, good);
     }
     if (outcome.result === 'wrong') {
       this.store.addMistake({
@@ -63,7 +69,7 @@ export class SessionRunner {
       follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
     } else if (outcome.result === 'wrong') {
       follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
-    } else if (entry.learn && entry.lvl < 2) {
+    } else if (entry.learn && entry.lvl < 2 && outcome.result !== 'practiceok') {
       follow = makeEntry(entry.itemId, st1.lvl, true, entry.kind, this.rng, item);
     }
     if (follow) {

@@ -27,11 +27,19 @@ def click_option(page, want, loose):
         if (strip(t) == strip(want)) if loose else (t == want): o.click(); return
     raise SystemExit('option not found: ' + want)
 
+def click_any(page, wants, loose):
+    for o in page.query_selector_all('.opt'):
+        t = o.inner_text().strip()
+        if any((strip(t) == strip(w)) if loose else (t == w) for w in wants): o.click(); return
+    raise SystemExit('option not found: ' + str(wants))
+
+ALL_P, ALL_L = {}, {}
+
 def answer_mc(page, kind, prompt, by_prompt, by_la):
     if kind == 'e2l':
-        click_option(page, by_prompt[strip(prompt)]['la'], True)
+        click_any(page, [i['la'] for i in ALL_P[strip(prompt)]], True)
     else:
-        click_option(page, by_la[strip(prompt)]['en'], False)
+        click_any(page, [i['en'] for i in ALL_L[strip(prompt)]], False)
 
 def play(page, by_prompt, by_la, max_steps=300):
     """Bot: answers everything correctly (typing macron-free Latin) until the summary."""
@@ -65,6 +73,9 @@ with sync_playwright() as p:
     page.goto(BASE); page.wait_for_selector('h1')
     items = page.evaluate("() => [...window.__app.content.itemsById.values()].map(i => ({id:i.id,en:i.en,la:i.la,fill:i.fill,prompt:i.q||i.sit||i.en,q:!!i.q}))")
     by_prompt = {strip(i['prompt']): i for i in items}; by_la = {strip(i['la']): i for i in items if not i['q']}
+    for i in items:
+        ALL_P.setdefault(strip(i['prompt']), []).append(i)
+        if not i['q']: ALL_L.setdefault(strip(i['la']), []).append(i)
 
     # --- service worker + offline -------------------------------------------------
     page.wait_for_function("() => navigator.serviceWorker.ready.then(() => true)")

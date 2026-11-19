@@ -8,4 +8,5 @@ export const PACKS = [
   { id: 'core', path: 'content/core/pack.json' },
   { id: 'daily', path: 'content/daily/pack.json' },
   { id: 'roman', path: 'content/roman/pack.json' },
+  { id: 'day', path: 'content/day/pack.json' },
 ];

@@ -37,8 +37,9 @@ export function validateLoaded(content) {
     }
   };
 
+  // English prompts are unique across the whole app: the same prompt with two different Latin answers would be ambiguous
+  const enSeen = new Set();
   for (const pack of packs) {
-    const enSeen = new Set();
     pack.units.forEach((unit, ui) => {
       if (unit.items.length < 4) err(`${pack.id}.${unit.id}`, 'unit has fewer than 4 items (needed for Latin->English choices)');
       if (!unit.intro) err(`${pack.id}.${unit.id}`, 'missing unit intro');

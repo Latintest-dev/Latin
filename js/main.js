@@ -9,6 +9,7 @@ import { renderHome } from './ui/home.js';
 import { renderSession } from './ui/session.js';
 import { renderProgress } from './ui/progress.js';
 import { renderSettings } from './ui/settings.js';
+import { renderWords } from './ui/words.js';
 
 const root = document.getElementById('app');
 const nav = document.getElementById('nav');
@@ -28,6 +29,7 @@ window.__app = app; // handy for debugging in the browser console
 const routes = {
   '': renderHome,
   progress: renderProgress,
+  words: renderWords,
   settings: renderSettings,
 };
 

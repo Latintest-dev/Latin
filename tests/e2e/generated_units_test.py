@@ -27,11 +27,19 @@ def click_option(page, want, loose):
         if (strip(t) == strip(want)) if loose else (t == want): o.click(); return
     raise SystemExit('option not found: ' + want)
 
+def click_any(page, wants, loose):
+    for o in page.query_selector_all('.opt'):
+        t = o.inner_text().strip()
+        if any((strip(t) == strip(w)) if loose else (t == w) for w in wants): o.click(); return
+    raise SystemExit('option not found: ' + str(wants))
+
+ALL_P, ALL_L = {}, {}
+
 def answer_mc(page, kind, key, by_prompt, by_la):
     if kind == 'e2l':
-        click_option(page, by_prompt[key]['la'], True)
+        click_any(page, [i['la'] for i in ALL_P[key]], True)
     else:
-        click_option(page, by_la[key.split('|')[0]]['en'], False)
+        click_any(page, [i['en'] for i in ALL_L[key.split('|')[0]]], False)
 
 def play(page, by_prompt, by_la, max_steps=300):
     """Bot: answers everything correctly (typing macron-free Latin) until the summary."""
@@ -59,7 +67,7 @@ def play(page, by_prompt, by_la, max_steps=300):
     raise SystemExit('too many steps')
 
 
-UNITS = [('core','4'),('core','5'),('core','6'),('core','7'),('core','8'),('core','9'),('core','10'),('daily','6'),('daily','7'),('daily','8'),('daily','9'),('daily','10'),('daily','11'),('roman','4'),('roman','5'),('roman','6'),('roman','7'),('roman','8')]
+UNITS = [('core','4'),('core','5'),('core','6'),('core','7'),('core','8'),('core','9'),('core','10'),('daily','6'),('daily','7'),('daily','8'),('daily','9'),('daily','10'),('daily','11'),('roman','4'),('roman','5'),('roman','6'),('roman','7'),('roman','8'),('roman','9'),('day','1'),('day','2'),('day','3'),('day','4')]
 with sync_playwright() as p:
     b = p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
     ctx = b.new_context(viewport={'width': 390, 'height': 844})
@@ -68,6 +76,9 @@ with sync_playwright() as p:
     page.on('pageerror', lambda e: errors.append(str(e)))
     page.goto(BASE); page.wait_for_selector('h1')
     items = page.evaluate("() => [...window.__app.content.itemsById.values()].map(i => ({id:i.id,en:i.en,la:i.la,fill:i.fill,prompt:i.q||i.sit||i.en,q:!!i.q,cue:i.q?(i.cue||((/“[^”]*”\\s*“([^”]*)”/.exec(i.en)||[])[1]||'')):''}))")
+    for i in items:
+        ALL_P.setdefault(strip(i['prompt']) + '|' + strip(i['cue']), []).append(i)
+        if not i['q']: ALL_L.setdefault(strip(i['la']), []).append(i)
     by_prompt = {strip(i['prompt']) + '|' + strip(i['cue']): i for i in items}; by_la = {strip(i['la']): i for i in items if not i['q']}
     for pack, unit in UNITS:
         page.goto(BASE); page.wait_for_selector('h1')

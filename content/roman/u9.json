@@ -1,0 +1,485 @@
+[
+  {
+    "id": "roman.9.01",
+    "review": "unreviewed",
+    "q": "Unde es?",
+    "en": "“Where are you from?” “I am from Rome.”",
+    "chunks": [
+      "Rōmā",
+      "sum"
+    ],
+    "fill": "Rōmā",
+    "skills": [
+      "qa.reply",
+      "talk"
+    ],
+    "tag": "where are you from?",
+    "explain": "_unde?_ asks “from where?”. For the name of a town, Latin uses the ablative with no preposition: _Rōmā sum_ = I am from Rome.",
+    "distractors": [
+      [
+        "Rōmam sum.",
+        "“From” a town is the ablative: _Rōmā_, not the accusative _Rōmam_."
+      ],
+      [
+        "Rōmae sum.",
+        "_Rōmae_ means “at Rome”. “From Rome” is _Rōmā_."
+      ],
+      [
+        "Rōmā es.",
+        "_es_ is “you are”. About yourself: _sum_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.02",
+    "review": "unreviewed",
+    "q": "Unde es?",
+    "en": "“Where are you from?” “I am from America.”",
+    "chunks": [
+      "ex Americā",
+      "sum"
+    ],
+    "modern": true,
+    "modernNote": "America was unknown to the Romans, so this is a modern name with Latin endings.",
+    "fill": "Americā",
+    "skills": [
+      "qa.reply",
+      "talk"
+    ],
+    "tag": "where are you from? (America)",
+    "explain": "A country needs _ex_ (“out of”) plus the ablative: _ex Americā_. America is a modern name, so a Roman would not have known it.",
+    "distractors": [
+      [
+        "Ex Americam sum.",
+        "_ex_ (“out of”) takes the ablative: _Americā_."
+      ],
+      [
+        "In Americā sum.",
+        "_in Americā_ means “in America”. “From America” is _ex Americā_."
+      ],
+      [
+        "Ex Americā es.",
+        "_es_ is “you are”. About yourself: _sum_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.03",
+    "review": "unreviewed",
+    "q": "Ubi habitās?",
+    "en": "“Where do you live?” “I live in Rome.”",
+    "chunks": [
+      "Rōmae",
+      "habitō"
+    ],
+    "fill": "habitō",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "verb.person"
+    ],
+    "tag": "where do you live?",
+    "explain": "_ubi?_ asks “where?”. For a town, _Rōmae_ means “at Rome” (a special form called the locative). _habitō_ is “I live”.",
+    "distractors": [
+      [
+        "Rōmā habitō.",
+        "_Rōmā_ means “from Rome”. “At Rome” is _Rōmae_."
+      ],
+      [
+        "Rōmae habitās.",
+        "_habitās_ is “you live”. About yourself: _habitō_."
+      ],
+      [
+        "In Rōmae habitō.",
+        "Town names need no _in_: _Rōmae_ alone means “at Rome”."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.04",
+    "review": "unreviewed",
+    "q": "Quot annōs nātus es?",
+    "en": "“How old are you?” “I am twenty years old.”",
+    "chunks": [
+      "vīgintī annōs",
+      "nātus",
+      "sum"
+    ],
+    "fill": "nātus",
+    "skills": [
+      "qa.reply",
+      "talk"
+    ],
+    "tag": "how old are you?",
+    "explain": "Romans said “born of twenty years”: _vīgintī annōs nātus sum_. The years are accusative plural (_annōs_), and _nātus_ means “born”.",
+    "distractors": [
+      [
+        "Vīgintī annī nātus sum.",
+        "The years are the object here: accusative _annōs_."
+      ],
+      [
+        "Vīgintī annōs nātus es.",
+        "_es_ is “you are”. About yourself: _sum_."
+      ],
+      [
+        "Vīgintī annōs nātī sum.",
+        "_nātus_ agrees with “I” (masculine singular): _nātus_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.05",
+    "review": "unreviewed",
+    "q": "Quid facis?",
+    "en": "“What are you doing?” “I am working.”",
+    "la": "Labōrō.",
+    "fill": "labōrō",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "verb.person"
+    ],
+    "tag": "what are you doing?",
+    "explain": "_quid facis?_ = what are you doing? The _-s_ is “you”, so the answer ends in _-ō_: _labōrō_ (I work).",
+    "distractors": [
+      [
+        "Labōrās.",
+        "_labōrās_ is “you work”. About yourself: _labōrō_."
+      ],
+      [
+        "Labōrat.",
+        "_labōrat_ is “he works”. About yourself: _labōrō_."
+      ],
+      [
+        "Labōrāmus.",
+        "_labōrāmus_ is “we work”. About yourself: _labōrō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.06",
+    "review": "unreviewed",
+    "q": "Habēsne frātrem?",
+    "en": "“Do you have a brother?” “Yes, I have a brother.”",
+    "la": "Etiam, frātrem habeō.",
+    "fill": "frātrem",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "case.acc.obj"
+    ],
+    "tag": "do you have a brother?",
+    "explain": "_-ne_ makes a yes/no question. _frātrem_ is the accusative singular, the thing you have.",
+    "distractors": [
+      [
+        "Etiam, frāter habeō.",
+        "_frāter_ is nominative. What you have is accusative: _frātrem_."
+      ],
+      [
+        "Etiam, frātrem habēs.",
+        "_habēs_ is “you have”. About yourself: _habeō_."
+      ],
+      [
+        "Minimē, frātrem habeō.",
+        "_minimē_ means “no”. The answer here is yes: _etiam_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.07",
+    "review": "unreviewed",
+    "q": "Habēsne sorōrem?",
+    "en": "“Do you have a sister?” “No, I do not have a sister.”",
+    "la": "Minimē, sorōrem nōn habeō.",
+    "fill": "nōn",
+    "skills": [
+      "qa.reply",
+      "talk"
+    ],
+    "tag": "no, I do not have a sister",
+    "explain": "_minimē_ means “no” (literally “least of all”), and _nōn_ goes before the verb to negate it.",
+    "distractors": [
+      [
+        "Etiam, sorōrem nōn habeō.",
+        "_etiam_ means “yes”. The answer is no: _minimē_."
+      ],
+      [
+        "Minimē, sorōrem habeō.",
+        "Without _nōn_ this says “I do have a sister”."
+      ],
+      [
+        "Minimē, soror nōn habeō.",
+        "_soror_ is nominative. What you do not have is accusative: _sorōrem_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.08",
+    "review": "unreviewed",
+    "en": "I don't understand. Say it again, please.",
+    "la": "Nōn intellegō. Dīc iterum, quaesō.",
+    "fill": "dīc",
+    "skills": [
+      "talk",
+      "verb.person",
+      "imp.2sg"
+    ],
+    "tag": "say you do not understand",
+    "explain": "_nōn_ negates the verb: _nōn intellegō_ = I do not understand. Then ask for a repeat with the command _dīc_ (no final -e) and _iterum_ (again). This is the most useful pair of sentences for a learner.",
+    "distractors": [
+      [
+        "Nōn intellegis. Dīc iterum, quaesō.",
+        "_intellegis_ is “you understand”. About yourself: _intellegō_."
+      ],
+      [
+        "Nōn intellegō. Dīcite iterum, quaesō.",
+        "_dīcite_ is to several people. To one person: _dīc_."
+      ],
+      [
+        "Nōn intellegō. Dīcō iterum, quaesō.",
+        "_dīcō_ is “I say”. A command is _dīc_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.09",
+    "review": "unreviewed",
+    "en": "Say it again, please.",
+    "la": "Dīc iterum, quaesō.",
+    "fill": "dīc",
+    "skills": [
+      "talk",
+      "imp.2sg"
+    ],
+    "tag": "ask someone to repeat",
+    "explain": "_dīc_ is the irregular command to one person (no final -e), and _iterum_ means “again”. _quaesō_ adds “please”.",
+    "distractors": [
+      [
+        "Dīcite iterum, quaesō.",
+        "_dīcite_ is to several people. To one person: _dīc_."
+      ],
+      [
+        "Dīcō iterum, quaesō.",
+        "_dīcō_ is “I say”. A command is _dīc_."
+      ],
+      [
+        "Dīcit iterum, quaesō.",
+        "_dīcit_ is “he says”. A command to one person is _dīc_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.10",
+    "review": "unreviewed",
+    "en": "Speak slowly, please.",
+    "la": "Lentē dīc, quaesō.",
+    "fill": "lentē",
+    "skills": [
+      "talk",
+      "imp.2sg"
+    ],
+    "tag": "ask someone to slow down",
+    "explain": "_dīc_ is the command to one person and _lentē_ is an adverb (“slowly”), which never changes. A learner's other useful sentence.",
+    "distractors": [
+      [
+        "Lentē dīcite, quaesō.",
+        "_dīcite_ is to several people. To one person: _dīc_."
+      ],
+      [
+        "Lentē dīcis, quaesō.",
+        "_dīcis_ is “you say”. A command is _dīc_."
+      ],
+      [
+        "Lentē dīcō, quaesō.",
+        "_dīcō_ is “I say”. A command is _dīc_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.11",
+    "review": "unreviewed",
+    "q": "Intellegisne?",
+    "en": "“Do you understand?” “Yes, I understand.”",
+    "la": "Etiam, intellegō.",
+    "fill": "intellegō",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "verb.person"
+    ],
+    "tag": "do you understand?",
+    "explain": "_-ne_ makes a question, and the answer turns _intellegis_ (you) into _intellegō_ (I).",
+    "distractors": [
+      [
+        "Etiam, intellegis.",
+        "_intellegis_ is “you understand”. About yourself: _intellegō_."
+      ],
+      [
+        "Etiam, intellegit.",
+        "_intellegit_ is “he understands”. About yourself: _intellegō_."
+      ],
+      [
+        "Minimē, intellegō.",
+        "_minimē_ means “no”. The answer here is yes: _etiam_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.12",
+    "review": "unreviewed",
+    "q": "Quid hoc est?",
+    "en": "“What is this?” “This is a book.”",
+    "chunks": [
+      "hoc",
+      "est",
+      "liber"
+    ],
+    "fill": "liber",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "noun.pred.nom"
+    ],
+    "tag": "what is this?",
+    "explain": "_hoc_ means “this”. After _est_ the noun that says what it is stays nominative: _liber_ (not _librum_).",
+    "distractors": [
+      [
+        "Hoc est librum.",
+        "After _est_ the noun is nominative: _liber_, not the accusative _librum_."
+      ],
+      [
+        "Hoc sunt liber.",
+        "_hoc_ is singular, so the verb is _est_."
+      ],
+      [
+        "Hoc est librī.",
+        "_librī_ is genitive or plural. “A book” is nominative singular: _liber_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.13",
+    "review": "unreviewed",
+    "q": "Occupātusne es?",
+    "en": "“Are you busy?” “No, I am free.”",
+    "la": "Minimē, ōtiōsus sum.",
+    "fill": "ōtiōsus",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "adj.agree.gender"
+    ],
+    "tag": "are you busy?",
+    "explain": "_occupātus_ (busy) and _ōtiōsus_ (free, at leisure) are adjectives that agree with the speaker. A man says _ōtiōsus_; a woman says _ōtiōsa_. The Romans valued _ōtium_ (leisure), the opposite of _negōtium_ (business).",
+    "distractors": [
+      [
+        "Minimē, ōtiōsa sum.",
+        "_ōtiōsa_ is feminine. A man says _ōtiōsus_ (this course assumes you are a man; a woman would say _ōtiōsa_)."
+      ],
+      [
+        "Etiam, ōtiōsus sum.",
+        "_etiam_ means “yes”. The answer is no: _minimē_."
+      ],
+      [
+        "Minimē, ōtiōsus es.",
+        "_es_ is “you are”. About yourself: _sum_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.14",
+    "review": "unreviewed",
+    "q": "Quō is?",
+    "en": "“Where are you going?” “I am going to the forum.”",
+    "chunks": [
+      "ad forum",
+      "eō"
+    ],
+    "fill": "eō",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "prep.motion"
+    ],
+    "tag": "where are you going?",
+    "explain": "_quō?_ asks “where to?”. _ad forum_ takes the accusative, and _eō_ is “I go”.",
+    "distractors": [
+      [
+        "Ad forō eō.",
+        "_ad_ takes the accusative: _forum_."
+      ],
+      [
+        "Ad forum īs.",
+        "_īs_ is “you go”. About yourself: _eō_."
+      ],
+      [
+        "Ad forum it.",
+        "_it_ is “he goes”. About yourself: _eō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.15",
+    "review": "unreviewed",
+    "en": "I know a little Latin.",
+    "chunks": [
+      "paulum",
+      "Latīnē",
+      "sciō"
+    ],
+    "fill": "sciō",
+    "skills": [
+      "talk",
+      "verb.person"
+    ],
+    "tag": "a little Latin",
+    "explain": "_sciō_ means “I know”. _paulum_ is “a little”, and _Latīnē_ is an adverb: “in Latin”, so it never changes.",
+    "distractors": [
+      [
+        "Paulum Latīnē scīs.",
+        "_scīs_ is “you know”. About yourself: _sciō_."
+      ],
+      [
+        "Paulum Latīnē scit.",
+        "_scit_ is “he knows”. About yourself: _sciō_."
+      ],
+      [
+        "Paulum Latīnē sciunt.",
+        "_sciunt_ is “they know”. About yourself: _sciō_."
+      ]
+    ]
+  },
+  {
+    "id": "roman.9.16",
+    "review": "unreviewed",
+    "q": "Quid discis?",
+    "en": "“What are you learning?” “I am learning the Latin language.”",
+    "chunks": [
+      "linguam Latīnam",
+      "discō"
+    ],
+    "fill": "Latīnam",
+    "skills": [
+      "qa.reply",
+      "talk",
+      "adj.agree.gender",
+      "case.acc.obj"
+    ],
+    "tag": "what are you learning?",
+    "explain": "_lingua_ is feminine, so its adjective is _Latīna_, and as the object of _discō_ both are accusative: _linguam Latīnam_.",
+    "distractors": [
+      [
+        "Lingua Latīna discō.",
+        "The object is accusative: _linguam Latīnam_."
+      ],
+      [
+        "Linguam Latīnam discis.",
+        "_discis_ is “you learn”. About yourself: _discō_."
+      ],
+      [
+        "Linguam Latīnum discō.",
+        "_lingua_ is feminine, so the adjective is _Latīnam_."
+      ]
+    ]
+  }
+]

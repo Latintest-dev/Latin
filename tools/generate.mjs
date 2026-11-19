@@ -438,7 +438,8 @@ export async function generateUnit(packId, gen, otherItems, kept = []) {
   const keep = kept.filter((i) => tplIds.has(i.gen));
   const have = (id) => keep.filter((i) => i.gen === id).length;
   const lists = gen.templates.map((tpl) => (tpl.n - have(tpl.id) > 0 ? generateTemplate({ ...tpl, n: tpl.n - have(tpl.id) }, ctx) : []));
-  const fresh = interleave(lists);
+  // an ordered unit (a narration script) keeps its templates in the order written; others are mixed
+  const fresh = gen.unit.ordered ? lists.flat() : interleave(lists);
   const usedIds = new Set(keep.map((i) => i.id));
   fresh.forEach((it) => {
     let h = hash(normLoose(it._la) + (it.q ? normLoose(it.q) : '')).toString(36).padStart(6, '0').slice(0, 6);
@@ -447,7 +448,12 @@ export async function generateUnit(packId, gen, otherItems, kept = []) {
     usedIds.add(it.id);
     delete it._la;
   });
-  return [...keep, ...fresh];
+  const all = [...keep, ...fresh];
+  if (gen.unit.ordered) {
+    const rank = (it) => gen.templates.findIndex((t) => t.id === it.gen);
+    return all.map((it, i) => ({ it, i })).sort((a, b) => rank(a.it) - rank(b.it) || a.i - b.i).map((x) => x.it);
+  }
+  return all;
 }
 
 // ---------- command line ----------
@@ -487,7 +493,7 @@ async function main() {
       if (!args.includes('--fresh')) kept = await readUnitItems(unitFile);
       const items = await generateUnit(packId, gen, others, kept);
       await writeFile(path.join(ROOT, 'content', packId, unitFile), '[\n' + items.map((i) => '  ' + JSON.stringify(i)).join(',\n') + '\n]\n');
-      const entry = { id: gen.unit.id, file: unitFile, title: gen.unit.title, blurb: gen.unit.blurb, intro: gen.unit.intro, generated: true };
+      const entry = { id: gen.unit.id, file: unitFile, title: gen.unit.title, blurb: gen.unit.blurb, intro: gen.unit.intro, generated: true, ...(gen.unit.narrate ? { narrate: true } : {}) };
       const at = pack.units.findIndex((u) => u.id === gen.unit.id);
       if (at >= 0) pack.units[at] = entry; else pack.units.push(entry);
       console.log(`${packId}.${gen.unit.id} ${gen.unit.title}: ${items.length} sentences (${items.length - kept.filter((k) => gen.templates.some((t) => t.id === k.gen)).length} new)`);

@@ -1,6 +1,7 @@
 import { h } from './dom.js';
 import { rich, DAYS } from './format.js';
-import { buildQueue, countKinds, summarize } from '../core/scheduler.js';
+import { buildQueue, countKinds, summarize, NARRATE_MIN } from '../core/scheduler.js';
+import { streak, today } from '../core/activity.js';
 
 export function renderHome(root, app) {
   const { store, content } = app;
@@ -22,12 +23,27 @@ export function renderHome(root, app) {
       s.meta.lastExport ? 'It has been over a week since your last backup. Export your progress →' : 'Back up your progress: export a file in Settings →'));
   }
 
+  // today's practice and streak
+  const goal = s.settings.dailyGoal || 20;
+  const n = today(s.activity || {}, now).n;
+  const run = streak(s.activity || {}, now);
+  root.append(h('div', { class: 'today', 'aria-label': 'Today' },
+    h('div', { class: 'today-top' },
+      h('span', null, h('strong', null, String(n)), ` of ${goal} answers today`),
+      h('span', { class: run ? 'streak on' : 'streak' }, run ? `${run}-day streak` : 'No streak yet')),
+    h('div', { class: 'meter' }, h('div', { class: n >= goal ? 'meter-strong' : 'meter-seen', style: `width:${Math.min(100, (n / goal) * 100)}%` }))));
+
   const label = kinds.review + kinds.fresh === 0 ? 'Practice' : started ? 'Continue' : 'Start learning';
   const detail = kinds.review + kinds.fresh === 0
     ? 'Nothing is due. Revisit what you know.'
     : [kinds.review ? `${kinds.review} to review` : null, kinds.fresh ? `${kinds.fresh} new` : null].filter(Boolean).join(' · ');
   root.append(h('button', { class: 'btn primary big', onclick: () => app.startSession({ mode: 'continue' }) },
     h('span', null, label), h('small', null, detail)));
+
+  const knownCount = Object.values(s.items).filter((x) => x.intro && x.lvl >= 2).length;
+  root.append(h('button', {
+    class: 'btn big speed', disabled: knownCount < 4, onclick: () => app.startSession({ mode: 'speed' }),
+  }, h('span', null, 'Speed round'), h('small', null, knownCount < 4 ? 'Unlocks once you can write four sentences' : 'Ten sentences you know, against the clock')));
 
   for (const { pack, units } of summarize(content, s.items, now)) {
     root.append(h('section', { class: 'pack' },
@@ -39,7 +55,11 @@ export function renderHome(root, app) {
             h('h3', null, unit.title),
             h('p', { class: 'sub' }, rich(unit.blurb, s.settings, { macrons: true }))),
           unlocked
-            ? h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'unit', scope: { packId: pack.id, unitId: unit.id } }) }, introduced ? 'Practice' : 'Start')
+            ? h('div', { class: 'unit-btns' },
+              h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'unit', scope: { packId: pack.id, unitId: unit.id } }) }, introduced ? 'Practice' : 'Start'),
+              unit.narrate && introduced / total >= NARRATE_MIN
+                ? h('button', { class: 'btn small primary', onclick: () => app.startSession({ mode: 'narrate', scope: { packId: pack.id, unitId: unit.id } }) }, 'Narrate it')
+                : null)
             : h('span', { class: 'lock', title: 'Introduce most of the previous unit first' }, '🔒')),
         h('div', { class: 'meter', 'aria-label': `${introduced} of ${total} met, ${strong} known` },
           h('div', { class: 'meter-seen', style: `width:${(introduced / total) * 100}%` }),

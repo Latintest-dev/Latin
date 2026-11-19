@@ -212,3 +212,32 @@ details summary { cursor: pointer; color: var(--muted); font-size: 15px; margin-
 .prompt-wrap .prompt { margin-bottom: 6px; }
 .cue { font: 15px/1.35 var(--sans); color: var(--muted, #6b6b6b); }
 .cue em { font-style: italic; color: inherit; }
+
+/* today strip, streak, speed round, narration */
+.today { margin: 0 0 12px; }
+.today-top { display: flex; justify-content: space-between; align-items: baseline; font: 15px/1.3 var(--sans); margin-bottom: 6px; }
+.streak { color: var(--muted); }
+.streak.on { color: var(--accent, #8f2f2f); font-weight: 600; }
+.btn.speed { width: 100%; margin: 0 0 18px; }
+.btn.speed small { display: block; font-weight: 400; opacity: .8; margin-top: 2px; }
+.unit-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.timer { height: 8px; border-radius: 4px; background: var(--line, #e2dccd); overflow: hidden; margin: 0 0 12px; }
+.timer-fill { height: 100%; width: 100%; background: var(--accent, #8f2f2f); transition: width .1s linear; }
+.script { text-align: left; margin: 12px 0; }
+.script-la { font: 600 20px/1.6 var(--serif); }
+.script-en { color: var(--muted); font: 15px/1.5 var(--sans); }
+
+/* words page */
+.pills { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+.pill { border: 1px solid var(--line); background: transparent; color: inherit; border-radius: 999px; padding: 6px 14px; font: 15px var(--sans); }
+.pill.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.word { border-bottom: 1px solid var(--line); padding: 8px 0; }
+.word summary { display: flex; gap: 12px; align-items: baseline; cursor: pointer; list-style: none; }
+.word summary::-webkit-details-marker { display: none; }
+.lemma { font: 600 19px var(--serif); }
+.gloss-s { color: var(--muted); font: 15px var(--sans); }
+table.forms { width: 100%; border-collapse: collapse; margin: 10px 0 4px; font: 16px var(--sans); }
+table.forms td, table.forms th { padding: 3px 6px; text-align: left; }
+table.forms .tense th { color: var(--muted); font: 600 13px var(--sans); letter-spacing: .04em; text-transform: uppercase; padding-top: 12px; }
+table.forms td.la { font: 600 17px var(--serif); }
+table.forms td.en { color: var(--muted); }

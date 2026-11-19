@@ -1,0 +1,568 @@
+{
+  "unit": {
+    "id": "2",
+    "title": "My afternoon and evening",
+    "blurb": "Narrate the second half of your day",
+    "intro": "The same pattern carries you through the rest of the day: a time word (_post prandium_ = after lunch, _vesperī_ = in the evening, _nocte_ = at night), then what you do. Notice how often you need only the verb: _dormiō_ is a whole sentence. When you speak about yourself, keep to short sentences and join them with _deinde_ (then) and _tum_ (then, next).",
+    "narrate": true,
+    "ordered": true
+  },
+  "templates": [
+    {
+      "id": "a1",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "ambulo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        }
+      },
+      "chunks": [
+        "post prandium",
+        "{v}"
+      ],
+      "en": "After lunch I walk.",
+      "fill": [
+        "v"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it.",
+      "roles": {}
+    },
+    {
+      "id": "a2",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "prep.motion"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "eo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "thermae"
+            ]
+          },
+          "form": "acc.pl",
+          "foils": [
+            "nom.pl",
+            "abl.pl"
+          ]
+        }
+      },
+      "chunks": [
+        "ad {pl}",
+        "{v}"
+      ],
+      "en": "I go to the baths.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _ad {pl}_ takes the accusative: motion towards.",
+      "roles": {
+        "pl": "after _ad_ (“to”) the place goes in the accusative"
+      }
+    },
+    {
+      "id": "a3",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "prep.in.abl"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "nato"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "aqua"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "I swim in the water.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    },
+    {
+      "id": "a4",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "redeo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        }
+      },
+      "chunks": [
+        "domum",
+        "{v}"
+      ],
+      "en": "I go back home.",
+      "fill": [
+        "v"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it.",
+      "roles": {}
+    },
+    {
+      "id": "a5",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "case.acc.obj"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "paro"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "cena"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "I prepare dinner.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "a6",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "case.acc.obj"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "cena"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "I eat dinner.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "a7",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "case.acc.obj"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "bibo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "vinum"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "I drink wine.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "a8",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "case.acc.obj"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "narro"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "fabula"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "I tell a story.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "a9",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "case.acc.obj"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "lego"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "fabula"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "{o}",
+        "{v}"
+      ],
+      "en": "I read a story.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "a10",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "prep.in.abl"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "sedeo"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "hortus"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "vesperī",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "I sit in the garden in the evening.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    },
+    {
+      "id": "a11",
+      "n": 1,
+      "skills": [
+        "verb.person",
+        "time.daily",
+        "prep.in.abl"
+      ],
+      "tag": "my day (present)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dormio"
+            ]
+          },
+          "form": "pres.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "lectus"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "nocte",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "At night I sleep in bed.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    }
+  ]
+}

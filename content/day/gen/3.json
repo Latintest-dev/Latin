@@ -1,0 +1,650 @@
+{
+  "unit": {
+    "id": "3",
+    "title": "What I did yesterday",
+    "blurb": "Retell yesterday in the past tense",
+    "intro": "To tell what you did, use the perfect tense and put _herī_ (yesterday) first. For “I” the ending is always _-ī_: _surrēxī_ (I got up), _lāvī_ (I washed), _ēdī_ (I ate), _vīdī_ (I saw), _iī_ (I went), _dormīvī_ (I slept). The stem changes from verb to verb, so each one is worth learning as a pair: _surgō / surrēxī_.",
+    "narrate": true,
+    "ordered": true
+  },
+  "templates": [
+    {
+      "id": "y1",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "surgo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        }
+      },
+      "chunks": [
+        "herī māne",
+        "{v}"
+      ],
+      "en": "Yesterday morning I got up.",
+      "fill": [
+        "v"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it.",
+      "roles": {}
+    },
+    {
+      "id": "y2",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "bibo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "aqua"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I drank water.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y3",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "lavo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "manus"
+            ]
+          },
+          "form": "acc.pl",
+          "foils": [
+            "nom.pl",
+            "gen.pl",
+            "abl.pl"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I washed my hands.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y4",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "induo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "tunica"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I put on a tunic.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y5",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "ientaculum"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I ate breakfast.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y6",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "lego"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "epistula"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I read a letter.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y7",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "prep.motion"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "eo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "forum"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "ad {pl}",
+        "{v}"
+      ],
+      "en": "Yesterday I went to the forum.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _ad {pl}_ takes the accusative: motion towards.",
+      "roles": {
+        "pl": "after _ad_ (“to”) the place goes in the accusative"
+      }
+    },
+    {
+      "id": "y8",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "video"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "amicus"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I saw a friend.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y9",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "prep.in.abl"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "laboro"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "forum"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "Yesterday I worked in the forum.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    },
+    {
+      "id": "y10",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "paro"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "cena"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I prepared dinner.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y11",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "case.acc.obj"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "edo"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "o": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "piscis"
+            ]
+          },
+          "form": "acc.sg",
+          "foils": [
+            "nom.sg",
+            "abl.sg",
+            "gen.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "{o}",
+        "{v}"
+      ],
+      "en": "Yesterday I ate fish.",
+      "fill": [
+        "v",
+        "o"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _{o}_ is {o.label}, the object.",
+      "roles": {
+        "o": "it is the object (the thing acted on), so it must be accusative"
+      }
+    },
+    {
+      "id": "y12",
+      "n": 1,
+      "skills": [
+        "verb.perf.person",
+        "time.past",
+        "prep.in.abl"
+      ],
+      "tag": "my day (past)",
+      "verb": "v",
+      "slots": {
+        "pn": {
+          "choice": [
+            "1sg"
+          ]
+        },
+        "v": {
+          "pos": "verb",
+          "where": {
+            "ids": [
+              "dormio"
+            ]
+          },
+          "form": "perf.ind.act.{pn}"
+        },
+        "pl": {
+          "pos": "noun",
+          "where": {
+            "ids": [
+              "lectus"
+            ]
+          },
+          "form": "abl.sg",
+          "foils": [
+            "nom.sg",
+            "acc.sg"
+          ]
+        }
+      },
+      "chunks": [
+        "herī",
+        "in {pl}",
+        "{v}"
+      ],
+      "en": "Yesterday I slept in bed.",
+      "fill": [
+        "v",
+        "pl"
+      ],
+      "explain": "_{v}_ is {v.label} of _{v.lemma}_: the ending already says “I”, so Latin needs no separate word for it. _in {pl}_ puts the place in the ablative.",
+      "roles": {
+        "pl": "after _in_ meaning “in” the place goes in the ablative"
+      }
+    }
+  ]
+}

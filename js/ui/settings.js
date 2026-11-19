@@ -1,7 +1,7 @@
 import { h } from './dom.js';
 import { fmtDate } from './format.js';
 
-export const APP_VERSION = '0.4.0';
+export const APP_VERSION = '0.5.0';
 
 export function renderSettings(root, app) {
   const { store } = app;
@@ -56,6 +56,9 @@ export function renderSettings(root, app) {
   const newSel = h('select', { onchange: () => store.setSetting('newTotal', Number(newSel.value)), 'aria-label': 'New sentences per session' },
     [3, 4, 6, 8, 10, 12].map((n) => h('option', { value: n, selected: n === s.settings.newTotal }, String(n))));
 
+  const goalSel = h('select', { onchange: () => store.setSetting('dailyGoal', Number(goalSel.value)), 'aria-label': 'Daily goal in answers' },
+    [10, 20, 30, 50, 80].map((n) => h('option', { value: n, selected: n === (s.settings.dailyGoal || 20) }, String(n))));
+
   root.append(
     h('header', { class: 'page-head' }, h('h1', null, 'Settings')),
     h('div', { class: 'card' },
@@ -63,7 +66,10 @@ export function renderSettings(root, app) {
       toggle('strictMacrons', 'Require macrons in answers', 'When on, answers typed without the right macrons count as "almost".'),
       h('label', { class: 'toggle' },
         h('span', null, h('strong', null, 'New sentences per session'), h('small', null, 'Shared between your tracks, taking turns. Reviews always come first.')),
-        newSel)),
+        newSel),
+      h('label', { class: 'toggle' },
+        h('span', null, h('strong', null, 'Daily goal'), h('small', null, 'Answers per day that make a full day. A little every day beats a lot once a week.')),
+        goalSel)),
 
     h('h2', null, 'Your data'),
     h('div', { class: 'card' },

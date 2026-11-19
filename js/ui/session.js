@@ -2,9 +2,11 @@
 
 import { h, clear } from './dom.js';
 import { latin, rich } from './format.js';
-import { buildQueue } from '../core/scheduler.js';
+import { buildQueue, speedLimitMs } from '../core/scheduler.js';
 import { SessionRunner } from '../core/session.js';
 import { checkText } from '../engine/checker.js';
+import { today as todayCount0 } from '../core/activity.js';
+const todayCount = (activity, now) => todayCount0(activity, now).n;
 import { blankSentence, promptKind, promptText, allowsL2E, cueText } from '../engine/items.js';
 
 function shuffle(arr, rng = Math.random) {
@@ -212,9 +214,10 @@ export function renderSession(root, app, params) {
 
   function showText(body, entry, item) {
     const fill = entry.type === 'fill';
-    body.append(
-      h('p', { class: 'eyebrow' }, EYEBROW[fill ? 'fill' : 'write'][promptKind(item)]),
-      promptNode(item));
+    const eyebrow = entry.speed ? 'Speed round: write it'
+      : entry.kind === 'narrate' ? `Your day, step ${entry.step} of ${entry.of}`
+        : EYEBROW[fill ? 'fill' : 'write'][promptKind(item)];
+    body.append(h('p', { class: 'eyebrow' }, eyebrow), promptNode(item));
     if (fill) body.append(h('div', { class: 'blank la' }, latin(blankSentence(item), st())));
     body.append(chips(item));
 
@@ -240,28 +243,55 @@ export function renderSession(root, app, params) {
     body.append(input, macrons, go);
     setTimeout(() => input.focus(), 50);
 
-    function submit() {
+    // speed round: a bar runs down; when it empties the answer is checked as it stands
+    let ticker = null;
+    if (entry.speed) {
+      const limit = speedLimitMs(item.la);
+      const t0 = Date.now();
+      const fillBar = h('div', { class: 'timer-fill' });
+      body.insertBefore(h('div', { class: 'timer', 'aria-label': 'Time left' }, fillBar), input);
+      ticker = setInterval(() => {
+        const left = 1 - (Date.now() - t0) / limit;
+        fillBar.style.width = `${Math.max(0, left * 100)}%`;
+        if (left <= 0) submit(true);
+      }, 100);
+      app.onCleanup(() => clearInterval(ticker));
+    }
+
+    function submit(late = false) {
+      clearInterval(ticker);
+      if (late === true && input.disabled) return;
       input.disabled = true;
       go.disabled = true;
       macrons.remove();
       go.remove();
       const accepted = fill ? item.fillAccepted : item.accepted;
       const r = checkText(accepted, input.value, { strictMacrons: st().strictMacrons }, content.index);
-      input.classList.add(r.result === 'correct' ? 'right' : r.result === 'close' ? 'close' : 'wrong');
+      const timedOut = late === true;
+      // in a speed round, running out of time means the sentence is not automatic yet
+      const result = timedOut && r.result === 'close' ? 'wrong' : r.result;
+      input.classList.add(result === 'correct' ? 'right' : result === 'close' ? 'close' : 'wrong');
       finish(body, entry, item, {
-        result: r.result,
-        given: input.value.trim(),
+        result,
+        given: input.value.trim() || '(no answer)',
         expected: fill ? item.la : r.best,
-        diag: r.diag,
+        diag: timedOut && result !== 'correct' ? [{ msg: 'Time ran out. Say it again until it comes without thinking.' }, ...(r.diag || [])] : r.diag,
         tags: r.tags,
         note: r.note,
         kind: r.kind,
+        late: timedOut,
       });
     }
   }
 
   function finish(body, entry, item, out) {
-    runner.record({ result: out.result, given: out.given, expected: out.expected, diag: out.diag, tags: out.tags });
+    // drills that must not move the review schedule record a right answer as 'practiceok'
+    const drill = entry.speed || entry.nosched;
+    runner.record({
+      result: drill && out.result === 'correct' ? 'practiceok' : out.result,
+      fast: !!entry.speed && !out.late,
+      given: out.given, expected: out.expected, diag: out.diag, tags: out.tags,
+    });
     const s = st();
     const title = { correct: 'Correct!', wrong: 'Not quite', close: 'Almost' }[out.result];
     const panel = h('div', { class: `feedback ${out.result}`, role: 'status' }, h('h3', null, title));
@@ -313,9 +343,21 @@ export function renderSession(root, app, params) {
     const { ok, bad, wrongItems } = runner.stats();
     const total = ok + bad;
     const s = st();
+    const speed = params.mode === 'speed';
+    const narrate = params.mode === 'narrate';
+    const script = narrate ? [...new Set(queue.map((e) => content.itemsById.get(e.itemId)))] : [];
+    const goal = s.dailyGoal;
+    const doneToday = todayCount(store.state.activity, Date.now());
     root.append(h('div', { class: 'card center' },
-      h('p', { class: 'eyebrow' }, 'Session complete'),
-      h('h2', null, total ? `${ok} of ${total} right first time` : 'Done'),
+      h('p', { class: 'eyebrow' }, speed ? 'Speed round complete' : narrate ? 'Your day, in Latin' : 'Session complete'),
+      h('h2', null, !total ? 'Done' : speed ? `${ok} of ${total} in time` : narrate ? `${ok} of ${total} right first time` : `${ok} of ${total} right first time`),
+      narrate && script.length
+        ? h('div', { class: 'script' },
+          h('p', { class: 'la script-la' }, latin(script.map((it) => it.la).join(' '), s)),
+          h('details', null, h('summary', null, 'English'), h('p', { class: 'script-en' }, script.map((it) => it.en).join(' '))),
+          h('p', { class: 'sub' }, 'Now read it aloud, then tell yourself your own day the same way.'))
+        : null,
+      h('p', { class: 'meta' }, `Today: ${doneToday} of ${goal} answers`),
       wrongItems.length
         ? h('div', { class: 'tricky' },
           h('p', { class: 'label' }, 'Worth another look:'),
