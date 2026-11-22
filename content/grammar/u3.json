@@ -1,0 +1,265 @@
+[
+  {
+    "id": "grammar.3.01",
+    "review": "unreviewed",
+    "en": "Love of country is great.",
+    "la": "Amor patriae magnus est.",
+    "fill": "patriae",
+    "skills": [
+      "gen.objective"
+    ],
+    "tag": "love of …",
+    "explain": "_patriae_ is the genitive of _patria_ (homeland): it says what the love is directed at, “love of country”.",
+    "distractors": [
+      [
+        "Amor patriam magnus est.",
+        "_patriam_ is accusative. A noun after _amor_ names what it is love of: genitive, _patriae_."
+      ],
+      [
+        "Amor patria magnus est.",
+        "_patria_ is nominative (or ablative). After _amor_: genitive, _patriae_."
+      ],
+      [
+        "Amor patriārum magnus est.",
+        "_patriārum_ is genitive plural (“of homelands”). You love one country: _patriae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.02",
+    "review": "unreviewed",
+    "en": "Fear of death is great.",
+    "la": "Timor mortis magnus est.",
+    "fill": "mortis",
+    "skills": [
+      "gen.objective"
+    ],
+    "tag": "fear of …",
+    "explain": "_mortis_ is the genitive of _mors_ (death): it says what the fear is directed at.",
+    "distractors": [
+      [
+        "Timor mortem magnus est.",
+        "_mortem_ is accusative. After _timor_: genitive, _mortis_."
+      ],
+      [
+        "Timor morte magnus est.",
+        "_morte_ is ablative. After _timor_: genitive, _mortis_."
+      ],
+      [
+        "Timor mortium magnus est.",
+        "_mortium_ is genitive plural (“of deaths”). Death here is one thing: _mortis_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.03",
+    "review": "unreviewed",
+    "en": "Fear of the enemies is great.",
+    "la": "Metus hostium magnus est.",
+    "fill": "hostium",
+    "skills": [
+      "gen.objective",
+      "noun.4decl"
+    ],
+    "tag": "fear of …",
+    "explain": "_metus_ is fourth declension (nominative _metus_). _hostium_ is the genitive plural of _hostis_: it says whom the fear is of.",
+    "distractors": [
+      [
+        "Metus hostēs magnus est.",
+        "_hostēs_ is accusative plural. After _metus_: genitive, _hostium_."
+      ],
+      [
+        "Metus hostibus magnus est.",
+        "_hostibus_ is dative or ablative plural. After _metus_: genitive, _hostium_."
+      ],
+      [
+        "Metus hostis magnus est.",
+        "_hostis_ here would be genitive singular: “fear of one enemy”. For “the enemies”, use _hostium_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.04",
+    "review": "unreviewed",
+    "en": "Hope of victory is great.",
+    "la": "Spēs victōriae magna est.",
+    "fill": "victōriae",
+    "skills": [
+      "gen.objective",
+      "noun.5decl"
+    ],
+    "tag": "hope of …",
+    "explain": "_spēs_ is fifth declension (feminine, so _magna_). _victōriae_ is the genitive of _victōria_: what the hope is of.",
+    "distractors": [
+      [
+        "Spēs victōriam magna est.",
+        "_victōriam_ is accusative. After _spēs_: genitive, _victōriae_."
+      ],
+      [
+        "Spēs victōria magna est.",
+        "_victōria_ is nominative (or ablative). After _spēs_: genitive, _victōriae_."
+      ],
+      [
+        "Spēs victōriārum magna est.",
+        "_victōriārum_ is genitive plural. One hope, one victory: _victōriae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.05",
+    "review": "unreviewed",
+    "en": "The boy is eager for glory.",
+    "la": "Puer cupidus glōriae est.",
+    "fill": "glōriae",
+    "skills": [
+      "gen.adjective"
+    ],
+    "tag": "eager for …",
+    "explain": "_cupidus_ (eager, desirous) is followed by the genitive of what you want: _glōriae_.",
+    "distractors": [
+      [
+        "Puer cupidus glōriam est.",
+        "_glōriam_ is accusative. After _cupidus_: genitive, _glōriae_."
+      ],
+      [
+        "Puer cupidus glōria est.",
+        "_glōria_ is nominative (or ablative). After _cupidus_: genitive, _glōriae_."
+      ],
+      [
+        "Puer cupidus glōriārum est.",
+        "_glōriārum_ is genitive plural. Glory as a mass is singular: _glōriae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.06",
+    "review": "unreviewed",
+    "en": "The man is greedy for money.",
+    "la": "Vir avidus pecūniae est.",
+    "fill": "pecūniae",
+    "skills": [
+      "gen.adjective"
+    ],
+    "tag": "greedy for …",
+    "explain": "_avidus_ (greedy, eager) takes the genitive: _pecūniae_ says what he is greedy for.",
+    "distractors": [
+      [
+        "Vir avidus pecūniam est.",
+        "_pecūniam_ is accusative. After _avidus_: genitive, _pecūniae_."
+      ],
+      [
+        "Vir avidus pecūnia est.",
+        "_pecūnia_ is nominative (or ablative). After _avidus_: genitive, _pecūniae_."
+      ],
+      [
+        "Vir avidus pecūniārum est.",
+        "_pecūniārum_ is genitive plural. Money as a mass is singular: _pecūniae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.07",
+    "review": "unreviewed",
+    "en": "The house is full of books.",
+    "la": "Domus plēna librōrum est.",
+    "fill": "librōrum",
+    "skills": [
+      "gen.adjective"
+    ],
+    "tag": "full of …",
+    "explain": "_plēna_ (full) agrees with feminine _domus_; what it is full of goes in the genitive: _librōrum_ (genitive plural of _liber_).",
+    "distractors": [
+      [
+        "Domus plēna librōs est.",
+        "_librōs_ is accusative plural. After _plēnus_: genitive, _librōrum_."
+      ],
+      [
+        "Domus plēna librī est.",
+        "_librī_ is genitive singular (“of a book”). Many books: _librōrum_."
+      ],
+      [
+        "Domus plēnus librōrum est.",
+        "_plēnus_ is masculine, but _domus_ is feminine here. The adjective agrees: _plēna_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.08",
+    "review": "unreviewed",
+    "en": "The man is experienced in war.",
+    "la": "Vir perītus bellī est.",
+    "fill": "bellī",
+    "skills": [
+      "gen.adjective"
+    ],
+    "tag": "skilled in …",
+    "explain": "_perītus_ (experienced, skilled) takes the genitive of what you are skilled in: _bellī_ (of war).",
+    "distractors": [
+      [
+        "Vir perītus bellum est.",
+        "_bellum_ is accusative. After _perītus_: genitive, _bellī_."
+      ],
+      [
+        "Vir perītus bella est.",
+        "_bella_ is plural (“wars”). One kind of skill: the genitive singular _bellī_."
+      ],
+      [
+        "Vir perītus bellōrum est.",
+        "_bellōrum_ is genitive plural (“of wars”). Say _bellī_ for skill in war."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.09",
+    "review": "unreviewed",
+    "en": "I am not greedy for money.",
+    "la": "Cupidus pecūniae nōn sum.",
+    "fill": "pecūniae",
+    "skills": [
+      "gen.adjective"
+    ],
+    "tag": "eager for …",
+    "explain": "A man says _cupidus_ of himself, so it is masculine: “I am (a man) desirous of money”. The genitive _pecūniae_ is what he wants.",
+    "distractors": [
+      [
+        "Cupidus pecūniam nōn sum.",
+        "_pecūniam_ is accusative. After _cupidus_: genitive, _pecūniae_."
+      ],
+      [
+        "Cupidus pecūnia nōn sum.",
+        "_pecūnia_ is nominative (or ablative). After _cupidus_: genitive, _pecūniae_."
+      ],
+      [
+        "Cupidus pecūniārum nōn sum.",
+        "_pecūniārum_ is genitive plural. Money as a mass is singular: _pecūniae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.3.10",
+    "review": "unreviewed",
+    "en": "I am full of hope.",
+    "la": "Plēnus speī sum.",
+    "fill": "speī",
+    "skills": [
+      "gen.adjective",
+      "noun.5decl"
+    ],
+    "tag": "full of …",
+    "explain": "_speī_ is the genitive singular of _spēs_ (fifth declension, genitive _-eī_). After _plēnus_ the thing you are full of is genitive.",
+    "distractors": [
+      [
+        "Plēnus spem sum.",
+        "_spem_ is accusative. After _plēnus_: genitive, _speī_."
+      ],
+      [
+        "Plēnus spēs sum.",
+        "_spēs_ is nominative (or accusative plural). After _plēnus_: genitive, _speī_."
+      ],
+      [
+        "Plēnus speī es.",
+        "_es_ is “you are”. “I am” is _sum_."
+      ]
+    ]
+  }
+]

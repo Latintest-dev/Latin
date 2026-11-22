@@ -1,0 +1,237 @@
+[
+  {
+    "id": "grammar.2.01",
+    "review": "unreviewed",
+    "en": "He is a man of great courage.",
+    "la": "Vir magnae virtūtis est.",
+    "fill": "virtūtis",
+    "skills": [
+      "gen.quality"
+    ],
+    "tag": "of great …",
+    "explain": "_magnae virtūtis_ is a genitive of description: the adjective _magnae_ agrees with _virtūtis_ (feminine genitive singular), and together they say what kind of man he is.",
+    "distractors": [
+      [
+        "Vir magnī virtūtis est.",
+        "_magnī_ is masculine or neuter, but _virtūtis_ is feminine. The adjective must agree: _magnae virtūtis_."
+      ],
+      [
+        "Vir magnae virtūtem est.",
+        "_virtūtem_ is accusative. A description of a person is a genitive: _virtūtis_."
+      ],
+      [
+        "Vir magnārum virtūtum est.",
+        "_magnārum virtūtum_ is genitive plural (“of great courages”). One man has one courage: _magnae virtūtis_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.02",
+    "review": "unreviewed",
+    "en": "The woman is of great wisdom.",
+    "la": "Fēmina magnae sapientiae est.",
+    "fill": "sapientiae",
+    "skills": [
+      "gen.quality"
+    ],
+    "tag": "of great …",
+    "explain": "_magnae sapientiae_ is a genitive of description: both words are feminine genitive singular, and they say what kind of woman she is.",
+    "distractors": [
+      [
+        "Fēmina magnī sapientiae est.",
+        "_magnī_ does not agree with feminine _sapientiae_. Say _magnae sapientiae_."
+      ],
+      [
+        "Fēmina magnae sapientiam est.",
+        "_sapientiam_ is accusative. A description is a genitive: _sapientiae_."
+      ],
+      [
+        "Fēmina magnārum sapientiārum est.",
+        "_magnārum sapientiārum_ is genitive plural. One woman, one wisdom: _magnae sapientiae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.03",
+    "review": "unreviewed",
+    "en": "My father is a man of great glory.",
+    "la": "Pater meus vir magnae glōriae est.",
+    "fill": "glōriae",
+    "skills": [
+      "gen.quality"
+    ],
+    "tag": "of great …",
+    "explain": "_vir magnae glōriae_ is “a man of great glory”: _glōriae_ is the genitive of _glōria_, and _magnae_ agrees with it.",
+    "distractors": [
+      [
+        "Pater meus vir magnī glōriae est.",
+        "_magnī_ does not agree with feminine _glōriae_. Say _magnae glōriae_."
+      ],
+      [
+        "Pater meus vir magnae glōriam est.",
+        "_glōriam_ is accusative. A description is a genitive: _glōriae_."
+      ],
+      [
+        "Pater meus vir magnārum glōriārum est.",
+        "_magnārum glōriārum_ is genitive plural. One man, one glory: _magnae glōriae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.04",
+    "review": "unreviewed",
+    "en": "My book is worth a lot.",
+    "la": "Liber meus magnī est.",
+    "fill": "magnī",
+    "skills": [
+      "gen.value"
+    ],
+    "tag": "worth a lot",
+    "explain": "_magnī_ is a genitive of value: “of great (value)”. With _sum_ it says what something is worth.",
+    "distractors": [
+      [
+        "Liber meus magnum est.",
+        "_magnum est_ means “it is big”. For “it is worth a lot”, Latin uses the genitive _magnī_."
+      ],
+      [
+        "Liber meus magna est.",
+        "_magna_ is feminine, and it would describe the book’s size. For value, Latin uses _magnī_."
+      ],
+      [
+        "Liber meus magnōrum est.",
+        "_magnōrum_ is genitive plural. For value the genitive singular is used: _magnī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.05",
+    "review": "unreviewed",
+    "en": "How much is your book worth?",
+    "la": "Quantī est liber tuus?",
+    "fill": "Quantī",
+    "skills": [
+      "gen.value",
+      "quest.words"
+    ],
+    "tag": "quantī …?",
+    "explain": "_quantī_ is the genitive of _quantus_ (how much): it asks about worth, as _magnī_ and _parvī_ answer it.",
+    "distractors": [
+      [
+        "Quantum est liber tuus?",
+        "_quantum_ would ask “how big (a thing)?”. To ask worth, use the genitive: _quantī_."
+      ],
+      [
+        "Quantae est liber tuus?",
+        "_quantae_ is feminine, but the question needs the neuter genitive _quantī_."
+      ],
+      [
+        "Quantōrum est liber tuus?",
+        "_quantōrum_ is plural. To ask a worth, use _quantī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.06",
+    "review": "unreviewed",
+    "en": "It is worth little.",
+    "la": "Parvī est.",
+    "fill": "Parvī",
+    "skills": [
+      "gen.value"
+    ],
+    "tag": "worth little",
+    "explain": "_parvī_ is the genitive of value: “of little (value)”.",
+    "distractors": [
+      [
+        "Parvum est.",
+        "_parvum est_ means “it is small”. For “it is worth little”, use the genitive _parvī_."
+      ],
+      [
+        "Parvō est.",
+        "_parvō_ is dative or ablative. A worth is expressed with the genitive: _parvī_."
+      ],
+      [
+        "Parvōrum est.",
+        "_parvōrum_ is genitive plural. For value use the singular _parvī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.07",
+    "review": "unreviewed",
+    "en": "I value friendship highly.",
+    "la": "Amīcitiam magnī aestimō.",
+    "fill": "magnī",
+    "skills": [
+      "gen.value"
+    ],
+    "tag": "value highly",
+    "explain": "_aestimō_ (I value) takes the thing valued in the accusative (_amīcitiam_) and how much in the genitive (_magnī_): “I reckon friendship at great (value)”.",
+    "distractors": [
+      [
+        "Amīcitiam magnum aestimō.",
+        "_magnum_ is neuter accusative and would describe a thing. How much you value it is a genitive of value: _magnī_."
+      ],
+      [
+        "Amīcitia magnī aestimō.",
+        "_amīcitia_ is nominative. What you value is the object, accusative: _amīcitiam_."
+      ],
+      [
+        "Amīcitiam magnōrum aestimō.",
+        "_magnōrum_ is genitive plural. The value is singular: _magnī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.08",
+    "review": "unreviewed",
+    "en": "I value money little.",
+    "la": "Pecūniam parvī aestimō.",
+    "fill": "parvī",
+    "skills": [
+      "gen.value"
+    ],
+    "tag": "value little",
+    "explain": "The opposite of _magnī aestimō_: _parvī aestimō_, “I reckon it at little (value)”.",
+    "distractors": [
+      [
+        "Pecūniam parvum aestimō.",
+        "_parvum_ would describe a thing. How little you value it is a genitive of value: _parvī_."
+      ],
+      [
+        "Pecūnia parvī aestimō.",
+        "_pecūnia_ is nominative. The thing valued is the object, accusative: _pecūniam_."
+      ],
+      [
+        "Pecūniam parvōrum aestimō.",
+        "_parvōrum_ is genitive plural. The value is singular: _parvī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.2.09",
+    "review": "unreviewed",
+    "en": "It is not worth that much.",
+    "la": "Tantī nōn est.",
+    "fill": "Tantī",
+    "skills": [
+      "gen.value"
+    ],
+    "tag": "worth so much",
+    "explain": "_tantī_ (of so much value) is the partner of _quantī_ (of how much value). Together: _Quantī est? Tantī est._ (How much is it worth? That much.)",
+    "distractors": [
+      [
+        "Tantum nōn est.",
+        "_tantum nōn est_ would say “it is not so much” (an amount, not a worth). For worth: _tantī_."
+      ],
+      [
+        "Tantō nōn est.",
+        "_tantō_ is dative or ablative. A worth is a genitive: _tantī_."
+      ],
+      [
+        "Tantōrum nōn est.",
+        "_tantōrum_ is genitive plural. For value use the singular _tantī_."
+      ]
+    ]
+  }
+]

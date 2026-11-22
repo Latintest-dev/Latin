@@ -1,0 +1,23 @@
+[
+{"id":"adsum","lemma":"adsum","pos":"verb","gloss":"to be present, be near; help","parts":"adsum, adesse, adfuī","vocabOnly":true,"pin":true},
+{"id":"arma","lemma":"arma","pos":"noun","gloss":"arms, weapons","parts":"arma, armōrum (n pl.)","vocabOnly":true,"pin":true,"gender":"n"},
+{"id":"castra","lemma":"castra","pos":"noun","gloss":"military camp","parts":"castra, castrōrum (n pl.)","vocabOnly":true,"pin":true,"gender":"n"},
+{"id":"bis","lemma":"bis","pos":"adv","gloss":"twice","parts":"bis","vocabOnly":true,"pin":true},
+{"id":"coepi","lemma":"coepī","pos":"verb","gloss":"to have begun, began","parts":"coepī, coepisse, coeptum","vocabOnly":true,"pin":true},
+{"id":"decet","lemma":"decet","pos":"verb","gloss":"it is fitting, it is proper","parts":"decet, decēre, decuit","vocabOnly":true,"pin":true},
+{"id":"dubito","lemma":"dubitō","pos":"verb","gloss":"to doubt, hesitate","parts":"dubitō, dubitāre, dubitāvī, dubitātum","vocabOnly":true,"pin":true},
+{"id":"genus","lemma":"genus","pos":"noun","gloss":"kind, sort; birth, family; race","parts":"genus, generis (n)","vocabOnly":true,"pin":true,"gender":"n"},
+{"id":"idem","lemma":"īdem","pos":"pron","gloss":"the same","parts":"īdem, eadem, idem","vocabOnly":true,"pin":true},
+{"id":"iungo","lemma":"iungō","pos":"verb","gloss":"to join, unite, yoke","parts":"iungō, iungere, iūnxī, iūnctum","vocabOnly":true,"pin":true},
+{"id":"quamquam","lemma":"quamquam","pos":"conj","gloss":"although","parts":"quamquam","vocabOnly":true,"pin":true},
+{"id":"quidam","lemma":"quīdam","pos":"pron","gloss":"a certain one, someone","parts":"quīdam, quaedam, quoddam","vocabOnly":true,"pin":true},
+{"id":"quisque","lemma":"quisque","pos":"pron","gloss":"each one, everyone","parts":"quisque, quaeque, quodque","vocabOnly":true,"pin":true},
+{"id":"quisquam","lemma":"quisquam","pos":"pron","gloss":"anyone (at all)","parts":"quisquam, quicquam","vocabOnly":true,"pin":true},
+{"id":"se","lemma":"sē","pos":"pron","gloss":"himself, herself, themselves (reflexive)","parts":"sē, suī","vocabOnly":true,"pin":true},
+{"id":"sermo","lemma":"sermō","pos":"noun","gloss":"conversation, talk; speech","parts":"sermō, sermōnis (m)","vocabOnly":true,"pin":true,"gender":"m"},
+{"id":"suus","lemma":"suus","pos":"adj","gloss":"his own, her own, their own","parts":"suus, sua, suum","vocabOnly":true,"pin":true},
+{"id":"uterque","lemma":"uterque","pos":"pron","gloss":"each of two, both","parts":"uterque, utraque, utrumque","vocabOnly":true,"pin":true},
+{"id":"melior","lemma":"melior","pos":"adj","gloss":"better (comparative of bonus)","parts":"melior, melius","vocabOnly":true,"pin":true},
+{"id":"prior","lemma":"prior","pos":"adj","gloss":"earlier, former, first of two","parts":"prior, prius","vocabOnly":true,"pin":true},
+{"id":"summus","lemma":"summus","pos":"adj","gloss":"highest, top; greatest","parts":"summus, summa, summum","vocabOnly":true,"pin":true}
+]

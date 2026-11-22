@@ -1,0 +1,61 @@
+{
+  "id": "grammar",
+  "name": "Grammar focus",
+  "blurb": "Short drills on one point of grammar at a time: the genitive in all its uses, the fourth and fifth declensions, and the pronouns for I, you and we.",
+  "skillsFile": "skills.json",
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Of the whole",
+      "blurb": "satis aquae, multum vīnī, nihil novī",
+      "intro": "Many Latin words for an amount are followed by the genitive, where English says “of” or says nothing: _satis aquae_ is “enough (of) water”, _multum vīnī_ “a lot of wine”, _nihil novī_ “nothing (of) new”. The word for the amount (_satis_, _multum_, _parum_, _paulum_, _plūs_, _nihil_, _quantum_) does not change; the thing measured goes in the genitive. This is called the partitive genitive (the genitive of the whole): you name a part, and the genitive names the whole it is part of. It is how _Quid novī?_ (What's new?) is built: “What of new?”."
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "What kind, how much",
+      "blurb": "vir magnae virtūtis, magnī est",
+      "intro": "The genitive can describe a person or thing, always with an adjective: _vir magnae virtūtis_ is “a man of great courage”. The adjective agrees with the noun in the genitive (_magnae virtūtis_: both feminine genitive singular), and the whole phrase says what kind of person he is. It is also how Latin says what something is worth: _magnī_ (of great value), _parvī_ (of little value), _tantī_ (of so much value), _quantī_ (of how much value). _Hic liber magnī est_ is “this book is worth a lot”. Careful: _magnum est_ would mean “it is big”."
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Love of, fear of, full of",
+      "blurb": "amor patriae, plēnus spēī",
+      "intro": "A genitive after a noun can say what a feeling is directed at: _amor patriae_ is “love of country”, _timor mortis_ “fear of death”, _metus hostium_ “fear of the enemies”. This is the objective genitive: the genitive is the target of the feeling. After some adjectives the genitive says what you are full of, eager for, or skilled at: _plēnus spēī_ (full of hope), _cupidus glōriae_ (eager for glory), _avidus pecūniae_ (greedy for money), _perītus bellī_ (experienced in war)."
+    },
+    {
+      "id": "4",
+      "file": "u4.json",
+      "title": "Remembering, and “of me, of you”",
+      "blurb": "meminī tuī, tuī memor sum",
+      "intro": "_Meminī_ (I remember) is a verb that looks perfect but means the present. What you remember goes in the genitive: _Meminī patris_ (I remember my father). The same goes for _memor_ (mindful of): _Tuī memor sum_ (I am mindful of you). With “me” and “you” the genitive has its own forms: _meī_ (of me), _tuī_ (of you), _nostrī_ (of us), _vestrī_ (of you all). Do not confuse _tuī_ (of you) with _tuus_ (your)."
+    },
+    {
+      "id": "5",
+      "file": "u5.json",
+      "title": "The fourth declension",
+      "blurb": "manus, exercitus, senātus, fructus",
+      "intro": "A group of nouns in _-us_ has a different set of endings from _amīcus_ and _lupus_. They are the fourth declension: _manus_ (hand), _exercitus_ (army), _senātus_ (senate), _fructus_ (fruit), _metus_ (fear), _portus_ (harbor), _lacus_ (lake). The genitive singular is _-ūs_ (_manūs_), and the ablative singular is _-ū_ (_manū_). Plural: _-ūs_, _-uum_, _-ibus_. Most are masculine; _manus_ is a famous feminine exception, so its adjective is feminine (_manus pulchra_)."
+    },
+    {
+      "id": "6",
+      "file": "u6.json",
+      "title": "The fifth declension",
+      "blurb": "diēs, rēs, spēs, fidēs",
+      "intro": "The fifth declension is small but very common: _diēs_ (day), _rēs_ (thing, matter), _spēs_ (hope), _fidēs_ (trust, faith), _faciēs_ (face). Nominative _-ēs_, accusative _-em_ (_diem_, _rem_, _spem_), genitive and dative _-eī_ (_reī_, _speī_, _fideī_; after a vowel _-ēī_: _diēī_, _faciēī_), ablative _-ē_. Almost all are feminine; _diēs_ is usually masculine. Latin says how long something lasts with the accusative: _multōs diēs labōrō_ (I work for many days)."
+    },
+    {
+      "id": "7",
+      "file": "u7.json",
+      "title": "I, you, we: all the cases",
+      "blurb": "tē videō, mihi dat, tēcum",
+      "intro": "The words for I, you, we and you all change with the case, just like nouns. Accusative (the thing you see): _mē_ (me), _tē_ (you), _nōs_ (us), _vōs_ (you all). Dative (to or for): _mihi_, _tibi_, _nōbīs_, _vōbīs_. Genitive (of): _meī_, _tuī_, _nostrī_, _vestrī_. The nominative (_ego_, _tū_, _nōs_, _vōs_) is only used for emphasis, because the verb ending already says who. With _cum_ (with), the pronoun and _cum_ join into one word: _mēcum_, _tēcum_, _nōbīscum_, _vōbīscum_."
+    }
+  ],
+  "requires": {
+    "pack": "core",
+    "unit": "9"
+  }
+}

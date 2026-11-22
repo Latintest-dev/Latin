@@ -1,0 +1,12 @@
+{
+  "id": "vocab",
+  "name": "Word trainer",
+  "blurb": "The most common Latin words, most frequent first, as flashcards that climb from choosing to typing.",
+  "budget": "words",
+  "skillsFile": "skills.json",
+  "vocab": {
+    "order": "order.json",
+    "size": 50,
+    "evidence": 2000
+  }
+}

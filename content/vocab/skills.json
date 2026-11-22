@@ -1,0 +1,7 @@
+{
+  "vocab.noun": { "name": "Nouns (word trainer)", "pack": "vocab" },
+  "vocab.verb": { "name": "Verbs (word trainer)", "pack": "vocab" },
+  "vocab.adj": { "name": "Adjectives (word trainer)", "pack": "vocab" },
+  "vocab.adv": { "name": "Adverbs (word trainer)", "pack": "vocab" },
+  "vocab.function": { "name": "Small words: prepositions, pronouns, conjunctions", "pack": "vocab" }
+}

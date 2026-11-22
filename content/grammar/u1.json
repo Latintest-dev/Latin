@@ -1,0 +1,263 @@
+[
+  {
+    "id": "grammar.1.01",
+    "review": "unreviewed",
+    "en": "I have enough water.",
+    "la": "Satis aquae habeō.",
+    "fill": "aquae",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "enough of …",
+    "explain": "_satis_ (enough) is followed by the genitive of the thing there is enough of: _aquae_ is the genitive singular of _aqua_.",
+    "distractors": [
+      [
+        "Satis aquam habeō.",
+        "_aquam_ is accusative. After _satis_ the thing measured goes in the genitive: _aquae_."
+      ],
+      [
+        "Satis aqua habeō.",
+        "_aqua_ is nominative (or ablative). After _satis_ you need the genitive: _aquae_."
+      ],
+      [
+        "Satis aquārum habeō.",
+        "_aquārum_ is genitive plural (“of waters”). One portion of water is singular: _aquae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.02",
+    "review": "unreviewed",
+    "en": "I drink a lot of wine.",
+    "la": "Multum vīnī bibō.",
+    "fill": "vīnī",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "a lot of …",
+    "explain": "_multum_ (much) is a quantity, so the wine is genitive: _vīnī_ (genitive of _vīnum_). _multum_ itself never changes.",
+    "distractors": [
+      [
+        "Multum vīnum bibō.",
+        "_vīnum_ is nominative or accusative. After _multum_ the thing measured is genitive: _vīnī_."
+      ],
+      [
+        "Multum vīnō bibō.",
+        "_vīnō_ is dative or ablative. After _multum_ you need the genitive: _vīnī_."
+      ],
+      [
+        "Multum vīnōrum bibō.",
+        "_vīnōrum_ is genitive plural (“of wines”). Wine as a drink is singular: _vīnī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.03",
+    "review": "unreviewed",
+    "en": "We have too little food.",
+    "la": "Parum cibī habēmus.",
+    "fill": "cibī",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "too little of …",
+    "explain": "_parum_ (too little, not enough) works like _satis_ and _multum_: the food is genitive, _cibī_.",
+    "distractors": [
+      [
+        "Parum cibum habēmus.",
+        "_cibum_ is accusative. After _parum_: genitive, _cibī_."
+      ],
+      [
+        "Parum cibō habēmus.",
+        "_cibō_ is dative or ablative. After _parum_: genitive, _cibī_."
+      ],
+      [
+        "Parum cibōrum habēmus.",
+        "_cibōrum_ is genitive plural (“of foods”). Food as a mass is singular: _cibī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.04",
+    "review": "unreviewed",
+    "en": "I have a little money.",
+    "la": "Paulum pecūniae habeō.",
+    "fill": "pecūniae",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "a little of …",
+    "explain": "_paulum_ (a little) is followed by the genitive of what there is a little of: _pecūniae_.",
+    "distractors": [
+      [
+        "Paulum pecūniam habeō.",
+        "_pecūniam_ is accusative. After _paulum_: genitive, _pecūniae_."
+      ],
+      [
+        "Paulum pecūnia habeō.",
+        "_pecūnia_ is nominative or ablative. After _paulum_: genitive, _pecūniae_."
+      ],
+      [
+        "Paulum pecūniārum habeō.",
+        "_pecūniārum_ is genitive plural (“of monies”). Money as a mass is singular: _pecūniae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.05",
+    "review": "unreviewed",
+    "en": "I don't have much money.",
+    "la": "Multum pecūniae nōn habeō.",
+    "fill": "pecūniae",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "not a lot of …",
+    "explain": "Negative or positive, _multum_ takes the genitive: _multum pecūniae_. _nōn_ goes before the verb.",
+    "distractors": [
+      [
+        "Multum pecūniam nōn habeō.",
+        "_pecūniam_ is accusative. After _multum_: genitive, _pecūniae_."
+      ],
+      [
+        "Multum pecūnia nōn habeō.",
+        "_pecūnia_ is nominative or ablative. After _multum_: genitive, _pecūniae_."
+      ],
+      [
+        "Multum pecūniārum nōn habeō.",
+        "_pecūniārum_ is genitive plural. Money as a mass is singular: _pecūniae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.06",
+    "review": "unreviewed",
+    "en": "How much wine do you drink?",
+    "la": "Quantum vīnī bibis?",
+    "fill": "vīnī",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "how much …?",
+    "explain": "_quantum_ (how much) asks about an amount, so the thing is genitive: _quantum vīnī_ is “how much (of) wine”.",
+    "distractors": [
+      [
+        "Quantum vīnum bibis?",
+        "_vīnum_ is nominative or accusative. After _quantum_: genitive, _vīnī_."
+      ],
+      [
+        "Quantum vīnō bibis?",
+        "_vīnō_ is dative or ablative. After _quantum_: genitive, _vīnī_."
+      ],
+      [
+        "Quantum vīnōrum bibis?",
+        "_vīnōrum_ is genitive plural. Wine as a drink is singular: _vīnī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.07",
+    "review": "unreviewed",
+    "en": "I drink more water.",
+    "la": "Plūs aquae bibō.",
+    "fill": "aquae",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "more of …",
+    "explain": "_plūs_ (more) is a quantity word like _satis_: the water is genitive, _aquae_.",
+    "distractors": [
+      [
+        "Plūs aquam bibō.",
+        "_aquam_ is accusative. After _plūs_: genitive, _aquae_."
+      ],
+      [
+        "Plūs aqua bibō.",
+        "_aqua_ is nominative or ablative. After _plūs_: genitive, _aquae_."
+      ],
+      [
+        "Plūs aquārum bibō.",
+        "_aquārum_ is genitive plural (“of waters”). Water as a mass is singular: _aquae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.08",
+    "review": "unreviewed",
+    "en": "We have enough food and wine.",
+    "la": "Satis cibī et vīnī habēmus.",
+    "fill": "vīnī",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "enough of … and …",
+    "explain": "Both things depend on _satis_, so both are genitive: _cibī et vīnī_.",
+    "distractors": [
+      [
+        "Satis cibum et vīnum habēmus.",
+        "Both nouns are accusative here. Both depend on _satis_, so both are genitive: _cibī et vīnī_."
+      ],
+      [
+        "Satis cibī et vīnum habēmus.",
+        "_cibī_ is right, but _vīnum_ is not: both nouns depend on _satis_, so _vīnī_ too."
+      ],
+      [
+        "Satis cibō et vīnō habēmus.",
+        "_cibō_ and _vīnō_ are dative or ablative. After _satis_: genitive, _cibī et vīnī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.09",
+    "review": "unreviewed",
+    "en": "I hear nothing new.",
+    "la": "Nihil novī audiō.",
+    "fill": "novī",
+    "skills": [
+      "gen.partitive"
+    ],
+    "tag": "nothing (of) new",
+    "explain": "_nihil_ (nothing) is followed by the genitive: “nothing of new”. _novī_ is the genitive of _novum_ (a new thing).",
+    "distractors": [
+      [
+        "Nihil novō audiō.",
+        "_novō_ is dative or ablative. The thing there is nothing of goes in the genitive: _novī_."
+      ],
+      [
+        "Nihil novae audiō.",
+        "_novae_ is feminine. “New (thing)” is neuter, genitive _novī_."
+      ],
+      [
+        "Nihil novōrum audiō.",
+        "_novōrum_ is genitive plural (“of new things”). The saying uses the singular: _nihil novī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.1.10",
+    "review": "unreviewed",
+    "en": "What's new?",
+    "la": "Quid novī?",
+    "fill": "novī",
+    "skills": [
+      "gen.partitive",
+      "quest.words"
+    ],
+    "tag": "Quid novī?",
+    "explain": "Literally “what of new?”. _quid_ (what) is followed by a genitive, just as _nihil_ and _satis_ are. The answer is _Nihil novī_ (nothing new).",
+    "distractors": [
+      [
+        "Quid novō?",
+        "_novō_ is dative or ablative. The “of new” is genitive: _novī_."
+      ],
+      [
+        "Quid novae?",
+        "_novae_ is feminine. “New (thing)” is neuter, genitive _novī_."
+      ],
+      [
+        "Quid novōrum?",
+        "_novōrum_ is genitive plural. The question uses the singular: _quid novī_."
+      ]
+    ]
+  }
+]

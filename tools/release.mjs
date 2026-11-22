@@ -39,7 +39,7 @@ function step(name, cmd, args, opts = {}) {
   }
 }
 
-const SKIP = new Set(['dist', 'node_modules', '.git', '__pycache__']);
+const SKIP = new Set(['dist', 'node_modules', '.git', '__pycache__', '.cache']);   // .cache = downloaded vocabulary sources (large, re-creatable)
 const UPLOAD_LIMIT = 90;   // GitHub's web uploader refuses more than 100 files at a time
 
 async function listFiles(dir = '') {

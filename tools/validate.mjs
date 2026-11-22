@@ -67,7 +67,13 @@ export function validateLoaded(content) {
       checkDialogues(pack, unit);
       for (const it of unit.items) {
         const id = it.id;
-        if (!id.startsWith(`${pack.id}.${unit.id}.`)) err(id, `id should start with ${pack.id}.${unit.id}.`);
+        // a word card's id follows its word, not its place in the list, so reordering never loses anyone's progress
+        if (it.word) {
+          if (id !== `${pack.id}.${it.word}`) err(id, `a word card's id should be ${pack.id}.${it.word}`);
+          const e = content.index.lex.get(it.word);
+          if (!e) err(id, `word "${it.word}" is not in the lexicon`);
+          else if (e.lemma !== it.la) err(id, `card shows "${it.la}" but the lexicon lemma is "${e.lemma}"`);
+        } else if (!id.startsWith(`${pack.id}.${unit.id}.`)) err(id, `id should start with ${pack.id}.${unit.id}.`);
         for (const f of ['en', 'la', 'tag', 'explain', 'fill']) if (!it[f]) err(id, `missing ${f}`);
         if (it.q) checkWords(id, 'question', it.q);
         if (it.q && it.sit) err(id, 'an item has either q (Latin question) or sit (situation), not both');
@@ -95,7 +101,7 @@ export function validateLoaded(content) {
         if (it.distractors?.length !== 3) err(id, 'needs exactly 3 distractors');
         const dSeen = new Set();
         for (const d of it.distractors || []) {
-          if (!Array.isArray(d) || d.length !== 2 || !d[0] || !d[1]) { err(id, 'distractor must be [latin, why]'); continue; }
+          if (!Array.isArray(d) || d.length !== (it.word ? 3 : 2) || d.some((x) => !x)) { err(id, it.word ? 'a word distractor must be [latin, why, meaning]' : 'distractor must be [latin, why]'); continue; }
           checkWords(id, 'distractor', d[0]);
           const dn = normLoose(d[0]);
           if (acceptedLoose.has(dn)) err(id, `distractor is also an accepted answer: ${d[0]}`);
@@ -109,6 +115,15 @@ export function validateLoaded(content) {
         }
       }
     });
+  }
+
+  // Word lists: a word is listed once, every listed id exists, and nothing in the lexicon is waiting unlisted.
+  for (const pack of packs.filter((p) => p.vocab)) {
+    const ids = pack.units.flatMap((u) => u.items.map((it) => it.word));
+    const seen = new Set();
+    for (const w of ids) { if (seen.has(w)) err(`${pack.id}`, `word "${w}" is listed twice in the order file`); seen.add(w); }
+    const unlisted = content.lexicon.filter((e) => e.vocabOnly && !seen.has(e.id));
+    if (unlisted.length) warnings.push(`${unlisted.length} lexicon words are marked vocabOnly but not in ${pack.id}'s order file (e.g. ${unlisted.slice(0, 5).map((e) => e.id).join(', ')})`);
   }
   return { errors, warnings };
 }

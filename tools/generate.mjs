@@ -14,6 +14,7 @@
 //
 // Distractors are built by changing ONE thing in the correct sentence (the form of one word, one word
 // for another, a preposition) and explaining the change, so every wrong option teaches something.
+import { loadLexicon as loadLexiconFiles } from '../js/core/content.js';
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -51,7 +52,8 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 let LEX = null;
 export function loadLexicon(list) {
-  LEX = list.map((e) => {
+  // vocabulary-list entries (vocabOnly) have no forms to build sentences from; the word trainer is their only user
+  LEX = list.filter((e) => !e.vocabOnly).map((e) => {
     const forms = generateForms(e);
     // indeclinable words answer to any key
     const withFallback = forms.indecl === undefined ? forms
@@ -532,7 +534,7 @@ export async function generateUnit(packId, gen, otherItems, kept = []) {
 // ---------- command line ----------
 
 async function main() {
-  loadLexicon(await readJson('content/lexicon.json'));
+  loadLexicon(await loadLexiconFiles((f) => readJson(f)));
   const args = process.argv.slice(2);
   const sampleAt = args.indexOf('--sample');
   const packs = (await readdir(path.join(ROOT, 'content'), { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name);

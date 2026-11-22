@@ -1,0 +1,47 @@
+# Words every learner of Latin needs, whatever a frequency count says (Whitaker's tiers rate some very common words,
+# such as hostis, sermō and dubitō, too low). Lemmas, one or more per line; macrons and capitals do not matter.
+# `node tools/vocab.mjs build` puts these ahead of the rest of the list, and `report` names any it cannot find.
+a ab absum ac accipio ad addo adhuc adsum adulescens aequus ager
+agnosco ago alius aliquis alter altus amicus amo amor animal animus annus
+ante antiquus aperio appareo appello aqua ara arbor arma ars arx audeo
+audio aureus aut autem auxilium avis bellum bene bis bonus brevis cado
+caelum campus canis cano capio caput carmen carus casa castra causa caveo
+cedo celer cerno certus ceterus cibus circum civis civitas clamo clarus classis
+coepi cogito cognosco colo coma comes condo conor consilium consul contra copia
+cor corpus credo cresco crimen cum cupio cur cura curro custos de
+dea debeo decem decet defendo deinde deleo denique dens deus dexter dico
+dies difficilis digitus dignus dimitto discedo disco diu diversus divus do doceo
+dolor domina dominus domus donec donum dubito duco dulcis dum duo dux
+e ecce edo ego eo equus ergo erro et etiam etsi ex
+exemplum exeo exercitus exspecto extra facies facilis facio fama fatum felix femina
+fero ferrum fides filia filius finis fio flamma flumen fortis fortuna forum
+frater frons fructus fuga fugio gens genus gero gladius gloria gratia gravis
+habeo hasta heres heri hic hodie homo honor hora hortor hospes hostis
+humanus iaceo iacio iam ibi idem ignis ille imperium impero in inde
+infans ingens inimicus inquam inter interea interficio intro invenio ipse ira is
+iste ita item iter iterum iubeo iudex iudicium iungo iuro ius iustus
+iuvenis labor lacrima laetus laudo legio lego levis lex liber libertas licet
+littera locus longus loquor ludus lumen luna lux magister magnus maior male
+malus mando maneo manus mare mater medius melior memoria mens mensa mereo
+metus meus miles mille minor miser mitto modus moneo mons mora morior
+mors mos moveo mox mulier multus munus murus nam narro nascor natura
+navis ne nec neco nego nemo neque nescio niger nihil nisi nobilis
+nolo nomen non nondum nos noster nosco novus nox nullus numquam nunc
+nuntius ob obtineo occido oculus odi omnis opus oro os ostendo otium
+ovis pars parvus pater patior patria pauci pax pecunia pello per perdo
+pereo periculum pes peto pietas placeo plebs plenus poena pono populus porta
+porto possum post postea postquam potens potestas praeter premo primus princeps prior
+pro procul proelium prope propter puella puer pugna pulcher puto qua quaero
+quam quamquam quando quantus quasi quattuor queror qui quia quidam quidem quis
+quisque quisquam quo quoniam quoque rapio ratio recipio rego regina regnum relinquo
+reliquus res respondeo rex rogo rumpo rursus sacer saepe saevus salus sanguis
+sapiens satis scio scribo se sed semper senex sentio sequor sermo servo
+servus seu si sic sicut signum silva similis simul sine sino sol
+soleo solus solvo soror spero spes spiritus sto studium sub sum summus
+super superbus supero surgo suus taceo talis tam tamen tandem tango tantus
+tego tellus telum templum tempus teneo terra terreo tertius timeo timor tollo
+tot totus trado traho trans tres tristis tu tum turba tuus ubi
+ullus umbra unda unde unus urbs ut uterque uxor valeo varius vel
+velut venio ventus verbum verus vester vestis veto via video vinco vinculum
+vir virgo virtus vis vita vito vivo vix voco volo voluntas vos
+vox vulnus vultus

@@ -1,0 +1,241 @@
+[
+  {
+    "id": "grammar.6.01",
+    "review": "unreviewed",
+    "en": "It is a good day.",
+    "la": "Bonus diēs est.",
+    "fill": "diēs",
+    "skills": [
+      "noun.5decl"
+    ],
+    "tag": "diēs, diēī (m)",
+    "explain": "_diēs_ is usually masculine in the singular, so _bonus_. It is the subject, nominative singular.",
+    "distractors": [
+      [
+        "Bona diēs est.",
+        "_bona_ is feminine. _diēs_ is masculine here: _bonus_."
+      ],
+      [
+        "Bonus diem est.",
+        "_diem_ is accusative. The day is the subject: nominative _diēs_."
+      ],
+      [
+        "Bonus diē est.",
+        "_diē_ is ablative. The subject is nominative: _diēs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.02",
+    "review": "unreviewed",
+    "en": "The matter is big.",
+    "la": "Rēs magna est.",
+    "fill": "magna",
+    "skills": [
+      "noun.5decl"
+    ],
+    "tag": "rēs, reī (f)",
+    "explain": "_rēs_ is feminine, so the adjective is feminine: _magna_.",
+    "distractors": [
+      [
+        "Rēs magnus est.",
+        "_magnus_ is masculine. _rēs_ is feminine: _magna_."
+      ],
+      [
+        "Rem magna est.",
+        "_rem_ is accusative. The matter is the subject: nominative _rēs_."
+      ],
+      [
+        "Rēs magna sunt.",
+        "_sunt_ is “they are”. One matter: _est_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.03",
+    "review": "unreviewed",
+    "en": "Hope is great.",
+    "la": "Spēs magna est.",
+    "fill": "magna",
+    "skills": [
+      "noun.5decl"
+    ],
+    "tag": "spēs, speī (f)",
+    "explain": "_spēs_ (hope) is feminine, so _magna_.",
+    "distractors": [
+      [
+        "Spēs magnus est.",
+        "_magnus_ is masculine. _spēs_ is feminine: _magna_."
+      ],
+      [
+        "Spem magna est.",
+        "_spem_ is accusative. Hope is the subject: nominative _spēs_."
+      ],
+      [
+        "Spē magna est.",
+        "_spē_ is ablative (“with hope”). The subject is nominative: _spēs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.04",
+    "review": "unreviewed",
+    "en": "I have faith.",
+    "la": "Fidem habeō.",
+    "fill": "Fidem",
+    "skills": [
+      "noun.5decl",
+      "case.acc.obj"
+    ],
+    "tag": "fidēs, fideī (f)",
+    "explain": "_fidem_ is the accusative of _fidēs_ (faith, trust): the thing you have, the object.",
+    "distractors": [
+      [
+        "Fidēs habeō.",
+        "_fidēs_ is nominative. What you have is the object, accusative: _fidem_."
+      ],
+      [
+        "Fideī habeō.",
+        "_fideī_ is genitive or dative. The object is accusative: _fidem_."
+      ],
+      [
+        "Fidē habeō.",
+        "_fidē_ is ablative. The object is accusative: _fidem_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.05",
+    "review": "unreviewed",
+    "en": "I have hope.",
+    "la": "Spem habeō.",
+    "fill": "Spem",
+    "skills": [
+      "noun.5decl",
+      "case.acc.obj"
+    ],
+    "tag": "spēs, speī (f)",
+    "explain": "_spem_ is the accusative of _spēs_: the thing you have.",
+    "distractors": [
+      [
+        "Spēs habeō.",
+        "_spēs_ is nominative (or accusative plural). “A hope”, the object: _spem_."
+      ],
+      [
+        "Speī habeō.",
+        "_speī_ is genitive or dative. The object is accusative: _spem_."
+      ],
+      [
+        "Spē habeō.",
+        "_spē_ is ablative. The object is accusative: _spem_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.06",
+    "review": "unreviewed",
+    "en": "I work for many days.",
+    "la": "Multōs diēs labōrō.",
+    "fill": "diēs",
+    "skills": [
+      "noun.5decl",
+      "case.acc.duration"
+    ],
+    "tag": "how long? accusative",
+    "explain": "To say how long something lasts, Latin uses the accusative: _multōs diēs_ (for many days). _diēs_ is accusative plural here, the same as nominative plural.",
+    "distractors": [
+      [
+        "Multī diēs labōrō.",
+        "_multī_ is nominative. A duration is accusative: _multōs diēs_."
+      ],
+      [
+        "Multōs diēbus labōrō.",
+        "_diēbus_ is ablative plural; it does not agree with _multōs_ (accusative). For “for many days”: _multōs diēs_."
+      ],
+      [
+        "Multōs diērum labōrō.",
+        "_diērum_ is genitive plural. A duration is accusative: _multōs diēs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.07",
+    "review": "unreviewed",
+    "en": "I work all day.",
+    "la": "Tōtum diem labōrō.",
+    "fill": "diem",
+    "skills": [
+      "noun.5decl",
+      "case.acc.duration"
+    ],
+    "tag": "how long? accusative",
+    "explain": "“All day” is _tōtum diem_, accusative singular: how long you work.",
+    "distractors": [
+      [
+        "Tōtus diem labōrō.",
+        "_tōtus_ is nominative masculine. It must agree with _diem_ (accusative): _tōtum_."
+      ],
+      [
+        "Tōtum diēs labōrō.",
+        "_diēs_ is nominative or accusative plural. “All day” is one day: _diem_."
+      ],
+      [
+        "Tōtum diēī labōrō.",
+        "_diēī_ is genitive or dative. A duration is accusative: _diem_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.08",
+    "review": "unreviewed",
+    "en": "The day is long.",
+    "la": "Diēs longus est.",
+    "fill": "longus",
+    "skills": [
+      "noun.5decl"
+    ],
+    "tag": "diēs, diēī (m)",
+    "explain": "_diēs_ is masculine in the singular, so _longus_. (In a few phrases it is feminine, but not here.)",
+    "distractors": [
+      [
+        "Diēs longa est.",
+        "_longa_ is feminine. _diēs_ is masculine here: _longus_."
+      ],
+      [
+        "Diem longus est.",
+        "_diem_ is accusative. The day is the subject: nominative _diēs_."
+      ],
+      [
+        "Diēī longus est.",
+        "_diēī_ is genitive or dative. The subject is nominative: _diēs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.6.09",
+    "review": "unreviewed",
+    "en": "She has a beautiful face.",
+    "la": "Faciem pulchram habet.",
+    "fill": "Faciem",
+    "skills": [
+      "noun.5decl",
+      "case.acc.obj"
+    ],
+    "tag": "faciēs, faciēī (f)",
+    "explain": "_faciem_ is the accusative of _faciēs_ (face). _pulchram_ is feminine accusative, to agree with it.",
+    "distractors": [
+      [
+        "Faciēs pulchram habet.",
+        "_faciēs_ is nominative. What she has is the object, accusative: _faciem_."
+      ],
+      [
+        "Faciem pulcher habet.",
+        "_pulcher_ is masculine nominative. It must agree with _faciem_: _pulchram_."
+      ],
+      [
+        "Faciem pulchram habent.",
+        "_habent_ is “they have”. “She has” is _habet_."
+      ]
+    ]
+  }
+]

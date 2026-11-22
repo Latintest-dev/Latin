@@ -1,0 +1,242 @@
+[
+  {
+    "id": "grammar.4.01",
+    "review": "unreviewed",
+    "en": "I remember you.",
+    "la": "Meminī tuī.",
+    "fill": "tuī",
+    "skills": [
+      "gen.memini",
+      "pron.personal"
+    ],
+    "tag": "meminī + genitive",
+    "explain": "_meminī_ takes the genitive of the person remembered. The genitive of _tū_ is _tuī_.",
+    "distractors": [
+      [
+        "Meminit tuī.",
+        "_meminit_ is “he remembers”. “I remember” is _meminī_."
+      ],
+      [
+        "Meminī tibi.",
+        "_tibi_ is dative (“to you”). _meminī_ takes the genitive: _tuī_."
+      ],
+      [
+        "Meminī tū.",
+        "_tū_ is the nominative “you” (the one doing). What you remember is genitive: _tuī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.02",
+    "review": "unreviewed",
+    "en": "I remember my father.",
+    "la": "Meminī patris.",
+    "fill": "patris",
+    "skills": [
+      "gen.memini"
+    ],
+    "tag": "meminī + genitive",
+    "explain": "What you remember goes in the genitive: _patris_, genitive singular of _pater_.",
+    "distractors": [
+      [
+        "Meminī patrī.",
+        "_patrī_ is dative. _meminī_ takes the genitive: _patris_."
+      ],
+      [
+        "Meminī pater.",
+        "_pater_ is nominative. What you remember is genitive: _patris_."
+      ],
+      [
+        "Meminī patrum.",
+        "_patrum_ is genitive plural (“of fathers”). One father: _patris_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.03",
+    "review": "unreviewed",
+    "en": "I remember my friends.",
+    "la": "Meminī amīcōrum.",
+    "fill": "amīcōrum",
+    "skills": [
+      "gen.memini"
+    ],
+    "tag": "meminī + genitive",
+    "explain": "Genitive plural of _amīcus_: _amīcōrum_.",
+    "distractors": [
+      [
+        "Meminī amīcīs.",
+        "_amīcīs_ is dative or ablative. _meminī_ takes the genitive: _amīcōrum_."
+      ],
+      [
+        "Meminī amīcī.",
+        "_amīcī_ is genitive singular: “I remember a friend”. For “friends”: _amīcōrum_."
+      ],
+      [
+        "Meminī amīcus.",
+        "_amīcus_ is nominative. What you remember is genitive: _amīcōrum_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.04",
+    "review": "unreviewed",
+    "en": "I remember my homeland.",
+    "la": "Meminī patriae.",
+    "fill": "patriae",
+    "skills": [
+      "gen.memini"
+    ],
+    "tag": "meminī + genitive",
+    "explain": "_patriae_ is the genitive of _patria_.",
+    "distractors": [
+      [
+        "Meminī patriīs.",
+        "_patriīs_ is dative or ablative plural. _meminī_ takes the genitive: _patriae_."
+      ],
+      [
+        "Meminī patria.",
+        "_patria_ is nominative (or ablative). What you remember is genitive: _patriae_."
+      ],
+      [
+        "Meminī patriārum.",
+        "_patriārum_ is genitive plural (“of homelands”). One homeland: _patriae_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.05",
+    "review": "unreviewed",
+    "en": "I remember the good days.",
+    "la": "Meminī diērum bonōrum.",
+    "fill": "diērum",
+    "skills": [
+      "gen.memini",
+      "noun.5decl"
+    ],
+    "tag": "meminī + genitive",
+    "explain": "_diēs_ is a fifth-declension noun (masculine here), so _bonōrum_ agrees with it: genitive plural _diērum bonōrum_.",
+    "distractors": [
+      [
+        "Meminī diēbus bonīs.",
+        "_diēbus bonīs_ is dative or ablative. _meminī_ takes the genitive: _diērum bonōrum_."
+      ],
+      [
+        "Meminī diērum bonārum.",
+        "_bonārum_ is feminine. _diēs_ is masculine here, so _bonōrum_."
+      ],
+      [
+        "Meminī diēī bonī.",
+        "_diēī bonī_ is genitive singular (“of the good day”). For “days”: _diērum bonōrum_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.06",
+    "review": "unreviewed",
+    "en": "I am mindful of you.",
+    "la": "Tuī memor sum.",
+    "fill": "tuī",
+    "skills": [
+      "gen.memini",
+      "pron.personal"
+    ],
+    "tag": "memor + genitive",
+    "explain": "_memor_ (mindful) takes the genitive of what you are mindful of: _tuī_.",
+    "distractors": [
+      [
+        "Tē memor sum.",
+        "_tē_ is accusative. After _memor_: genitive, _tuī_."
+      ],
+      [
+        "Tibi memor sum.",
+        "_tibi_ is dative. After _memor_: genitive, _tuī_."
+      ],
+      [
+        "Tuus memor sum.",
+        "_tuus_ means “your” (an adjective), not “of you”. The genitive pronoun is _tuī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.07",
+    "review": "unreviewed",
+    "en": "You are mindful of us.",
+    "la": "Nostrī memor es.",
+    "fill": "Nostrī",
+    "skills": [
+      "gen.memini",
+      "pron.personal"
+    ],
+    "tag": "memor + genitive",
+    "explain": "_nostrī_ is the genitive of _nōs_ (we): “of us”.",
+    "distractors": [
+      [
+        "Nōs memor es.",
+        "_nōs_ is nominative or accusative. After _memor_: genitive, _nostrī_."
+      ],
+      [
+        "Nōbīs memor es.",
+        "_nōbīs_ is dative or ablative. After _memor_: genitive, _nostrī_."
+      ],
+      [
+        "Nostrī memor est.",
+        "_est_ is “he is”. “You are” is _es_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.08",
+    "review": "unreviewed",
+    "en": "Are you mindful of me?",
+    "la": "Meī memor es?",
+    "fill": "Meī",
+    "skills": [
+      "gen.memini",
+      "pron.personal"
+    ],
+    "tag": "memor + genitive",
+    "explain": "_meī_ is the genitive of _ego_ (I): “of me”.",
+    "distractors": [
+      [
+        "Mē memor es?",
+        "_mē_ is accusative. After _memor_: genitive, _meī_."
+      ],
+      [
+        "Mihi memor es?",
+        "_mihi_ is dative. After _memor_: genitive, _meī_."
+      ],
+      [
+        "Meus memor es?",
+        "_meus_ means “my”. The genitive pronoun is _meī_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.4.09",
+    "review": "unreviewed",
+    "en": "I am mindful of you all.",
+    "la": "Vestrī memor sum.",
+    "fill": "Vestrī",
+    "skills": [
+      "gen.memini",
+      "pron.personal"
+    ],
+    "tag": "memor + genitive",
+    "explain": "_vestrī_ is the genitive of _vōs_ (you, several people).",
+    "distractors": [
+      [
+        "Vōs memor sum.",
+        "_vōs_ is nominative or accusative. After _memor_: genitive, _vestrī_."
+      ],
+      [
+        "Vōbīs memor sum.",
+        "_vōbīs_ is dative or ablative. After _memor_: genitive, _vestrī_."
+      ],
+      [
+        "Tuī memor sum.",
+        "_tuī_ is “of you” (one person). For several people: _vestrī_."
+      ]
+    ]
+  }
+]

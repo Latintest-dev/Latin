@@ -1,0 +1,245 @@
+[
+  {
+    "id": "grammar.7.01",
+    "review": "unreviewed",
+    "en": "I see you.",
+    "la": "Tē videō.",
+    "fill": "Tē",
+    "skills": [
+      "pron.personal",
+      "case.acc.obj"
+    ],
+    "tag": "tē: you (object)",
+    "explain": "_tē_ is the accusative of _tū_: you as the thing seen. The verb ending _-ō_ already says “I”.",
+    "distractors": [
+      [
+        "Tū videō.",
+        "_tū_ is nominative: “you” as the one doing. As the thing seen, use _tē_."
+      ],
+      [
+        "Tibi videō.",
+        "_tibi_ is dative (“to you”). The thing seen is accusative: _tē_."
+      ],
+      [
+        "Tuī videō.",
+        "_tuī_ is genitive (“of you”). The thing seen is accusative: _tē_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.02",
+    "review": "unreviewed",
+    "en": "You see me.",
+    "la": "Mē vidēs.",
+    "fill": "Mē",
+    "skills": [
+      "pron.personal",
+      "case.acc.obj"
+    ],
+    "tag": "mē: me (object)",
+    "explain": "_mē_ is the accusative of _ego_: me as the thing seen. _vidēs_ already says “you”.",
+    "distractors": [
+      [
+        "Ego vidēs.",
+        "_ego_ is nominative: “I” as the one doing. As the thing seen: _mē_."
+      ],
+      [
+        "Mihi vidēs.",
+        "_mihi_ is dative (“to me”). The thing seen is accusative: _mē_."
+      ],
+      [
+        "Meī vidēs.",
+        "_meī_ is genitive (“of me”). The thing seen is accusative: _mē_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.03",
+    "review": "unreviewed",
+    "en": "He gives me bread.",
+    "la": "Mihi pānem dat.",
+    "fill": "Mihi",
+    "skills": [
+      "pron.personal",
+      "case.dat.indirect"
+    ],
+    "tag": "mihi: to me",
+    "explain": "_mihi_ is the dative of _ego_: “to me” (the one who receives). _pānem_ is what is given.",
+    "distractors": [
+      [
+        "Mē pānem dat.",
+        "_mē_ is accusative (“me” as the thing given). The person who receives is dative: _mihi_."
+      ],
+      [
+        "Ego pānem dat.",
+        "_ego_ is nominative (“I do it”). The one who receives is dative: _mihi_."
+      ],
+      [
+        "Meī pānem dat.",
+        "_meī_ is genitive (“of me”). The one who receives is dative: _mihi_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.04",
+    "review": "unreviewed",
+    "en": "I give you a book.",
+    "la": "Tibi librum dō.",
+    "fill": "Tibi",
+    "skills": [
+      "pron.personal",
+      "case.dat.indirect"
+    ],
+    "tag": "tibi: to you",
+    "explain": "_tibi_ is the dative of _tū_: “to you”.",
+    "distractors": [
+      [
+        "Tē librum dō.",
+        "_tē_ is accusative. The one who receives is dative: _tibi_."
+      ],
+      [
+        "Tū librum dō.",
+        "_tū_ is nominative. The one who receives is dative: _tibi_."
+      ],
+      [
+        "Tuī librum dō.",
+        "_tuī_ is genitive (“of you”). The one who receives is dative: _tibi_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.05",
+    "review": "unreviewed",
+    "en": "They see us.",
+    "la": "Nōs vident.",
+    "fill": "Nōs",
+    "skills": [
+      "pron.personal",
+      "case.acc.obj"
+    ],
+    "tag": "nōs: us (object)",
+    "explain": "_nōs_ is both “we” and “us”: its nominative and accusative look the same. Here it is the thing seen. _vident_ says “they”.",
+    "distractors": [
+      [
+        "Nōbīs vident.",
+        "_nōbīs_ is dative or ablative (“to us”). The thing seen is accusative: _nōs_."
+      ],
+      [
+        "Nostrī vident.",
+        "_nostrī_ is genitive (“of us”). The thing seen is accusative: _nōs_."
+      ],
+      [
+        "Nōs videt.",
+        "_videt_ is “he sees”. “They see” is _vident_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.06",
+    "review": "unreviewed",
+    "en": "He gives us money.",
+    "la": "Nōbīs pecūniam dat.",
+    "fill": "Nōbīs",
+    "skills": [
+      "pron.personal",
+      "case.dat.indirect"
+    ],
+    "tag": "nōbīs: to us",
+    "explain": "_nōbīs_ is the dative of _nōs_: “to us”.",
+    "distractors": [
+      [
+        "Nōs pecūniam dat.",
+        "_nōs_ is accusative. The ones who receive are dative: _nōbīs_."
+      ],
+      [
+        "Nostrī pecūniam dat.",
+        "_nostrī_ is genitive (“of us”). The ones who receive are dative: _nōbīs_."
+      ],
+      [
+        "Nōbīs pecūniam dant.",
+        "_dant_ is “they give”. “He gives” is _dat_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.07",
+    "review": "unreviewed",
+    "en": "I see you all.",
+    "la": "Vōs videō.",
+    "fill": "Vōs",
+    "skills": [
+      "pron.personal",
+      "case.acc.obj"
+    ],
+    "tag": "vōs: you all (object)",
+    "explain": "_vōs_ is both “you all” (nominative) and “you all” (accusative). Here it is the thing seen.",
+    "distractors": [
+      [
+        "Vōbīs videō.",
+        "_vōbīs_ is dative or ablative (“to you all”). The thing seen is accusative: _vōs_."
+      ],
+      [
+        "Vestrī videō.",
+        "_vestrī_ is genitive (“of you all”). The thing seen is accusative: _vōs_."
+      ],
+      [
+        "Tē videō.",
+        "_tē_ is “you” (one person). For several people: _vōs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.08",
+    "review": "unreviewed",
+    "en": "I give you all books.",
+    "la": "Vōbīs librōs dō.",
+    "fill": "Vōbīs",
+    "skills": [
+      "pron.personal",
+      "case.dat.indirect"
+    ],
+    "tag": "vōbīs: to you all",
+    "explain": "_vōbīs_ is the dative of _vōs_: “to you all”.",
+    "distractors": [
+      [
+        "Vōs librōs dō.",
+        "_vōs_ is accusative. The ones who receive are dative: _vōbīs_."
+      ],
+      [
+        "Vestrī librōs dō.",
+        "_vestrī_ is genitive. The ones who receive are dative: _vōbīs_."
+      ],
+      [
+        "Tibi librōs dō.",
+        "_tibi_ is “to you” (one person). For several people: _vōbīs_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.7.09",
+    "review": "unreviewed",
+    "en": "I am with you.",
+    "la": "Tēcum sum.",
+    "fill": "Tēcum",
+    "skills": [
+      "pron.personal",
+      "case.abl.accompany"
+    ],
+    "tag": "tēcum: with you",
+    "explain": "With a personal pronoun, _cum_ is joined on to the end: _tēcum_ is “with you”. (Not _cum tē_.)",
+    "distractors": [
+      [
+        "Cum tē sum.",
+        "With a pronoun, _cum_ is attached to the end: _tēcum_."
+      ],
+      [
+        "Tēcum es.",
+        "_es_ is “you are”. “I am” is _sum_."
+      ],
+      [
+        "Mēcum sum.",
+        "_mēcum_ is “with me”. “With you” is _tēcum_."
+      ]
+    ]
+  }
+]

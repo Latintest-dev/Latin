@@ -1,0 +1,50 @@
+{
+  "gen.partitive": {
+    "name": "Genitive of the whole (satis aquae, nihil novī)",
+    "pack": "grammar"
+  },
+  "gen.quality": {
+    "name": "Genitive of description (vir magnae virtūtis)",
+    "pack": "grammar"
+  },
+  "gen.value": {
+    "name": "Genitive of value (magnī, parvī, quantī)",
+    "pack": "grammar"
+  },
+  "gen.objective": {
+    "name": "Genitive after nouns: love of, fear of",
+    "pack": "grammar"
+  },
+  "gen.adjective": {
+    "name": "Genitive after adjectives: full of, eager for",
+    "pack": "grammar"
+  },
+  "gen.memini": {
+    "name": "Genitive with meminī and memor",
+    "pack": "grammar"
+  },
+  "noun.4decl": {
+    "name": "Fourth declension (manus, fructus)",
+    "pack": "grammar"
+  },
+  "noun.5decl": {
+    "name": "Fifth declension (diēs, rēs, spēs)",
+    "pack": "grammar"
+  },
+  "case.acc.duration": {
+    "name": "Accusative of time: how long?",
+    "pack": "grammar"
+  },
+  "pron.personal": {
+    "name": "I, you, we, you all: the cases",
+    "pack": "grammar"
+  },
+  "case.abl.instrument": {
+    "name": "Ablative: with (what you use)",
+    "pack": "grammar"
+  },
+  "case.abl.accompany": {
+    "name": "Ablative: with (whom)",
+    "pack": "grammar"
+  }
+}

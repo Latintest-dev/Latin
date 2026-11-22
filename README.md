@@ -1,4 +1,4 @@
-# Latin: sentence-drill app (v0.6)
+# Latin: sentence-drill app (v0.7)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences, aimed at reading, writing,
 thinking in and speaking Latin the way a Roman would. It runs in any modern browser on a phone or computer,
@@ -22,7 +22,7 @@ and brings it back. Typed answers accept every listed word order, with or withou
 diagnosed ("*est* is 3rd person singular, but you need 3rd person plural: *sunt*"); every mistake is logged.
 Review is spaced (1, 2, 4, 8, 16, 32 days) with per-skill strength, "practice weak spots" and "practice my mistakes".
 
-### Six tracks
+### Nine tracks
 
 - **Core grammar**: follows the order of *Lingua Latina per se illustrata*, from *est/sunt* and *in* + ablative
   to the genitive, dative, numbers and telling the hour.
@@ -35,11 +35,22 @@ Review is spaced (1, 2, 4, 8, 16, 32 days) with per-skill strength, "practice we
   (yesterday, tomorrow), how many, or turn it into a question or a *not*. This is what makes endings automatic.
 - **Conversations** (v0.6): short exchanges where you play one side. You see the earlier lines as chat bubbles
   and reply in Latin. Opens after *Like a Roman* unit 3.
+- **Grammar focus** (v0.7): short drills on one point at a time. Four units on the genitive (of the whole, of
+  quality and value, with adjectives, with *meminī*), then the fourth and fifth declensions and the pronouns *I, you,
+  we* in every case. Opens after *Core grammar* unit 9.
+- **Street Latin** (v0.7): how Romans really sounded. Shouts and oaths (*mehercule*, *ecastor*, *vae victīs*),
+  graffiti, signs and tombstones from Pompeii, and famous lines from Catullus, Cicero, Horace, Martial and Vergil.
+  Opens after *Like a Roman* unit 3.
+- **Word trainer** (v0.7): about 5,000 of the most common Latin words as flashcards, most frequent first, 50 to a
+  unit. Each word climbs choose, then type with the first letter given, then type. New words have their own daily
+  budget (default 6), separate from sentences. The ranking is evidence-based for roughly the first 2,000 words and
+  approximate after that (see `docs/CONTENT.md`).
 
 ### Ways to practice
 
 - **Continue**: reviews that are due, then new sentences (a shared budget, default 6 per session, taking turns
-  between tracks). Reviews of every track always come up.
+  between tracks) and new words (their own budget, default 6). Reviews of every track always come up. When more
+  than ten reviews are due, no new material is added until you catch up.
 - **Speed round**: ten sentences you can already write, typed against a countdown. Never moves your review dates,
   so it is safe to do as often as you like.
 - **Replay buttons** appear on a unit once you have met 80% of it. They never change your review schedule
@@ -54,7 +65,7 @@ Review is spaced (1, 2, 4, 8, 16, 32 days) with per-skill strength, "practice we
 ### Settings worth knowing
 
 - **Show macrons** (off by default) and **Require macrons**. Explanations always show macrons.
-- **New sentences per session** and **Daily goal**.
+- **New sentences per session**, **New words per session** and **Daily goal**.
 - **Tracks**: untick a track to stop it adding new sentences to Continue while you focus on another. You still
   review what you have already met, and you can open any unit from the Learn page. Some tracks open only after a
   unit of another (the lock icon says which).
@@ -82,7 +93,11 @@ home screen reminds you after a week.
 
     node tools/release.mjs --bump minor     # or patch; checks everything, rebuilds sw.js, writes dist/latin-app-<version>.zip
 
-Then upload the contents of the zip to the GitHub repository (replace the files) and reload the app twice
+GitHub's web upload accepts fewer than 100 files at a time, so the release also writes
+`dist/latin-app-<version>-upload-1.zip`, `-upload-2.zip`, ... of at most 90 files each. Upload them one after another
+(unzip each and drag its contents in, keeping folders), or use the full zip with git.
+
+Then upload the contents (replace the files) and reload the app twice
 on each device. The release command stops before writing anything if content fails validation, a sentence id
 that was shipped before has disappeared (which would orphan your saved progress), or a test fails.
 
@@ -96,7 +111,8 @@ Useful commands (`npm run <name>` works too):
 ## Content review
 
 Every sentence is marked `"review": "unreviewed"`. The sentences, macrons and explanations were drafted by
-Claude and checked mechanically (forms, spelling against the lexicon), but not by a Latin teacher. Use the
+Claude and checked mechanically (forms, spelling against the lexicon), but not by a Latin teacher. The word-list
+meanings come from Whitaker's Words and are short and unreviewed; the new list words have no macrons. Use the
 **Report a problem** button in the app; flags are included in your export file, and `tools/flags.mjs` turns
 an export into a fix list.
 

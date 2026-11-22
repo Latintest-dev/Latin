@@ -1,0 +1,263 @@
+[
+  {
+    "id": "grammar.5.01",
+    "review": "unreviewed",
+    "en": "The army comes to the city.",
+    "la": "Exercitus ad urbem venit.",
+    "fill": "Exercitus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "exercitus, -ūs (m)",
+    "explain": "_exercitus_ is fourth declension. As the subject it is nominative singular, so the verb is singular: _venit_.",
+    "distractors": [
+      [
+        "Exercitum ad urbem venit.",
+        "_exercitum_ is accusative. The army is the subject, so it is nominative: _exercitus_."
+      ],
+      [
+        "Exercituī ad urbem venit.",
+        "_exercituī_ is dative (“to the army”). The subject is nominative: _exercitus_."
+      ],
+      [
+        "Exercitus ad urbem veniunt.",
+        "_veniunt_ is “they come”. One army, so one verb: _venit_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.02",
+    "review": "unreviewed",
+    "en": "The hand is beautiful.",
+    "la": "Manus pulchra est.",
+    "fill": "pulchra",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "manus, -ūs (f)",
+    "explain": "_manus_ is feminine, so the adjective is feminine: _pulchra_ (not _pulcher_).",
+    "distractors": [
+      [
+        "Manus pulcher est.",
+        "_pulcher_ is masculine. _manus_ is feminine: _pulchra_."
+      ],
+      [
+        "Manum pulchra est.",
+        "_manum_ is accusative. The hand is the subject: nominative _manus_."
+      ],
+      [
+        "Manibus pulchra est.",
+        "_manibus_ is dative or ablative plural. The subject is nominative singular: _manus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.03",
+    "review": "unreviewed",
+    "en": "The senate is in the forum.",
+    "la": "Senātus in forō est.",
+    "fill": "Senātus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "senātus, -ūs (m)",
+    "explain": "_senātus_ is fourth declension. The senate is the subject: nominative singular.",
+    "distractors": [
+      [
+        "Senātum in forō est.",
+        "_senātum_ is accusative. The subject is nominative: _senātus_."
+      ],
+      [
+        "Senātū in forō est.",
+        "_senātū_ is ablative (“with the senate”). The subject is nominative: _senātus_."
+      ],
+      [
+        "Senātuī in forō est.",
+        "_senātuī_ is dative (“to the senate”). The subject is nominative: _senātus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.04",
+    "review": "unreviewed",
+    "en": "The fruit is good.",
+    "la": "Fructus bonus est.",
+    "fill": "bonus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "fructus, -ūs (m)",
+    "explain": "_fructus_ is masculine, so the adjective is masculine nominative: _bonus_.",
+    "distractors": [
+      [
+        "Fructus bona est.",
+        "_bona_ is feminine. _fructus_ is masculine: _bonus_."
+      ],
+      [
+        "Fructum bonus est.",
+        "_fructum_ is accusative. The fruit is the subject: nominative _fructus_."
+      ],
+      [
+        "Fructū bonus est.",
+        "_fructū_ is ablative (“with fruit”). The subject is nominative: _fructus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.05",
+    "review": "unreviewed",
+    "en": "Fear is great.",
+    "la": "Metus magnus est.",
+    "fill": "magnus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "metus, -ūs (m)",
+    "explain": "_metus_ (fear) is masculine in the fourth declension: nominative _metus_, genitive _metūs_.",
+    "distractors": [
+      [
+        "Metus magna est.",
+        "_magna_ is feminine. _metus_ is masculine: _magnus_."
+      ],
+      [
+        "Metum magnus est.",
+        "_metum_ is accusative. Fear is the subject: nominative _metus_."
+      ],
+      [
+        "Metū magnus est.",
+        "_metū_ is ablative (“with fear”). The subject is nominative: _metus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.06",
+    "review": "unreviewed",
+    "en": "The harbor is big.",
+    "la": "Portus magnus est.",
+    "fill": "Portus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "portus, -ūs (m)",
+    "explain": "_portus_ (harbor) is fourth declension and masculine, like most of them.",
+    "distractors": [
+      [
+        "Portum magnus est.",
+        "_portum_ is accusative. The harbor is the subject: nominative _portus_."
+      ],
+      [
+        "Portuī magnus est.",
+        "_portuī_ is dative (“to the harbor”). The subject is nominative: _portus_."
+      ],
+      [
+        "Portus magna est.",
+        "_magna_ is feminine. _portus_ is masculine: _magnus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.07",
+    "review": "unreviewed",
+    "en": "The lake is deep.",
+    "la": "Lacus altus est.",
+    "fill": "altus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "lacus, -ūs (m)",
+    "explain": "_altus_ means high and also deep. _lacus_ is fourth declension and masculine, so _altus_ agrees.",
+    "distractors": [
+      [
+        "Lacus alta est.",
+        "_alta_ is feminine. _lacus_ is masculine: _altus_."
+      ],
+      [
+        "Lacum altus est.",
+        "_lacum_ is accusative. The lake is the subject: nominative _lacus_."
+      ],
+      [
+        "Lacū altus est.",
+        "_lacū_ is ablative (“at the lake”). The subject is nominative: _lacus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.08",
+    "review": "unreviewed",
+    "en": "Your arrival is good.",
+    "la": "Adventus tuus bonus est.",
+    "fill": "tuus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "adventus, -ūs (m)",
+    "explain": "_adventus_ (arrival) is masculine, so _tuus_ and _bonus_ are masculine nominative.",
+    "distractors": [
+      [
+        "Adventus tua bonus est.",
+        "_tua_ is feminine. _adventus_ is masculine: _tuus_."
+      ],
+      [
+        "Adventum tuus bonus est.",
+        "_adventum_ is accusative. The arrival is the subject: nominative _adventus_."
+      ],
+      [
+        "Adventuī tuus bonus est.",
+        "_adventuī_ is dative (“to the arrival”). The subject is nominative: _adventus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.09",
+    "review": "unreviewed",
+    "en": "I work with my hands.",
+    "la": "Manibus laborō.",
+    "fill": "Manibus",
+    "skills": [
+      "noun.4decl",
+      "case.abl.instrument"
+    ],
+    "tag": "manus: ablative plural",
+    "explain": "The ablative plural of the fourth declension is _-ibus_: _manibus_ (with the hands). The ablative says what you do it with.",
+    "distractors": [
+      [
+        "Manūs laborō.",
+        "_manūs_ is plural or genitive, with no “with”. Use the ablative plural: _manibus_."
+      ],
+      [
+        "Manuum laborō.",
+        "_manuum_ is genitive plural (“of hands”). To say “with the hands”: _manibus_."
+      ],
+      [
+        "Manum laborō.",
+        "_manum_ is accusative singular: it would make the hand the thing worked on. “With hands”: _manibus_."
+      ]
+    ]
+  },
+  {
+    "id": "grammar.5.10",
+    "review": "unreviewed",
+    "en": "The course is long.",
+    "la": "Cursus longus est.",
+    "fill": "longus",
+    "skills": [
+      "noun.4decl"
+    ],
+    "tag": "cursus, -ūs (m)",
+    "explain": "_cursus_ (running, a course) is fourth declension and masculine.",
+    "distractors": [
+      [
+        "Cursus longa est.",
+        "_longa_ is feminine. _cursus_ is masculine: _longus_."
+      ],
+      [
+        "Cursum longus est.",
+        "_cursum_ is accusative. The course is the subject: nominative _cursus_."
+      ],
+      [
+        "Cursuī longus est.",
+        "_cursuī_ is dative (“to the course”). The subject is nominative: _cursus_."
+      ]
+    ]
+  }
+]
