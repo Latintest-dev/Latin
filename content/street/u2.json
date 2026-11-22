@@ -1,0 +1,216 @@
+[
+  {
+    "id": "street.2.01",
+    "review": "unreviewed",
+    "en": "Beware of the dog (the Pompeii doorway sign).",
+    "la": "Cavē canem.",
+    "fill": "canem",
+    "skills": [
+      "street.graffiti",
+      "imp.2sg"
+    ],
+    "tag": "mosaic at Pompeii",
+    "explain": "A black-and-white mosaic in a Pompeian doorway warns visitors with these words. _cavē_ is a command to one person, and what you beware of is accusative: _canem_.",
+    "distractors": [
+      [
+        "Cavē canis.",
+        "_canis_ is nominative. What you beware of is the object, accusative: _canem_."
+      ],
+      [
+        "Cavēte canem.",
+        "_cavēte_ is a command to several people. The mosaic speaks to one visitor: _cavē_."
+      ],
+      [
+        "Cavet canem.",
+        "_cavet_ is “he beware(s)”. A command to one person: _cavē_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.02",
+    "review": "unreviewed",
+    "en": "Hello, profit!",
+    "la": "Salvē, lucrum!",
+    "fill": "lucrum",
+    "skills": [
+      "street.graffiti",
+      "imp.2sg"
+    ],
+    "tag": "mosaic at Pompeii",
+    "explain": "A Pompeian mosaic greets “profit” (_lucrum_) as a welcome guest. Shopkeepers hoped it would come through the door. _lucrum_ is the one being greeted, so it is in the vocative, which for _-um_ nouns looks like the nominative.",
+    "distractors": [
+      [
+        "Salvēte, lucrum!",
+        "_salvēte_ is said to several people. One thing is greeted: _salvē_."
+      ],
+      [
+        "Salvē, lucrī!",
+        "_lucrī_ is genitive (“of profit”). You greet the thing itself: _lucrum_."
+      ],
+      [
+        "Salvē, lucrō!",
+        "_lucrō_ is dative or ablative. You greet the thing itself: _lucrum_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.03",
+    "review": "unreviewed",
+    "en": "Happiness lives here.",
+    "la": "Hīc habitat fēlīcitās.",
+    "fill": "habitat",
+    "skills": [
+      "street.graffiti",
+      "verb.person"
+    ],
+    "tag": "inscription at Pompeii",
+    "explain": "A house at Pompeii carried this text over its door. _hīc_ is “here”, _habitat_ is “lives”, and _fēlīcitās_ is the subject.",
+    "distractors": [
+      [
+        "Hīc habitant fēlīcitās.",
+        "_habitant_ is “they live”. One subject, one verb: _habitat_."
+      ],
+      [
+        "Hīc habitat fēlīcitātem.",
+        "_fēlīcitātem_ is accusative. Happiness is the one who lives here, so nominative: _fēlīcitās_."
+      ],
+      [
+        "Hīc habitō fēlīcitās.",
+        "_habitō_ is “I live”. Happiness is the subject: _habitat_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.04",
+    "review": "unreviewed",
+    "en": "Tomorrow I'll give credit, today nothing.",
+    "la": "Crās crēdō, hodiē nihil.",
+    "fill": "crēdō",
+    "skills": [
+      "street.graffiti",
+      "verb.person"
+    ],
+    "tag": "a shop's joke",
+    "explain": "A joke told in ancient shops and bars: _crēdō_ means “I believe” and “I lend on credit”, so the sign says “credit tomorrow, nothing today”. _crās_ is tomorrow, _hodiē_ today.",
+    "distractors": [
+      [
+        "Crās crēdis, hodiē nihil.",
+        "_crēdis_ is “you lend”. The shopkeeper says “I”: _crēdō_."
+      ],
+      [
+        "Heri crēdō, hodiē nihil.",
+        "_heri_ is yesterday. The joke is about tomorrow: _crās_."
+      ],
+      [
+        "Crās crēdunt, hodiē nihil.",
+        "_crēdunt_ is “they lend”. The shopkeeper says “I”: _crēdō_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.05",
+    "review": "unreviewed",
+    "en": "Whoever loves, let him thrive.",
+    "la": "Quisquis amat valeat.",
+    "fill": "valeat",
+    "skills": [
+      "street.graffiti"
+    ],
+    "tag": "love graffito",
+    "explain": "A love verse scratched on walls at Pompeii. _quisquis_ (whoever) takes _amat_ (loves). _valeat_ is a wish: “let him be well, let him thrive”.",
+    "distractors": [
+      [
+        "Quisquis amat valet.",
+        "_valet_ is plain “he is well”, a statement. The graffito is a wish: _valeat_."
+      ],
+      [
+        "Quisquis amās valeat.",
+        "_amās_ is “you love”. “Whoever loves” takes _amat_."
+      ],
+      [
+        "Quisquis amat valē.",
+        "_valē_ is a command to the person you are talking to (“be well!”). The graffito wishes this for “whoever loves”, so the verb is _valeat_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.06",
+    "review": "unreviewed",
+    "en": "Here lies.",
+    "la": "Hīc iacet.",
+    "fill": "iacet",
+    "skills": [
+      "street.graffiti",
+      "verb.person"
+    ],
+    "tag": "tombstone",
+    "explain": "The usual opening of a tombstone. _iacet_ is “lies” (is lying down), the 3rd person singular of _iaceō_.",
+    "distractors": [
+      [
+        "Hīc iacent.",
+        "_iacent_ is “they lie”. One person: _iacet_."
+      ],
+      [
+        "Hīc iaceō.",
+        "_iaceō_ is “I lie”. The stone talks about someone else: _iacet_."
+      ],
+      [
+        "Hīc iaces.",
+        "_iaces_ is “you lie”. The stone talks about someone else: _iacet_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.07",
+    "review": "unreviewed",
+    "en": "May the earth be light on you.",
+    "la": "Sit tibi terra levis.",
+    "fill": "levis",
+    "skills": [
+      "street.graffiti"
+    ],
+    "tag": "tombstone",
+    "explain": "A wish carved on tombstones, often shortened to S T T L. _sit_ is a wish form of _sum_ (“may it be”). The wish is that the earth will not press heavily on the dead.",
+    "distractors": [
+      [
+        "Est tibi terra levis.",
+        "_est_ is plain “is”, a statement. The wish form is _sit_."
+      ],
+      [
+        "Sit mihi terra levis.",
+        "_mihi_ is “to me”. The wish is for “you”: _tibi_."
+      ],
+      [
+        "Sit tibi terra levem.",
+        "_levem_ is accusative. It describes _terra_ after _sit_, so nominative: _levis_."
+      ]
+    ]
+  },
+  {
+    "id": "street.2.08",
+    "review": "unreviewed",
+    "en": "Hail and farewell.",
+    "la": "Avē atque valē.",
+    "fill": "valē",
+    "skills": [
+      "street.graffiti",
+      "imp.2sg"
+    ],
+    "tag": "Catullus 101",
+    "explain": "The famous last line of Catullus's poem to his dead brother. _avē_ is a greeting, _valē_ a goodbye: both are said to one person.",
+    "distractors": [
+      [
+        "Valē atque avē.",
+        "The poem goes _avē atque valē_: hello first, then goodbye."
+      ],
+      [
+        "Salvē atque valē.",
+        "_salvē_ is also “hello”, but Catullus wrote _avē_."
+      ],
+      [
+        "Avē nec valē.",
+        "_nec_ means “and not”. Catullus says “and”: _atque_."
+      ]
+    ]
+  }
+]

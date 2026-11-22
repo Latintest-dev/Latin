@@ -1,0 +1,14 @@
+{
+  "street.exclaim": {
+    "name": "Exclamations and oaths",
+    "pack": "street"
+  },
+  "street.graffiti": {
+    "name": "Graffiti, signs and tombstones",
+    "pack": "street"
+  },
+  "street.authors": {
+    "name": "Lines from Latin authors",
+    "pack": "street"
+  }
+}

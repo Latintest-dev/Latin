@@ -2,7 +2,7 @@
 // with a pack.json and unit files, then add one line here.
 //
 // Each pack is independent: its own units, its own unlock order. They share the lexicon
-// (content/lexicon.json) and the skill list (content/skills.json).
+// (content/lexicon/*.json) and the skill list (content/skills.json).
 
 export const PACKS = [
   { id: 'core', path: 'content/core/pack.json' },
@@ -11,4 +11,7 @@ export const PACKS = [
   { id: 'day', path: 'content/day/pack.json' },
   { id: 'swap', path: 'content/swap/pack.json' },
   { id: 'talk', path: 'content/talk/pack.json' },
+  { id: 'grammar', path: 'content/grammar/pack.json' },
+  { id: 'street', path: 'content/street/pack.json' },
+  { id: 'vocab', path: 'content/vocab/pack.json' },
 ];

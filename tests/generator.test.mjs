@@ -1,3 +1,4 @@
+import { loadLexicon as loadLexiconFiles } from '../js/core/content.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -12,7 +13,7 @@ import { renderNoun, renderVerb } from '../tools/gen/english.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const content = await loadFromDisk();
 const forms = (id) => content.index.forms.get(id);
-const lexicon = JSON.parse(await readFile(path.join(ROOT, 'content/lexicon.json'), 'utf8'));
+const lexicon = await loadLexiconFiles(async (f) => JSON.parse(await readFile(path.join(ROOT, f), 'utf8')));
 loadLexicon(lexicon);
 
 test('third declension nouns', () => {

@@ -29,7 +29,7 @@ test('ladder: correct answers climb, then enter spaced review', () => {
 
 test('a brand-new session shares its new-sentence budget between tracks, first at MC level', async () => {
   const store = await mkStore();
-  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'continue', newTotal: 4 });
+  const q = buildQueue({ content, itemStates: store.state.items, skills: store.state.skills, mistakes: [], now: clock, mode: 'continue', newTotal: 4, newWords: 0 });
   assert.equal(q.length, 4);
   // taking turns: one from each track, then the next round starts over
   const packs = q.map((e) => content.packOf.get(e.itemId));
@@ -41,8 +41,8 @@ test('a brand-new session shares its new-sentence budget between tracks, first a
 
 test('the new-sentence budget is a total, not per track', async () => {
   const store = await mkStore();
-  const six = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6 });
-  const two = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 2 });
+  const six = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 0 });
+  const two = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 2, newWords: 0 });
   assert.equal(six.length, 6);
   assert.equal(two.length, 2);
 });

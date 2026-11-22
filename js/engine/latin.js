@@ -64,14 +64,23 @@ const CONJ = {
  * Regular paradigms come from rules; `forms` in the entry adds or overrides.
  *
  * Feature keys:
- *   noun        nom.sg, gen.pl, ...
+ *   noun        nom.sg, gen.pl, ...   (decl 1, 2, 3 with `stem`/`nomSg`, 4 and 5)
  *   adjective   nom.sg.m, acc.pl.f, ...
  *   verb        pres.ind.act.1sg ... pres.inf.act
  *   indeclinable  indecl
  */
 export function generateForms(e) {
   const f = {};
-  if (e.pos === 'noun' && e.decl && (e.decl !== 3 || e.stem)) {
+  if (e.pos === 'noun' && (e.decl === 4 || e.decl === 5)) {
+    // 4th declension (fructus, -ūs) and 5th declension (diēs, -ēī / -eī): `stem` is what stays (fructū- is built from fruct-)
+    const nums = e.number ? [e.number] : ['sg', 'pl'];
+    // 5th: after a vowel the genitive and dative are -ēī (diēī, faciēī); after a consonant -eī (reī, speī, fideī)
+    const eI = /[aeiouāēīōū]$/.test(e.stem) ? 'ēī' : 'eī';
+    const t = e.decl === 4
+      ? { sg: ['us', 'ūs', 'uī', 'um', 'ū'], pl: ['ūs', 'uum', 'ibus', 'ūs', 'ibus'] }
+      : { sg: ['ēs', eI, eI, 'em', 'ē'], pl: ['ēs', 'ērum', 'ēbus', 'ēs', 'ēbus'] };
+    for (const n of nums) CASES.forEach((c, i) => { f[`${c}.${n}`] = e.stem + t[n][i]; });
+  } else if (e.pos === 'noun' && e.decl && (e.decl !== 3 || e.stem)) {
     const nums = e.number ? [e.number] : ['sg', 'pl'];
     if (e.decl === 3) {
       // 3rd declension: `stem` is the genitive stem (rēg-), `nomSg` the nominative (rēx).
@@ -122,6 +131,9 @@ export function generateForms(e) {
   }
   if (e.form) f.indecl = e.form;
   if (e.forms) Object.assign(f, e.forms);
+  // The dictionary form is always a known form of its word, even when no paradigm is built (a word known only from
+  // the vocabulary lists) or the paradigm leaves it out (grātia is only used in the plural, salveō only as salvē).
+  if (!Object.values(f).includes(e.lemma)) f.lemma = e.lemma;
   return f;
 }
 
@@ -140,6 +152,7 @@ const TENSES = ['pres', 'impf', 'fut', 'perf'];
 /** Human-friendly description of a feature key. */
 export function featureLabel(key) {
   if (key === 'indecl') return 'an unchanging word';
+  if (key === 'lemma') return 'the dictionary form';
   if (key === 'pres.inf.act') return 'the present infinitive';
   if (key === 'imp.act.2sg') return 'the command form (to one person)';
   if (key === 'imp.act.2pl') return 'the command form (to several people)';

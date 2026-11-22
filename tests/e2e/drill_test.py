@@ -14,7 +14,7 @@ with sync_playwright() as p:
     txt = page.inner_text('.today')
     check('home shows today strip', '0' in txt and 'answers today' in txt and 'No streak yet' in txt, txt.replace('\n', ' | '))
     check('speed round locked at first', page.is_disabled('.btn.speed'))
-    check('six tracks listed', page.locator('section.pack').count() == 6, str(page.locator('section.pack h2').all_inner_texts()))
+    check('nine tracks listed', page.locator('section.pack').count() == 9, str(page.locator('section.pack h2').all_inner_texts()))
     replay_btns = '.unit-btns button:is(:has-text("Narrate it"), :has-text("Run the drill"), :has-text("Play it"))'
     check('no replay buttons before anything is learned', page.locator(replay_btns).count() == 0)
 

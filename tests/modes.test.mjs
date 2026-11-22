@@ -1,4 +1,5 @@
 // Practice modes added in v0.6: conversations, "change it" drills, linked tracks, paused tracks.
+import { loadLexicon as loadLexiconFiles } from '../js/core/content.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -16,7 +17,7 @@ import { promptKind, promptText, cueText, promptKey } from '../js/engine/items.j
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const content = await loadFromDisk();
-loadLexicon(JSON.parse(await readFile(path.join(ROOT, 'content/lexicon.json'), 'utf8')));
+loadLexicon(await loadLexiconFiles(async (f) => JSON.parse(await readFile(path.join(ROOT, f), 'utf8'))));
 let clock = new Date(2026, 10, 19, 12).getTime();
 const now = () => clock;
 const mkStore = async () => createStore(createMemoryBackend(), { now });

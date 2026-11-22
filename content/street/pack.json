@@ -1,0 +1,33 @@
+{
+  "id": "street",
+  "name": "Street Latin",
+  "blurb": "How Romans really sounded: exclamations and oaths, graffiti from Pompeii, tombstone formulas, and famous lines from Catullus, Cicero, Horace, Martial and Vergil.",
+  "skillsFile": "skills.json",
+  "units": [
+    {
+      "id": "1",
+      "file": "u1.json",
+      "title": "Shouts and oaths",
+      "blurb": "ēheu, ecce, mehercule, prō dī immortālēs",
+      "intro": "Romans did not speak in textbook sentences. They shouted, swore and exclaimed, and these little words fill the plays of Plautus and the letters of Cicero. Men swore _mehercule_ (by Hercules); women swore _ecastor_ (by Castor); both swore _edepol_ (by Pollux). _Ēheu_ is “alas”, _ecce_ “look!”, _heus_ “hey there!”, _euge_ “bravo!”. These words do not change, so the point is to know them cold and hear their tone."
+    },
+    {
+      "id": "2",
+      "file": "u2.json",
+      "title": "Walls, doors and tombs",
+      "blurb": "cavē canem, salvē lucrum, sit tibi terra levis",
+      "intro": "The ruins of Pompeii kept doorway mosaics, shop signs and scribbles on walls, so we can read what ordinary people wrote. This unit has some famous ones, along with the short formulas written on tombstones. Notice how short they are, and how many are commands (_cavē_, _salvē_) or wishes (_sit tibi terra levis_, _valeat_). A wish in Latin uses a form called the subjunctive, which you do not need to know yet: here you learn each wish as one saying."
+    },
+    {
+      "id": "3",
+      "file": "u3.json",
+      "title": "Lines from Latin authors",
+      "blurb": "ōdī et amō, ō tempora ō mōrēs, omnia vincit amor",
+      "intro": "These are real lines that Romans quoted to each other, and that people have quoted ever since. Learning them whole is the best way to feel the rhythm of Latin: short, with the key word often at the end. Where a line is only part of a longer sentence or poem, the English tells you what it means on its own. Some use verbs or word forms from later in your Latin; here you learn each line as one saying."
+    }
+  ],
+  "requires": {
+    "pack": "roman",
+    "unit": "3"
+  }
+}

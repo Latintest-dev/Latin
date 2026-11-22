@@ -57,6 +57,9 @@ export function renderSettings(root, app) {
   const newSel = h('select', { onchange: () => store.setSetting('newTotal', Number(newSel.value)), 'aria-label': 'New sentences per session' },
     [3, 4, 6, 8, 10, 12].map((n) => h('option', { value: n, selected: n === s.settings.newTotal }, String(n))));
 
+  const wordsSel = h('select', { onchange: () => store.setSetting('newWords', Number(wordsSel.value)), 'aria-label': 'New words per session' },
+    [3, 4, 6, 8, 10, 15].map((n) => h('option', { value: n, selected: n === (s.settings.newWords ?? 6) }, String(n))));
+
   const goalSel = h('select', { onchange: () => store.setSetting('dailyGoal', Number(goalSel.value)), 'aria-label': 'Daily goal in answers' },
     [10, 20, 30, 50, 80].map((n) => h('option', { value: n, selected: n === (s.settings.dailyGoal || 20) }, String(n))));
 
@@ -81,6 +84,9 @@ export function renderSettings(root, app) {
       h('label', { class: 'toggle' },
         h('span', null, h('strong', null, 'New sentences per session'), h('small', null, 'Shared between your tracks, taking turns. Reviews always come first.')),
         newSel),
+      h('label', { class: 'toggle' },
+        h('span', null, h('strong', null, 'New words per session'), h('small', null, 'From the word trainer, on top of the sentences. Each new word is asked about three times in the session.')),
+        wordsSel),
       h('label', { class: 'toggle' },
         h('span', null, h('strong', null, 'Daily goal'), h('small', null, 'Answers per day that make a full day. A little every day beats a lot once a week.')),
         goalSel)),

@@ -9,6 +9,7 @@ export const DEFAULT_SETTINGS = {
   showMacrons: false,    // display macrons on Latin text
   strictMacrons: false,  // require macrons in typed answers
   newTotal: 6,           // new sentences introduced per session, shared between tracks
+  newWords: 6,           // new words introduced per session by the word trainer (it keeps a budget of its own)
   dailyGoal: 20,         // answers per day that count as a full day of practice
   pausedPacks: [],       // tracks left out of Continue's new sentences (their reviews still come up)
   upd: 0,

@@ -1,0 +1,316 @@
+[
+  {
+    "id": "street.1.01",
+    "review": "unreviewed",
+    "en": "Alas!",
+    "la": "Ēheu!",
+    "fill": "Ēheu",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "exclamation",
+    "explain": "_ēheu_ is a sigh of sorrow, used by Plautus, Vergil and Horace alike.",
+    "distractors": [
+      [
+        "Ecce!",
+        "_ecce_ means “look!”."
+      ],
+      [
+        "Euge!",
+        "_euge_ means “well done!”."
+      ],
+      [
+        "Heus!",
+        "_heus_ means “hey there!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.02",
+    "review": "unreviewed",
+    "en": "Look!",
+    "la": "Ecce!",
+    "fill": "Ecce",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "exclamation",
+    "explain": "_ecce_ points at something: “look!”, “here it is!”.",
+    "distractors": [
+      [
+        "Ēheu!",
+        "_ēheu_ means “alas!”."
+      ],
+      [
+        "Euge!",
+        "_euge_ means “well done!”."
+      ],
+      [
+        "Heus!",
+        "_heus_ means “hey there!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.03",
+    "review": "unreviewed",
+    "en": "Hey there!",
+    "la": "Heus!",
+    "fill": "Heus",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "exclamation",
+    "explain": "_heus_ calls for someone's attention. It is common in the comedies of Plautus.",
+    "distractors": [
+      [
+        "Ēheu!",
+        "_ēheu_ means “alas!”."
+      ],
+      [
+        "Ecce!",
+        "_ecce_ means “look!”."
+      ],
+      [
+        "Euge!",
+        "_euge_ means “well done!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.04",
+    "review": "unreviewed",
+    "en": "Well done!",
+    "la": "Euge!",
+    "fill": "Euge",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "exclamation",
+    "explain": "_euge_ is “bravo!”. It can also be said sarcastically.",
+    "distractors": [
+      [
+        "Ēheu!",
+        "_ēheu_ means “alas!”."
+      ],
+      [
+        "Ecce!",
+        "_ecce_ means “look!”."
+      ],
+      [
+        "Heus!",
+        "_heus_ means “hey there!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.05",
+    "review": "unreviewed",
+    "en": "By Hercules!",
+    "la": "Mehercule!",
+    "fill": "Mehercule",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "an oath (men)",
+    "explain": "_mehercule_ (also _hercle_) is a man's oath. It is everywhere in Cicero and Plautus, meaning roughly “honestly!” or “I swear!”.",
+    "distractors": [
+      [
+        "Ecastor!",
+        "_ecastor_ is “by Castor!”, an oath used by women."
+      ],
+      [
+        "Edepol!",
+        "_edepol_ is “by Pollux!”, used by men and women."
+      ],
+      [
+        "Ēheu!",
+        "_ēheu_ means “alas!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.06",
+    "review": "unreviewed",
+    "en": "By Castor!",
+    "la": "Ecastor!",
+    "fill": "Ecastor",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "an oath (women)",
+    "explain": "_ecastor_ is the oath Roman women used (by Castor). The comedies of Plautus give it to female characters.",
+    "distractors": [
+      [
+        "Mehercule!",
+        "_mehercule_ is “by Hercules!”, a man's oath."
+      ],
+      [
+        "Edepol!",
+        "_edepol_ is “by Pollux!”, used by men and women."
+      ],
+      [
+        "Euge!",
+        "_euge_ means “well done!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.07",
+    "review": "unreviewed",
+    "en": "By Pollux!",
+    "la": "Edepol!",
+    "fill": "Edepol",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "an oath (anyone)",
+    "explain": "_edepol_ is “by Pollux!”. Unlike _mehercule_ and _ecastor_, men and women both used it.",
+    "distractors": [
+      [
+        "Mehercule!",
+        "_mehercule_ is “by Hercules!”, a man's oath."
+      ],
+      [
+        "Ecastor!",
+        "_ecastor_ is “by Castor!”, a woman's oath."
+      ],
+      [
+        "Heus!",
+        "_heus_ means “hey there!”."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.08",
+    "review": "unreviewed",
+    "en": "Woe to the conquered!",
+    "la": "Vae victīs!",
+    "fill": "victīs",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "vae + dative",
+    "explain": "_vae_ (woe) takes the dative: _victīs_ is the dative plural of _victus_ (conquered). The Roman historian Livy puts these words in the mouth of the Gaul Brennus after he sacked Rome.",
+    "distractors": [
+      [
+        "Vae victus!",
+        "_victus_ is nominative. After _vae_, the people who suffer are in the dative: _victīs_."
+      ],
+      [
+        "Vae victōs!",
+        "_victōs_ is accusative. After _vae_: dative, _victīs_."
+      ],
+      [
+        "Vae victī!",
+        "_victī_ is nominative plural or genitive singular. After _vae_: dative, _victīs_."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.09",
+    "review": "unreviewed",
+    "en": "Good heavens!",
+    "la": "Prō dī immortālēs!",
+    "fill": "dī",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "“O immortal gods!”",
+    "explain": "Literally “O immortal gods!”. Cicero uses it constantly. _dī_ is the plural of _deus_ (the usual plural is _dī_, not _deī_).",
+    "distractors": [
+      [
+        "Prō deus immortālis!",
+        "_deus immortālis_ is singular. The exclamation calls on several gods: _dī immortālēs_."
+      ],
+      [
+        "Prō dīs immortālibus!",
+        "_dīs immortālibus_ is dative or ablative. The exclamation uses the nominative: _dī immortālēs_."
+      ],
+      [
+        "Prō deōs immortālēs!",
+        "_deōs_ is accusative. The exclamation uses the nominative: _dī immortālēs_."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.10",
+    "review": "unreviewed",
+    "en": "Come on, come here!",
+    "la": "Age, venī!",
+    "fill": "venī",
+    "skills": [
+      "street.exclaim",
+      "imp.2sg"
+    ],
+    "tag": "age + command",
+    "explain": "_age_ (come on!) is an exclamation that urges someone on, followed by a command: _venī_ (come, to one person).",
+    "distractors": [
+      [
+        "Age, venīte!",
+        "_venīte_ is to several people. Here you are speaking to one: _venī_."
+      ],
+      [
+        "Age, veniō!",
+        "_veniō_ is “I come”. A command to one person: _venī_."
+      ],
+      [
+        "Age, venit!",
+        "_venit_ is “he comes”. A command to one person: _venī_."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.11",
+    "review": "unreviewed",
+    "en": "Really? (What do you say?)",
+    "la": "Quid ais?",
+    "fill": "ais",
+    "skills": [
+      "street.exclaim",
+      "verb.person"
+    ],
+    "tag": "Plautus: “really?”",
+    "explain": "_Quid ais?_ (What do you say?) is how Plautus's characters say “really?” or “what's that?”. _ais_ is “you say”, from _aiō_.",
+    "distractors": [
+      [
+        "Quid ait?",
+        "_ait_ is “he says”. “You say” is _ais_."
+      ],
+      [
+        "Quid aiunt?",
+        "_aiunt_ is “they say”. “You say” is _ais_."
+      ],
+      [
+        "Quid aiō?",
+        "_aiō_ is “I say”. “You say” is _ais_."
+      ]
+    ]
+  },
+  {
+    "id": "street.1.12",
+    "review": "unreviewed",
+    "en": "Yes, indeed.",
+    "la": "Ita vērō.",
+    "fill": "vērō",
+    "skills": [
+      "street.exclaim"
+    ],
+    "tag": "yes",
+    "explain": "_ita vērō_ (so, truly) is an emphatic “yes”. The answer for “no” is _minimē_.",
+    "distractors": [
+      [
+        "Minimē vērō.",
+        "_minimē vērō_ is an emphatic “no”: “not at all”."
+      ],
+      [
+        "Ita nōn.",
+        "_ita nōn_ would say “so not”. The emphatic yes is _ita vērō_."
+      ],
+      [
+        "Heus vērō.",
+        "_heus_ is “hey!”, not “yes”. The emphatic yes is _ita vērō_."
+      ]
+    ]
+  }
+]

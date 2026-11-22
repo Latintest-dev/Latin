@@ -32,7 +32,9 @@ with sync_playwright() as p:
     open_app(page)
     page.evaluate("""()=>{const s=window.__app.store; const t=Date.now()-1000;
       for (const id of ['roman.3.09','roman.1.05','daily.4.02','roman.1.01']) s.putItem(id,{lvl:2,box:1,due:t,intro:true,seen:3,ok:3,bad:0,last:t,upd:t});
-      s.putItem('roman.1.05',{lvl:1,box:0,due:t,intro:true,seen:2,ok:2,bad:0,last:t,upd:t});}""")
+      s.putItem('roman.1.05',{lvl:1,box:0,due:t,intro:true,seen:2,ok:2,bad:0,last:t,upd:t});
+      s.putItem('roman.3.01',{lvl:2,box:4,due:t+30*864e5,intro:true,seen:5,ok:5,bad:0,last:t,upd:t});}""")
+    page.evaluate("() => { const s = window.__app.store; s.setSetting('newWords', 0); s.setSetting('newTotal', 0); }")   # only the four due items: no new cards in this scenario
     start(page, mode='continue')
     seen = {}
     for _ in range(14):
@@ -71,7 +73,7 @@ with sync_playwright() as p:
       await s.flush(); }""")
     start(page, mode='unit', scope={'packId': 'swap', 'unitId': '1'})
     swap_fb = ''
-    for _ in range(40):
+    for _ in range(14):
         kind = screen(page)
         if kind == 'unit': page.click('.card .btn.primary'); continue
         if kind == 'teach': page.click('.btn.primary:has-text("Got it")'); continue

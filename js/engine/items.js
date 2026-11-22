@@ -62,9 +62,17 @@ export function prepareItem(raw) {
   return it;
 }
 
+/** "amō" -> "a__": the first letter, then one underscore per remaining letter (spaces and hyphens kept). */
+export function wordHint(la) {
+  const chars = [...String(la).normalize('NFC')];
+  return chars.map((c, i) => (i === 0 || /[\s\-']/u.test(c) ? c : '_')).join('');
+}
+
 /** The canonical sentence with the `fill` word replaced by a blank. */
 export function blankSentence(item, blank = '_____') {
   if (!item.fill) return null;
+  // a word card gives its first letter and the length, so the step between choosing and typing is a real step
+  if (item.word) return wordHint(item.la);
   const target = item.fill.normalize('NFC').toLowerCase();
   const toks = item.la.normalize('NFC').split(' ');
   const i = toks.findIndex((t) => {
@@ -83,8 +91,10 @@ export function blankSentence(item, blank = '_____') {
  *   situation  item.sit describes a situation in English ("Greet your friend"); answer in Latin
  *   question   item.q is a Latin question; answer in Latin (no Latin->English multiple choice)
  *   swap       item.swap = {from, change}: a Latin sentence and an instruction ("Say it for “we”"); answer in Latin
+ *   word       item.word = the lexicon id of a single word; the English meaning is the prompt
  */
 export function promptKind(item) {
+  if (item.word) return 'word';
   if (item.q) return 'question';
   if (item.swap) return 'swap';
   if (item.sit) return 'situation';
@@ -116,6 +126,7 @@ export function cueText(item) {
  * the same English would be ambiguous); a swap is identified by its Latin sentence and its instruction instead.
  */
 export function promptKey(item) {
+  if (item.word) return `word:${item.word}`; // two words may share a meaning; the id tells them apart
   if (item.swap) return `${item.swap.from}|${item.swap.change}`.toLowerCase();
   return item.en.toLowerCase();
 }

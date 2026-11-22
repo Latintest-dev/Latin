@@ -3,7 +3,9 @@ from lib import *
 
 UNITS = ([('core', str(n)) for n in range(4, 11)] + [('daily', str(n)) for n in range(6, 12)]
          + [('roman', str(n)) for n in range(4, 10)] + [('day', str(n)) for n in range(1, 5)]
-         + [('swap', str(n)) for n in range(1, 5)] + [('talk', str(n)) for n in range(1, 4)])
+         + [('swap', str(n)) for n in range(1, 5)] + [('talk', str(n)) for n in range(1, 4)]
+         + [('grammar', str(n)) for n in range(1, 8)] + [('street', str(n)) for n in range(1, 4)]
+         + [('vocab', '1'), ('vocab', '2'), ('vocab', '100')])
 
 check = Checks()
 with sync_playwright() as p:

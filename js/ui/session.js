@@ -32,6 +32,12 @@ export function mcOptions(entry, item, content, rng = Math.random) {
       { text: item.la, correct: true },
       ...item.distractors.map(([la, why]) => ({ text: la, correct: false, why })),
     ];
+  } else if (item.word) {
+    // a word card carries its own wrong options (words of similar rank and kind), with their meanings
+    opts = [
+      { text: item.en, correct: true },
+      ...item.distractors.map(([la, , gloss]) => ({ text: gloss, correct: false, why: `That means “${gloss}” (_${la}_).` })),
+    ];
   } else {
     const packId = content.packOf.get(item.id);
     const unitId = content.unitOf.get(item.id);
@@ -68,6 +74,7 @@ export function renderSession(root, app, params) {
     mode: params.mode,
     scope: params.scope,
     newTotal: st().newTotal,
+    newWords: st().newWords,
     paused: st().pausedPacks || [],
   });
 
@@ -131,9 +138,9 @@ export function renderSession(root, app, params) {
   };
   const promptBlock = (item) => [transcript(item), promptNode(item)].filter(Boolean);
   const EYEBROW = {
-    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply', swap: 'Change it: choose the Latin' },
-    fill: { plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank', swap: 'Change it: fill in the blank' },
-    write: { plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin', swap: 'Change it: write it in Latin' },
+    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply', swap: 'Change it: choose the Latin', word: 'Choose the Latin word' },
+    fill: { word: 'Type the Latin word (first letter given)', plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank', swap: 'Change it: fill in the blank' },
+    write: { word: 'Type the Latin word', plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin', swap: 'Change it: write it in Latin' },
   };
 
   function header() {
@@ -178,9 +185,10 @@ export function renderSession(root, app, params) {
     const kind = promptKind(item);
     // (native append() would print the word "null" for a missing piece, so filter first)
     body.append(...[
-      h('p', { class: 'eyebrow' }, { question: 'New question and reply', situation: 'New situation', swap: 'New change' }[kind] || 'New sentence'),
-      ...promptBlock(item),
-      h('div', { class: 'answer la' }, latin(item.la, st())),
+      h('p', { class: 'eyebrow' }, { question: 'New question and reply', situation: 'New situation', swap: 'New change', word: 'New word' }[kind] || 'New sentence'),
+      ...(kind === 'word' ? [] : promptBlock(item)),
+      // a new word is shown with its principal parts (or its genitive): you need them to use the word
+      h('div', { class: 'answer la' }, latin(kind === 'word' ? item.parts : item.la, st())),
       kind === 'plain' ? null : h('div', { class: 'gloss' }, item.en),
       chips(item),
       item.modern && item.modernNote ? h('p', { class: 'note' }, rich(item.modernNote, st(), { macrons: true })) : null,
@@ -240,7 +248,7 @@ export function renderSession(root, app, params) {
 
     const input = h('input', {
       type: 'text', class: 'ans', autocomplete: 'off', autocapitalize: 'none', autocorrect: 'off',
-      spellcheck: false, lang: 'la', placeholder: fill ? 'missing word' : 'type the whole sentence',
+      spellcheck: false, lang: 'la', placeholder: item.word ? 'the Latin word' : fill ? 'missing word' : 'type the whole sentence',
       'aria-label': 'Your answer',
     });
     const go = h('button', { class: 'btn primary', disabled: true, onclick: submit }, 'Check');

@@ -3,6 +3,7 @@
 
 import { h } from './dom.js';
 import { generateForms, stripMacrons } from '../engine/latin.js';
+import { partsOf, kindLabel } from '../engine/vocab.js';
 
 const PRON = ['I', 'you', 'he/she', 'we', 'you all', 'they'];
 const PERSONS = ['1sg', '2sg', '3sg', '1pl', '2pl', '3pl'];
@@ -81,6 +82,12 @@ function adjTable(f) {
 }
 
 function detail(e) {
+  // a word known from the vocabulary lists has its principal parts and meaning, but no built paradigm yet
+  if (e.vocabOnly) {
+    return h('div', null,
+      h('p', { class: 'sub la' }, partsOf(e)),
+      h('p', { class: 'meta' }, `${kindLabel(e)}. Its other forms are not listed here; the principal parts above give you the stems.`));
+  }
   let f;
   try { f = generateForms(e); } catch { f = {}; }
   if (e.pos === 'verb') return verbTable(e, f);
@@ -110,7 +117,9 @@ export function renderWords(root, app) {
 
   function draw() {
     list.replaceChildren();
-    const shown = lex.filter(matches).sort((a, b) => stripMacrons(a.lemma).localeCompare(stripMacrons(b.lemma)));
+    // while searching, words that have a full forms table come first; the list-only words follow
+    const rank = (e) => (query && e.vocabOnly ? 1 : 0);
+    const shown = lex.filter(matches).sort((a, b) => rank(a) - rank(b) || stripMacrons(a.lemma).localeCompare(stripMacrons(b.lemma)));
     count.textContent = `${shown.length} word${shown.length === 1 ? '' : 's'}`;
     for (const e of shown.slice(0, 200)) {
       const d = h('details', { class: 'word' },

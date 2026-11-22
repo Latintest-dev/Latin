@@ -9,7 +9,7 @@
 // To add a mode: write a builder here, add one line to MODES, and (for its own wording and summary) one entry in
 // ui/modes.js. Nothing else in the session screen needs to know about it.
 //
-// ctx = { content, itemStates, skills, mistakes, now, scope, newTotal, paused, rng }
+// ctx = { content, itemStates, skills, mistakes, now, scope, newTotal, newWords, paused, rng }
 import { MAX_DUE, exerciseTypeFor, makeEntry, shuffle, strength, dueItems, newItems } from './scheduler.js';
 
 export const SPEED_COUNT = 10;    // sentences in a speed round
@@ -30,7 +30,7 @@ function drillEntry(item, itemStates, mode, extra = {}) {
   return { itemId: item.id, lvl, learn: false, kind: mode, mode, nosched: true, type: exerciseTypeFor(lvl, () => 0, true), ...extra };
 }
 
-function buildContinue({ content, itemStates, now, newTotal = 6, paused = [], rng = Math.random }) {
+function buildContinue({ content, itemStates, now, newTotal = 6, newWords = 6, paused = [], rng = Math.random }) {
   const queue = [];
   const entryFor = (it, kind) => {
     const st = itemStates[it.id];
@@ -44,8 +44,11 @@ function buildContinue({ content, itemStates, now, newTotal = 6, paused = [], rn
   // Hold back new material when there is a big review backlog; otherwise share the session's new-sentence
   // budget between the tracks that are switched on, one at a time, so adding tracks never makes sessions longer.
   // (Reviews always include every track, switched on or not.)
-  const budget = due.length > MAX_DUE ? 0 : newTotal;
-  const lists = content.packs.filter((p) => !paused.includes(p.id)).map((pack) => newItems(pack, itemStates, budget));
+  const backlog = due.length > MAX_DUE;
+  const budget = backlog ? 0 : newTotal;
+  // a word track (pack.json: "budget": "words") keeps a budget of its own, so thousands of words never crowd out sentences
+  const open = content.packs.filter((p) => !paused.includes(p.id));
+  const lists = open.filter((p) => p.budget !== 'words').map((pack) => newItems(pack, itemStates, budget));
   for (let round = 0, taken = 0; taken < budget; round++) {
     let any = false;
     for (const list of lists) {
@@ -56,6 +59,9 @@ function buildContinue({ content, itemStates, now, newTotal = 6, paused = [], rn
       }
     }
     if (!any) break;
+  }
+  for (const pack of open.filter((p) => p.budget === 'words')) {
+    for (const it of newItems(pack, itemStates, backlog ? 0 : newWords)) queue.push(entryFor(it, 'new'));
   }
   if (!queue.length) {
     // nothing due, nothing new: practice ahead
@@ -111,7 +117,8 @@ function buildMistakes({ content, itemStates, mistakes, rng = Math.random }) {
 
 /** Automaticity drill: sentences you can already write. Those you have answered fast least often come first. */
 function buildSpeed({ content, itemStates, rng = Math.random }) {
-  const all = [...content.itemsById.values()];
+  // (single words are not speed-round material: the round is for whole sentences you can say without thinking)
+  const all = [...content.itemsById.values()].filter((it) => !it.word);
   const known = all.filter((it) => itemStates[it.id]?.intro && itemStates[it.id].lvl >= 2);
   const pool = known.length >= 4 ? known : all.filter((it) => itemStates[it.id]?.intro);
   const ranked = shuffle(pool, rng).sort((a, b) => (itemStates[a.id].fast || 0) - (itemStates[b.id].fast || 0));

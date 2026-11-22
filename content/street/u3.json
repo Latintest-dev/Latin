@@ -1,0 +1,267 @@
+[
+  {
+    "id": "street.3.01",
+    "review": "unreviewed",
+    "en": "I hate and I love.",
+    "la": "Ōdī et amō.",
+    "fill": "Ōdī",
+    "skills": [
+      "street.authors",
+      "verb.person"
+    ],
+    "tag": "Catullus 85",
+    "explain": "The first words of a two-line poem by Catullus about being torn about someone he loves. _ōdī_ looks like a past form, but means “I hate”: it is a verb that only has perfect forms.",
+    "distractors": [
+      [
+        "Ōdit et amat.",
+        "_ōdit_ and _amat_ are “he hates and loves”. Catullus says “I”: _ōdī et amō_."
+      ],
+      [
+        "Ōdī et amās.",
+        "_amās_ is “you love”. Catullus says “I love”: _amō_."
+      ],
+      [
+        "Ōdistī et amō.",
+        "_ōdistī_ is “you hated”. Catullus says “I hate”: _ōdī_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.02",
+    "review": "unreviewed",
+    "en": "I do not love you, Sabidius.",
+    "la": "Nōn amō tē, Sabidī.",
+    "fill": "tē",
+    "skills": [
+      "street.authors",
+      "pron.personal"
+    ],
+    "tag": "Martial 1.32",
+    "explain": "The first words of a famous epigram by Martial. _tē_ is the object (accusative) and _Sabidī_ is the person addressed, in the vocative.",
+    "distractors": [
+      [
+        "Nōn amō tū, Sabidī.",
+        "_tū_ is nominative (“you” as the one acting). The one loved is accusative: _tē_."
+      ],
+      [
+        "Nōn amō tibi, Sabidī.",
+        "_tibi_ is dative (“to you”). _amō_ takes the accusative: _tē_."
+      ],
+      [
+        "Nōn amās tē, Sabidī.",
+        "_amās_ is “you love”. Martial says “I do not love”: _nōn amō_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.03",
+    "review": "unreviewed",
+    "en": "And I cannot say why.",
+    "la": "Nec possum dīcere quārē.",
+    "fill": "quārē",
+    "skills": [
+      "street.authors"
+    ],
+    "tag": "Martial 1.32",
+    "explain": "The next words in Martial's epigram. _quārē_ (why) is the word for the reason; _nec_ is “and not”; _possum dīcere_ is “I can say”.",
+    "distractors": [
+      [
+        "Nec possumus dīcere quārē.",
+        "_possumus_ is “we can”. Martial says “I”: _possum_."
+      ],
+      [
+        "Nec possum dīcō quārē.",
+        "After _possum_ the verb is an infinitive: _dīcere_, not _dīcō_."
+      ],
+      [
+        "Et possum dīcere quārē.",
+        "_et_ is “and”: it would say “and I can say why”. Martial says “and not”: _nec_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.04",
+    "review": "unreviewed",
+    "en": "Oh, the times! Oh, the customs!",
+    "la": "Ō tempora, ō mōrēs!",
+    "fill": "mōrēs",
+    "skills": [
+      "street.authors"
+    ],
+    "tag": "Cicero",
+    "explain": "Cicero's cry of dismay at the state of Rome, in his speech against Catiline. It is plural and in the nominative or accusative: _tempora_ (times), _mōrēs_ (customs, ways).",
+    "distractors": [
+      [
+        "Ō tempus, ō mōs!",
+        "_tempus_ and _mōs_ are singular (“time” and “custom”). Cicero uses the plural."
+      ],
+      [
+        "Ō tempora, ō mōrum!",
+        "_mōrum_ is genitive plural. Cicero's exclamation uses _mōrēs_."
+      ],
+      [
+        "Ō temporibus, ō mōribus!",
+        "_temporibus_ and _mōribus_ are dative or ablative. The exclamation uses the nominative: _tempora, mōrēs_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.05",
+    "review": "unreviewed",
+    "en": "Who benefits?",
+    "la": "Cui bonō?",
+    "fill": "bonō",
+    "skills": [
+      "street.authors"
+    ],
+    "tag": "Cicero, quoting Cassius",
+    "explain": "Literally “to whom (is it) for a good?”. A famous lawyer's question: look for the person who gains. Cicero quoted it from the judge Cassius. _cui_ is “to whom” and _bonō_ is dative.",
+    "distractors": [
+      [
+        "Cui bonum?",
+        "_bonum_ is nominative or accusative. The saying has the dative: _bonō_."
+      ],
+      [
+        "Cuius bonō?",
+        "_cuius_ is “whose”. The question is _cui_ (“to whom”)."
+      ],
+      [
+        "Cui bonī?",
+        "_bonī_ is genitive or plural. The saying has the dative singular: _bonō_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.06",
+    "review": "unreviewed",
+    "en": "Love conquers all.",
+    "la": "Omnia vincit amor.",
+    "fill": "vincit",
+    "skills": [
+      "street.authors",
+      "verb.person"
+    ],
+    "tag": "Vergil, Eclogues 10",
+    "explain": "Vergil's words in a pastoral poem. _omnia_ (everything) is the object, _amor_ is the subject (love), and the verb comes between them.",
+    "distractors": [
+      [
+        "Omnia vincunt amor.",
+        "_vincunt_ is “they conquer”. One subject, _amor_: _vincit_."
+      ],
+      [
+        "Omnēs vincit amor.",
+        "_omnēs_ is “all people”. Vergil says “all things”: _omnia_."
+      ],
+      [
+        "Omnia vincit amōrem.",
+        "_amōrem_ is accusative. Love is the subject, nominative: _amor_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.07",
+    "review": "unreviewed",
+    "en": "It is sweet and honorable to die for one's country.",
+    "la": "Dulce et decōrum est prō patriā morī.",
+    "fill": "patriā",
+    "skills": [
+      "street.authors"
+    ],
+    "tag": "Horace, Odes 3.2",
+    "explain": "One of the most quoted lines of Horace. _prō_ (for) takes the ablative: _patriā_. _morī_ is “to die”. The adjectives _dulce_ and _decōrum_ are neuter: “(it is) a sweet and honorable (thing)”.",
+    "distractors": [
+      [
+        "Dulce et decōrum est prō patriam morī.",
+        "_patriam_ is accusative. _prō_ takes the ablative: _patriā_."
+      ],
+      [
+        "Dulce et decōrum est prō patriae morī.",
+        "_patriae_ is genitive or dative. _prō_ takes the ablative: _patriā_."
+      ],
+      [
+        "Dulcis et decōrus est prō patriā morī.",
+        "_dulcis_ and _decōrus_ are masculine. Horace says “(it) is a sweet and honorable thing”, neuter: _dulce et decōrum_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.08",
+    "review": "unreviewed",
+    "en": "A man is a wolf to a man.",
+    "la": "Homō hominī lupus.",
+    "fill": "hominī",
+    "skills": [
+      "street.authors",
+      "case.dat.indirect"
+    ],
+    "tag": "Plautus",
+    "explain": "A saying from a comedy of Plautus, meaning that people can be cruel to each other. _hominī_ is the dative: “to a man”.",
+    "distractors": [
+      [
+        "Homō hominem lupus.",
+        "_hominem_ is accusative. “To a man” is dative: _hominī_."
+      ],
+      [
+        "Homō hominis lupus.",
+        "_hominis_ is genitive (“of a man”). “To a man” is dative: _hominī_."
+      ],
+      [
+        "Hominēs hominī lupus.",
+        "_hominēs_ is plural (“men”). The saying has one man: _homō_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.09",
+    "review": "unreviewed",
+    "en": "To err is human (the proverb).",
+    "la": "Errāre hūmānum est.",
+    "fill": "hūmānum",
+    "skills": [
+      "street.authors"
+    ],
+    "tag": "a Latin proverb",
+    "explain": "A proverb that goes back to Roman writers. _errāre_ is the infinitive (“to err”) and is the subject; _hūmānum_ is neuter, “(a) human (thing)”.",
+    "distractors": [
+      [
+        "Errō hūmānum est.",
+        "_errō_ is “I err”. The saying uses the infinitive: _errāre_."
+      ],
+      [
+        "Errāre hūmānus est.",
+        "_hūmānus_ is masculine. The saying calls it a “human thing”, neuter: _hūmānum_."
+      ],
+      [
+        "Errāre hūmānō est.",
+        "_hūmānō_ is dative or ablative. After _est_ the adjective is nominative: _hūmānum_."
+      ]
+    ]
+  },
+  {
+    "id": "street.3.10",
+    "review": "unreviewed",
+    "en": "Give me a thousand kisses.",
+    "la": "Dā mihi bāsia mīlle.",
+    "fill": "bāsia",
+    "skills": [
+      "street.authors",
+      "imp.2sg"
+    ],
+    "tag": "Catullus 5",
+    "explain": "Catullus asks his Lesbia for “a thousand kisses”. _dā_ is the command “give”, _mihi_ is “to me”, and _bāsia_ is the plural of _bāsium_ (kiss).",
+    "distractors": [
+      [
+        "Dā mē bāsia mīlle.",
+        "_mē_ is accusative (“me”). “To me” is dative: _mihi_."
+      ],
+      [
+        "Dā mihi bāsium mīlle.",
+        "_bāsium_ is singular (“a kiss”). A thousand kisses is plural: _bāsia_."
+      ],
+      [
+        "Dāte mihi bāsia mīlle.",
+        "_dāte_ is a command to several people. Catullus speaks to one: _dā_."
+      ]
+    ]
+  }
+]
