@@ -1,0 +1,326 @@
+[
+ {
+  "id": "world.2.01",
+  "review": "unreviewed",
+  "en": "The soldiers fight with swords.",
+  "la": "Mīlitēs gladiīs pugnant.",
+  "fill": "gladiīs",
+  "skills": [
+   "abl.means",
+   "world.army"
+  ],
+  "tag": "gladiīs: with swords",
+  "explain": "A tool takes the ablative plural: _gladiīs_.",
+  "distractors": [
+   [
+    "Mīlitēs gladiōs pugnant.",
+    "_gladiōs_ is accusative plural. A tool takes the ablative plural: _gladiīs_."
+   ],
+   [
+    "Mīlitēs gladiī pugnant.",
+    "_gladiī_ is nominative or genitive. A tool takes the ablative plural: _gladiīs_."
+   ],
+   [
+    "Mīlitēs gladium pugnant.",
+    "_gladium_ is accusative singular. A tool takes the ablative plural: _gladiīs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.02",
+  "review": "unreviewed",
+  "en": "The legion is in the camp.",
+  "la": "Legiō in castrīs est.",
+  "fill": "castrīs",
+  "skills": [
+   "case.abl.place",
+   "world.army"
+  ],
+  "tag": "in castrīs: in the camp",
+  "explain": "After _in_ meaning “in”, use the ablative. _castra_ (camp) is plural in form: _castrīs_.",
+  "distractors": [
+   [
+    "Legiō in castra est.",
+    "_castra_ is accusative or nominative plural. After _in_ meaning “in”, use the ablative. _castra_ (camp) is plural in form: _castrīs_."
+   ],
+   [
+    "Legiō in castrōrum est.",
+    "_castrōrum_ is genitive plural. After _in_ meaning “in”, use the ablative. _castra_ (camp) is plural in form: _castrīs_."
+   ],
+   [
+    "Legiō in castrō est.",
+    "_castrō_ is singular ablative. After _in_ meaning “in”, use the ablative. _castra_ (camp) is plural in form: _castrīs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.03",
+  "review": "unreviewed",
+  "en": "The general leads the legion.",
+  "la": "Dux legiōnem dūcit.",
+  "fill": "legiōnem",
+  "skills": [
+   "case.acc.obj",
+   "world.army"
+  ],
+  "tag": "legiōnem: the legion (object)",
+  "explain": "The thing led is accusative: _legiōnem_.",
+  "distractors": [
+   [
+    "Dux legiō dūcit.",
+    "_legiō_ is nominative. The thing led is accusative: _legiōnem_."
+   ],
+   [
+    "Dux legiōnis dūcit.",
+    "_legiōnis_ is genitive. The thing led is accusative: _legiōnem_."
+   ],
+   [
+    "Dux legiōnī dūcit.",
+    "_legiōnī_ is dative. The thing led is accusative: _legiōnem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.04",
+  "review": "unreviewed",
+  "en": "The enemies flee.",
+  "la": "Hostēs fugiunt.",
+  "fill": "fugiunt",
+  "skills": [
+   "verb.person",
+   "world.army"
+  ],
+  "tag": "fugiunt: they flee",
+  "explain": "Several enemies need the “they” ending _-iunt_: _fugiunt_.",
+  "distractors": [
+   [
+    "Hostēs fugit.",
+    "_fugit_ is “he flees”. Several enemies need the “they” ending _-iunt_: _fugiunt_."
+   ],
+   [
+    "Hostēs fugimus.",
+    "_fugimus_ is “we flee”. Several enemies need the “they” ending _-iunt_: _fugiunt_."
+   ],
+   [
+    "Hostēs fugis.",
+    "_fugis_ is “you flee”. Several enemies need the “they” ending _-iunt_: _fugiunt_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.05",
+  "review": "unreviewed",
+  "en": "The soldier throws the spear.",
+  "la": "Mīles hastam iacit.",
+  "fill": "hastam",
+  "skills": [
+   "case.acc.obj",
+   "world.army"
+  ],
+  "tag": "hastam: the spear (object)",
+  "explain": "The thing thrown is accusative: _hastam_.",
+  "distractors": [
+   [
+    "Mīles hasta iacit.",
+    "_hasta_ is nominative. The thing thrown is accusative: _hastam_."
+   ],
+   [
+    "Mīles hastae iacit.",
+    "_hastae_ is genitive or dative. The thing thrown is accusative: _hastam_."
+   ],
+   [
+    "Mīles hastās iacit.",
+    "_hastās_ is accusative plural (“spears”). The thing thrown is accusative: _hastam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.06",
+  "review": "unreviewed",
+  "en": "The battle is great.",
+  "la": "Pugna magna est.",
+  "fill": "magna",
+  "skills": [
+   "adj.agree.gender",
+   "world.army"
+  ],
+  "tag": "magna: great (feminine)",
+  "explain": "_pugna_ is feminine, so the adjective is feminine: _magna_.",
+  "distractors": [
+   [
+    "Pugna magnus est.",
+    "_magnus_ is masculine. _pugna_ is feminine, so the adjective is feminine: _magna_."
+   ],
+   [
+    "Pugna magnum est.",
+    "_magnum_ is neuter. _pugna_ is feminine, so the adjective is feminine: _magna_."
+   ],
+   [
+    "Pugna magnae est.",
+    "_magnae_ is genitive or plural. _pugna_ is feminine, so the adjective is feminine: _magna_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.07",
+  "review": "unreviewed",
+  "en": "We hold the wall.",
+  "la": "Mūrum tenēmus.",
+  "fill": "tenēmus",
+  "skills": [
+   "verb.person",
+   "world.army"
+  ],
+  "tag": "tenēmus: we hold",
+  "explain": "The subject is “we”, so the ending is _-mus_: _tenēmus_.",
+  "distractors": [
+   [
+    "Mūrum tenet.",
+    "_tenet_ is “he holds”. The subject is “we”, so the ending is _-mus_: _tenēmus_."
+   ],
+   [
+    "Mūrum tenent.",
+    "_tenent_ is “they hold”. The subject is “we”, so the ending is _-mus_: _tenēmus_."
+   ],
+   [
+    "Mūrum teneō.",
+    "_teneō_ is “I hold”. The subject is “we”, so the ending is _-mus_: _tenēmus_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.08",
+  "review": "unreviewed",
+  "en": "They hold the citadel.",
+  "la": "Arcem tenent.",
+  "fill": "Arcem",
+  "skills": [
+   "case.acc.obj",
+   "world.army"
+  ],
+  "tag": "arcem: the citadel (object)",
+  "explain": "The thing held is accusative: _Arcem_.",
+  "distractors": [
+   [
+    "Arx tenent.",
+    "_Arx_ is nominative. The thing held is accusative: _Arcem_."
+   ],
+   [
+    "Arcis tenent.",
+    "_Arcis_ is genitive. The thing held is accusative: _Arcem_."
+   ],
+   [
+    "Arcī tenent.",
+    "_Arcī_ is dative. The thing held is accusative: _Arcem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.09",
+  "review": "unreviewed",
+  "en": "The envoy comes with the standard.",
+  "la": "Lēgātus cum signō venit.",
+  "fill": "signō",
+  "skills": [
+   "case.abl.accompany",
+   "world.army"
+  ],
+  "tag": "cum signō: with the standard",
+  "explain": "_cum_ takes the ablative: _signō_.",
+  "distractors": [
+   [
+    "Lēgātus cum signum venit.",
+    "_signum_ is accusative. _cum_ takes the ablative: _signō_."
+   ],
+   [
+    "Lēgātus cum signī venit.",
+    "_signī_ is genitive. _cum_ takes the ablative: _signō_."
+   ],
+   [
+    "Lēgātus cum signa venit.",
+    "_signa_ is plural. _cum_ takes the ablative: _signō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.10",
+  "review": "unreviewed",
+  "en": "The soldiers wait for the general.",
+  "la": "Mīlitēs ducem exspectant.",
+  "fill": "ducem",
+  "skills": [
+   "case.acc.obj",
+   "world.army"
+  ],
+  "tag": "ducem: the general (object)",
+  "explain": "The one waited for is accusative: _ducem_.",
+  "distractors": [
+   [
+    "Mīlitēs dux exspectant.",
+    "_dux_ is nominative. The one waited for is accusative: _ducem_."
+   ],
+   [
+    "Mīlitēs ducis exspectant.",
+    "_ducis_ is genitive. The one waited for is accusative: _ducem_."
+   ],
+   [
+    "Mīlitēs ducī exspectant.",
+    "_ducī_ is dative. The one waited for is accusative: _ducem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.11",
+  "review": "unreviewed",
+  "en": "The fleet is great.",
+  "la": "Classis magna est.",
+  "fill": "Classis",
+  "skills": [
+   "case.nom.subj",
+   "world.army"
+  ],
+  "tag": "classis: fleet (subject)",
+  "explain": "The subject is nominative: _Classis_.",
+  "distractors": [
+   [
+    "Classem magna est.",
+    "_Classem_ is accusative. The subject is nominative: _Classis_."
+   ],
+   [
+    "Classī magna est.",
+    "_Classī_ is dative or ablative. The subject is nominative: _Classis_."
+   ],
+   [
+    "Classium magna est.",
+    "_Classium_ is genitive plural. The subject is nominative: _Classis_."
+   ]
+  ]
+ },
+ {
+  "id": "world.2.12",
+  "review": "unreviewed",
+  "en": "The ship carries the soldiers.",
+  "la": "Nāvis mīlitēs portat.",
+  "fill": "mīlitēs",
+  "skills": [
+   "case.acc.obj",
+   "world.army"
+  ],
+  "tag": "mīlitēs: the soldiers (object)",
+  "explain": "The things carried are accusative plural, and in the third declension that ends in _-ēs_: _mīlitēs_.",
+  "distractors": [
+   [
+    "Nāvis mīles portat.",
+    "_mīles_ is nominative singular. The things carried are accusative plural, and in the third declension that ends in _-ēs_: _mīlitēs_."
+   ],
+   [
+    "Nāvis mīlitis portat.",
+    "_mīlitis_ is genitive singular. The things carried are accusative plural, and in the third declension that ends in _-ēs_: _mīlitēs_."
+   ],
+   [
+    "Nāvis mīlitī portat.",
+    "_mīlitī_ is dative singular. The things carried are accusative plural, and in the third declension that ends in _-ēs_: _mīlitēs_."
+   ]
+  ]
+ }
+]

@@ -25,8 +25,11 @@ const mkStore = async () => createStore(createMemoryBackend(), { now: () => cloc
 
 test('the word list covers about 5,000 words, 50 to a unit (a short remainder joins the last), each word once', () => {
   assert.ok(words.length >= 5000 && words.length < 5100);
-  assert.equal(vocab.units.length, 100);
-  assert.ok(vocab.units.every((u) => u.items.length >= 50 && u.items.length < 75));
+  // 50 to a unit; a remainder of fewer than 25 joins the last unit, otherwise it stands as one more
+  const full = Math.floor(words.length / 50);
+  assert.equal(vocab.units.length, words.length - full * 50 < 25 ? full : full + 1);
+  assert.ok(vocab.units.slice(0, -1).every((u) => u.items.length === 50));
+  assert.ok(vocab.units.at(-1).items.length >= 25 && vocab.units.at(-1).items.length < 75);
   assert.equal(new Set(words.map((w) => w.word)).size, words.length);
 });
 

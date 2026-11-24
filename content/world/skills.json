@@ -1,0 +1,34 @@
+{
+  "world.state": {
+    "name": "The state and the law",
+    "pack": "world"
+  },
+  "world.army": {
+    "name": "The army",
+    "pack": "world"
+  },
+  "world.home": {
+    "name": "Family and home",
+    "pack": "world"
+  },
+  "world.gods": {
+    "name": "Gods and fate",
+    "pack": "world"
+  },
+  "world.nature": {
+    "name": "Nature",
+    "pack": "world"
+  },
+  "world.mind": {
+    "name": "Mind and speech",
+    "pack": "world"
+  },
+  "world.travel": {
+    "name": "Travel",
+    "pack": "world"
+  },
+  "world.time": {
+    "name": "Time",
+    "pack": "world"
+  }
+}

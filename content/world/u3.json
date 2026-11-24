@@ -1,0 +1,326 @@
+[
+ {
+  "id": "world.3.01",
+  "review": "unreviewed",
+  "en": "The master loves the house.",
+  "la": "Dominus domum amat.",
+  "fill": "domum",
+  "skills": [
+   "case.acc.obj",
+   "world.home"
+  ],
+  "tag": "domum: the house (object)",
+  "explain": "The thing loved is accusative. _domus_ is fourth declension: _domum_.",
+  "distractors": [
+   [
+    "Dominus domus amat.",
+    "_domus_ is nominative. The thing loved is accusative. _domus_ is fourth declension: _domum_."
+   ],
+   [
+    "Dominus domī amat.",
+    "_domī_ is genitive (or “at home”). The thing loved is accusative. _domus_ is fourth declension: _domum_."
+   ],
+   [
+    "Dominus domō amat.",
+    "_domō_ is ablative. The thing loved is accusative. _domus_ is fourth declension: _domum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.02",
+  "review": "unreviewed",
+  "en": "The lady of the house gives the child food.",
+  "la": "Domina infantī cibum dat.",
+  "fill": "infantī",
+  "skills": [
+   "case.dat.recipient",
+   "world.home"
+  ],
+  "tag": "infantī: to the child",
+  "explain": "The one receiving is dative: _infantī_.",
+  "distractors": [
+   [
+    "Domina infantem cibum dat.",
+    "_infantem_ is accusative. The one receiving is dative: _infantī_."
+   ],
+   [
+    "Domina infāns cibum dat.",
+    "_infāns_ is nominative. The one receiving is dative: _infantī_."
+   ],
+   [
+    "Domina infantis cibum dat.",
+    "_infantis_ is genitive. The one receiving is dative: _infantī_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.03",
+  "review": "unreviewed",
+  "en": "The parents love their own children.",
+  "la": "Parentēs līberōs suōs amant.",
+  "fill": "suōs",
+  "skills": [
+   "pron.suus",
+   "world.home"
+  ],
+  "tag": "suōs: their own",
+  "explain": "_suus_ agrees with _līberōs_ (masculine accusative plural): _suōs_.",
+  "distractors": [
+   [
+    "Parentēs līberōs suōrum amant.",
+    "_suōrum_ is genitive plural. _suus_ agrees with _līberōs_ (masculine accusative plural): _suōs_."
+   ],
+   [
+    "Parentēs līberōs suās amant.",
+    "_suās_ is feminine plural. _suus_ agrees with _līberōs_ (masculine accusative plural): _suōs_."
+   ],
+   [
+    "Parentēs līberōs suum amant.",
+    "_suum_ is singular. _suus_ agrees with _līberōs_ (masculine accusative plural): _suōs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.04",
+  "review": "unreviewed",
+  "en": "The heir has the house.",
+  "la": "Hērēs domum habet.",
+  "fill": "Hērēs",
+  "skills": [
+   "case.nom.subj",
+   "world.home"
+  ],
+  "tag": "hērēs: the heir (subject)",
+  "explain": "The one who has is the subject, nominative: _Hērēs_.",
+  "distractors": [
+   [
+    "Hērēdem domum habet.",
+    "_Hērēdem_ is accusative. The one who has is the subject, nominative: _Hērēs_."
+   ],
+   [
+    "Hērēdis domum habet.",
+    "_Hērēdis_ is genitive. The one who has is the subject, nominative: _Hērēs_."
+   ],
+   [
+    "Hērēdī domum habet.",
+    "_Hērēdī_ is dative. The one who has is the subject, nominative: _Hērēs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.05",
+  "review": "unreviewed",
+  "en": "The mother gives the daughter a book.",
+  "la": "Māter fīliae librum dat.",
+  "fill": "fīliae",
+  "skills": [
+   "case.dat.recipient",
+   "world.home"
+  ],
+  "tag": "fīliae: to the daughter",
+  "explain": "The one receiving is dative: _fīliae_.",
+  "distractors": [
+   [
+    "Māter fīlia librum dat.",
+    "_fīlia_ is nominative. The one receiving is dative: _fīliae_."
+   ],
+   [
+    "Māter fīliam librum dat.",
+    "_fīliam_ is accusative. The one receiving is dative: _fīliae_."
+   ],
+   [
+    "Māter fīliās librum dat.",
+    "_fīliās_ is accusative plural. The one receiving is dative: _fīliae_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.06",
+  "review": "unreviewed",
+  "en": "The father is in the house.",
+  "la": "Pater in domō est.",
+  "fill": "domō",
+  "skills": [
+   "case.abl.place",
+   "world.home"
+  ],
+  "tag": "in domō: in the house",
+  "explain": "After _in_ meaning “in”, use the ablative: _domō_.",
+  "distractors": [
+   [
+    "Pater in domum est.",
+    "_domum_ is accusative. After _in_ meaning “in”, use the ablative: _domō_."
+   ],
+   [
+    "Pater in domūs est.",
+    "_domūs_ is genitive or plural. After _in_ meaning “in”, use the ablative: _domō_."
+   ],
+   [
+    "Pater in domuī est.",
+    "_domuī_ is dative. After _in_ meaning “in”, use the ablative: _domō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.07",
+  "review": "unreviewed",
+  "en": "A good woman has a good mother.",
+  "la": "Mulier bona mātrem bonam habet.",
+  "fill": "mātrem",
+  "skills": [
+   "case.acc.obj",
+   "world.home"
+  ],
+  "tag": "mātrem: mother (object)",
+  "explain": "The one held is accusative: _mātrem_.",
+  "distractors": [
+   [
+    "Mulier bona māter bonam habet.",
+    "_māter_ is nominative. The one held is accusative: _mātrem_."
+   ],
+   [
+    "Mulier bona mātris bonam habet.",
+    "_mātris_ is genitive. The one held is accusative: _mātrem_."
+   ],
+   [
+    "Mulier bona mātrī bonam habet.",
+    "_mātrī_ is dative. The one held is accusative: _mātrem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.08",
+  "review": "unreviewed",
+  "en": "The baby’s face is dear.",
+  "la": "Vultus infantis cārus est.",
+  "fill": "infantis",
+  "skills": [
+   "case.gen",
+   "world.home"
+  ],
+  "tag": "infantis: of the baby",
+  "explain": "“The face of the baby” needs the genitive: _infantis_.",
+  "distractors": [
+   [
+    "Vultus infantem cārus est.",
+    "_infantem_ is accusative. “The face of the baby” needs the genitive: _infantis_."
+   ],
+   [
+    "Vultus infantī cārus est.",
+    "_infantī_ is dative. “The face of the baby” needs the genitive: _infantis_."
+   ],
+   [
+    "Vultus infāns cārus est.",
+    "_infāns_ is nominative. “The face of the baby” needs the genitive: _infantis_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.09",
+  "review": "unreviewed",
+  "en": "The girl sits with her mother.",
+  "la": "Puella cum mātre sedet.",
+  "fill": "mātre",
+  "skills": [
+   "case.abl.accompany",
+   "world.home"
+  ],
+  "tag": "cum mātre: with her mother",
+  "explain": "_cum_ takes the ablative: _mātre_.",
+  "distractors": [
+   [
+    "Puella cum mātrem sedet.",
+    "_mātrem_ is accusative. _cum_ takes the ablative: _mātre_."
+   ],
+   [
+    "Puella cum māter sedet.",
+    "_māter_ is nominative. _cum_ takes the ablative: _mātre_."
+   ],
+   [
+    "Puella cum mātrī sedet.",
+    "_mātrī_ is dative. _cum_ takes the ablative: _mātre_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.10",
+  "review": "unreviewed",
+  "en": "Our family is large.",
+  "la": "Familia nostra magna est.",
+  "fill": "magna",
+  "skills": [
+   "adj.agree.gender",
+   "world.home"
+  ],
+  "tag": "magna: large (feminine)",
+  "explain": "_familia_ is feminine, so the adjective is feminine: _magna_.",
+  "distractors": [
+   [
+    "Familia nostra magnus est.",
+    "_magnus_ is masculine. _familia_ is feminine, so the adjective is feminine: _magna_."
+   ],
+   [
+    "Familia nostra magnum est.",
+    "_magnum_ is neuter. _familia_ is feminine, so the adjective is feminine: _magna_."
+   ],
+   [
+    "Familia nostra magnae est.",
+    "_magnae_ is genitive or plural. _familia_ is feminine, so the adjective is feminine: _magna_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.11",
+  "review": "unreviewed",
+  "en": "The lady has great anger.",
+  "la": "Domina īram magnam habet.",
+  "fill": "magnam",
+  "skills": [
+   "adj.agree.gender",
+   "world.home"
+  ],
+  "tag": "magnam: great (accusative feminine)",
+  "explain": "The adjective agrees with _īram_ (accusative feminine): _magnam_.",
+  "distractors": [
+   [
+    "Domina īram magna habet.",
+    "_magna_ is nominative or ablative. The adjective agrees with _īram_ (accusative feminine): _magnam_."
+   ],
+   [
+    "Domina īram magnum habet.",
+    "_magnum_ is neuter. The adjective agrees with _īram_ (accusative feminine): _magnam_."
+   ],
+   [
+    "Domina īram magnās habet.",
+    "_magnās_ is plural. The adjective agrees with _īram_ (accusative feminine): _magnam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.3.12",
+  "review": "unreviewed",
+  "en": "I love my mother’s house.",
+  "la": "Domum mātris amō.",
+  "fill": "mātris",
+  "skills": [
+   "case.gen",
+   "world.home"
+  ],
+  "tag": "mātris: of the mother",
+  "explain": "“The house of the mother” needs the genitive: _mātris_.",
+  "distractors": [
+   [
+    "Domum mātrem amō.",
+    "_mātrem_ is accusative. “The house of the mother” needs the genitive: _mātris_."
+   ],
+   [
+    "Domum mātrī amō.",
+    "_mātrī_ is dative. “The house of the mother” needs the genitive: _mātris_."
+   ],
+   [
+    "Domum māter amō.",
+    "_māter_ is nominative. “The house of the mother” needs the genitive: _mātris_."
+   ]
+  ]
+ }
+]

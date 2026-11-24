@@ -1,0 +1,330 @@
+[
+ {
+  "id": "world.8.01",
+  "review": "unreviewed",
+  "en": "This day is long.",
+  "la": "Hic diēs longus est.",
+  "fill": "longus",
+  "skills": [
+   "adj.agree.gender",
+   "world.time"
+  ],
+  "tag": "longus: long (masculine)",
+  "explain": "_diēs_ is usually masculine, so the adjective is masculine: _longus_.",
+  "distractors": [
+   [
+    "Hic diēs longa est.",
+    "_longa_ is feminine. _diēs_ is usually masculine, so the adjective is masculine: _longus_."
+   ],
+   [
+    "Hic diēs longum est.",
+    "_longum_ is neuter. _diēs_ is usually masculine, so the adjective is masculine: _longus_."
+   ],
+   [
+    "Hic diēs longī est.",
+    "_longī_ is genitive or plural. _diēs_ is usually masculine, so the adjective is masculine: _longus_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.02",
+  "review": "unreviewed",
+  "en": "We wait for many days.",
+  "la": "Multōs diēs exspectāmus.",
+  "fill": "diēs",
+  "skills": [
+   "case.acc.duration",
+   "noun.5decl",
+   "world.time"
+  ],
+  "tag": "multōs diēs: for many days",
+  "explain": "How long something lasts is accusative; plural _diēs_ looks like the singular: _diēs_.",
+  "distractors": [
+   [
+    "Multōs diem exspectāmus.",
+    "_diem_ is accusative singular. How long something lasts is accusative; plural _diēs_ looks like the singular: _diēs_."
+   ],
+   [
+    "Multōs diēī exspectāmus.",
+    "_diēī_ is genitive or dative. How long something lasts is accusative; plural _diēs_ looks like the singular: _diēs_."
+   ],
+   [
+    "Multōs diēbus exspectāmus.",
+    "_diēbus_ is dative or ablative plural. How long something lasts is accusative; plural _diēs_ looks like the singular: _diēs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.03",
+  "review": "unreviewed",
+  "en": "Today I work, tomorrow I do not work.",
+  "la": "Hodiē labōrō, crās nōn labōrō.",
+  "fill": "crās",
+  "skills": [
+   "time.when",
+   "world.time"
+  ],
+  "tag": "crās: tomorrow",
+  "explain": "The word for “tomorrow” is _crās_: _crās_.",
+  "distractors": [
+   [
+    "Hodiē labōrō, hodiē nōn labōrō.",
+    "_hodiē_ is “today”. The word for “tomorrow” is _crās_: _crās_."
+   ],
+   [
+    "Hodiē labōrō, herī nōn labōrō.",
+    "_herī_ is “yesterday”. The word for “tomorrow” is _crās_: _crās_."
+   ],
+   [
+    "Hodiē labōrō, nunc nōn labōrō.",
+    "_nunc_ is “now”. The word for “tomorrow” is _crās_: _crās_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.04",
+  "review": "unreviewed",
+  "en": "He is consul in the same year.",
+  "la": "Eōdem annō cōnsul est.",
+  "fill": "Eōdem",
+  "skills": [
+   "pron.idem",
+   "time.when",
+   "world.time"
+  ],
+  "tag": "eōdem annō: in the same year",
+  "explain": "The time when takes the ablative, and the pronoun agrees: masculine ablative: _Eōdem_.",
+  "distractors": [
+   [
+    "Eādem annō cōnsul est.",
+    "_Eādem_ is feminine. The time when takes the ablative, and the pronoun agrees: masculine ablative: _Eōdem_."
+   ],
+   [
+    "Eundem annō cōnsul est.",
+    "_Eundem_ is accusative. The time when takes the ablative, and the pronoun agrees: masculine ablative: _Eōdem_."
+   ],
+   [
+    "Eōsdem annō cōnsul est.",
+    "_Eōsdem_ is accusative plural. The time when takes the ablative, and the pronoun agrees: masculine ablative: _Eōdem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.05",
+  "review": "unreviewed",
+  "en": "He lives for a long time.",
+  "la": "Diū vīvit.",
+  "fill": "vīvit",
+  "skills": [
+   "verb.person",
+   "world.time"
+  ],
+  "tag": "vīvit: he lives",
+  "explain": "One person needs the ending _-it_: _vīvit_.",
+  "distractors": [
+   [
+    "Diū vīvō.",
+    "_vīvō_ is “I live”. One person needs the ending _-it_: _vīvit_."
+   ],
+   [
+    "Diū vīvunt.",
+    "_vīvunt_ is “they live”. One person needs the ending _-it_: _vīvit_."
+   ],
+   [
+    "Diū vīvimus.",
+    "_vīvimus_ is “we live”. One person needs the ending _-it_: _vīvit_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.06",
+  "review": "unreviewed",
+  "en": "The boy is seven years old.",
+  "la": "Puer septem annōs habet.",
+  "fill": "annōs",
+  "skills": [
+   "case.acc.duration",
+   "world.time"
+  ],
+  "tag": "annōs: years",
+  "explain": "Latin says “has seven years”. The years are accusative plural: _annōs_.",
+  "distractors": [
+   [
+    "Puer septem annum habet.",
+    "_annum_ is accusative singular. Latin says “has seven years”. The years are accusative plural: _annōs_."
+   ],
+   [
+    "Puer septem annī habet.",
+    "_annī_ is genitive or plural. Latin says “has seven years”. The years are accusative plural: _annōs_."
+   ],
+   [
+    "Puer septem annīs habet.",
+    "_annīs_ is dative or ablative plural. Latin says “has seven years”. The years are accusative plural: _annōs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.07",
+  "review": "unreviewed",
+  "en": "At night we work.",
+  "la": "Nocte labōrāmus.",
+  "fill": "Nocte",
+  "skills": [
+   "time.when",
+   "world.time"
+  ],
+  "tag": "nocte: at night",
+  "explain": "The time when takes the ablative: _Nocte_.",
+  "distractors": [
+   [
+    "Noctem labōrāmus.",
+    "_Noctem_ is accusative. The time when takes the ablative: _Nocte_."
+   ],
+   [
+    "Nox labōrāmus.",
+    "_Nox_ is nominative. The time when takes the ablative: _Nocte_."
+   ],
+   [
+    "Noctis labōrāmus.",
+    "_Noctis_ is genitive. The time when takes the ablative: _Nocte_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.08",
+  "review": "unreviewed",
+  "en": "On one day I see Rome.",
+  "la": "Ūnō diē Rōmam videō.",
+  "fill": "diē",
+  "skills": [
+   "time.when",
+   "noun.5decl",
+   "world.time"
+  ],
+  "tag": "ūnō diē: on one day",
+  "explain": "The time when takes the ablative: _diē_.",
+  "distractors": [
+   [
+    "Ūnō diem Rōmam videō.",
+    "_diem_ is accusative. The time when takes the ablative: _diē_."
+   ],
+   [
+    "Ūnō diēs Rōmam videō.",
+    "_diēs_ is nominative. The time when takes the ablative: _diē_."
+   ],
+   [
+    "Ūnō diēī Rōmam videō.",
+    "_diēī_ is genitive or dative. The time when takes the ablative: _diē_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.09",
+  "review": "unreviewed",
+  "en": "Time is fleeing.",
+  "la": "Tempus fugit.",
+  "fill": "fugit",
+  "skills": [
+   "verb.person",
+   "world.time"
+  ],
+  "tag": "fugit: flies, flees",
+  "explain": "_tempus_ is one thing, so the ending is _-it_: _fugit_.",
+  "distractors": [
+   [
+    "Tempus fugiunt.",
+    "_fugiunt_ is “they flee”. _tempus_ is one thing, so the ending is _-it_: _fugit_."
+   ],
+   [
+    "Tempus fugis.",
+    "_fugis_ is “you flee”. _tempus_ is one thing, so the ending is _-it_: _fugit_."
+   ],
+   [
+    "Tempus fugiō.",
+    "_fugiō_ is “I flee”. _tempus_ is one thing, so the ending is _-it_: _fugit_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.10",
+  "review": "unreviewed",
+  "en": "Now it is the hour.",
+  "la": "Nunc hōra est.",
+  "fill": "hōra",
+  "skills": [
+   "case.nom.subj",
+   "world.time"
+  ],
+  "tag": "hōra: the hour",
+  "explain": "After _est_, a noun is nominative: _hōra_.",
+  "distractors": [
+   [
+    "Nunc hōram est.",
+    "_hōram_ is accusative. After _est_, a noun is nominative: _hōra_."
+   ],
+   [
+    "Nunc hōrae est.",
+    "_hōrae_ is genitive or dative. After _est_, a noun is nominative: _hōra_."
+   ],
+   [
+    "Nunc hōrās est.",
+    "_hōrās_ is accusative plural. After _est_, a noun is nominative: _hōra_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.11",
+  "review": "unreviewed",
+  "en": "This year I work.",
+  "la": "Hōc annō labōrō.",
+  "fill": "Hōc",
+  "skills": [
+   "pron.hic",
+   "time.when",
+   "world.time"
+  ],
+  "tag": "hōc annō: this year",
+  "explain": "The time when takes the ablative, and “this” agrees: masculine ablative: _Hōc_.",
+  "distractors": [
+   [
+    "Hunc annō labōrō.",
+    "_Hunc_ is accusative. The time when takes the ablative, and “this” agrees: masculine ablative: _Hōc_."
+   ],
+   [
+    "Hic annō labōrō.",
+    "_Hic_ is nominative. The time when takes the ablative, and “this” agrees: masculine ablative: _Hōc_."
+   ],
+   [
+    "Huius annō labōrō.",
+    "_Huius_ is genitive. The time when takes the ablative, and “this” agrees: masculine ablative: _Hōc_."
+   ]
+  ]
+ },
+ {
+  "id": "world.8.12",
+  "review": "unreviewed",
+  "en": "I work the whole year.",
+  "la": "Tōtum annum labōrō.",
+  "fill": "annum",
+  "skills": [
+   "case.acc.duration",
+   "world.time"
+  ],
+  "tag": "tōtum annum: the whole year",
+  "explain": "How long something lasts is accusative: _annum_.",
+  "distractors": [
+   [
+    "Tōtum annus labōrō.",
+    "_annus_ is nominative. How long something lasts is accusative: _annum_."
+   ],
+   [
+    "Tōtum annō labōrō.",
+    "_annō_ is ablative. How long something lasts is accusative: _annum_."
+   ],
+   [
+    "Tōtum annī labōrō.",
+    "_annī_ is genitive. How long something lasts is accusative: _annum_."
+   ]
+  ]
+ }
+]

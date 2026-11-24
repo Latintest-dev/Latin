@@ -46,5 +46,81 @@
   "case.abl.accompany": {
     "name": "Ablative: with (whom)",
     "pack": "grammar"
+  },
+  "pron.hic": {
+    "name": "This (hic, haec, hoc)",
+    "pack": "grammar"
+  },
+  "pron.ille": {
+    "name": "That (ille, illa, illud)",
+    "pack": "grammar"
+  },
+  "pron.is": {
+    "name": "Him, her, it (is, ea, id)",
+    "pack": "grammar"
+  },
+  "pron.idem": {
+    "name": "The same (īdem, eadem, idem)",
+    "pack": "grammar"
+  },
+  "pron.ipse": {
+    "name": "Himself, emphasis (ipse)",
+    "pack": "grammar"
+  },
+  "pron.rel": {
+    "name": "Who, which (quī, quae, quod)",
+    "pack": "grammar"
+  },
+  "pron.reflexive": {
+    "name": "Himself, themselves (sē)",
+    "pack": "grammar"
+  },
+  "pron.suus": {
+    "name": "His own, their own (suus)",
+    "pack": "grammar"
+  },
+  "adj.comp": {
+    "name": "Comparative (melior, maior)",
+    "pack": "grammar"
+  },
+  "adj.super": {
+    "name": "Superlative (optimus, maximus)",
+    "pack": "grammar"
+  },
+  "adv.comp": {
+    "name": "More, better as adverbs (magis, melius)",
+    "pack": "grammar"
+  },
+  "comp.quam": {
+    "name": "Than (quam)",
+    "pack": "grammar"
+  },
+  "comp.abl": {
+    "name": "Than, with the ablative",
+    "pack": "grammar"
+  },
+  "abl.means": {
+    "name": "Ablative of means (gladiō)",
+    "pack": "grammar"
+  },
+  "abl.manner": {
+    "name": "Ablative of manner (cum cūrā)",
+    "pack": "grammar"
+  },
+  "abl.cause": {
+    "name": "Cause (propter, timōre)",
+    "pack": "grammar"
+  },
+  "case.nom.subj": {
+    "name": "Nominative: the subject",
+    "pack": "grammar"
+  },
+  "case.dat.recipient": {
+    "name": "Dative: to or for",
+    "pack": "grammar"
+  },
+  "case.gen": {
+    "name": "Genitive: of, whose",
+    "pack": "grammar"
   }
 }

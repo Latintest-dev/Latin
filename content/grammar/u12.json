@@ -1,0 +1,299 @@
+[
+ {
+  "id": "grammar.12.01",
+  "review": "unreviewed",
+  "en": "The man whose son I see is good.",
+  "la": "Vir cuius fīlium videō bonus est.",
+  "fill": "cuius",
+  "skills": [
+   "pron.rel",
+   "case.gen"
+  ],
+  "tag": "cuius: whose",
+  "explain": "_cuius_ is the genitive of _quī_: “of whom, whose”. It is the same for all genders.",
+  "distractors": [
+   [
+    "Vir cui fīlium videō bonus est.",
+    "_cui_ is dative (“to whom”). “Whose” is genitive: _cuius_."
+   ],
+   [
+    "Vir quem fīlium videō bonus est.",
+    "_quem_ is accusative (“whom”). “Whose” is genitive: _cuius_."
+   ],
+   [
+    "Vir quō fīlium videō bonus est.",
+    "_quō_ is ablative (“by whom”). “Whose” is genitive: _cuius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.02",
+  "review": "unreviewed",
+  "en": "The girl whose mother is coming is good.",
+  "la": "Puella cuius māter venit bona est.",
+  "fill": "cuius",
+  "skills": [
+   "pron.rel",
+   "case.gen"
+  ],
+  "tag": "cuius: whose",
+  "explain": "_cuius māter_ is “whose mother”, the mother of the girl.",
+  "distractors": [
+   [
+    "Puella cui māter venit bona est.",
+    "_cui_ is dative (“to whom”). “Whose” is genitive: _cuius_."
+   ],
+   [
+    "Puella quam māter venit bona est.",
+    "_quam_ is accusative (“whom”). “Whose” is genitive: _cuius_."
+   ],
+   [
+    "Puella quae māter venit bona est.",
+    "_quae_ is nominative (“who”). “Whose” is genitive: _cuius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.03",
+  "review": "unreviewed",
+  "en": "The man to whom I give the book is good.",
+  "la": "Vir cui librum dō bonus est.",
+  "fill": "cui",
+  "skills": [
+   "pron.rel",
+   "case.dat.recipient"
+  ],
+  "tag": "cui: to whom",
+  "explain": "_cui_ is the dative of _quī_: “to whom, for whom”. He receives the book.",
+  "distractors": [
+   [
+    "Vir cuius librum dō bonus est.",
+    "_cuius_ is genitive (“whose”). “To whom” is dative: _cui_."
+   ],
+   [
+    "Vir quem librum dō bonus est.",
+    "_quem_ is accusative (“whom”). “To whom” is dative: _cui_."
+   ],
+   [
+    "Vir quō librum dō bonus est.",
+    "_quō_ is ablative (“by whom”). “To whom” is dative: _cui_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.04",
+  "review": "unreviewed",
+  "en": "The girl to whom I give water is good.",
+  "la": "Puella cui aquam dō bona est.",
+  "fill": "cui",
+  "skills": [
+   "pron.rel",
+   "case.dat.recipient"
+  ],
+  "tag": "cui: to whom",
+  "explain": "The girl receives the water, so _cui_ (dative). It is the same for all genders.",
+  "distractors": [
+   [
+    "Puella cuius aquam dō bona est.",
+    "_cuius_ is genitive (“whose”). “To whom” is dative: _cui_."
+   ],
+   [
+    "Puella quam aquam dō bona est.",
+    "_quam_ is accusative (“whom”). “To whom” is dative: _cui_."
+   ],
+   [
+    "Puella quā aquam dō bona est.",
+    "_quā_ is ablative (“by whom”). “To whom” is dative: _cui_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.05",
+  "review": "unreviewed",
+  "en": "The sword with which I fight is good.",
+  "la": "Gladius quō pugnō bonus est.",
+  "fill": "quō",
+  "skills": [
+   "pron.rel",
+   "case.abl.instrument"
+  ],
+  "tag": "quō: with which",
+  "explain": "A tool goes in the ablative, so “with which” is _quō_ (masculine or neuter ablative).",
+  "distractors": [
+   [
+    "Gladius quem pugnō bonus est.",
+    "_quem_ is accusative. A tool takes the ablative: _quō_."
+   ],
+   [
+    "Gladius cui pugnō bonus est.",
+    "_cui_ is dative. A tool takes the ablative: _quō_."
+   ],
+   [
+    "Gladius quae pugnō bonus est.",
+    "_quae_ is feminine or plural. _gladius_ is masculine singular: _quō_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.06",
+  "review": "unreviewed",
+  "en": "The road by which I walk is long.",
+  "la": "Via quā ambulō longa est.",
+  "fill": "quā",
+  "skills": [
+   "pron.rel",
+   "case.abl.instrument"
+  ],
+  "tag": "quā: by which (feminine)",
+  "explain": "The road is feminine, and “by which” is ablative: _quā_.",
+  "distractors": [
+   [
+    "Via quam ambulō longa est.",
+    "_quam_ is accusative. “By which” is ablative: _quā_."
+   ],
+   [
+    "Via quō ambulō longa est.",
+    "_quō_ is masculine or neuter ablative. _via_ is feminine: _quā_."
+   ],
+   [
+    "Via cuius ambulō longa est.",
+    "_cuius_ is genitive (“whose”). “By which” is ablative: _quā_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.07",
+  "review": "unreviewed",
+  "en": "The friend with whom I walk is good.",
+  "la": "Amīcus cum quō ambulō bonus est.",
+  "fill": "quō",
+  "skills": [
+   "pron.rel",
+   "case.abl.accompany"
+  ],
+  "tag": "cum quō: with whom",
+  "explain": "_cum_ takes the ablative. After a relative pronoun it stays a separate word (unlike _mēcum_): _cum quō_.",
+  "distractors": [
+   [
+    "Amīcus cum quem ambulō bonus est.",
+    "_quem_ is accusative. After _cum_, use the ablative: _quō_."
+   ],
+   [
+    "Amīcus cum cui ambulō bonus est.",
+    "_cui_ is dative. After _cum_, use the ablative: _quō_."
+   ],
+   [
+    "Amīcus cum quā ambulō bonus est.",
+    "_quā_ is feminine. _amīcus_ is masculine: _quō_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.08",
+  "review": "unreviewed",
+  "en": "The friends with whom I live are good.",
+  "la": "Amīcī cum quibus habitō bonī sunt.",
+  "fill": "quibus",
+  "skills": [
+   "pron.rel",
+   "case.abl.accompany"
+  ],
+  "tag": "cum quibus: with whom (plural)",
+  "explain": "The plural dative and ablative of _quī_ is _quibus_. After _cum_ it is ablative.",
+  "distractors": [
+   [
+    "Amīcī cum quōs habitō bonī sunt.",
+    "_quōs_ is accusative. After _cum_, use the ablative: _quibus_."
+   ],
+   [
+    "Amīcī cum quī habitō bonī sunt.",
+    "_quī_ is nominative. After _cum_, use the ablative: _quibus_."
+   ],
+   [
+    "Amīcī cum cuius habitō bonī sunt.",
+    "_cuius_ is singular genitive. “With whom” (plural) is _quibus_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.09",
+  "review": "unreviewed",
+  "en": "The men whose sons fight are good.",
+  "la": "Virī quōrum fīliī pugnant bonī sunt.",
+  "fill": "quōrum",
+  "skills": [
+   "pron.rel",
+   "case.gen"
+  ],
+  "tag": "quōrum: whose (plural)",
+  "explain": "The genitive plural of _quī_ is _quōrum_ (feminine _quārum_): “of whom, whose”.",
+  "distractors": [
+   [
+    "Virī cuius fīliī pugnant bonī sunt.",
+    "_cuius_ is singular. _virī_ is plural: _quōrum_."
+   ],
+   [
+    "Virī quōs fīliī pugnant bonī sunt.",
+    "_quōs_ is accusative (“whom”). “Whose” is genitive: _quōrum_."
+   ],
+   [
+    "Virī quibus fīliī pugnant bonī sunt.",
+    "_quibus_ is dative or ablative. “Whose” is genitive: _quōrum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.10",
+  "review": "unreviewed",
+  "en": "The women to whom we give water are good.",
+  "la": "Fēminae quibus aquam damus bonae sunt.",
+  "fill": "quibus",
+  "skills": [
+   "pron.rel",
+   "case.dat.recipient"
+  ],
+  "tag": "quibus: to whom (plural)",
+  "explain": "The women receive the water, so dative plural: _quibus_.",
+  "distractors": [
+   [
+    "Fēminae quās aquam damus bonae sunt.",
+    "_quās_ is accusative. The ones receiving are dative: _quibus_."
+   ],
+   [
+    "Fēminae quōrum aquam damus bonae sunt.",
+    "_quōrum_ is genitive (“whose”). “To whom” is dative: _quibus_."
+   ],
+   [
+    "Fēminae quae aquam damus bonae sunt.",
+    "_quae_ is nominative. The ones receiving are dative: _quibus_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.12.11",
+  "review": "unreviewed",
+  "en": "Rome, which I love, is great.",
+  "la": "Rōma, quam amō, magna est.",
+  "fill": "quam",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quam: which (feminine)",
+  "explain": "Names work like any noun: _Rōma_ is feminine, and I love it, so _quam_.",
+  "distractors": [
+   [
+    "Rōma, quae amō, magna est.",
+    "_quae_ is nominative. I love Rome, so accusative: _quam_."
+   ],
+   [
+    "Rōma, quem amō, magna est.",
+    "_quem_ is masculine. _Rōma_ is feminine: _quam_."
+   ],
+   [
+    "Rōma, quod amō, magna est.",
+    "_quod_ is neuter. _Rōma_ is feminine: _quam_."
+   ]
+  ]
+ }
+]

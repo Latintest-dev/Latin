@@ -1,0 +1,326 @@
+[
+ {
+  "id": "world.5.01",
+  "review": "unreviewed",
+  "en": "The wind moves the sea.",
+  "la": "Ventus mare movet.",
+  "fill": "movet",
+  "skills": [
+   "verb.person",
+   "world.nature"
+  ],
+  "tag": "movet: moves",
+  "explain": "One wind needs the “he, she, it” ending _-et_: _movet_.",
+  "distractors": [
+   [
+    "Ventus mare movent.",
+    "_movent_ is “they move”. One wind needs the “he, she, it” ending _-et_: _movet_."
+   ],
+   [
+    "Ventus mare movēmus.",
+    "_movēmus_ is “we move”. One wind needs the “he, she, it” ending _-et_: _movet_."
+   ],
+   [
+    "Ventus mare moveō.",
+    "_moveō_ is “I move”. One wind needs the “he, she, it” ending _-et_: _movet_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.02",
+  "review": "unreviewed",
+  "en": "The waves are great.",
+  "la": "Undae magnae sunt.",
+  "fill": "magnae",
+  "skills": [
+   "adj.agree.number",
+   "world.nature"
+  ],
+  "tag": "magnae: great (feminine plural)",
+  "explain": "_undae_ is feminine plural, so the adjective is too: _magnae_.",
+  "distractors": [
+   [
+    "Undae magnī sunt.",
+    "_magnī_ is masculine plural. _undae_ is feminine plural, so the adjective is too: _magnae_."
+   ],
+   [
+    "Undae magna sunt.",
+    "_magna_ is singular or neuter plural. _undae_ is feminine plural, so the adjective is too: _magnae_."
+   ],
+   [
+    "Undae magnās sunt.",
+    "_magnās_ is accusative plural. _undae_ is feminine plural, so the adjective is too: _magnae_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.03",
+  "review": "unreviewed",
+  "en": "The fire destroys the tree.",
+  "la": "Ignis arborem dēlet.",
+  "fill": "arborem",
+  "skills": [
+   "case.acc.obj",
+   "world.nature"
+  ],
+  "tag": "arborem: the tree (object)",
+  "explain": "The thing destroyed is accusative: _arborem_.",
+  "distractors": [
+   [
+    "Ignis arbor dēlet.",
+    "_arbor_ is nominative. The thing destroyed is accusative: _arborem_."
+   ],
+   [
+    "Ignis arboris dēlet.",
+    "_arboris_ is genitive. The thing destroyed is accusative: _arborem_."
+   ],
+   [
+    "Ignis arborī dēlet.",
+    "_arborī_ is dative. The thing destroyed is accusative: _arborem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.04",
+  "review": "unreviewed",
+  "en": "The sun sees the earth.",
+  "la": "Sōl terram videt.",
+  "fill": "terram",
+  "skills": [
+   "case.acc.obj",
+   "world.nature"
+  ],
+  "tag": "terram: the earth (object)",
+  "explain": "The thing seen is accusative: _terram_.",
+  "distractors": [
+   [
+    "Sōl terra videt.",
+    "_terra_ is nominative. The thing seen is accusative: _terram_."
+   ],
+   [
+    "Sōl terrae videt.",
+    "_terrae_ is genitive or dative. The thing seen is accusative: _terram_."
+   ],
+   [
+    "Sōl terrās videt.",
+    "_terrās_ is accusative plural (“lands”). The thing seen is accusative: _terram_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.05",
+  "review": "unreviewed",
+  "en": "The sun is bigger than the moon.",
+  "la": "Sōl lūnā maior est.",
+  "fill": "lūnā",
+  "skills": [
+   "comp.abl",
+   "world.nature"
+  ],
+  "tag": "lūnā: than the moon",
+  "explain": "After a comparative without _quam_, the thing compared is ablative: _lūnā_.",
+  "distractors": [
+   [
+    "Sōl lūnam maior est.",
+    "_lūnam_ is accusative. After a comparative without _quam_, the thing compared is ablative: _lūnā_."
+   ],
+   [
+    "Sōl lūnae maior est.",
+    "_lūnae_ is genitive or dative. After a comparative without _quam_, the thing compared is ablative: _lūnā_."
+   ],
+   [
+    "Sōl lūnās maior est.",
+    "_lūnās_ is accusative plural. After a comparative without _quam_, the thing compared is ablative: _lūnā_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.06",
+  "review": "unreviewed",
+  "en": "The tree is in the field.",
+  "la": "Arbor in agrō est.",
+  "fill": "agrō",
+  "skills": [
+   "case.abl.place",
+   "world.nature"
+  ],
+  "tag": "in agrō: in the field",
+  "explain": "After _in_ meaning “in”, use the ablative: _agrō_.",
+  "distractors": [
+   [
+    "Arbor in agrum est.",
+    "_agrum_ is accusative. After _in_ meaning “in”, use the ablative: _agrō_."
+   ],
+   [
+    "Arbor in agrī est.",
+    "_agrī_ is genitive. After _in_ meaning “in”, use the ablative: _agrō_."
+   ],
+   [
+    "Arbor in agrōs est.",
+    "_agrōs_ is accusative plural. After _in_ meaning “in”, use the ablative: _agrō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.07",
+  "review": "unreviewed",
+  "en": "We see the shadow of the tree.",
+  "la": "Umbram arboris videmus.",
+  "fill": "arboris",
+  "skills": [
+   "case.gen",
+   "world.nature"
+  ],
+  "tag": "arboris: of the tree",
+  "explain": "“The shadow of the tree” needs the genitive: _arboris_.",
+  "distractors": [
+   [
+    "Umbram arborem videmus.",
+    "_arborem_ is accusative. “The shadow of the tree” needs the genitive: _arboris_."
+   ],
+   [
+    "Umbram arbor videmus.",
+    "_arbor_ is nominative. “The shadow of the tree” needs the genitive: _arboris_."
+   ],
+   [
+    "Umbram arborī videmus.",
+    "_arborī_ is dative. “The shadow of the tree” needs the genitive: _arboris_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.08",
+  "review": "unreviewed",
+  "en": "The river is long.",
+  "la": "Flūmen longum est.",
+  "fill": "longum",
+  "skills": [
+   "adj.agree.gender",
+   "world.nature"
+  ],
+  "tag": "longum: long (neuter)",
+  "explain": "_flūmen_ is neuter, so the adjective is neuter: _longum_.",
+  "distractors": [
+   [
+    "Flūmen longus est.",
+    "_longus_ is masculine. _flūmen_ is neuter, so the adjective is neuter: _longum_."
+   ],
+   [
+    "Flūmen longa est.",
+    "_longa_ is feminine. _flūmen_ is neuter, so the adjective is neuter: _longum_."
+   ],
+   [
+    "Flūmen longī est.",
+    "_longī_ is genitive or plural. _flūmen_ is neuter, so the adjective is neuter: _longum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.09",
+  "review": "unreviewed",
+  "en": "This mountain is the biggest.",
+  "la": "Hic mōns maximus est.",
+  "fill": "maximus",
+  "skills": [
+   "adj.super",
+   "world.nature"
+  ],
+  "tag": "maximus: biggest",
+  "explain": "_mōns_ is masculine, and “the biggest” is the superlative: _maximus_.",
+  "distractors": [
+   [
+    "Hic mōns maior est.",
+    "_maior_ is the comparative (“bigger”). _mōns_ is masculine, and “the biggest” is the superlative: _maximus_."
+   ],
+   [
+    "Hic mōns maxima est.",
+    "_maxima_ is feminine. _mōns_ is masculine, and “the biggest” is the superlative: _maximus_."
+   ],
+   [
+    "Hic mōns maximum est.",
+    "_maximum_ is neuter. _mōns_ is masculine, and “the biggest” is the superlative: _maximus_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.10",
+  "review": "unreviewed",
+  "en": "The earth gives water.",
+  "la": "Tellūs aquam dat.",
+  "fill": "aquam",
+  "skills": [
+   "case.acc.obj",
+   "world.nature"
+  ],
+  "tag": "aquam: water (object)",
+  "explain": "The thing given is accusative: _aquam_.",
+  "distractors": [
+   [
+    "Tellūs aqua dat.",
+    "_aqua_ is nominative. The thing given is accusative: _aquam_."
+   ],
+   [
+    "Tellūs aquae dat.",
+    "_aquae_ is genitive or dative. The thing given is accusative: _aquam_."
+   ],
+   [
+    "Tellūs aquās dat.",
+    "_aquās_ is accusative plural. The thing given is accusative: _aquam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.11",
+  "review": "unreviewed",
+  "en": "Fire is a danger.",
+  "la": "Ignis perīculum est.",
+  "fill": "perīculum",
+  "skills": [
+   "noun.pred.nom",
+   "world.nature"
+  ],
+  "tag": "perīculum: a danger",
+  "explain": "After _est_, the noun is nominative; _perīculum_ is neuter, and neuter nominative looks like accusative: _perīculum_.",
+  "distractors": [
+   [
+    "Ignis perīculī est.",
+    "_perīculī_ is genitive. After _est_, the noun is nominative; _perīculum_ is neuter, and neuter nominative looks like accusative: _perīculum_."
+   ],
+   [
+    "Ignis perīculō est.",
+    "_perīculō_ is dative or ablative. After _est_, the noun is nominative; _perīculum_ is neuter, and neuter nominative looks like accusative: _perīculum_."
+   ],
+   [
+    "Ignis perīcula est.",
+    "_perīcula_ is plural. After _est_, the noun is nominative; _perīculum_ is neuter, and neuter nominative looks like accusative: _perīculum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.5.12",
+  "review": "unreviewed",
+  "en": "We do not live without the sun.",
+  "la": "Sine sōle nōn vīvimus.",
+  "fill": "sōle",
+  "skills": [
+   "prep.abl",
+   "world.nature"
+  ],
+  "tag": "sine sōle: without the sun",
+  "explain": "_sine_ takes the ablative: _sōle_.",
+  "distractors": [
+   [
+    "Sine sōlem nōn vīvimus.",
+    "_sōlem_ is accusative. _sine_ takes the ablative: _sōle_."
+   ],
+   [
+    "Sine sōl nōn vīvimus.",
+    "_sōl_ is nominative. _sine_ takes the ablative: _sōle_."
+   ],
+   [
+    "Sine sōlis nōn vīvimus.",
+    "_sōlis_ is genitive. _sine_ takes the ablative: _sōle_."
+   ]
+  ]
+ }
+]

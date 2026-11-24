@@ -20,7 +20,7 @@ This is the contract that keeps the app usable as it grows. Every kind of growth
 | Screen   | Purpose                                                        | Reads                                   |
 | -------- | -------------------------------------------------------------- | --------------------------------------- |
 | Today    | One button: Continue. Today's meter, what's next, what's weak. | `path.nextLesson`, `settings`, `summarize` |
-| Path     | The plan: 12 stages, you are here, lessons, locks explained.   | `content.stages`, `stageStats`, `lockInfo` |
+| Path     | The plan: every stage of the curriculum, you are here, lessons, locks explained.   | `content.stages`, `stageStats`, `lockInfo` |
 | Words    | Meanings (word cards), Forms (+ use in sentences), Look up.    | lexicon, `lessonWordCards`, forms skills |
 | Progress | Skills, slips, mistakes; Practice on any weak skill.           | `content.skills`, `state.skills`         |
 | Settings | Everything configurable, with a live "your next Continue".     | `SETTINGS`                               |

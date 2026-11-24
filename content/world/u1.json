@@ -1,0 +1,326 @@
+[
+ {
+  "id": "world.1.01",
+  "review": "unreviewed",
+  "en": "The consuls rule the state.",
+  "la": "Cōnsulēs rem pūblicam regunt.",
+  "fill": "regunt",
+  "skills": [
+   "verb.person",
+   "world.state"
+  ],
+  "tag": "regunt: they rule",
+  "explain": "Two or more rulers need the “they” ending _-unt_: _regunt_.",
+  "distractors": [
+   [
+    "Cōnsulēs rem pūblicam regit.",
+    "_regit_ is one ruler (“he rules”). Two or more rulers need the “they” ending _-unt_: _regunt_."
+   ],
+   [
+    "Cōnsulēs rem pūblicam regimus.",
+    "_regimus_ is “we rule”. Two or more rulers need the “they” ending _-unt_: _regunt_."
+   ],
+   [
+    "Cōnsulēs rem pūblicam regō.",
+    "_regō_ is “I rule”. Two or more rulers need the “they” ending _-unt_: _regunt_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.02",
+  "review": "unreviewed",
+  "en": "The law is just.",
+  "la": "Lēx iūsta est.",
+  "fill": "iūsta",
+  "skills": [
+   "adj.agree.gender",
+   "world.state"
+  ],
+  "tag": "iūsta: just (feminine)",
+  "explain": "_lēx_ is feminine, so the adjective is feminine: _iūsta_.",
+  "distractors": [
+   [
+    "Lēx iūstus est.",
+    "_iūstus_ is masculine. _lēx_ is feminine, so the adjective is feminine: _iūsta_."
+   ],
+   [
+    "Lēx iūstum est.",
+    "_iūstum_ is neuter. _lēx_ is feminine, so the adjective is feminine: _iūsta_."
+   ],
+   [
+    "Lēx iūstam est.",
+    "_iūstam_ is accusative. _lēx_ is feminine, so the adjective is feminine: _iūsta_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.03",
+  "review": "unreviewed",
+  "en": "The people love the law.",
+  "la": "Populus lēgem amat.",
+  "fill": "lēgem",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "lēgem: the law (object)",
+  "explain": "The thing loved is accusative: _lēgem_.",
+  "distractors": [
+   [
+    "Populus lēx amat.",
+    "_lēx_ is nominative. The thing loved is accusative: _lēgem_."
+   ],
+   [
+    "Populus lēgis amat.",
+    "_lēgis_ is genitive (“of the law”). The thing loved is accusative: _lēgem_."
+   ],
+   [
+    "Populus lēgī amat.",
+    "_lēgī_ is dative (“to the law”). The thing loved is accusative: _lēgem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.04",
+  "review": "unreviewed",
+  "en": "Nobody is greater than the law.",
+  "la": "Nēmō lēge maior est.",
+  "fill": "lēge",
+  "skills": [
+   "comp.abl",
+   "world.state"
+  ],
+  "tag": "lēge: than the law",
+  "explain": "After a comparative without _quam_, the thing compared is ablative: _lēge_.",
+  "distractors": [
+   [
+    "Nēmō lēgem maior est.",
+    "_lēgem_ is accusative. After a comparative without _quam_, the thing compared is ablative: _lēge_."
+   ],
+   [
+    "Nēmō lēx maior est.",
+    "_lēx_ is nominative. After a comparative without _quam_, the thing compared is ablative: _lēge_."
+   ],
+   [
+    "Nēmō lēgis maior est.",
+    "_lēgis_ is genitive. After a comparative without _quam_, the thing compared is ablative: _lēge_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.05",
+  "review": "unreviewed",
+  "en": "The judge hears the case.",
+  "la": "Iūdex causam audit.",
+  "fill": "causam",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "causam: the case (object)",
+  "explain": "The thing heard is accusative: _causam_.",
+  "distractors": [
+   [
+    "Iūdex causa audit.",
+    "_causa_ is nominative. The thing heard is accusative: _causam_."
+   ],
+   [
+    "Iūdex causae audit.",
+    "_causae_ is genitive or dative. The thing heard is accusative: _causam_."
+   ],
+   [
+    "Iūdex causās audit.",
+    "_causās_ is accusative plural (“cases”). The thing heard is accusative: _causam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.06",
+  "review": "unreviewed",
+  "en": "The judge gives the punishment.",
+  "la": "Iūdex poenam dat.",
+  "fill": "poenam",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "poenam: the punishment (object)",
+  "explain": "The thing given is accusative: _poenam_.",
+  "distractors": [
+   [
+    "Iūdex poena dat.",
+    "_poena_ is nominative. The thing given is accusative: _poenam_."
+   ],
+   [
+    "Iūdex poenae dat.",
+    "_poenae_ is genitive or dative. The thing given is accusative: _poenam_."
+   ],
+   [
+    "Iūdex poenās dat.",
+    "_poenās_ is accusative plural (“punishments”). The thing given is accusative: _poenam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.07",
+  "review": "unreviewed",
+  "en": "The magistrate has great power.",
+  "la": "Magistrātus magnam potestātem habet.",
+  "fill": "potestātem",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "potestātem: power (object)",
+  "explain": "The thing held is accusative: _potestātem_.",
+  "distractors": [
+   [
+    "Magistrātus magnam potestās habet.",
+    "_potestās_ is nominative. The thing held is accusative: _potestātem_."
+   ],
+   [
+    "Magistrātus magnam potestātis habet.",
+    "_potestātis_ is genitive (“of power”). The thing held is accusative: _potestātem_."
+   ],
+   [
+    "Magistrātus magnam potestātī habet.",
+    "_potestātī_ is dative (“to power”). The thing held is accusative: _potestātem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.08",
+  "review": "unreviewed",
+  "en": "The senate gives advice.",
+  "la": "Senātus cōnsilium dat.",
+  "fill": "cōnsilium",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "cōnsilium: advice (object)",
+  "explain": "The thing given is accusative: _cōnsilium_.",
+  "distractors": [
+   [
+    "Senātus cōnsiliī dat.",
+    "_cōnsiliī_ is genitive (“of advice”). The thing given is accusative: _cōnsilium_."
+   ],
+   [
+    "Senātus cōnsiliō dat.",
+    "_cōnsiliō_ is dative or ablative. The thing given is accusative: _cōnsilium_."
+   ],
+   [
+    "Senātus cōnsilia dat.",
+    "_cōnsilia_ is plural (“pieces of advice”). The thing given is accusative: _cōnsilium_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.09",
+  "review": "unreviewed",
+  "en": "The citizen wants office.",
+  "la": "Cīvis honōrem cupit.",
+  "fill": "honōrem",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "honōrem: office, honor (object)",
+  "explain": "The thing wanted is accusative: _honōrem_.",
+  "distractors": [
+   [
+    "Cīvis honor cupit.",
+    "_honor_ is nominative. The thing wanted is accusative: _honōrem_."
+   ],
+   [
+    "Cīvis honōris cupit.",
+    "_honōris_ is genitive. The thing wanted is accusative: _honōrem_."
+   ],
+   [
+    "Cīvis honōrī cupit.",
+    "_honōrī_ is dative. The thing wanted is accusative: _honōrem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.10",
+  "review": "unreviewed",
+  "en": "The crime is great.",
+  "la": "Crīmen magnum est.",
+  "fill": "magnum",
+  "skills": [
+   "adj.agree.gender",
+   "world.state"
+  ],
+  "tag": "magnum: great (neuter)",
+  "explain": "_crīmen_ is neuter, so the adjective is neuter: _magnum_.",
+  "distractors": [
+   [
+    "Crīmen magnus est.",
+    "_magnus_ is masculine. _crīmen_ is neuter, so the adjective is neuter: _magnum_."
+   ],
+   [
+    "Crīmen magna est.",
+    "_magna_ is feminine. _crīmen_ is neuter, so the adjective is neuter: _magnum_."
+   ],
+   [
+    "Crīmen magnī est.",
+    "_magnī_ is genitive or plural. _crīmen_ is neuter, so the adjective is neuter: _magnum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.11",
+  "review": "unreviewed",
+  "en": "The king has the command.",
+  "la": "Rēx imperium habet.",
+  "fill": "imperium",
+  "skills": [
+   "case.acc.obj",
+   "world.state"
+  ],
+  "tag": "imperium: command (object)",
+  "explain": "The thing held is accusative: _imperium_.",
+  "distractors": [
+   [
+    "Rēx imperiī habet.",
+    "_imperiī_ is genitive (“of command”). The thing held is accusative: _imperium_."
+   ],
+   [
+    "Rēx imperiō habet.",
+    "_imperiō_ is dative or ablative. The thing held is accusative: _imperium_."
+   ],
+   [
+    "Rēx imperia habet.",
+    "_imperia_ is plural. The thing held is accusative: _imperium_."
+   ]
+  ]
+ },
+ {
+  "id": "world.1.12",
+  "review": "unreviewed",
+  "en": "They send the envoy to the king.",
+  "la": "Lēgātum ad rēgem mittunt.",
+  "fill": "rēgem",
+  "skills": [
+   "prep.acc",
+   "world.state"
+  ],
+  "tag": "ad rēgem: to the king",
+  "explain": "_ad_ takes the accusative: _rēgem_.",
+  "distractors": [
+   [
+    "Lēgātum ad rēx mittunt.",
+    "_rēx_ is nominative. _ad_ takes the accusative: _rēgem_."
+   ],
+   [
+    "Lēgātum ad rēgis mittunt.",
+    "_rēgis_ is genitive. _ad_ takes the accusative: _rēgem_."
+   ],
+   [
+    "Lēgātum ad rēgī mittunt.",
+    "_rēgī_ is dative. _ad_ takes the accusative: _rēgem_."
+   ]
+  ]
+ }
+]

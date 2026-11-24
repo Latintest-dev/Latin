@@ -8,6 +8,8 @@ no content lives in the JavaScript. After any content change run `node tools/rel
     content/lexicon/index.json       the list of lexicon files (each a JSON list of word entries)
     content/lexicon/core.json        hand-made words, with forms (the ones the sentence tracks are built from)
     content/lexicon/grammar.json     words added for the Grammar track
+    content/lexicon/pronouns.json    hic, ille, is, īdem, ipse, quī, alius, comparatives and superlatives (full paradigms)
+    content/lexicon/common.json      about 300 frequent nouns, verbs, adjectives and function words promoted from the lists
     content/lexicon/street.json      words added for the Street Latin track
     content/lexicon/supplement.json  very common words the frequency data missed or ranked too low
     content/lexicon/band-1..5.json   word-list entries (lemma only), 1,000 ranks per file, made by tools/vocab.mjs
@@ -199,11 +201,25 @@ Hand-made words are kept and put in their place in the order.
 
 ## The Grammar track
 
-Seven short units that each drill one point: the genitive of the whole, of quality and value, with adjectives and
-verbs of remembering, the fourth and fifth declensions, and the pronouns for I, you and we in every case. It opens
+Fifteen short units that each drill one point: the genitive of the whole, of quality and value, with adjectives and
+verbs of remembering, the fourth and fifth declensions, the pronouns for I, you and we in every case, then (v0.9)
+this, that, him and her, the same and himself, the relative pronoun in all its cases, the reflexive and *suus*,
+comparison, and the ablative of means, manner and cause with prepositions. It opens
 after *Core grammar* unit 9 (*Whose is it?*), where the genitive is first met. These are ordinary hand-written
 sentences; each unit file starts with an `intro` that teaches the point before the first card. To add a point, add
 a unit file, list it in `content/grammar/pack.json` and add any new skills to `content/grammar/skills.json`.
+
+## The Roman world track
+
+Eight units of twelve sentences each (`content/world/`): the state and law, the army, family and home, gods and fate,
+nature, mind and speech, travel, and time. They use the words promoted in v0.9 (`content/lexicon/common.json`) and
+revisit the grammar of the Grammar track (comparison with the ablative, *cum* + ablative, *hic*, *īdem*, *suus*).
+It opens after *Core grammar* unit 9, like the Grammar track. Each distractor is the same sentence with one wrong
+form, so the card teaches case, agreement or person.
+
+Promoting a word: move its entry (same `id`) from `band-N.json` into a hand-made lexicon file, drop `vocabOnly`,
+and write its endings (`n1..n3`, `1-2`, `3-2`, a verb `conj` and `stem`, or explicit `forms`). Do not rename the id:
+word cards and progress follow it. A word new to the list needs its id appended to `content/vocab/order.json`.
 
 ## The Street Latin track
 

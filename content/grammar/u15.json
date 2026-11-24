@@ -1,0 +1,293 @@
+[
+ {
+  "id": "grammar.15.01",
+  "review": "unreviewed",
+  "en": "I write with my hand.",
+  "la": "Manū scrībō.",
+  "fill": "Manū",
+  "skills": [
+   "abl.means",
+   "noun.4decl"
+  ],
+  "tag": "manū: with the hand (means)",
+  "explain": "The tool or means goes in the ablative, with no preposition: _manū_ (by hand). _manus_ is fourth declension, so the ablative is _-ū_.",
+  "distractors": [
+   [
+    "Manum scrībō.",
+    "_manum_ is accusative. A means takes the ablative: _manū_."
+   ],
+   [
+    "Manus scrībō.",
+    "_manus_ is nominative. A means takes the ablative: _manū_."
+   ],
+   [
+    "Manuī scrībō.",
+    "_manuī_ is dative. A means takes the ablative: _manū_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.02",
+  "review": "unreviewed",
+  "en": "He kills with a sword.",
+  "la": "Gladiō necat.",
+  "fill": "Gladiō",
+  "skills": [
+   "abl.means"
+  ],
+  "tag": "gladiō: with a sword",
+  "explain": "The sword is what he uses: the ablative of means, _gladiō_. No _cum_ is needed.",
+  "distractors": [
+   [
+    "Gladium necat.",
+    "_gladium_ is accusative. A means takes the ablative: _gladiō_."
+   ],
+   [
+    "Gladius necat.",
+    "_gladius_ is nominative. A means takes the ablative: _gladiō_."
+   ],
+   [
+    "Gladiī necat.",
+    "_gladiī_ is genitive or plural. A means takes the ablative: _gladiō_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.03",
+  "review": "unreviewed",
+  "en": "We fight with weapons.",
+  "la": "Tēlīs pugnāmus.",
+  "fill": "Tēlīs",
+  "skills": [
+   "abl.means"
+  ],
+  "tag": "tēlīs: with weapons",
+  "explain": "Plural means: _tēlīs_ (ablative plural of _tēlum_).",
+  "distractors": [
+   [
+    "Tēla pugnāmus.",
+    "_tēla_ is nominative or accusative plural. A means takes the ablative: _tēlīs_."
+   ],
+   [
+    "Tēlōrum pugnāmus.",
+    "_tēlōrum_ is genitive plural. A means takes the ablative: _tēlīs_."
+   ],
+   [
+    "Tēlum pugnāmus.",
+    "_tēlum_ is singular and accusative. A means takes the ablative plural: _tēlīs_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.04",
+  "review": "unreviewed",
+  "en": "I work with care.",
+  "la": "Cum cūrā labōrō.",
+  "fill": "cūrā",
+  "skills": [
+   "abl.manner",
+   "prep.abl"
+  ],
+  "tag": "cum cūrā: with care (manner)",
+  "explain": "How you do something is the ablative of manner, usually with _cum_: _cum cūrā_.",
+  "distractors": [
+   [
+    "Cum cūram labōrō.",
+    "_cūram_ is accusative. _cum_ takes the ablative: _cūrā_."
+   ],
+   [
+    "Cum cūrārum labōrō.",
+    "_cūrārum_ is genitive plural. _cum_ takes the ablative: _cūrā_."
+   ],
+   [
+    "Cum cūrae labōrō.",
+    "_cūrae_ is genitive or dative. _cum_ takes the ablative: _cūrā_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.05",
+  "review": "unreviewed",
+  "en": "He fights with great boldness.",
+  "la": "Magnā cum audāciā pugnat.",
+  "fill": "audāciā",
+  "skills": [
+   "abl.manner",
+   "prep.abl"
+  ],
+  "tag": "magnā cum audāciā: with great boldness",
+  "explain": "When the noun has an adjective, _cum_ can sit between them: _magnā cum audāciā_. Both words are ablative.",
+  "distractors": [
+   [
+    "Magnā cum audāciam pugnat.",
+    "_audāciam_ is accusative. _cum_ takes the ablative: _audāciā_."
+   ],
+   [
+    "Magnā cum audāciārum pugnat.",
+    "_audāciārum_ is genitive plural. _cum_ takes the ablative: _audāciā_."
+   ],
+   [
+    "Magnā cum audāciae pugnat.",
+    "_audāciae_ is genitive or dative. _cum_ takes the ablative: _audāciā_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.06",
+  "review": "unreviewed",
+  "en": "He leaves because of anger.",
+  "la": "Propter īram abit.",
+  "fill": "īram",
+  "skills": [
+   "abl.cause",
+   "prep.acc"
+  ],
+  "tag": "propter īram: because of anger",
+  "explain": "_propter_ (because of) takes the accusative, not the ablative.",
+  "distractors": [
+   [
+    "Propter īrā abit.",
+    "_īrā_ is ablative. _propter_ takes the accusative: _īram_."
+   ],
+   [
+    "Propter īrae abit.",
+    "_īrae_ is genitive or dative. _propter_ takes the accusative: _īram_."
+   ],
+   [
+    "Propter īrās abit.",
+    "_īrās_ is plural accusative. One anger is singular: _īram_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.07",
+  "review": "unreviewed",
+  "en": "He is silent from fear.",
+  "la": "Timōre tacet.",
+  "fill": "Timōre",
+  "skills": [
+   "abl.cause"
+  ],
+  "tag": "timōre: from fear (cause)",
+  "explain": "A feeling that causes an action can stand alone in the ablative: _timōre_ (out of fear).",
+  "distractors": [
+   [
+    "Timōrem tacet.",
+    "_timōrem_ is accusative. A cause takes the ablative: _timōre_."
+   ],
+   [
+    "Timor tacet.",
+    "_timor_ is nominative. A cause takes the ablative: _timōre_."
+   ],
+   [
+    "Timōrī tacet.",
+    "_timōrī_ is dative. A cause takes the ablative: _timōre_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.08",
+  "review": "unreviewed",
+  "en": "I come out of the city.",
+  "la": "Ē urbe veniō.",
+  "fill": "urbe",
+  "skills": [
+   "prep.abl"
+  ],
+  "tag": "ē urbe: out of the city",
+  "explain": "_ē_ and _ex_ (out of) take the ablative. _ē_ is used before a consonant, _ex_ before a vowel.",
+  "distractors": [
+   [
+    "Ē urbem veniō.",
+    "_urbem_ is accusative. _ē_ takes the ablative: _urbe_."
+   ],
+   [
+    "Ē urbis veniō.",
+    "_urbis_ is genitive. _ē_ takes the ablative: _urbe_."
+   ],
+   [
+    "Ē urbī veniō.",
+    "_urbī_ is dative. _ē_ takes the ablative: _urbe_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.09",
+  "review": "unreviewed",
+  "en": "I walk with my friends.",
+  "la": "Cum amīcīs ambulō.",
+  "fill": "amīcīs",
+  "skills": [
+   "case.abl.accompany",
+   "prep.abl"
+  ],
+  "tag": "cum amīcīs: with friends",
+  "explain": "Accompaniment takes _cum_ and the ablative: _cum amīcīs_.",
+  "distractors": [
+   [
+    "Cum amīcōs ambulō.",
+    "_amīcōs_ is accusative. _cum_ takes the ablative: _amīcīs_."
+   ],
+   [
+    "Cum amīcī ambulō.",
+    "_amīcī_ is nominative or genitive. _cum_ takes the ablative: _amīcīs_."
+   ],
+   [
+    "Cum amīcōrum ambulō.",
+    "_amīcōrum_ is genitive. _cum_ takes the ablative: _amīcīs_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.10",
+  "review": "unreviewed",
+  "en": "We do not live without water.",
+  "la": "Sine aquā nōn vīvimus.",
+  "fill": "aquā",
+  "skills": [
+   "prep.abl"
+  ],
+  "tag": "sine aquā: without water",
+  "explain": "_sine_ (without) takes the ablative: _aquā_.",
+  "distractors": [
+   [
+    "Sine aquam nōn vīvimus.",
+    "_aquam_ is accusative. _sine_ takes the ablative: _aquā_."
+   ],
+   [
+    "Sine aquārum nōn vīvimus.",
+    "_aquārum_ is genitive plural. _sine_ takes the ablative: _aquā_."
+   ],
+   [
+    "Sine aquae nōn vīvimus.",
+    "_aquae_ is genitive or dative. _sine_ takes the ablative: _aquā_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.15.11",
+  "review": "unreviewed",
+  "en": "I speak about war.",
+  "la": "Dē bellō dīcō.",
+  "fill": "bellō",
+  "skills": [
+   "prep.abl"
+  ],
+  "tag": "dē bellō: about war",
+  "explain": "_dē_ (about, down from) takes the ablative: _dē bellō_.",
+  "distractors": [
+   [
+    "Dē bellum dīcō.",
+    "_bellum_ is accusative. _dē_ takes the ablative: _bellō_."
+   ],
+   [
+    "Dē bellī dīcō.",
+    "_bellī_ is genitive. _dē_ takes the ablative: _bellō_."
+   ],
+   [
+    "Dē bella dīcō.",
+    "_bella_ is plural. _dē_ with one war takes _bellō_."
+   ]
+  ]
+ }
+]

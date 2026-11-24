@@ -55,7 +55,7 @@ button on a unit, set `replay` and give units `"play"`. Add a test in `tests/mod
 
 ## The plan, lessons and words
 
-`content/curriculum.json` places every lesson of every sentence track into one of 12 stages (the validator fails if a
+`content/curriculum.json` places every lesson of every sentence track into one of the stages (15 at v0.9) (the validator fails if a
 lesson is missing or doubled, or if the order breaks a track's own order or its gates). `core/path.js` turns that into
 "the stage you are on" and the new sentences Continue teaches. `engine/lessons.js` links sentences and words (derived at
 load), so `lessonWordCards` can teach the words of your lessons first. Forms practice builds items on demand

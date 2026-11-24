@@ -31,7 +31,7 @@ with sync_playwright() as p:
     check('the Path shows progress per lesson', re.match(r'\d+/\d+ met', metas[0]) and not metas[0].startswith('0/'), metas[0])
     check('lesson 2 still locked after one session', 'locked' in page.query_selector_all('.lesson')[1].get_attribute('class'))
     check('a locked lesson says what to do', 'Meet' in page.inner_text('.lesson.locked .lockline') and 'unlock' in page.inner_text('.lesson.locked .lockline'), page.inner_text('.lesson.locked .lockline'))
-    check('the Path has twelve stages', page.locator('details.stage').count() == 12)
+    check('the Path lists every stage of the curriculum', page.locator('details.stage').count() == page.evaluate("() => window.__app.content.stages.length"))
 
     # --- many sessions: reviews are not due yet, new units unlock
     for _ in range(5):

@@ -1,0 +1,272 @@
+[
+ {
+  "id": "grammar.13.01",
+  "review": "unreviewed",
+  "en": "He loves himself.",
+  "la": "Sē amat.",
+  "fill": "Sē",
+  "skills": [
+   "pron.reflexive",
+   "case.acc.obj"
+  ],
+  "tag": "sē: himself, herself, themselves",
+  "explain": "_sē_ points back to the subject of its own sentence: “himself, herself, itself, themselves”. It has no nominative.",
+  "distractors": [
+   [
+    "Eum amat.",
+    "_eum_ is “him”, a different person. “Himself” is _sē_."
+   ],
+   [
+    "Eī amat.",
+    "_eī_ is “to him”. “Himself” as the thing loved is accusative _sē_."
+   ],
+   [
+    "Mē amat.",
+    "_mē_ is “myself”. For “he … himself”, use _sē_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.02",
+  "review": "unreviewed",
+  "en": "I love myself.",
+  "la": "Mē amō.",
+  "fill": "Mē",
+  "skills": [
+   "pron.reflexive",
+   "pron.personal"
+  ],
+  "tag": "mē: myself",
+  "explain": "For I and you, the ordinary pronouns do the reflexive job: _mē_ (myself), _tē_ (yourself). Only the third person has _sē_.",
+  "distractors": [
+   [
+    "Sē amō.",
+    "_sē_ is for he, she, they. Here the subject is “I”: _mē_."
+   ],
+   [
+    "Tē amō.",
+    "_tē_ is “yourself”. The subject is “I”: _mē_."
+   ],
+   [
+    "Eum amō.",
+    "_eum_ is “him”. “Myself” is _mē_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.03",
+  "review": "unreviewed",
+  "en": "You love yourself.",
+  "la": "Tē amās.",
+  "fill": "Tē",
+  "skills": [
+   "pron.reflexive",
+   "pron.personal"
+  ],
+  "tag": "tē: yourself",
+  "explain": "The subject is “you” (_amās_), so “yourself” is _tē_.",
+  "distractors": [
+   [
+    "Sē amās.",
+    "_sē_ is for he, she, they. Here the subject is “you”: _tē_."
+   ],
+   [
+    "Mē amās.",
+    "_mē_ is “myself”. The subject is “you”: _tē_."
+   ],
+   [
+    "Eum amās.",
+    "_eum_ is “him”. “Yourself” is _tē_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.04",
+  "review": "unreviewed",
+  "en": "He gives himself a book.",
+  "la": "Sibi librum dat.",
+  "fill": "Sibi",
+  "skills": [
+   "pron.reflexive",
+   "case.dat.recipient"
+  ],
+  "tag": "sibi: to himself",
+  "explain": "_sibi_ is the dative of _sē_: “to himself, for himself, to themselves”. The giver and the receiver are the same person.",
+  "distractors": [
+   [
+    "Eī librum dat.",
+    "_eī_ is “to him”, someone else. For the same person, _sibi_."
+   ],
+   [
+    "Sē librum dat.",
+    "_sē_ is accusative. The one receiving is dative: _sibi_."
+   ],
+   [
+    "Mihi librum dat.",
+    "_mihi_ is “to me”. For “to himself”, use _sibi_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.05",
+  "review": "unreviewed",
+  "en": "He thinks to himself.",
+  "la": "Sēcum cōgitat.",
+  "fill": "Sēcum",
+  "skills": [
+   "pron.reflexive",
+   "case.abl.accompany"
+  ],
+  "tag": "sēcum: with himself",
+  "explain": "_cum_ joins to the end of the pronouns: _sēcum_ (with himself), like _mēcum_ and _tēcum_.",
+  "distractors": [
+   [
+    "Mēcum cōgitat.",
+    "_mēcum_ is “with me”. The subject is “he”: _sēcum_."
+   ],
+   [
+    "Tēcum cōgitat.",
+    "_tēcum_ is “with you”. The subject is “he”: _sēcum_."
+   ],
+   [
+    "Cum eō cōgitat.",
+    "_cum eō_ is “with him”, another person. “With himself” is the one word _sēcum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.06",
+  "review": "unreviewed",
+  "en": "He loves his own son.",
+  "la": "Fīlium suum amat.",
+  "fill": "suum",
+  "skills": [
+   "pron.reflexive",
+   "pron.suus"
+  ],
+  "tag": "suus: his own",
+  "explain": "_suus_ means “his own, her own, their own”: it belongs to the subject. It agrees with _fīlium_ (masculine accusative).",
+  "distractors": [
+   [
+    "Fīlium eius amat.",
+    "_eius_ means “his” as someone else’s son. For his own, use _suum_."
+   ],
+   [
+    "Fīlium suam amat.",
+    "_suam_ is feminine. _fīlium_ is masculine: _suum_."
+   ],
+   [
+    "Fīlium suī amat.",
+    "_suī_ is genitive or plural. _fīlium_ is accusative singular: _suum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.07",
+  "review": "unreviewed",
+  "en": "He loves his son (a different man’s son).",
+  "la": "Fīlium eius amat.",
+  "fill": "eius",
+  "skills": [
+   "pron.is",
+   "pron.suus"
+  ],
+  "tag": "eius: his (someone else’s)",
+  "explain": "When “his” means another person’s, Latin uses _eius_, not _suus_. _suus_ would mean the subject’s own.",
+  "distractors": [
+   [
+    "Fīlium suum amat.",
+    "_suum_ would be his own son. This sentence means another man’s son: _eius_."
+   ],
+   [
+    "Fīlium suam amat.",
+    "_suam_ is feminine accusative, and _suus_ means his own anyway: _eius_."
+   ],
+   [
+    "Fīlium eī amat.",
+    "_eī_ is dative (“to him”). “His” is the genitive: _eius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.08",
+  "review": "unreviewed",
+  "en": "She loves her own daughter.",
+  "la": "Fīliam suam amat.",
+  "fill": "suam",
+  "skills": [
+   "pron.reflexive",
+   "pron.suus"
+  ],
+  "tag": "suam: her own",
+  "explain": "_suam_ agrees with _fīliam_ (feminine accusative). _suus_ takes its gender and case from the noun, not from the owner.",
+  "distractors": [
+   [
+    "Fīliam suum amat.",
+    "_suum_ is masculine. _fīliam_ is feminine: _suam_."
+   ],
+   [
+    "Fīliam suās amat.",
+    "_suās_ is plural. _fīliam_ is singular: _suam_."
+   ],
+   [
+    "Fīliam suī amat.",
+    "_suī_ is masculine genitive or plural. _fīliam_ is feminine singular: _suam_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.09",
+  "review": "unreviewed",
+  "en": "They love their own sons.",
+  "la": "Fīliōs suōs amant.",
+  "fill": "suōs",
+  "skills": [
+   "pron.reflexive",
+   "pron.suus"
+  ],
+  "tag": "suōs: their own",
+  "explain": "_suōs_ agrees with _fīliōs_ (masculine accusative plural). The owners are “they”, so _suus_, not _eōrum_.",
+  "distractors": [
+   [
+    "Fīliōs suōrum amant.",
+    "_suōrum_ is genitive. _fīliōs_ is accusative: _suōs_."
+   ],
+   [
+    "Fīliōs suās amant.",
+    "_suās_ is feminine. _fīliōs_ is masculine: _suōs_."
+   ],
+   [
+    "Fīliōs suum amant.",
+    "_suum_ is singular. _fīliōs_ is plural: _suōs_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.13.10",
+  "review": "unreviewed",
+  "en": "The soldiers defend themselves.",
+  "la": "Mīlitēs sē dēfendunt.",
+  "fill": "sē",
+  "skills": [
+   "pron.reflexive",
+   "case.acc.obj"
+  ],
+  "tag": "sē: themselves",
+  "explain": "_sē_ is the same for singular and plural: himself or themselves. The soldiers defend the soldiers.",
+  "distractors": [
+   [
+    "Mīlitēs eōs dēfendunt.",
+    "_eōs_ is “them”, other people. “Themselves” is _sē_."
+   ],
+   [
+    "Mīlitēs eum dēfendunt.",
+    "_eum_ is “him”, one other person. “Themselves” is _sē_."
+   ],
+   [
+    "Mīlitēs nōs dēfendunt.",
+    "_nōs_ is “ourselves”. The subject is “the soldiers”: _sē_."
+   ]
+  ]
+ }
+]

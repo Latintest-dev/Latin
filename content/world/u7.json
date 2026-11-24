@@ -1,0 +1,327 @@
+[
+ {
+  "id": "world.7.01",
+  "review": "unreviewed",
+  "en": "The journey is long.",
+  "la": "Iter longum est.",
+  "fill": "longum",
+  "skills": [
+   "adj.agree.gender",
+   "world.travel"
+  ],
+  "tag": "longum: long (neuter)",
+  "explain": "_iter_ is neuter, so the adjective is neuter: _longum_.",
+  "distractors": [
+   [
+    "Iter longus est.",
+    "_longus_ is masculine. _iter_ is neuter, so the adjective is neuter: _longum_."
+   ],
+   [
+    "Iter longa est.",
+    "_longa_ is feminine. _iter_ is neuter, so the adjective is neuter: _longum_."
+   ],
+   [
+    "Iter longī est.",
+    "_longī_ is genitive or plural. _iter_ is neuter, so the adjective is neuter: _longum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.02",
+  "review": "unreviewed",
+  "en": "We go on foot.",
+  "la": "Pedibus īmus.",
+  "fill": "Pedibus",
+  "skills": [
+   "abl.means",
+   "world.travel"
+  ],
+  "tag": "pedibus: on foot (with the feet)",
+  "explain": "The means takes the ablative plural: _Pedibus_.",
+  "distractors": [
+   [
+    "Pedēs īmus.",
+    "_Pedēs_ is nominative or accusative plural. The means takes the ablative plural: _Pedibus_."
+   ],
+   [
+    "Pedum īmus.",
+    "_Pedum_ is genitive plural. The means takes the ablative plural: _Pedibus_."
+   ],
+   [
+    "Pedī īmus.",
+    "_Pedī_ is dative singular. The means takes the ablative plural: _Pedibus_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.03",
+  "review": "unreviewed",
+  "en": "The road leads to the city.",
+  "la": "Via ad urbem dūcit.",
+  "fill": "urbem",
+  "skills": [
+   "prep.acc",
+   "world.travel"
+  ],
+  "tag": "ad urbem: to the city",
+  "explain": "_ad_ takes the accusative: _urbem_.",
+  "distractors": [
+   [
+    "Via ad urbe dūcit.",
+    "_urbe_ is ablative. _ad_ takes the accusative: _urbem_."
+   ],
+   [
+    "Via ad urbis dūcit.",
+    "_urbis_ is genitive. _ad_ takes the accusative: _urbem_."
+   ],
+   [
+    "Via ad urbī dūcit.",
+    "_urbī_ is dative. _ad_ takes the accusative: _urbem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.04",
+  "review": "unreviewed",
+  "en": "They go out of the city.",
+  "la": "Ex urbe abeunt.",
+  "fill": "urbe",
+  "skills": [
+   "prep.abl",
+   "world.travel"
+  ],
+  "tag": "ex urbe: out of the city",
+  "explain": "_ex_ takes the ablative: _urbe_.",
+  "distractors": [
+   [
+    "Ex urbem abeunt.",
+    "_urbem_ is accusative. _ex_ takes the ablative: _urbe_."
+   ],
+   [
+    "Ex urbis abeunt.",
+    "_urbis_ is genitive. _ex_ takes the ablative: _urbe_."
+   ],
+   [
+    "Ex urbī abeunt.",
+    "_urbī_ is dative. _ex_ takes the ablative: _urbe_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.05",
+  "review": "unreviewed",
+  "en": "The ship is in the harbor.",
+  "la": "Nāvis in portū est.",
+  "fill": "portū",
+  "skills": [
+   "case.abl.place",
+   "noun.4decl",
+   "world.travel"
+  ],
+  "tag": "in portū: in the harbor",
+  "explain": "After _in_ meaning “in”, use the ablative. _portus_ is fourth declension: _portū_.",
+  "distractors": [
+   [
+    "Nāvis in portum est.",
+    "_portum_ is accusative. After _in_ meaning “in”, use the ablative. _portus_ is fourth declension: _portū_."
+   ],
+   [
+    "Nāvis in portus est.",
+    "_portus_ is nominative or genitive. After _in_ meaning “in”, use the ablative. _portus_ is fourth declension: _portū_."
+   ],
+   [
+    "Nāvis in portuī est.",
+    "_portuī_ is dative. After _in_ meaning “in”, use the ablative. _portus_ is fourth declension: _portū_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.06",
+  "review": "unreviewed",
+  "en": "The fleet comes to the province.",
+  "la": "Classis ad prōvinciam venit.",
+  "fill": "prōvinciam",
+  "skills": [
+   "prep.acc",
+   "world.travel"
+  ],
+  "tag": "ad prōvinciam: to the province",
+  "explain": "_ad_ takes the accusative: _prōvinciam_.",
+  "distractors": [
+   [
+    "Classis ad prōvinciae venit.",
+    "_prōvinciae_ is genitive or dative. _ad_ takes the accusative: _prōvinciam_."
+   ],
+   [
+    "Classis ad prōvinciās venit.",
+    "_prōvinciās_ is accusative plural. _ad_ takes the accusative: _prōvinciam_."
+   ],
+   [
+    "Classis ad prōvinciā venit.",
+    "_prōvinciā_ is ablative. _ad_ takes the accusative: _prōvinciam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.07",
+  "review": "unreviewed",
+  "en": "The horseman comes from far away.",
+  "la": "Eques procul venit.",
+  "fill": "procul",
+  "skills": [
+   "adv.sequence",
+   "world.travel"
+  ],
+  "tag": "procul: from far away",
+  "explain": "The adverb for “far away” is _procul_: _procul_.",
+  "distractors": [
+   [
+    "Eques ibi venit.",
+    "_ibi_ is “there”. The adverb for “far away” is _procul_: _procul_."
+   ],
+   [
+    "Eques tunc venit.",
+    "_tunc_ is “then”. The adverb for “far away” is _procul_: _procul_."
+   ],
+   [
+    "Eques numquam venit.",
+    "_numquam_ is “never”. The adverb for “far away” is _procul_: _procul_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.08",
+  "review": "unreviewed",
+  "en": "He goes away from the province.",
+  "la": "Ā prōvinciā abit.",
+  "fill": "prōvinciā",
+  "skills": [
+   "prep.abl",
+   "world.travel"
+  ],
+  "tag": "ā prōvinciā: from the province",
+  "explain": "_ā_ takes the ablative: _prōvinciā_.",
+  "distractors": [
+   [
+    "Ā prōvinciam abit.",
+    "_prōvinciam_ is accusative. _ā_ takes the ablative: _prōvinciā_."
+   ],
+   [
+    "Ā prōvinciae abit.",
+    "_prōvinciae_ is genitive or dative. _ā_ takes the ablative: _prōvinciā_."
+   ],
+   [
+    "Ā prōvinciās abit.",
+    "_prōvinciās_ is accusative plural. _ā_ takes the ablative: _prōvinciā_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.09",
+  "review": "unreviewed",
+  "en": "We walk through the city.",
+  "la": "Per urbem ambulāmus.",
+  "fill": "urbem",
+  "skills": [
+   "prep.acc",
+   "world.travel"
+  ],
+  "tag": "per urbem: through the city",
+  "explain": "_per_ takes the accusative: _urbem_.",
+  "distractors": [
+   [
+    "Per urbe ambulāmus.",
+    "_urbe_ is ablative. _per_ takes the accusative: _urbem_."
+   ],
+   [
+    "Per urbis ambulāmus.",
+    "_urbis_ is genitive. _per_ takes the accusative: _urbem_."
+   ],
+   [
+    "Per urbēs ambulāmus.",
+    "_urbēs_ is accusative plural. _per_ takes the accusative: _urbem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.10",
+  "review": "unreviewed",
+  "en": "The envoy comes to Rome.",
+  "la": "Lēgātus Rōmam venit.",
+  "fill": "Rōmam",
+  "skills": [
+   "prep.motion",
+   "world.travel"
+  ],
+  "tag": "Rōmam: to Rome",
+  "explain": "With names of cities, “to” needs no preposition: just the accusative: _Rōmam_.",
+  "distractors": [
+   [
+    "Lēgātus Rōmae venit.",
+    "_Rōmae_ is genitive (or “at Rome”). With names of cities, “to” needs no preposition: just the accusative: _Rōmam_."
+   ],
+   [
+    "Lēgātus Rōmā venit.",
+    "_Rōmā_ is ablative. With names of cities, “to” needs no preposition: just the accusative: _Rōmam_."
+   ],
+   [
+    "Lēgātus Rōmānus venit.",
+    "_Rōmānus_ is the adjective “Roman”, not “to Rome”. With names of cities, “to” needs no preposition: just the accusative: _Rōmam_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.11",
+  "review": "unreviewed",
+  "en": "The road to the sea is long.",
+  "la": "Via ad mare longa est.",
+  "fill": "longa",
+  "skills": [
+   "adj.agree.gender",
+   "world.travel"
+  ],
+  "tag": "longa: long (feminine)",
+  "explain": "_via_ is feminine, so the adjective is feminine: _longa_.",
+  "distractors": [
+   [
+    "Via ad mare longus est.",
+    "_longus_ is masculine. _via_ is feminine, so the adjective is feminine: _longa_."
+   ],
+   [
+    "Via ad mare longum est.",
+    "_longum_ is neuter. _via_ is feminine, so the adjective is feminine: _longa_."
+   ],
+   [
+    "Via ad mare longae est.",
+    "_longae_ is genitive or plural. _via_ is feminine, so the adjective is feminine: _longa_."
+   ]
+  ]
+ },
+ {
+  "id": "world.7.12",
+  "review": "unreviewed",
+  "en": "The soldiers make a march.",
+  "la": "Mīlitēs iter faciunt.",
+  "fill": "iter",
+  "skills": [
+   "case.acc.obj",
+   "world.travel"
+  ],
+  "tag": "iter: a march, a journey (object)",
+  "explain": "The thing made is accusative; _iter_ is neuter, so nominative and accusative are alike: _iter_.",
+  "distractors": [
+   [
+    "Mīlitēs itineris faciunt.",
+    "_itineris_ is genitive. The thing made is accusative; _iter_ is neuter, so nominative and accusative are alike: _iter_."
+   ],
+   [
+    "Mīlitēs itinerī faciunt.",
+    "_itinerī_ is dative. The thing made is accusative; _iter_ is neuter, so nominative and accusative are alike: _iter_."
+   ],
+   [
+    "Mīlitēs itinere faciunt.",
+    "_itinere_ is ablative. The thing made is accusative; _iter_ is neuter, so nominative and accusative are alike: _iter_."
+   ]
+  ]
+ }
+]

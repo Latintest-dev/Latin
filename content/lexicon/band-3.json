@@ -178,7 +178,6 @@
 {"id":"ictus","lemma":"ictus","pos":"noun","gloss":"blow, stroke; musical/metrical beat; measure (music)","parts":"ictus (m)","vocabOnly":true,"gender":"m"},
 {"id":"citus","lemma":"citus","pos":"adj","gloss":"quick, swift, rapid","parts":"citus, cita, citum","vocabOnly":true},
 {"id":"labos","lemma":"labos","pos":"noun","gloss":"labor/toil/exertion/effort/work; task/undertaking","parts":"labos, laboris (m)","vocabOnly":true,"gender":"m"},
-{"id":"minus","lemma":"minus","pos":"adv","gloss":"less; not so well; not quite","parts":"minus","vocabOnly":true},
 {"id":"coquo","lemma":"coquo","pos":"verb","gloss":"to cook; boil, fry, bake; burn, parch (sun); stir up","parts":"coquo, coquere, coctum","vocabOnly":true},
 {"id":"turris","lemma":"turris","pos":"noun","gloss":"tower; high building, palace, citadel; dove tower, dove cot","parts":"turris (f)","vocabOnly":true,"gender":"f"},
 {"id":"cratis","lemma":"cratis","pos":"noun","gloss":"wickerwork; bundle of brush, fascine","parts":"cratis (f)","vocabOnly":true,"gender":"f"},

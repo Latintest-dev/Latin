@@ -2,6 +2,23 @@
 
 Newest first. Version numbers live in `js/version.js`.
 
+## 0.9.0
+- **About 300 more words are full entries** (`content/lexicon/pronouns.json`, `common.json`): hic, ille, is, īdem, ipse,
+  quī, sē, suus, alius, comparatives and superlatives (melior, maior, minor, peior, optimus, maximus...), about 60
+  verbs (ferō, adsum, absum, pōnō, iubeō...), 150 nouns and adjectives, and the common prepositions and conjunctions.
+  They can now appear in sentences and have full forms tables. Of the 1,000 most frequent words, 40% (was 29%) occur
+  in a sentence, and sentences use 517 different words (was 395).
+- **Eight new Grammar lessons** (units 8 to 15, 86 sentences): this (hic), that and him/her (ille, is), the same and
+  himself (īdem, ipse), who and which (quī), whose, to whom, with which, himself and his own (sē, suus), comparison
+  (melior, optimus, quam), and with, by, because of (the ablative at work).
+- **A new track, The Roman world** (8 lessons, 96 sentences): the state, the army, family and home, gods and fate,
+  nature, mind and speech, travel, time.
+- **Three new stages on the Path** (This, that, who / Himself, better, by means / The Roman world): 15 stages, 67 lessons.
+- Word cards no longer offer the same spelling twice as wrong options (homographs such as nē / nē).
+- The word list is 5,026 words, so it now has 101 units; the last holds the remainder.
+- Tests: `tests/v09.test.mjs` (paradigms, spelling of comparatives, no duplicate word ids, plan shape); end-to-end checks
+  read the number of stages and tracks from the content instead of hard-coding them.
+
 ## 0.8.0
 - **Faster start-up**: the 5,000 word cards are built only when first used (about 3.7 s to about 0.15 s of loading in
   Node), and content files are fetched in parallel.

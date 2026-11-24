@@ -52,8 +52,8 @@ Review is spaced (1, 2, 4, 8, 16, 32 days) with per-skill strength, "practice we
 
 - **Today**: one big **Continue** button, today's meter, the lesson Continue is on, what is due, and buttons for the
   speed round, weak spots and your mistakes.
-- **Path**: the plan, in twelve stages (First steps, I want / I do, Yesterday and tomorrow, ... The genitive in depth,
-  Latin on the wall). You are here is open; each stage lists its lessons from every track in the order to study them.
+- **Path**: the plan, in fifteen stages (First steps, I want / I do, Yesterday and tomorrow, ... Latin on the wall,
+  This, that, who, Himself, better, by means, The Roman world). You are here is open; each stage lists its lessons from every track in the order to study them.
   A locked lesson says exactly what to do ("Meet 3 more sentences in "X" (Core grammar) to unlock this") with a
   **Go there** button.
 - **Words**: *Meanings* (word cards: your lesson words first, then the frequency list, plus a quick quiz),

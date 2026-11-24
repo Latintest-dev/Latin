@@ -1,0 +1,299 @@
+[
+ {
+  "id": "grammar.8.01",
+  "review": "unreviewed",
+  "en": "This man is good.",
+  "la": "Hic vir bonus est.",
+  "fill": "Hic",
+  "skills": [
+   "pron.hic",
+   "case.nom.subj"
+  ],
+  "tag": "hic: this (masculine)",
+  "explain": "_hic_ is “this” for a masculine noun as the subject. _vir_ is masculine, so _hic vir_.",
+  "distractors": [
+   [
+    "Haec vir bonus est.",
+    "_haec_ is feminine (“this girl”). _vir_ is masculine: _hic_."
+   ],
+   [
+    "Hoc vir bonus est.",
+    "_hoc_ is neuter (“this thing”). _vir_ is masculine: _hic_."
+   ],
+   [
+    "Hunc vir bonus est.",
+    "_hunc_ is accusative (the thing seen). A subject needs the nominative: _hic_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.02",
+  "review": "unreviewed",
+  "en": "This girl is good.",
+  "la": "Haec puella bona est.",
+  "fill": "Haec",
+  "skills": [
+   "pron.hic",
+   "case.nom.subj"
+  ],
+  "tag": "haec: this (feminine)",
+  "explain": "_haec_ is “this” for a feminine noun. _puella_ is feminine, so _haec puella_.",
+  "distractors": [
+   [
+    "Hic puella bona est.",
+    "_hic_ is masculine (“this man”). _puella_ is feminine: _haec_."
+   ],
+   [
+    "Hoc puella bona est.",
+    "_hoc_ is neuter. _puella_ is feminine: _haec_."
+   ],
+   [
+    "Hanc puella bona est.",
+    "_hanc_ is accusative (the thing seen). A subject needs the nominative: _haec_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.03",
+  "review": "unreviewed",
+  "en": "This word is true.",
+  "la": "Hoc verbum vērum est.",
+  "fill": "Hoc",
+  "skills": [
+   "pron.hic",
+   "case.nom.subj"
+  ],
+  "tag": "hoc: this (neuter)",
+  "explain": "_hoc_ is “this” for a neuter noun. _verbum_ is neuter, so _hoc verbum_.",
+  "distractors": [
+   [
+    "Hic verbum vērum est.",
+    "_hic_ is masculine. _verbum_ is neuter: _hoc_."
+   ],
+   [
+    "Haec verbum vērum est.",
+    "_haec_ is feminine (singular). _verbum_ is neuter: _hoc_."
+   ],
+   [
+    "Hunc verbum vērum est.",
+    "_hunc_ is masculine accusative. A neuter subject needs _hoc_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.04",
+  "review": "unreviewed",
+  "en": "I see this man.",
+  "la": "Hunc virum videō.",
+  "fill": "Hunc",
+  "skills": [
+   "pron.hic",
+   "case.acc.obj"
+  ],
+  "tag": "hunc: this (object, masculine)",
+  "explain": "The man is the thing seen, so _virum_ and _hunc_ are both accusative.",
+  "distractors": [
+   [
+    "Hic virum videō.",
+    "_hic_ is nominative: the one doing. The thing seen is accusative: _hunc_."
+   ],
+   [
+    "Hanc virum videō.",
+    "_hanc_ is feminine accusative. _virum_ is masculine: _hunc_."
+   ],
+   [
+    "Huic virum videō.",
+    "_huic_ is dative (“to this”). The thing seen is accusative: _hunc_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.05",
+  "review": "unreviewed",
+  "en": "I see this girl.",
+  "la": "Hanc puellam videō.",
+  "fill": "Hanc",
+  "skills": [
+   "pron.hic",
+   "case.acc.obj"
+  ],
+  "tag": "hanc: this (object, feminine)",
+  "explain": "The girl is the thing seen, so _puellam_ and _hanc_ are both accusative feminine.",
+  "distractors": [
+   [
+    "Haec puellam videō.",
+    "_haec_ is nominative. The thing seen is accusative: _hanc_."
+   ],
+   [
+    "Hunc puellam videō.",
+    "_hunc_ is masculine accusative. _puellam_ is feminine: _hanc_."
+   ],
+   [
+    "Huic puellam videō.",
+    "_huic_ is dative (“to this”). The thing seen is accusative: _hanc_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.06",
+  "review": "unreviewed",
+  "en": "I give this book to this boy.",
+  "la": "Huic puerō hunc librum dō.",
+  "fill": "Huic",
+  "skills": [
+   "pron.hic",
+   "case.dat.recipient"
+  ],
+  "tag": "huic: to this",
+  "explain": "_huic_ is the dative of _hic_: “to this”. The boy receives the book, so _huic puerō_ (dative) and _hunc librum_ (accusative).",
+  "distractors": [
+   [
+    "Hunc puerō hunc librum dō.",
+    "_hunc_ is accusative. The one receiving is dative: _huic_."
+   ],
+   [
+    "Hic puerō hunc librum dō.",
+    "_hic_ is nominative. The one receiving is dative: _huic_."
+   ],
+   [
+    "Huius puerō hunc librum dō.",
+    "_huius_ is genitive (“of this”). To this boy is dative: _huic_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.07",
+  "review": "unreviewed",
+  "en": "The face of this man is good.",
+  "la": "Vultus huius virī bonus est.",
+  "fill": "huius",
+  "skills": [
+   "pron.hic",
+   "case.gen"
+  ],
+  "tag": "huius: of this",
+  "explain": "_huius_ is the genitive of _hic_ (“of this”), for all three genders. It goes with _virī_, which is also genitive.",
+  "distractors": [
+   [
+    "Vultus hunc virī bonus est.",
+    "_hunc_ is accusative. “Of this man” is genitive: _huius_."
+   ],
+   [
+    "Vultus huic virī bonus est.",
+    "_huic_ is dative (“to this”). “Of this man” is genitive: _huius_."
+   ],
+   [
+    "Vultus hic virī bonus est.",
+    "_hic_ is nominative. “Of this man” is genitive: _huius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.08",
+  "review": "unreviewed",
+  "en": "These men are Romans.",
+  "la": "Hī virī Rōmānī sunt.",
+  "fill": "Hī",
+  "skills": [
+   "pron.hic",
+   "case.nom.subj"
+  ],
+  "tag": "hī: these (masculine)",
+  "explain": "_hī_ is “these” for masculine plural nouns as the subject. _virī_ is masculine plural nominative.",
+  "distractors": [
+   [
+    "Hae virī Rōmānī sunt.",
+    "_hae_ is feminine plural (“these women”). _virī_ is masculine: _hī_."
+   ],
+   [
+    "Haec virī Rōmānī sunt.",
+    "_haec_ is neuter plural (“these things”). _virī_ is masculine: _hī_."
+   ],
+   [
+    "Hōs virī Rōmānī sunt.",
+    "_hōs_ is accusative plural (the things seen). A subject needs _hī_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.09",
+  "review": "unreviewed",
+  "en": "These things are good.",
+  "la": "Haec bona sunt.",
+  "fill": "Haec",
+  "skills": [
+   "pron.hic",
+   "case.nom.subj"
+  ],
+  "tag": "haec: these (neuter plural)",
+  "explain": "In the neuter plural, _hic_ and the adjective both end in _-a_: _haec bona_ (these good things). _haec_ is also the feminine singular, but here the plural meaning is clear.",
+  "distractors": [
+   [
+    "Hī bona sunt.",
+    "_hī_ is masculine plural. _bona_ is neuter: _haec_."
+   ],
+   [
+    "Hae bona sunt.",
+    "_hae_ is feminine plural. _bona_ is neuter: _haec_."
+   ],
+   [
+    "Hōs bona sunt.",
+    "_hōs_ is masculine accusative plural. The subject needs the nominative: _haec_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.10",
+  "review": "unreviewed",
+  "en": "I live in this city.",
+  "la": "In hāc urbe habitō.",
+  "fill": "hāc",
+  "skills": [
+   "pron.hic",
+   "case.abl.place"
+  ],
+  "tag": "hāc: this (ablative, feminine)",
+  "explain": "_in_ meaning “in” takes the ablative. _urbe_ is ablative feminine, so “this” is _hāc_.",
+  "distractors": [
+   [
+    "In hōc urbe habitō.",
+    "_hōc_ is ablative masculine or neuter. _urbe_ is feminine: _hāc_."
+   ],
+   [
+    "In hanc urbe habitō.",
+    "_hanc_ is accusative. After _in_ meaning “in”, use the ablative: _hāc_."
+   ],
+   [
+    "In huius urbe habitō.",
+    "_huius_ is genitive (“of this”). After _in_ meaning “in”, use the ablative: _hāc_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.8.11",
+  "review": "unreviewed",
+  "en": "I fight with this sword.",
+  "la": "Hōc gladiō pugnō.",
+  "fill": "Hōc",
+  "skills": [
+   "pron.hic",
+   "case.abl.instrument"
+  ],
+  "tag": "hōc: this (ablative, masculine)",
+  "explain": "The tool you use goes in the ablative: _gladiō_. The pronoun agrees: _hōc_ (masculine ablative).",
+  "distractors": [
+   [
+    "Hunc gladiō pugnō.",
+    "_hunc_ is accusative. A tool takes the ablative: _hōc gladiō_."
+   ],
+   [
+    "Hic gladiō pugnō.",
+    "_hic_ is nominative. A tool takes the ablative: _hōc gladiō_."
+   ],
+   [
+    "Hōs gladiō pugnō.",
+    "_hōs_ is accusative plural. A single sword is ablative singular: _hōc_."
+   ]
+  ]
+ }
+]

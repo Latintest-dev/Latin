@@ -1,61 +1,117 @@
 {
-  "id": "grammar",
-  "name": "Grammar focus",
-  "blurb": "Short drills on one point of grammar at a time: the genitive in all its uses, the fourth and fifth declensions, and the pronouns for I, you and we.",
-  "skillsFile": "skills.json",
-  "units": [
-    {
-      "id": "1",
-      "file": "u1.json",
-      "title": "Of the whole",
-      "blurb": "satis aquae, multum vīnī, nihil novī",
-      "intro": "Many Latin words for an amount are followed by the genitive, where English says “of” or says nothing: _satis aquae_ is “enough (of) water”, _multum vīnī_ “a lot of wine”, _nihil novī_ “nothing (of) new”. The word for the amount (_satis_, _multum_, _parum_, _paulum_, _plūs_, _nihil_, _quantum_) does not change; the thing measured goes in the genitive. This is called the partitive genitive (the genitive of the whole): you name a part, and the genitive names the whole it is part of. It is how _Quid novī?_ (What's new?) is built: “What of new?”."
-    },
-    {
-      "id": "2",
-      "file": "u2.json",
-      "title": "What kind, how much",
-      "blurb": "vir magnae virtūtis, magnī est",
-      "intro": "The genitive can describe a person or thing, always with an adjective: _vir magnae virtūtis_ is “a man of great courage”. The adjective agrees with the noun in the genitive (_magnae virtūtis_: both feminine genitive singular), and the whole phrase says what kind of person he is. It is also how Latin says what something is worth: _magnī_ (of great value), _parvī_ (of little value), _tantī_ (of so much value), _quantī_ (of how much value). _Hic liber magnī est_ is “this book is worth a lot”. Careful: _magnum est_ would mean “it is big”."
-    },
-    {
-      "id": "3",
-      "file": "u3.json",
-      "title": "Love of, fear of, full of",
-      "blurb": "amor patriae, plēnus spēī",
-      "intro": "A genitive after a noun can say what a feeling is directed at: _amor patriae_ is “love of country”, _timor mortis_ “fear of death”, _metus hostium_ “fear of the enemies”. This is the objective genitive: the genitive is the target of the feeling. After some adjectives the genitive says what you are full of, eager for, or skilled at: _plēnus spēī_ (full of hope), _cupidus glōriae_ (eager for glory), _avidus pecūniae_ (greedy for money), _perītus bellī_ (experienced in war)."
-    },
-    {
-      "id": "4",
-      "file": "u4.json",
-      "title": "Remembering, and “of me, of you”",
-      "blurb": "meminī tuī, tuī memor sum",
-      "intro": "_Meminī_ (I remember) is a verb that looks perfect but means the present. What you remember goes in the genitive: _Meminī patris_ (I remember my father). The same goes for _memor_ (mindful of): _Tuī memor sum_ (I am mindful of you). With “me” and “you” the genitive has its own forms: _meī_ (of me), _tuī_ (of you), _nostrī_ (of us), _vestrī_ (of you all). Do not confuse _tuī_ (of you) with _tuus_ (your)."
-    },
-    {
-      "id": "5",
-      "file": "u5.json",
-      "title": "The fourth declension",
-      "blurb": "manus, exercitus, senātus, fructus",
-      "intro": "A group of nouns in _-us_ has a different set of endings from _amīcus_ and _lupus_. They are the fourth declension: _manus_ (hand), _exercitus_ (army), _senātus_ (senate), _fructus_ (fruit), _metus_ (fear), _portus_ (harbor), _lacus_ (lake). The genitive singular is _-ūs_ (_manūs_), and the ablative singular is _-ū_ (_manū_). Plural: _-ūs_, _-uum_, _-ibus_. Most are masculine; _manus_ is a famous feminine exception, so its adjective is feminine (_manus pulchra_)."
-    },
-    {
-      "id": "6",
-      "file": "u6.json",
-      "title": "The fifth declension",
-      "blurb": "diēs, rēs, spēs, fidēs",
-      "intro": "The fifth declension is small but very common: _diēs_ (day), _rēs_ (thing, matter), _spēs_ (hope), _fidēs_ (trust, faith), _faciēs_ (face). Nominative _-ēs_, accusative _-em_ (_diem_, _rem_, _spem_), genitive and dative _-eī_ (_reī_, _speī_, _fideī_; after a vowel _-ēī_: _diēī_, _faciēī_), ablative _-ē_. Almost all are feminine; _diēs_ is usually masculine. Latin says how long something lasts with the accusative: _multōs diēs labōrō_ (I work for many days)."
-    },
-    {
-      "id": "7",
-      "file": "u7.json",
-      "title": "I, you, we: all the cases",
-      "blurb": "tē videō, mihi dat, tēcum",
-      "intro": "The words for I, you, we and you all change with the case, just like nouns. Accusative (the thing you see): _mē_ (me), _tē_ (you), _nōs_ (us), _vōs_ (you all). Dative (to or for): _mihi_, _tibi_, _nōbīs_, _vōbīs_. Genitive (of): _meī_, _tuī_, _nostrī_, _vestrī_. The nominative (_ego_, _tū_, _nōs_, _vōs_) is only used for emphasis, because the verb ending already says who. With _cum_ (with), the pronoun and _cum_ join into one word: _mēcum_, _tēcum_, _nōbīscum_, _vōbīscum_."
-    }
-  ],
-  "requires": {
-    "pack": "core",
-    "unit": "9"
+ "id": "grammar",
+ "name": "Grammar focus",
+ "blurb": "Short drills on one point of grammar at a time: the genitive, the fourth and fifth declensions, the pronouns (I, you, this, that, who, himself), comparison, and the ablative.",
+ "skillsFile": "skills.json",
+ "units": [
+  {
+   "id": "1",
+   "file": "u1.json",
+   "title": "Of the whole",
+   "blurb": "satis aquae, multum vīnī, nihil novī",
+   "intro": "Many Latin words for an amount are followed by the genitive, where English says “of” or says nothing: _satis aquae_ is “enough (of) water”, _multum vīnī_ “a lot of wine”, _nihil novī_ “nothing (of) new”. The word for the amount (_satis_, _multum_, _parum_, _paulum_, _plūs_, _nihil_, _quantum_) does not change; the thing measured goes in the genitive. This is called the partitive genitive (the genitive of the whole): you name a part, and the genitive names the whole it is part of. It is how _Quid novī?_ (What's new?) is built: “What of new?”."
+  },
+  {
+   "id": "2",
+   "file": "u2.json",
+   "title": "What kind, how much",
+   "blurb": "vir magnae virtūtis, magnī est",
+   "intro": "The genitive can describe a person or thing, always with an adjective: _vir magnae virtūtis_ is “a man of great courage”. The adjective agrees with the noun in the genitive (_magnae virtūtis_: both feminine genitive singular), and the whole phrase says what kind of person he is. It is also how Latin says what something is worth: _magnī_ (of great value), _parvī_ (of little value), _tantī_ (of so much value), _quantī_ (of how much value). _Hic liber magnī est_ is “this book is worth a lot”. Careful: _magnum est_ would mean “it is big”."
+  },
+  {
+   "id": "3",
+   "file": "u3.json",
+   "title": "Love of, fear of, full of",
+   "blurb": "amor patriae, plēnus spēī",
+   "intro": "A genitive after a noun can say what a feeling is directed at: _amor patriae_ is “love of country”, _timor mortis_ “fear of death”, _metus hostium_ “fear of the enemies”. This is the objective genitive: the genitive is the target of the feeling. After some adjectives the genitive says what you are full of, eager for, or skilled at: _plēnus spēī_ (full of hope), _cupidus glōriae_ (eager for glory), _avidus pecūniae_ (greedy for money), _perītus bellī_ (experienced in war)."
+  },
+  {
+   "id": "4",
+   "file": "u4.json",
+   "title": "Remembering, and “of me, of you”",
+   "blurb": "meminī tuī, tuī memor sum",
+   "intro": "_Meminī_ (I remember) is a verb that looks perfect but means the present. What you remember goes in the genitive: _Meminī patris_ (I remember my father). The same goes for _memor_ (mindful of): _Tuī memor sum_ (I am mindful of you). With “me” and “you” the genitive has its own forms: _meī_ (of me), _tuī_ (of you), _nostrī_ (of us), _vestrī_ (of you all). Do not confuse _tuī_ (of you) with _tuus_ (your)."
+  },
+  {
+   "id": "5",
+   "file": "u5.json",
+   "title": "The fourth declension",
+   "blurb": "manus, exercitus, senātus, fructus",
+   "intro": "A group of nouns in _-us_ has a different set of endings from _amīcus_ and _lupus_. They are the fourth declension: _manus_ (hand), _exercitus_ (army), _senātus_ (senate), _fructus_ (fruit), _metus_ (fear), _portus_ (harbor), _lacus_ (lake). The genitive singular is _-ūs_ (_manūs_), and the ablative singular is _-ū_ (_manū_). Plural: _-ūs_, _-uum_, _-ibus_. Most are masculine; _manus_ is a famous feminine exception, so its adjective is feminine (_manus pulchra_)."
+  },
+  {
+   "id": "6",
+   "file": "u6.json",
+   "title": "The fifth declension",
+   "blurb": "diēs, rēs, spēs, fidēs",
+   "intro": "The fifth declension is small but very common: _diēs_ (day), _rēs_ (thing, matter), _spēs_ (hope), _fidēs_ (trust, faith), _faciēs_ (face). Nominative _-ēs_, accusative _-em_ (_diem_, _rem_, _spem_), genitive and dative _-eī_ (_reī_, _speī_, _fideī_; after a vowel _-ēī_: _diēī_, _faciēī_), ablative _-ē_. Almost all are feminine; _diēs_ is usually masculine. Latin says how long something lasts with the accusative: _multōs diēs labōrō_ (I work for many days)."
+  },
+  {
+   "id": "7",
+   "file": "u7.json",
+   "title": "I, you, we: all the cases",
+   "blurb": "tē videō, mihi dat, tēcum",
+   "intro": "The words for I, you, we and you all change with the case, just like nouns. Accusative (the thing you see): _mē_ (me), _tē_ (you), _nōs_ (us), _vōs_ (you all). Dative (to or for): _mihi_, _tibi_, _nōbīs_, _vōbīs_. Genitive (of): _meī_, _tuī_, _nostrī_, _vestrī_. The nominative (_ego_, _tū_, _nōs_, _vōs_) is only used for emphasis, because the verb ending already says who. With _cum_ (with), the pronoun and _cum_ join into one word: _mēcum_, _tēcum_, _nōbīscum_, _vōbīscum_."
+  },
+  {
+   "id": "8",
+   "file": "u8.json",
+   "title": "This: hic, haec, hoc",
+   "blurb": "hic vir, haec puella, hoc verbum",
+   "intro": "The word for “this” changes with gender, number and case. Masculine _hic_, feminine _haec_, neuter _hoc_. Accusative: _hunc_, _hanc_, _hoc_. Genitive (all genders): _huius_. Dative: _huic_. Ablative: _hōc_, _hāc_, _hōc_. Plural nominative: _hī_, _hae_, _haec_. It points at what is near the speaker: _hic vir_ is “this man here”. Notice that _haec_ means both “this” (feminine singular) and “these” (neuter plural); the noun beside it tells you which."
+  },
+  {
+   "id": "9",
+   "file": "u9.json",
+   "title": "That, him, her: ille and is",
+   "blurb": "ille vir, eum videō, fīlius eius",
+   "intro": "_ille, illa, illud_ is “that” (the one over there) and it declines just like _hic_ except for the genitive _illīus_ and dative _illī_. Latin has no word for “he” or “him” that is separate from these: it uses _is, ea, id_. _eum_ is “him”, _eam_ is “her”, _eōs_ is “them”. The genitive _eius_ means “his, her, its” when the owner is another person: _fīlius eius_ (his son). Together, _hic … ille_ means “this one … that one”."
+  },
+  {
+   "id": "10",
+   "file": "u10.json",
+   "title": "The same and himself: īdem, ipse",
+   "blurb": "īdem vir, ipse vir",
+   "intro": "_īdem, eadem, idem_ is _is_ plus _-dem_ and means “the same”: _īdem vir_, _eadem puella_. Before _-dem_ an _m_ becomes _n_: _eundem_, _eandem_, _eōrundem_. _ipse, ipsa, ipsum_ means “himself, herself, itself” for emphasis: _ipse vir_ (the man himself). It declines like _ille_ (genitive _ipsīus_, dative _ipsī_) and always agrees with the noun it stresses."
+  },
+  {
+   "id": "11",
+   "file": "u11.json",
+   "title": "Who, which: the relative quī",
+   "blurb": "vir quī ambulat",
+   "intro": "The relative pronoun _quī, quae, quod_ begins a clause that describes a noun: _vir quī ambulat_ (the man who is walking). Two rules decide its form. Its gender and number come from the noun it describes. Its case comes from its own clause: if it is the one acting, nominative; if it is the thing seen, accusative. _vir quem videō_: _quem_ is masculine singular because of _vir_ and accusative because I see him."
+  },
+  {
+   "id": "12",
+   "file": "u12.json",
+   "title": "Whose, to whom, with which",
+   "blurb": "cuius fīlius, cui dō, cum quō",
+   "intro": "The same relative pronoun has all the other cases too. Genitive (whose): _cuius_ (plural _quōrum, quārum_). Dative (to whom): _cui_ (plural _quibus_). Ablative: _quō, quā, quō_ (plural _quibus_). With _cum_ the preposition stays separate (_cum quō_), unlike with _mē, tē, sē_ where it joins on (_mēcum_). Case still comes from the relative clause, gender and number from the noun described."
+  },
+  {
+   "id": "13",
+   "file": "u13.json",
+   "title": "Himself and his own: sē and suus",
+   "blurb": "sē amat, fīlium suum amat",
+   "intro": "_sē_ is the pronoun that points back to the subject of its own clause: himself, herself, themselves. Accusative and ablative _sē_, dative _sibi_, genitive _suī_; with _cum_ it joins on: _sēcum_. For I and you there is no special form: _mē_ and _tē_ do the job. The possessive _suus, sua, suum_ means “his own, her own, their own”. It takes gender, number and case from the noun it goes with, not from the owner. To say “his” about someone else, Latin uses _eius_ (or _eōrum_ for “their”)."
+  },
+  {
+   "id": "14",
+   "file": "u14.json",
+   "title": "Better, biggest, more than",
+   "blurb": "melior quam, optimus, maior",
+   "intro": "Latin makes comparisons by changing the adjective. The comparative ends in _-ior_ (_melior_, better) and the superlative in _-issimus_ or irregular forms (_optimus_, best). Common irregular ones: _bonus, melior, optimus_; _malus, peior, pessimus_; _magnus, maior, maximus_; _parvus, minor, minimus_. “Than” is _quam_, with both things in the same case, or the ablative alone: _puella puerō melior_. The adverbs are _melius_ (better), _peius_ (worse), _magis_ (more), _minus_ (less)."
+  },
+  {
+   "id": "15",
+   "file": "u15.json",
+   "title": "With, by, because of: the ablative at work",
+   "blurb": "gladiō, cum cūrā, sine aquā",
+   "intro": "The ablative does many jobs. A tool or means takes the bare ablative (_gladiō necat_, _manū scrībō_). How you do something is manner: usually _cum_ + ablative (_cum cūrā_). A feeling that causes an action can be a bare ablative (_timōre tacet_). Many prepositions take the ablative: _cum_ (with), _sine_ (without), _dē_ (about), _ē_ or _ex_ (out of), _ā_ or _ab_ (from, by), _in_ (in), _sub_ (under). Others take the accusative: _propter_ (because of), _ob_ (because of), _ad_, _per_, _inter_, _contrā_."
   }
+ ],
+ "requires": {
+  "pack": "core",
+  "unit": "9"
+ }
 }

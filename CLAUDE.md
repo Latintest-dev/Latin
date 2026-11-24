@@ -48,11 +48,12 @@ Look at `CHANGELOG.md` (what exists), `docs/FRAMEWORK.md` (how to extend), `docs
 ## Roadmap (suggested order)
 
 1. Review and fix: ask Ryan to use "Report a problem"; run `tools/flags.mjs` on his export and fix what he flagged.
-2. **Promote high-frequency words** from the list files to full lexicon entries so they can appear in sentences
-   (`node tools/coverage.mjs` shows which top words no sentence uses yet).
-3. More sentences for the words he is meeting; more units in Grammar focus.
-4. Advanced grammar: demonstratives (*hic, ille, is*), relative clauses, the subjunctive, participles, ablative
-   absolute, indirect statement. Each = a unit file + a `pack.json` line + a `curriculum.json` stage row.
+2. **Promote more high-frequency words** from the list files to full lexicon entries (done for about 300 in v0.9;
+   `node tools/coverage.mjs 1000` shows which top words no sentence uses yet: quis, quisque, quīdam, uterque, omnis, ...).
+3. More sentences for the words he is meeting; more units in Grammar focus and The Roman world.
+4. Advanced grammar (v0.9 did demonstratives, relatives, reflexives, comparison, ablative uses): the subjunctive,
+   participles, ablative absolute, indirect statement, indefinites (*quis, quisque, quīdam*). Each = a unit file + a
+   `pack.json` line + a `curriculum.json` stage row.
 5. Reading: short graded passages as a new item kind (one row in `ITEM_KINDS`).
 
 ## Honest limits

@@ -15,8 +15,9 @@ with sync_playwright() as p:
     check('home shows today strip', '0' in txt and 'answers today' in txt and 'No streak yet' in txt, txt.replace('\n', ' | '))
     check('speed round locked at first', page.is_disabled('.btn.speed'))
     open_path(page)
-    check('the plan lists twelve stages', page.locator('details.stage').count() == 12)
-    check('every sentence track has lessons on the Path', len({c for c in page.locator('.lesson .track-chip').all_inner_texts()}) == 8, str(set(page.locator('.lesson .track-chip').all_inner_texts())))
+    planned = page.evaluate("() => window.__app.content.stages.length")
+    check('the plan lists every stage of the curriculum', page.locator('details.stage').count() == planned and planned >= 15, str(planned))
+    check('every sentence track has lessons on the Path', len({c for c in page.locator('.lesson .track-chip').all_inner_texts()}) == page.evaluate("() => window.__app.content.packs.filter(p => !p.vocab).length"), str(set(page.locator('.lesson .track-chip').all_inner_texts())))
     open_app(page)
     replay_btns = '.unit-btns button:is(:has-text("Narrate it"), :has-text("Run the drill"), :has-text("Play it"))'
     check('no replay buttons before anything is learned', page.locator(replay_btns).count() == 0)

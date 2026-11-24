@@ -1,0 +1,327 @@
+[
+ {
+  "id": "world.6.01",
+  "review": "unreviewed",
+  "en": "I think about the matter.",
+  "la": "Dē rē cōgitō.",
+  "fill": "rē",
+  "skills": [
+   "prep.abl",
+   "noun.5decl",
+   "world.mind"
+  ],
+  "tag": "dē rē: about the matter",
+  "explain": "_dē_ takes the ablative. _rēs_ is fifth declension: _rē_.",
+  "distractors": [
+   [
+    "Dē rem cōgitō.",
+    "_rem_ is accusative. _dē_ takes the ablative. _rēs_ is fifth declension: _rē_."
+   ],
+   [
+    "Dē reī cōgitō.",
+    "_reī_ is genitive or dative. _dē_ takes the ablative. _rēs_ is fifth declension: _rē_."
+   ],
+   [
+    "Dē rēs cōgitō.",
+    "_rēs_ is nominative. _dē_ takes the ablative. _rēs_ is fifth declension: _rē_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.02",
+  "review": "unreviewed",
+  "en": "The mind is greater than the body.",
+  "la": "Animus corpore maior est.",
+  "fill": "corpore",
+  "skills": [
+   "comp.abl",
+   "world.mind"
+  ],
+  "tag": "corpore: than the body",
+  "explain": "After a comparative without _quam_, the thing compared is ablative: _corpore_.",
+  "distractors": [
+   [
+    "Animus corpus maior est.",
+    "_corpus_ is nominative or accusative. After a comparative without _quam_, the thing compared is ablative: _corpore_."
+   ],
+   [
+    "Animus corporis maior est.",
+    "_corporis_ is genitive. After a comparative without _quam_, the thing compared is ablative: _corpore_."
+   ],
+   [
+    "Animus corporī maior est.",
+    "_corporī_ is dative. After a comparative without _quam_, the thing compared is ablative: _corpore_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.03",
+  "review": "unreviewed",
+  "en": "I do not doubt.",
+  "la": "Nōn dubitō.",
+  "fill": "dubitō",
+  "skills": [
+   "verb.person",
+   "world.mind"
+  ],
+  "tag": "dubitō: I doubt",
+  "explain": "The subject is “I”, so the ending is _-ō_: _dubitō_.",
+  "distractors": [
+   [
+    "Nōn dubitās.",
+    "_dubitās_ is “you doubt”. The subject is “I”, so the ending is _-ō_: _dubitō_."
+   ],
+   [
+    "Nōn dubitat.",
+    "_dubitat_ is “he doubts”. The subject is “I”, so the ending is _-ō_: _dubitō_."
+   ],
+   [
+    "Nōn dubitāmus.",
+    "_dubitāmus_ is “we doubt”. The subject is “I”, so the ending is _-ō_: _dubitō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.04",
+  "review": "unreviewed",
+  "en": "This talk is good.",
+  "la": "Hic sermō bonus est.",
+  "fill": "Hic",
+  "skills": [
+   "pron.hic",
+   "world.mind"
+  ],
+  "tag": "hic: this (masculine)",
+  "explain": "_sermō_ is masculine, so “this” is masculine nominative: _Hic_.",
+  "distractors": [
+   [
+    "Haec sermō bonus est.",
+    "_Haec_ is feminine. _sermō_ is masculine, so “this” is masculine nominative: _Hic_."
+   ],
+   [
+    "Hoc sermō bonus est.",
+    "_Hoc_ is neuter. _sermō_ is masculine, so “this” is masculine nominative: _Hic_."
+   ],
+   [
+    "Hunc sermō bonus est.",
+    "_Hunc_ is accusative. _sermō_ is masculine, so “this” is masculine nominative: _Hic_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.05",
+  "review": "unreviewed",
+  "en": "The word has great force.",
+  "la": "Verbum magnam vim habet.",
+  "fill": "vim",
+  "skills": [
+   "case.acc.obj",
+   "world.mind"
+  ],
+  "tag": "vim: force (object)",
+  "explain": "The thing held is accusative. _vīs_ is irregular: _vim_: _vim_.",
+  "distractors": [
+   [
+    "Verbum magnam vīs habet.",
+    "_vīs_ is nominative. The thing held is accusative. _vīs_ is irregular: _vim_: _vim_."
+   ],
+   [
+    "Verbum magnam vī habet.",
+    "_vī_ is ablative. The thing held is accusative. _vīs_ is irregular: _vim_: _vim_."
+   ],
+   [
+    "Verbum magnam vīrēs habet.",
+    "_vīrēs_ is plural “strength”. The thing held is accusative. _vīs_ is irregular: _vim_: _vim_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.06",
+  "review": "unreviewed",
+  "en": "Memory is dear.",
+  "la": "Memoria cāra est.",
+  "fill": "cāra",
+  "skills": [
+   "adj.agree.gender",
+   "world.mind"
+  ],
+  "tag": "cāra: dear (feminine)",
+  "explain": "_memoria_ is feminine, so the adjective is feminine: _cāra_.",
+  "distractors": [
+   [
+    "Memoria cārus est.",
+    "_cārus_ is masculine. _memoria_ is feminine, so the adjective is feminine: _cāra_."
+   ],
+   [
+    "Memoria cārum est.",
+    "_cārum_ is neuter. _memoria_ is feminine, so the adjective is feminine: _cāra_."
+   ],
+   [
+    "Memoria cāram est.",
+    "_cāram_ is accusative. _memoria_ is feminine, so the adjective is feminine: _cāra_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.07",
+  "review": "unreviewed",
+  "en": "I write a letter to my friend.",
+  "la": "Litterās amīcō scrībō.",
+  "fill": "amīcō",
+  "skills": [
+   "case.dat.recipient",
+   "world.mind"
+  ],
+  "tag": "amīcō: to my friend",
+  "explain": "The one receiving is dative: _amīcō_.",
+  "distractors": [
+   [
+    "Litterās amīcum scrībō.",
+    "_amīcum_ is accusative. The one receiving is dative: _amīcō_."
+   ],
+   [
+    "Litterās amīcī scrībō.",
+    "_amīcī_ is genitive or plural. The one receiving is dative: _amīcō_."
+   ],
+   [
+    "Litterās amīcus scrībō.",
+    "_amīcus_ is nominative. The one receiving is dative: _amīcō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.08",
+  "review": "unreviewed",
+  "en": "The boy has great eagerness.",
+  "la": "Puer magnum studium habet.",
+  "fill": "magnum",
+  "skills": [
+   "adj.agree.gender",
+   "world.mind"
+  ],
+  "tag": "magnum: great (neuter)",
+  "explain": "_studium_ is neuter, so the adjective is neuter: _magnum_.",
+  "distractors": [
+   [
+    "Puer magnus studium habet.",
+    "_magnus_ is masculine. _studium_ is neuter, so the adjective is neuter: _magnum_."
+   ],
+   [
+    "Puer magna studium habet.",
+    "_magna_ is feminine. _studium_ is neuter, so the adjective is neuter: _magnum_."
+   ],
+   [
+    "Puer magnī studium habet.",
+    "_magnī_ is genitive or plural. _studium_ is neuter, so the adjective is neuter: _magnum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.09",
+  "review": "unreviewed",
+  "en": "Talent is a gift of the gods.",
+  "la": "Ingenium mūnus deōrum est.",
+  "fill": "mūnus",
+  "skills": [
+   "noun.pred.nom",
+   "world.mind"
+  ],
+  "tag": "mūnus: a gift",
+  "explain": "After _est_, the noun is nominative; _mūnus_ is neuter: _mūnus_.",
+  "distractors": [
+   [
+    "Ingenium mūneris deōrum est.",
+    "_mūneris_ is genitive. After _est_, the noun is nominative; _mūnus_ is neuter: _mūnus_."
+   ],
+   [
+    "Ingenium mūnere deōrum est.",
+    "_mūnere_ is ablative. After _est_, the noun is nominative; _mūnus_ is neuter: _mūnus_."
+   ],
+   [
+    "Ingenium mūnera deōrum est.",
+    "_mūnera_ is plural. After _est_, the noun is nominative; _mūnus_ is neuter: _mūnus_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.10",
+  "review": "unreviewed",
+  "en": "I do not say this.",
+  "la": "Hoc nōn dīcō.",
+  "fill": "dīcō",
+  "skills": [
+   "verb.person",
+   "world.mind"
+  ],
+  "tag": "dīcō: I say",
+  "explain": "The subject is “I”, so the ending is _-ō_: _dīcō_.",
+  "distractors": [
+   [
+    "Hoc nōn dīcis.",
+    "_dīcis_ is “you say”. The subject is “I”, so the ending is _-ō_: _dīcō_."
+   ],
+   [
+    "Hoc nōn dīcit.",
+    "_dīcit_ is “he says”. The subject is “I”, so the ending is _-ō_: _dīcō_."
+   ],
+   [
+    "Hoc nōn dīcimus.",
+    "_dīcimus_ is “we say”. The subject is “I”, so the ending is _-ō_: _dīcō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.11",
+  "review": "unreviewed",
+  "en": "He gives advice with words.",
+  "la": "Verbīs cōnsilium dat.",
+  "fill": "Verbīs",
+  "skills": [
+   "abl.means",
+   "world.mind"
+  ],
+  "tag": "verbīs: with words",
+  "explain": "The means takes the ablative plural: _Verbīs_.",
+  "distractors": [
+   [
+    "Verba cōnsilium dat.",
+    "_Verba_ is nominative or accusative plural. The means takes the ablative plural: _Verbīs_."
+   ],
+   [
+    "Verbōrum cōnsilium dat.",
+    "_Verbōrum_ is genitive plural. The means takes the ablative plural: _Verbīs_."
+   ],
+   [
+    "Verbum cōnsilium dat.",
+    "_Verbum_ is singular. The means takes the ablative plural: _Verbīs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.6.12",
+  "review": "unreviewed",
+  "en": "The voice of the people is great.",
+  "la": "Vōx populī magna est.",
+  "fill": "populī",
+  "skills": [
+   "case.gen",
+   "world.mind"
+  ],
+  "tag": "populī: of the people",
+  "explain": "“The voice of the people” needs the genitive: _populī_.",
+  "distractors": [
+   [
+    "Vōx populum magna est.",
+    "_populum_ is accusative. “The voice of the people” needs the genitive: _populī_."
+   ],
+   [
+    "Vōx populus magna est.",
+    "_populus_ is nominative. “The voice of the people” needs the genitive: _populī_."
+   ],
+   [
+    "Vōx populō magna est.",
+    "_populō_ is dative or ablative. “The voice of the people” needs the genitive: _populī_."
+   ]
+  ]
+ }
+]

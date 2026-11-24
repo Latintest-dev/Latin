@@ -58,7 +58,11 @@ export const overlaps = (a, b) => {
  */
 export function wordItem(e, near, sameMeaning = []) {
   const rng = seeded(hash(e.id));
-  const pool = near.filter((o) => o.id !== e.id && o.lemma !== e.lemma && !overlaps(o.gloss, e.gloss));
+  // Homographs (two entries spelled alike, or alike but for the macrons) would show the same option twice, so each spelling is offered once.
+  const spell = (w) => w.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const seenSpell = new Set([spell(e.lemma)]);
+  const pool = near.filter((o) => o.id !== e.id && o.lemma !== e.lemma && !overlaps(o.gloss, e.gloss) && !(spell(o.lemma) === spell(e.lemma)))
+    .filter((o) => (seenSpell.has(spell(o.lemma)) ? false : (seenSpell.add(spell(o.lemma)), true)));
   const same = pool.filter((o) => o.pos === e.pos);
   const pick = [];
   for (const list of [same, pool]) {

@@ -1,0 +1,68 @@
+{
+ "id": "world",
+ "name": "The Roman world",
+ "blurb": "Sentences about the state, the army, the home, the gods, nature, the mind, travel and time, using the words that turn up most in Latin writing. Opens after “Belonging and giving”.",
+ "skillsFile": "skills.json",
+ "requires": {
+  "pack": "core",
+  "unit": "9"
+ },
+ "units": [
+  {
+   "id": "1",
+   "file": "u1.json",
+   "title": "State and law",
+   "blurb": "cōnsul, lēx, iūdex, populus",
+   "intro": "The Roman state ran on magistrates, law and the people’s say. Words for rule and justice, in sentences you can already build: the consuls rule, the judge hears the case, nobody is greater than the law."
+  },
+  {
+   "id": "2",
+   "file": "u2.json",
+   "title": "The army",
+   "blurb": "mīles, legiō, dux, castra",
+   "intro": "Rome grew by its legions. Soldiers, camps, spears and standards. Note _castra_: it looks plural but means one camp."
+  },
+  {
+   "id": "3",
+   "file": "u3.json",
+   "title": "Family and home",
+   "blurb": "domus, māter, hērēs, līberī",
+   "intro": "The household (_familia_) was the Roman world in small. Parents, children, the lady of the house, the heir."
+  },
+  {
+   "id": "4",
+   "file": "u4.json",
+   "title": "Gods and fate",
+   "blurb": "deus, dea, āra, fātum",
+   "intro": "Romans lived with their gods and with fate. _deus_ is irregular in the plural (_dī_ or _deī_, genitive _deōrum_), and _dea_ has its own dative and ablative plural, _deābus_."
+  },
+  {
+   "id": "5",
+   "file": "u5.json",
+   "title": "Nature",
+   "blurb": "ventus, ignis, arbor, flūmen",
+   "intro": "Wind, fire, trees and rivers. Comparison comes back: the sun is bigger _than the moon_, with the ablative."
+  },
+  {
+   "id": "6",
+   "file": "u6.json",
+   "title": "Mind and speech",
+   "blurb": "animus, verbum, vōx, memoria",
+   "intro": "How Romans talked about thinking and saying. _vīs_ (force) is irregular: _vim_, _vī_."
+  },
+  {
+   "id": "7",
+   "file": "u7.json",
+   "title": "Travel",
+   "blurb": "iter, via, nāvis, portus",
+   "intro": "Roads, ships, harbors and provinces. “To” a town is just the accusative: _Rōmam_."
+  },
+  {
+   "id": "8",
+   "file": "u8.json",
+   "title": "Time",
+   "blurb": "diēs, annus, nox, hōra",
+   "intro": "Days, years, nights and hours. How long takes the accusative (_multōs diēs_); when takes the ablative (_nocte_, _hieme_)."
+  }
+ ]
+}

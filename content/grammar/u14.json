@@ -1,0 +1,292 @@
+[
+ {
+  "id": "grammar.14.01",
+  "review": "unreviewed",
+  "en": "This man is better than that man.",
+  "la": "Hic vir melior est quam ille.",
+  "fill": "melior",
+  "skills": [
+   "adj.comp"
+  ],
+  "tag": "melior: better",
+  "explain": "The comparative adds “more”: _bonus_ (good) becomes _melior_ (better). It is irregular, like English good, better, best.",
+  "distractors": [
+   [
+    "Hic vir bonus est quam ille.",
+    "_bonus_ is “good”, with no comparison. “Better” is _melior_."
+   ],
+   [
+    "Hic vir optimus est quam ille.",
+    "_optimus_ is “best”. With _quam_ (than), use _melior_."
+   ],
+   [
+    "Hic vir meliōrem est quam ille.",
+    "_meliōrem_ is accusative. The subject needs the nominative: _melior_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.02",
+  "review": "unreviewed",
+  "en": "The girl is better than the boy.",
+  "la": "Puella melior est quam puer.",
+  "fill": "quam",
+  "skills": [
+   "adj.comp",
+   "comp.quam"
+  ],
+  "tag": "quam: than",
+  "explain": "After a comparative, _quam_ means “than”, and the two things compared stand in the same case: _puella … quam puer_ (both nominative).",
+  "distractors": [
+   [
+    "Puella melior est et puer.",
+    "_et_ means “and”. For “than”, use _quam_."
+   ],
+   [
+    "Puella melior est sed puer.",
+    "_sed_ means “but”. For “than”, use _quam_."
+   ],
+   [
+    "Puella melior est aut puer.",
+    "_aut_ means “or”. For “than”, use _quam_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.03",
+  "review": "unreviewed",
+  "en": "The girl is better than the boy (no quam).",
+  "la": "Puella puerō melior est.",
+  "fill": "puerō",
+  "skills": [
+   "adj.comp",
+   "comp.abl"
+  ],
+  "tag": "puerō: than the boy (ablative)",
+  "explain": "Instead of _quam_, the thing compared can go in the ablative: _puerō_ (than the boy). It is common when the second thing is short.",
+  "distractors": [
+   [
+    "Puella puerum melior est.",
+    "_puerum_ is accusative. After a comparative without _quam_, use the ablative: _puerō_."
+   ],
+   [
+    "Puella puer melior est.",
+    "_puer_ is nominative. Without _quam_, use the ablative: _puerō_."
+   ],
+   [
+    "Puella puerī melior est.",
+    "_puerī_ is genitive or plural. Without _quam_, use the ablative: _puerō_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.04",
+  "review": "unreviewed",
+  "en": "This book is bigger.",
+  "la": "Hic liber maior est.",
+  "fill": "maior",
+  "skills": [
+   "adj.comp"
+  ],
+  "tag": "maior: bigger",
+  "explain": "_magnus_ (big) has the comparative _maior_ (bigger). It agrees with _liber_: masculine nominative.",
+  "distractors": [
+   [
+    "Hic liber magnus est.",
+    "_magnus_ is “big”, with no comparison. “Bigger” is _maior_."
+   ],
+   [
+    "Hic liber maximus est.",
+    "_maximus_ is “biggest”. “Bigger” is _maior_."
+   ],
+   [
+    "Hic liber maius est.",
+    "_maius_ is neuter. _liber_ is masculine: _maior_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.05",
+  "review": "unreviewed",
+  "en": "This city is bigger than that city.",
+  "la": "Haec urbs maior est quam illa.",
+  "fill": "maior",
+  "skills": [
+   "adj.comp",
+   "comp.quam"
+  ],
+  "tag": "maior: bigger (feminine)",
+  "explain": "_maior_ is the same for masculine and feminine. _quam illa_ means “than that one”.",
+  "distractors": [
+   [
+    "Haec urbs maximus est quam illa.",
+    "_maximus_ is “biggest”, and masculine. “Bigger” is _maior_."
+   ],
+   [
+    "Haec urbs magna est quam illa.",
+    "_magna_ is “big”, with no comparison. “Bigger” is _maior_."
+   ],
+   [
+    "Haec urbs maius est quam illa.",
+    "_maius_ is neuter. _urbs_ is feminine: _maior_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.06",
+  "review": "unreviewed",
+  "en": "He is the best man.",
+  "la": "Optimus vir est.",
+  "fill": "Optimus",
+  "skills": [
+   "adj.super"
+  ],
+  "tag": "optimus: best",
+  "explain": "The superlative is “most”: _bonus_, _melior_, _optimus_. It agrees with _vir_ (masculine nominative).",
+  "distractors": [
+   [
+    "Melior vir est.",
+    "_melior_ is “better”, between two. “Best” is _optimus_."
+   ],
+   [
+    "Bonus vir est.",
+    "_bonus_ is “good”, with no comparison. “Best” is _optimus_."
+   ],
+   [
+    "Optima vir est.",
+    "_optima_ is feminine. _vir_ is masculine: _optimus_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.07",
+  "review": "unreviewed",
+  "en": "Rome is the greatest city.",
+  "la": "Rōma urbs maxima est.",
+  "fill": "maxima",
+  "skills": [
+   "adj.super"
+  ],
+  "tag": "maxima: greatest",
+  "explain": "_magnus_, _maior_, _maximus_: big, bigger, biggest. _maxima_ is feminine to agree with _urbs_.",
+  "distractors": [
+   [
+    "Rōma urbs maximus est.",
+    "_maximus_ is masculine. _urbs_ is feminine: _maxima_."
+   ],
+   [
+    "Rōma urbs maior est.",
+    "_maior_ is “bigger”, not “biggest”. For the superlative: _maxima_."
+   ],
+   [
+    "Rōma urbs maximum est.",
+    "_maximum_ is neuter. _urbs_ is feminine: _maxima_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.08",
+  "review": "unreviewed",
+  "en": "This is worse.",
+  "la": "Hoc peius est.",
+  "fill": "peius",
+  "skills": [
+   "adj.comp"
+  ],
+  "tag": "peius: worse (neuter)",
+  "explain": "_malus_ (bad) becomes _peior_ (worse). The neuter nominative is _peius_, to agree with _hoc_.",
+  "distractors": [
+   [
+    "Hoc peior est.",
+    "_peior_ is masculine or feminine. _hoc_ is neuter: _peius_."
+   ],
+   [
+    "Hoc pessimus est.",
+    "_pessimus_ is masculine and means “worst”. “Worse” (neuter) is _peius_."
+   ],
+   [
+    "Hoc melius est.",
+    "_melius_ means “better”. “Worse” is _peius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.09",
+  "review": "unreviewed",
+  "en": "The number is smaller.",
+  "la": "Numerus minor est.",
+  "fill": "minor",
+  "skills": [
+   "adj.comp"
+  ],
+  "tag": "minor: smaller",
+  "explain": "_parvus_ (small) has the comparative _minor_. It agrees with _numerus_ (masculine).",
+  "distractors": [
+   [
+    "Numerus parvus est.",
+    "_parvus_ is “small”, with no comparison. “Smaller” is _minor_."
+   ],
+   [
+    "Numerus minimus est.",
+    "_minimus_ is “smallest”. “Smaller” is _minor_."
+   ],
+   [
+    "Numerus minus est.",
+    "_minus_ is neuter. _numerus_ is masculine: _minor_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.10",
+  "review": "unreviewed",
+  "en": "I love you more.",
+  "la": "Tē magis amō.",
+  "fill": "magis",
+  "skills": [
+   "adv.comp"
+  ],
+  "tag": "magis: more",
+  "explain": "_magis_ is the adverb “more”: it says how much you do something. It does not change for case or gender.",
+  "distractors": [
+   [
+    "Tē maior amō.",
+    "_maior_ is an adjective, “bigger”. To say how I love, use the adverb _magis_."
+   ],
+   [
+    "Tē melius amō.",
+    "_melius_ is “better”. “More” is _magis_."
+   ],
+   [
+    "Tē minus amō.",
+    "_minus_ is “less”. “More” is _magis_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.14.11",
+  "review": "unreviewed",
+  "en": "You work better than I do.",
+  "la": "Melius labōrās quam ego.",
+  "fill": "Melius",
+  "skills": [
+   "adv.comp",
+   "comp.quam"
+  ],
+  "tag": "melius: better (adverb)",
+  "explain": "The adverb for “better” is _melius_. It describes how you work, so no agreement is needed.",
+  "distractors": [
+   [
+    "Melior labōrās quam ego.",
+    "_melior_ is an adjective, “better” of a person. For how you work, the adverb: _melius_."
+   ],
+   [
+    "Bene labōrās quam ego.",
+    "_bene_ is “well”, with no comparison. “Better” is _melius_."
+   ],
+   [
+    "Optimus labōrās quam ego.",
+    "_optimus_ is an adjective, “best”. “Better” (how) is _melius_."
+   ]
+  ]
+ }
+]

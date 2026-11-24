@@ -1,0 +1,299 @@
+[
+ {
+  "id": "grammar.9.01",
+  "review": "unreviewed",
+  "en": "That man is a Roman.",
+  "la": "Ille vir Rōmānus est.",
+  "fill": "Ille",
+  "skills": [
+   "pron.ille",
+   "case.nom.subj"
+  ],
+  "tag": "ille: that (masculine)",
+  "explain": "_ille_ is “that” (the one over there) for masculine nouns. It follows the same pattern as _hic_.",
+  "distractors": [
+   [
+    "Illa vir Rōmānus est.",
+    "_illa_ is feminine (“that woman”). _vir_ is masculine: _ille_."
+   ],
+   [
+    "Illud vir Rōmānus est.",
+    "_illud_ is neuter (“that thing”). _vir_ is masculine: _ille_."
+   ],
+   [
+    "Illum vir Rōmānus est.",
+    "_illum_ is accusative. A subject needs the nominative: _ille_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.02",
+  "review": "unreviewed",
+  "en": "That woman is a queen.",
+  "la": "Illa fēmina rēgīna est.",
+  "fill": "Illa",
+  "skills": [
+   "pron.ille",
+   "case.nom.subj"
+  ],
+  "tag": "illa: that (feminine)",
+  "explain": "_illa_ is “that” for feminine nouns. _fēmina_ is feminine, so _illa fēmina_.",
+  "distractors": [
+   [
+    "Ille fēmina rēgīna est.",
+    "_ille_ is masculine. _fēmina_ is feminine: _illa_."
+   ],
+   [
+    "Illud fēmina rēgīna est.",
+    "_illud_ is neuter. _fēmina_ is feminine: _illa_."
+   ],
+   [
+    "Illam fēmina rēgīna est.",
+    "_illam_ is accusative. A subject needs the nominative: _illa_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.03",
+  "review": "unreviewed",
+  "en": "That is true.",
+  "la": "Illud vērum est.",
+  "fill": "Illud",
+  "skills": [
+   "pron.ille",
+   "case.nom.subj"
+  ],
+  "tag": "illud: that (neuter)",
+  "explain": "_illud_ is the neuter “that”. Like _hoc_, it can stand alone to mean “that thing”.",
+  "distractors": [
+   [
+    "Ille vērum est.",
+    "_ille_ is masculine (“that man”). “That” on its own, a thing, is neuter: _illud_."
+   ],
+   [
+    "Illa vērum est.",
+    "_illa_ is feminine. “That” as a thing is neuter: _illud_."
+   ],
+   [
+    "Illum vērum est.",
+    "_illum_ is masculine accusative. A subject needs the nominative: _illud_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.04",
+  "review": "unreviewed",
+  "en": "I see that man.",
+  "la": "Illum virum videō.",
+  "fill": "Illum",
+  "skills": [
+   "pron.ille",
+   "case.acc.obj"
+  ],
+  "tag": "illum: that (object, masculine)",
+  "explain": "The man is the thing seen: _virum_ and _illum_ are accusative.",
+  "distractors": [
+   [
+    "Ille virum videō.",
+    "_ille_ is nominative. The thing seen is accusative: _illum_."
+   ],
+   [
+    "Illam virum videō.",
+    "_illam_ is feminine accusative. _virum_ is masculine: _illum_."
+   ],
+   [
+    "Illī virum videō.",
+    "_illī_ is dative (“to that”). The thing seen is accusative: _illum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.05",
+  "review": "unreviewed",
+  "en": "The sword of that man is good.",
+  "la": "Gladius illīus virī bonus est.",
+  "fill": "illīus",
+  "skills": [
+   "pron.ille",
+   "case.gen"
+  ],
+  "tag": "illīus: of that",
+  "explain": "_illīus_ is the genitive of _ille_ for every gender (“of that”). It sits with _virī_ (genitive).",
+  "distractors": [
+   [
+    "Gladius illum virī bonus est.",
+    "_illum_ is accusative. “Of that man” is genitive: _illīus_."
+   ],
+   [
+    "Gladius illī virī bonus est.",
+    "_illī_ is dative (“to that”). “Of that man” is genitive: _illīus_."
+   ],
+   [
+    "Gladius ille virī bonus est.",
+    "_ille_ is nominative. “Of that man” is genitive: _illīus_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.06",
+  "review": "unreviewed",
+  "en": "I give a book to that woman.",
+  "la": "Illī fēminae librum dō.",
+  "fill": "Illī",
+  "skills": [
+   "pron.ille",
+   "case.dat.recipient"
+  ],
+  "tag": "illī: to that",
+  "explain": "_illī_ is the dative of _ille_ (“to that”). The woman receives the book, so _illī fēminae_ and _librum_ (accusative).",
+  "distractors": [
+   [
+    "Illam fēminae librum dō.",
+    "_illam_ is accusative. The one receiving is dative: _illī_."
+   ],
+   [
+    "Illa fēminae librum dō.",
+    "_illa_ is nominative. The one receiving is dative: _illī_."
+   ],
+   [
+    "Illīus fēminae librum dō.",
+    "_illīus_ is genitive (“of that”). The one receiving is dative: _illī_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.07",
+  "review": "unreviewed",
+  "en": "This man is good, that man is bad.",
+  "la": "Hic vir bonus est, ille malus.",
+  "fill": "ille",
+  "skills": [
+   "pron.ille",
+   "pron.hic"
+  ],
+  "tag": "hic … ille: this … that",
+  "explain": "_hic_ points to what is near, _ille_ to what is far. Together they mean “this one … that one” (or “the latter … the former”).",
+  "distractors": [
+   [
+    "Hic vir bonus est, illa malus.",
+    "_illa_ is feminine. _vir_ is masculine: _ille_."
+   ],
+   [
+    "Hic vir bonus est, illud malus.",
+    "_illud_ is neuter. _vir_ is masculine: _ille_."
+   ],
+   [
+    "Hic vir bonus est, illum malus.",
+    "_illum_ is accusative. A subject needs the nominative: _ille_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.08",
+  "review": "unreviewed",
+  "en": "I see him.",
+  "la": "Eum videō.",
+  "fill": "Eum",
+  "skills": [
+   "pron.is",
+   "case.acc.obj"
+  ],
+  "tag": "eum: him",
+  "explain": "For “he, him, she, her, it” Latin uses _is, ea, id_. The thing seen is accusative, so “him” is _eum_.",
+  "distractors": [
+   [
+    "Is videō.",
+    "_is_ is nominative (“he”). The thing seen is accusative: _eum_."
+   ],
+   [
+    "Eam videō.",
+    "_eam_ is “her”. For “him”, use _eum_."
+   ],
+   [
+    "Eī videō.",
+    "_eī_ is dative (“to him”). The thing seen is accusative: _eum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.09",
+  "review": "unreviewed",
+  "en": "I see her.",
+  "la": "Eam videō.",
+  "fill": "Eam",
+  "skills": [
+   "pron.is",
+   "case.acc.obj"
+  ],
+  "tag": "eam: her",
+  "explain": "_eam_ is the feminine accusative of _is, ea, id_: “her” as the thing seen.",
+  "distractors": [
+   [
+    "Ea videō.",
+    "_ea_ is nominative (“she”). The thing seen is accusative: _eam_."
+   ],
+   [
+    "Eum videō.",
+    "_eum_ is “him”. For “her”, use _eam_."
+   ],
+   [
+    "Eius videō.",
+    "_eius_ is genitive (“of her”). The thing seen is accusative: _eam_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.10",
+  "review": "unreviewed",
+  "en": "I love his son.",
+  "la": "Fīlium eius amō.",
+  "fill": "eius",
+  "skills": [
+   "pron.is",
+   "case.gen"
+  ],
+  "tag": "eius: of him, his, her",
+  "explain": "_eius_ (“of him, of her, of it”) is how Latin says “his” or “her” when it means someone else’s: _fīlium eius_, the son of him.",
+  "distractors": [
+   [
+    "Fīlium eum amō.",
+    "_eum_ is accusative (“him”). “His” is the genitive: _eius_."
+   ],
+   [
+    "Fīlium eī amō.",
+    "_eī_ is dative (“to him”). “His” is the genitive: _eius_."
+   ],
+   [
+    "Fīlium eam amō.",
+    "_eam_ is accusative (“her”). “His” is the genitive: _eius_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.9.11",
+  "review": "unreviewed",
+  "en": "We see them.",
+  "la": "Eōs videmus.",
+  "fill": "Eōs",
+  "skills": [
+   "pron.is",
+   "case.acc.obj"
+  ],
+  "tag": "eōs: them (masculine)",
+  "explain": "_eōs_ is the masculine plural accusative of _is_: “them” as the things seen.",
+  "distractors": [
+   [
+    "Eī videmus.",
+    "_eī_ is nominative plural (“they”). The things seen are accusative: _eōs_."
+   ],
+   [
+    "Eās videmus.",
+    "_eās_ is “them” for women. For men, use _eōs_."
+   ],
+   [
+    "Eīs videmus.",
+    "_eīs_ is dative or ablative (“to them”). The things seen are accusative: _eōs_."
+   ]
+  ]
+ }
+]

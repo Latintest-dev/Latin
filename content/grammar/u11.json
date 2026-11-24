@@ -1,0 +1,272 @@
+[
+ {
+  "id": "grammar.11.01",
+  "review": "unreviewed",
+  "en": "The man who is walking is good.",
+  "la": "Vir quī ambulat bonus est.",
+  "fill": "quī",
+  "skills": [
+   "pron.rel",
+   "case.nom.subj"
+  ],
+  "tag": "quī: who (masculine)",
+  "explain": "_quī_ starts a clause that describes _vir_. It is masculine singular because _vir_ is, and nominative because it is the one walking.",
+  "distractors": [
+   [
+    "Vir quae ambulat bonus est.",
+    "_quae_ is feminine (or neuter plural). _vir_ is masculine: _quī_."
+   ],
+   [
+    "Vir quod ambulat bonus est.",
+    "_quod_ is neuter. _vir_ is masculine: _quī_."
+   ],
+   [
+    "Vir quem ambulat bonus est.",
+    "_quem_ is accusative. The one walking is the subject: _quī_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.02",
+  "review": "unreviewed",
+  "en": "The girl who is walking is good.",
+  "la": "Puella quae ambulat bona est.",
+  "fill": "quae",
+  "skills": [
+   "pron.rel",
+   "case.nom.subj"
+  ],
+  "tag": "quae: who (feminine)",
+  "explain": "_quae_ agrees with _puella_ (feminine) and is nominative: she is the one walking.",
+  "distractors": [
+   [
+    "Puella quī ambulat bona est.",
+    "_quī_ is masculine. _puella_ is feminine: _quae_."
+   ],
+   [
+    "Puella quod ambulat bona est.",
+    "_quod_ is neuter. _puella_ is feminine: _quae_."
+   ],
+   [
+    "Puella quam ambulat bona est.",
+    "_quam_ is accusative. The one walking is the subject: _quae_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.03",
+  "review": "unreviewed",
+  "en": "The thing that I see is good.",
+  "la": "Id quod videō bonum est.",
+  "fill": "quod",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quod: which (neuter)",
+  "explain": "_id_ is “that thing”; _quod_ is the neuter “which”. I see it, so it is accusative, and neuter nominative and accusative look the same.",
+  "distractors": [
+   [
+    "Id quī videō bonum est.",
+    "_quī_ is masculine. _id_ is neuter: _quod_."
+   ],
+   [
+    "Id quae videō bonum est.",
+    "_quae_ is feminine. _id_ is neuter: _quod_."
+   ],
+   [
+    "Id quem videō bonum est.",
+    "_quem_ is masculine. _id_ is neuter: _quod_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.04",
+  "review": "unreviewed",
+  "en": "The man whom I see is good.",
+  "la": "Vir quem videō bonus est.",
+  "fill": "quem",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quem: whom (masculine)",
+  "explain": "The relative takes its gender from _vir_ (masculine) and its case from its own clause: I see him, so accusative _quem_.",
+  "distractors": [
+   [
+    "Vir quī videō bonus est.",
+    "_quī_ is nominative. Inside the clause the man is seen, so accusative: _quem_."
+   ],
+   [
+    "Vir quod videō bonus est.",
+    "_quod_ is neuter. _vir_ is masculine: _quem_."
+   ],
+   [
+    "Vir quam videō bonus est.",
+    "_quam_ is feminine. _vir_ is masculine: _quem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.05",
+  "review": "unreviewed",
+  "en": "The girl whom I see is good.",
+  "la": "Puella quam videō bona est.",
+  "fill": "quam",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quam: whom (feminine)",
+  "explain": "Feminine from _puella_, accusative because I see her: _quam_.",
+  "distractors": [
+   [
+    "Puella quae videō bona est.",
+    "_quae_ is nominative. Inside the clause she is seen, so accusative: _quam_."
+   ],
+   [
+    "Puella quem videō bona est.",
+    "_quem_ is masculine. _puella_ is feminine: _quam_."
+   ],
+   [
+    "Puella quod videō bona est.",
+    "_quod_ is neuter. _puella_ is feminine: _quam_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.06",
+  "review": "unreviewed",
+  "en": "The men who are walking are good.",
+  "la": "Virī quī ambulant bonī sunt.",
+  "fill": "quī",
+  "skills": [
+   "pron.rel",
+   "case.nom.subj"
+  ],
+  "tag": "quī: who (masculine plural)",
+  "explain": "Masculine plural nominative is _quī_, the same spelling as the singular. The plural verb _ambulant_ shows it is plural.",
+  "distractors": [
+   [
+    "Virī quae ambulant bonī sunt.",
+    "_quae_ is feminine plural. _virī_ is masculine: _quī_."
+   ],
+   [
+    "Virī quōs ambulant bonī sunt.",
+    "_quōs_ is accusative. The ones walking are the subject: _quī_."
+   ],
+   [
+    "Virī quem ambulant bonī sunt.",
+    "_quem_ is singular accusative. The ones walking are plural subjects: _quī_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.07",
+  "review": "unreviewed",
+  "en": "The men whom I see are good.",
+  "la": "Virī quōs videō bonī sunt.",
+  "fill": "quōs",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quōs: whom (masculine plural)",
+  "explain": "Masculine plural, and accusative because I see them: _quōs_.",
+  "distractors": [
+   [
+    "Virī quī videō bonī sunt.",
+    "_quī_ is nominative. Inside the clause the men are seen, so accusative: _quōs_."
+   ],
+   [
+    "Virī quās videō bonī sunt.",
+    "_quās_ is feminine. _virī_ is masculine: _quōs_."
+   ],
+   [
+    "Virī quem videō bonī sunt.",
+    "_quem_ is singular. _virī_ is plural: _quōs_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.08",
+  "review": "unreviewed",
+  "en": "The women whom I see are good.",
+  "la": "Fēminae quās videō bonae sunt.",
+  "fill": "quās",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quās: whom (feminine plural)",
+  "explain": "Feminine plural, accusative because I see them: _quās_.",
+  "distractors": [
+   [
+    "Fēminae quae videō bonae sunt.",
+    "_quae_ is nominative. Inside the clause the women are seen, so accusative: _quās_."
+   ],
+   [
+    "Fēminae quōs videō bonae sunt.",
+    "_quōs_ is masculine. _fēminae_ is feminine: _quās_."
+   ],
+   [
+    "Fēminae quam videō bonae sunt.",
+    "_quam_ is singular. _fēminae_ is plural: _quās_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.09",
+  "review": "unreviewed",
+  "en": "The things that I see are good.",
+  "la": "Ea quae videō bona sunt.",
+  "fill": "quae",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quae: which (neuter plural)",
+  "explain": "_ea_ is “those things”; _quae_ is the neuter plural “which”. Neuter plural nominative and accusative are the same.",
+  "distractors": [
+   [
+    "Ea quī videō bona sunt.",
+    "_quī_ is masculine. _ea_ is neuter plural: _quae_."
+   ],
+   [
+    "Ea quod videō bona sunt.",
+    "_quod_ is singular. _ea_ is plural: _quae_."
+   ],
+   [
+    "Ea quās videō bona sunt.",
+    "_quās_ is feminine. _ea_ is neuter: _quae_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.11.10",
+  "review": "unreviewed",
+  "en": "This is the man whom I love.",
+  "la": "Hic est vir quem amō.",
+  "fill": "quem",
+  "skills": [
+   "pron.rel",
+   "case.acc.obj"
+  ],
+  "tag": "quem: whom",
+  "explain": "Same rule: _vir_ is masculine singular, and in the clause I love him, so accusative: _quem_.",
+  "distractors": [
+   [
+    "Hic est vir quī amō.",
+    "_quī_ is nominative. In the clause he is loved, so accusative: _quem_."
+   ],
+   [
+    "Hic est vir quam amō.",
+    "_quam_ is feminine. _vir_ is masculine: _quem_."
+   ],
+   [
+    "Hic est vir quod amō.",
+    "_quod_ is neuter. _vir_ is masculine: _quem_."
+   ]
+  ]
+ }
+]

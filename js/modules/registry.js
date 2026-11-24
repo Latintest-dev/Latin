@@ -13,5 +13,6 @@ export const PACKS = [
   { id: 'talk', path: 'content/talk/pack.json' },
   { id: 'grammar', path: 'content/grammar/pack.json' },
   { id: 'street', path: 'content/street/pack.json' },
+  { id: 'world', path: 'content/world/pack.json' },
   { id: 'vocab', path: 'content/vocab/pack.json' },
 ];

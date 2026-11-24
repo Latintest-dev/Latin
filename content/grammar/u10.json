@@ -1,0 +1,299 @@
+[
+ {
+  "id": "grammar.10.01",
+  "review": "unreviewed",
+  "en": "The same man comes.",
+  "la": "Īdem vir venit.",
+  "fill": "Īdem",
+  "skills": [
+   "pron.idem",
+   "case.nom.subj"
+  ],
+  "tag": "īdem: the same (masculine)",
+  "explain": "_īdem_ is _is_ plus _-dem_: “the same”. For a masculine subject: _īdem vir_.",
+  "distractors": [
+   [
+    "Eadem vir venit.",
+    "_eadem_ is feminine (“the same girl”). _vir_ is masculine: _īdem_."
+   ],
+   [
+    "Eundem vir venit.",
+    "_eundem_ is accusative. A subject needs the nominative: _īdem_."
+   ],
+   [
+    "Eiusdem vir venit.",
+    "_eiusdem_ is genitive (“of the same”). A subject needs the nominative: _īdem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.02",
+  "review": "unreviewed",
+  "en": "The same girl comes.",
+  "la": "Eadem puella venit.",
+  "fill": "Eadem",
+  "skills": [
+   "pron.idem",
+   "case.nom.subj"
+  ],
+  "tag": "eadem: the same (feminine)",
+  "explain": "_eadem_ is the feminine “the same”: _eadem puella_.",
+  "distractors": [
+   [
+    "Īdem puella venit.",
+    "_īdem_ is masculine. _puella_ is feminine: _eadem_."
+   ],
+   [
+    "Eandem puella venit.",
+    "_eandem_ is accusative. A subject needs the nominative: _eadem_."
+   ],
+   [
+    "Eundem puella venit.",
+    "_eundem_ is masculine accusative. A feminine subject needs _eadem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.03",
+  "review": "unreviewed",
+  "en": "I see the same man.",
+  "la": "Eundem virum videō.",
+  "fill": "Eundem",
+  "skills": [
+   "pron.idem",
+   "case.acc.obj"
+  ],
+  "tag": "eundem: the same (object)",
+  "explain": "Before _-dem_, _-m_ becomes _-n_: _eum + dem_ gives _eundem_. The same man as the thing seen: accusative.",
+  "distractors": [
+   [
+    "Īdem virum videō.",
+    "_īdem_ is nominative. The thing seen is accusative: _eundem_."
+   ],
+   [
+    "Eandem virum videō.",
+    "_eandem_ is feminine accusative. _virum_ is masculine: _eundem_."
+   ],
+   [
+    "Eōdem virum videō.",
+    "_eōdem_ is ablative. The thing seen is accusative: _eundem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.04",
+  "review": "unreviewed",
+  "en": "I say the same thing.",
+  "la": "Idem dīcō.",
+  "fill": "Idem",
+  "skills": [
+   "pron.idem",
+   "case.acc.obj"
+  ],
+  "tag": "idem: the same thing",
+  "explain": "For “the same thing” the neuter _idem_ stands alone as the object of _dīcō_.",
+  "distractors": [
+   [
+    "Eundem dīcō.",
+    "_eundem_ is masculine accusative (“the same man”). “The same thing” is neuter: _idem_."
+   ],
+   [
+    "Eandem dīcō.",
+    "_eandem_ is feminine accusative. “The same thing” is neuter: _idem_."
+   ],
+   [
+    "Eiusdem dīcō.",
+    "_eiusdem_ is genitive (“of the same”). The thing said is accusative: _idem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.05",
+  "review": "unreviewed",
+  "en": "We live in the same city.",
+  "la": "In eādem urbe habitāmus.",
+  "fill": "eādem",
+  "skills": [
+   "pron.idem",
+   "case.abl.place"
+  ],
+  "tag": "eādem: the same (ablative, feminine)",
+  "explain": "“In” (place) takes the ablative. _urbe_ is ablative feminine, so “the same” is _eādem_.",
+  "distractors": [
+   [
+    "In eōdem urbe habitāmus.",
+    "_eōdem_ is ablative masculine or neuter. _urbe_ is feminine: _eādem_."
+   ],
+   [
+    "In eandem urbe habitāmus.",
+    "_eandem_ is accusative. “In” (place) takes the ablative: _eādem_."
+   ],
+   [
+    "In eundem urbe habitāmus.",
+    "_eundem_ is accusative. “In” (place) takes the ablative: _eādem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.06",
+  "review": "unreviewed",
+  "en": "The same girls come.",
+  "la": "Eaedem puellae veniunt.",
+  "fill": "Eaedem",
+  "skills": [
+   "pron.idem",
+   "case.nom.subj"
+  ],
+  "tag": "eaedem: the same (feminine plural)",
+  "explain": "_eaedem_ is the feminine plural: _ea + dem_ with an _-ae_ ending, like _puellae_.",
+  "distractors": [
+   [
+    "Eadem puellae veniunt.",
+    "_eadem_ is singular (“the same girl”). _puellae_ is plural: _eaedem_."
+   ],
+   [
+    "Eīdem puellae veniunt.",
+    "_eīdem_ is masculine plural. _puellae_ is feminine: _eaedem_."
+   ],
+   [
+    "Eōsdem puellae veniunt.",
+    "_eōsdem_ is accusative. A subject needs the nominative: _eaedem_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.07",
+  "review": "unreviewed",
+  "en": "The man himself comes.",
+  "la": "Ipse vir venit.",
+  "fill": "Ipse",
+  "skills": [
+   "pron.ipse",
+   "case.nom.subj"
+  ],
+  "tag": "ipse: himself (emphasis)",
+  "explain": "_ipse_ stresses a noun: “the man himself”, “in person”. It agrees with the noun in case, number and gender.",
+  "distractors": [
+   [
+    "Ipsa vir venit.",
+    "_ipsa_ is feminine (“herself”). _vir_ is masculine: _ipse_."
+   ],
+   [
+    "Ipsum vir venit.",
+    "_ipsum_ is accusative (or neuter). A masculine subject needs _ipse_."
+   ],
+   [
+    "Ipsī vir venit.",
+    "_ipsī_ is plural or dative. One man as the subject: _ipse_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.08",
+  "review": "unreviewed",
+  "en": "The girl herself comes.",
+  "la": "Ipsa puella venit.",
+  "fill": "Ipsa",
+  "skills": [
+   "pron.ipse",
+   "case.nom.subj"
+  ],
+  "tag": "ipsa: herself (emphasis)",
+  "explain": "_ipsa_ is feminine: _ipsa puella_, “the girl herself”.",
+  "distractors": [
+   [
+    "Ipse puella venit.",
+    "_ipse_ is masculine. _puella_ is feminine: _ipsa_."
+   ],
+   [
+    "Ipsum puella venit.",
+    "_ipsum_ is masculine accusative or neuter. A feminine subject needs _ipsa_."
+   ],
+   [
+    "Ipsam puella venit.",
+    "_ipsam_ is accusative. A subject needs the nominative: _ipsa_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.09",
+  "review": "unreviewed",
+  "en": "I see the man himself.",
+  "la": "Ipsum virum videō.",
+  "fill": "Ipsum",
+  "skills": [
+   "pron.ipse",
+   "case.acc.obj"
+  ],
+  "tag": "ipsum: himself (object)",
+  "explain": "_ipsum_ agrees with _virum_ (accusative masculine): “the man himself” as the thing seen.",
+  "distractors": [
+   [
+    "Ipse virum videō.",
+    "_ipse_ is nominative. The thing seen is accusative: _ipsum_."
+   ],
+   [
+    "Ipsam virum videō.",
+    "_ipsam_ is feminine accusative. _virum_ is masculine: _ipsum_."
+   ],
+   [
+    "Ipsī virum videō.",
+    "_ipsī_ is dative or plural. The thing seen is accusative singular: _ipsum_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.10",
+  "review": "unreviewed",
+  "en": "The men themselves work.",
+  "la": "Virī ipsī labōrant.",
+  "fill": "ipsī",
+  "skills": [
+   "pron.ipse",
+   "case.nom.subj"
+  ],
+  "tag": "ipsī: themselves (masculine plural)",
+  "explain": "_ipsī_ is masculine plural nominative, agreeing with _virī_.",
+  "distractors": [
+   [
+    "Virī ipsae labōrant.",
+    "_ipsae_ is feminine plural. _virī_ is masculine: _ipsī_."
+   ],
+   [
+    "Virī ipsōs labōrant.",
+    "_ipsōs_ is accusative plural. A subject needs the nominative: _ipsī_."
+   ],
+   [
+    "Virī ipsīs labōrant.",
+    "_ipsīs_ is dative or ablative plural. A subject needs the nominative: _ipsī_."
+   ]
+  ]
+ },
+ {
+  "id": "grammar.10.11",
+  "review": "unreviewed",
+  "en": "I give a book to the master himself.",
+  "la": "Dominō ipsī librum dō.",
+  "fill": "ipsī",
+  "skills": [
+   "pron.ipse",
+   "case.dat.recipient"
+  ],
+  "tag": "ipsī: to himself (dative)",
+  "explain": "The master receives the book, so _dominō_ is dative and the pronoun agrees: _ipsī_.",
+  "distractors": [
+   [
+    "Dominō ipsum librum dō.",
+    "_ipsum_ is accusative. The one receiving is dative: _ipsī_."
+   ],
+   [
+    "Dominō ipsō librum dō.",
+    "_ipsō_ is ablative. The one receiving is dative: _ipsī_."
+   ],
+   [
+    "Dominō ipse librum dō.",
+    "_ipse_ is nominative. The one receiving is dative: _ipsī_."
+   ]
+  ]
+ }
+]

@@ -1,0 +1,326 @@
+[
+ {
+  "id": "world.4.01",
+  "review": "unreviewed",
+  "en": "The gods love Rome.",
+  "la": "Dī Rōmam amant.",
+  "fill": "Dī",
+  "skills": [
+   "case.nom.subj",
+   "world.gods"
+  ],
+  "tag": "dī: the gods (subject)",
+  "explain": "A plural subject in the nominative: _Dī_.",
+  "distractors": [
+   [
+    "Deus Rōmam amant.",
+    "_Deus_ is singular (“the god”). A plural subject in the nominative: _Dī_."
+   ],
+   [
+    "Deum Rōmam amant.",
+    "_Deum_ is accusative singular. A plural subject in the nominative: _Dī_."
+   ],
+   [
+    "Deōs Rōmam amant.",
+    "_Deōs_ is accusative plural. A plural subject in the nominative: _Dī_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.02",
+  "review": "unreviewed",
+  "en": "The goddess has great power.",
+  "la": "Dea magnam potestātem habet.",
+  "fill": "Dea",
+  "skills": [
+   "case.nom.subj",
+   "world.gods"
+  ],
+  "tag": "dea: goddess (subject)",
+  "explain": "The one who has is the subject, nominative: _Dea_.",
+  "distractors": [
+   [
+    "Deus magnam potestātem habet.",
+    "_Deus_ is masculine (“god”). The one who has is the subject, nominative: _Dea_."
+   ],
+   [
+    "Deam magnam potestātem habet.",
+    "_Deam_ is accusative. The one who has is the subject, nominative: _Dea_."
+   ],
+   [
+    "Deae magnam potestātem habet.",
+    "_Deae_ is genitive or dative. The one who has is the subject, nominative: _Dea_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.03",
+  "review": "unreviewed",
+  "en": "We pray to the gods.",
+  "la": "Deōs ōrāmus.",
+  "fill": "Deōs",
+  "skills": [
+   "case.acc.obj",
+   "world.gods"
+  ],
+  "tag": "deōs: the gods (object)",
+  "explain": "_ōrō_ takes the accusative: the ones prayed to: _Deōs_.",
+  "distractors": [
+   [
+    "Dī ōrāmus.",
+    "_Dī_ is nominative plural. _ōrō_ takes the accusative: the ones prayed to: _Deōs_."
+   ],
+   [
+    "Deum ōrāmus.",
+    "_Deum_ is singular. _ōrō_ takes the accusative: the ones prayed to: _Deōs_."
+   ],
+   [
+    "Deōrum ōrāmus.",
+    "_Deōrum_ is genitive plural. _ōrō_ takes the accusative: the ones prayed to: _Deōs_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.04",
+  "review": "unreviewed",
+  "en": "The altar is in the temple.",
+  "la": "Āra in templō est.",
+  "fill": "templō",
+  "skills": [
+   "case.abl.place",
+   "world.gods"
+  ],
+  "tag": "in templō: in the temple",
+  "explain": "After _in_ meaning “in”, use the ablative: _templō_.",
+  "distractors": [
+   [
+    "Āra in templum est.",
+    "_templum_ is accusative. After _in_ meaning “in”, use the ablative: _templō_."
+   ],
+   [
+    "Āra in templī est.",
+    "_templī_ is genitive. After _in_ meaning “in”, use the ablative: _templō_."
+   ],
+   [
+    "Āra in templa est.",
+    "_templa_ is plural. After _in_ meaning “in”, use the ablative: _templō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.05",
+  "review": "unreviewed",
+  "en": "Nobody conquers fate.",
+  "la": "Nēmō fātum vincit.",
+  "fill": "fātum",
+  "skills": [
+   "case.acc.obj",
+   "world.gods"
+  ],
+  "tag": "fātum: fate (object)",
+  "explain": "The thing conquered is accusative: _fātum_.",
+  "distractors": [
+   [
+    "Nēmō fātō vincit.",
+    "_fātō_ is dative or ablative. The thing conquered is accusative: _fātum_."
+   ],
+   [
+    "Nēmō fātī vincit.",
+    "_fātī_ is genitive. The thing conquered is accusative: _fātum_."
+   ],
+   [
+    "Nēmō fātīs vincit.",
+    "_fātīs_ is dative or ablative plural. The thing conquered is accusative: _fātum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.06",
+  "review": "unreviewed",
+  "en": "The gods are in the sky.",
+  "la": "Dī in caelō sunt.",
+  "fill": "caelō",
+  "skills": [
+   "case.abl.place",
+   "world.gods"
+  ],
+  "tag": "in caelō: in the sky",
+  "explain": "After _in_ meaning “in”, use the ablative: _caelō_.",
+  "distractors": [
+   [
+    "Dī in caelum sunt.",
+    "_caelum_ is accusative. After _in_ meaning “in”, use the ablative: _caelō_."
+   ],
+   [
+    "Dī in caelī sunt.",
+    "_caelī_ is genitive. After _in_ meaning “in”, use the ablative: _caelō_."
+   ],
+   [
+    "Dī in caelōrum sunt.",
+    "_caelōrum_ is genitive plural. After _in_ meaning “in”, use the ablative: _caelō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.07",
+  "review": "unreviewed",
+  "en": "The sun and the moon are in the sky.",
+  "la": "Sōl et lūna in caelō sunt.",
+  "fill": "lūna",
+  "skills": [
+   "case.nom.subj",
+   "world.gods"
+  ],
+  "tag": "lūna: the moon (subject)",
+  "explain": "The second subject is also nominative: _lūna_.",
+  "distractors": [
+   [
+    "Sōl et lūnam in caelō sunt.",
+    "_lūnam_ is accusative. The second subject is also nominative: _lūna_."
+   ],
+   [
+    "Sōl et lūnae in caelō sunt.",
+    "_lūnae_ is genitive or dative. The second subject is also nominative: _lūna_."
+   ],
+   [
+    "Sōl et lūnās in caelō sunt.",
+    "_lūnās_ is accusative plural. The second subject is also nominative: _lūna_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.08",
+  "review": "unreviewed",
+  "en": "The citizen gives a gift to the god.",
+  "la": "Cīvis deō mūnus dat.",
+  "fill": "deō",
+  "skills": [
+   "case.dat.recipient",
+   "world.gods"
+  ],
+  "tag": "deō: to the god",
+  "explain": "The one receiving is dative: _deō_.",
+  "distractors": [
+   [
+    "Cīvis deum mūnus dat.",
+    "_deum_ is accusative. The one receiving is dative: _deō_."
+   ],
+   [
+    "Cīvis deus mūnus dat.",
+    "_deus_ is nominative. The one receiving is dative: _deō_."
+   ],
+   [
+    "Cīvis deī mūnus dat.",
+    "_deī_ is genitive or plural. The one receiving is dative: _deō_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.09",
+  "review": "unreviewed",
+  "en": "The god hears the voice.",
+  "la": "Deus vōcem audit.",
+  "fill": "vōcem",
+  "skills": [
+   "case.acc.obj",
+   "world.gods"
+  ],
+  "tag": "vōcem: the voice (object)",
+  "explain": "The thing heard is accusative: _vōcem_.",
+  "distractors": [
+   [
+    "Deus vōx audit.",
+    "_vōx_ is nominative. The thing heard is accusative: _vōcem_."
+   ],
+   [
+    "Deus vōcis audit.",
+    "_vōcis_ is genitive. The thing heard is accusative: _vōcem_."
+   ],
+   [
+    "Deus vōcī audit.",
+    "_vōcī_ is dative. The thing heard is accusative: _vōcem_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.10",
+  "review": "unreviewed",
+  "en": "They fear the anger of the gods.",
+  "la": "Īram deōrum timent.",
+  "fill": "deōrum",
+  "skills": [
+   "case.gen",
+   "world.gods"
+  ],
+  "tag": "deōrum: of the gods",
+  "explain": "“The anger of the gods” needs the genitive plural: _deōrum_.",
+  "distractors": [
+   [
+    "Īram deōs timent.",
+    "_deōs_ is accusative plural. “The anger of the gods” needs the genitive plural: _deōrum_."
+   ],
+   [
+    "Īram Dīs timent.",
+    "_Dīs_ is dative plural. “The anger of the gods” needs the genitive plural: _deōrum_."
+   ],
+   [
+    "Īram deus timent.",
+    "_deus_ is nominative singular. “The anger of the gods” needs the genitive plural: _deōrum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.11",
+  "review": "unreviewed",
+  "en": "The gods hold the fate of men.",
+  "la": "Dī fāta hominum tenent.",
+  "fill": "hominum",
+  "skills": [
+   "case.gen",
+   "world.gods"
+  ],
+  "tag": "hominum: of men",
+  "explain": "“The fate of men” needs the genitive plural: _hominum_.",
+  "distractors": [
+   [
+    "Dī fāta hominēs tenent.",
+    "_hominēs_ is nominative or accusative plural. “The fate of men” needs the genitive plural: _hominum_."
+   ],
+   [
+    "Dī fāta hominibus tenent.",
+    "_hominibus_ is dative or ablative plural. “The fate of men” needs the genitive plural: _hominum_."
+   ],
+   [
+    "Dī fāta hominem tenent.",
+    "_hominem_ is accusative singular. “The fate of men” needs the genitive plural: _hominum_."
+   ]
+  ]
+ },
+ {
+  "id": "world.4.12",
+  "review": "unreviewed",
+  "en": "The altar of the goddess is great.",
+  "la": "Āra deae magna est.",
+  "fill": "deae",
+  "skills": [
+   "case.gen",
+   "world.gods"
+  ],
+  "tag": "deae: of the goddess",
+  "explain": "“The altar of the goddess” needs the genitive: _deae_.",
+  "distractors": [
+   [
+    "Āra dea magna est.",
+    "_dea_ is nominative. “The altar of the goddess” needs the genitive: _deae_."
+   ],
+   [
+    "Āra deam magna est.",
+    "_deam_ is accusative. “The altar of the goddess” needs the genitive: _deae_."
+   ],
+   [
+    "Āra deābus magna est.",
+    "_deābus_ is dative or ablative plural. “The altar of the goddess” needs the genitive: _deae_."
+   ]
+  ]
+ }
+]
