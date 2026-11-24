@@ -125,6 +125,38 @@ export function validateLoaded(content) {
     const unlisted = content.lexicon.filter((e) => e.vocabOnly && !seen.has(e.id));
     if (unlisted.length) warnings.push(`${unlisted.length} lexicon words are marked vocabOnly but not in ${pack.id}'s order file (e.g. ${unlisted.slice(0, 5).map((e) => e.id).join(', ')})`);
   }
+
+  // The curriculum (content/curriculum.json): every unit of every sentence track is in exactly one stage, in an order
+  // the unlock rules allow, so the Path screen never hides a unit and never offers one that cannot open yet.
+  if (content.stages) {
+    const where = new Map();   // "pack.unit" -> position in the whole plan
+    let pos = 0;
+    const stageIds = new Set();
+    for (const st of content.stages) {
+      if (stageIds.has(st.id)) err(`curriculum ${st.id}`, 'stage id used twice');
+      stageIds.add(st.id);
+      if (!st.units.length) err(`curriculum ${st.id}`, 'a stage needs at least one unit');
+      for (const u of st.units) {
+        if (where.has(u.ref)) err(`curriculum ${st.id}`, `${u.ref} is listed twice`);
+        where.set(u.ref, pos++);
+      }
+    }
+    for (const pack of packs.filter((p) => p.budget !== 'words')) {
+      let last = -1;
+      for (const unit of pack.units) {
+        const at = where.get(`${pack.id}.${unit.id}`);
+        if (at === undefined) { err(`curriculum`, `${pack.id}.${unit.id} (“${unit.title}”) is in no stage`); continue; }
+        if (at < last) err('curriculum', `${pack.id}.${unit.id} comes before an earlier unit of its own track; units open in order`);
+        last = at;
+      }
+      if (pack.gate) {
+        const first = where.get(`${pack.id}.${pack.units[0].id}`);
+        const gate = where.get(`${pack.gate.pack}.${pack.gate.unit.id}`);
+        if (first !== undefined && gate !== undefined && gate > first) err('curriculum', `${pack.id} opens only after ${pack.gate.pack}.${pack.gate.unit.id}, which the plan puts later`);
+      }
+    }
+  }
+
   return { errors, warnings };
 }
 

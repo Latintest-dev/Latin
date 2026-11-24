@@ -81,15 +81,41 @@ test('words that mean the same are all accepted when typing from English', () =>
 
 test('Continue gives sentences and words separate budgets, and holds both back under a review backlog', async () => {
   const store = await mkStore();
-  const q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 4 });
+  const base = { content, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6 };
   const isWord = (e) => content.itemsById.get(e.itemId).word;
-  assert.equal(q.filter((e) => e.kind === 'new' && isWord(e)).length, 4);
-  assert.ok(q.filter((e) => e.kind === 'new' && !isWord(e)).length <= 6);
+  // words from the lessons (newWords) and extra frequency words (tailWords) are counted separately
+  const lessonOnly = buildQueue({ ...base, itemStates: store.state.items, newWords: 4, tailWords: 0 });
+  assert.equal(lessonOnly.filter((e) => e.kind === 'new' && isWord(e)).length, 4);
+  assert.ok(lessonOnly.filter((e) => e.kind === 'new' && !isWord(e)).length <= 6);
+  const tailOnly = buildQueue({ ...base, itemStates: store.state.items, newWords: 0, tailWords: 3 });
+  assert.equal(tailOnly.filter((e) => e.kind === 'new' && isWord(e)).length, 3);
   // a big backlog: nothing new at all
   const due = { ...newItemState(), intro: true, lvl: 2, box: 2, due: clock - DAY };
   content.packs[0].units[0].items.concat(content.packs[1].units[0].items).slice(0, 14).forEach((it) => store.putItem(it.id, { ...due }));
-  const held = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 4 });
+  const held = buildQueue({ ...base, itemStates: store.state.items, newWords: 4, tailWords: 2 });
   assert.equal(held.filter((e) => e.kind === 'new').length, 0);
+});
+
+test('lesson words come first: a new sentence brings the words it uses, in frequency order, before the frequency tail', async () => {
+  const store = await mkStore();
+  const q = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 6, tailWords: 0 });
+  const sentenceIds = q.filter((e) => e.kind === 'new' && !content.itemsById.get(e.itemId).word).map((e) => e.itemId);
+  const used = new Set(sentenceIds.flatMap((id) => content.lesson.itemWords.get(id)));
+  const cards = q.filter((e) => e.kind === 'new' && content.itemsById.get(e.itemId).word);
+  assert.ok(cards.length > 0);
+  for (const e of cards) assert.ok(used.has(content.itemsById.get(e.itemId).word), `${e.itemId} is not a word of the new sentences`);
+  const ranks = cards.map((e) => content.wordRank.get(content.itemsById.get(e.itemId).word));
+  assert.deepEqual(ranks, [...ranks].sort((a, b) => a - b), 'in frequency order');
+});
+
+test('a word card already met is not offered again as a lesson word', async () => {
+  const store = await mkStore();
+  const first = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 6, tailWords: 0 })
+    .filter((e) => e.kind === 'new' && content.itemsById.get(e.itemId).word);
+  first.forEach((e) => store.putItem(e.itemId, { ...newItemState(), intro: true, lvl: 2, box: 1, due: clock + DAY }));
+  const again = buildQueue({ content, itemStates: store.state.items, skills: {}, mistakes: [], now: clock, mode: 'continue', newTotal: 6, newWords: 6, tailWords: 0 })
+    .filter((e) => e.kind === 'new' && content.itemsById.get(e.itemId).word);
+  for (const e of again) assert.ok(!first.some((f) => f.itemId === e.itemId));
 });
 
 test('a paused word track adds no new words, but its reviews still come up', async () => {

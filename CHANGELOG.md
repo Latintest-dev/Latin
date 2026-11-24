@@ -2,6 +2,31 @@
 
 Newest first. Version numbers live in `js/version.js`.
 
+## 0.8.0
+- **Faster start-up**: the 5,000 word cards are built only when first used (about 3.7 s to about 0.15 s of loading in
+  Node), and content files are fetched in parallel.
+- **A plan instead of a pile**: `content/curriculum.json` arranges the 51 lessons of all tracks into 12 stages. The new
+  **Path** screen shows them (you are here, lessons, meters); the old Learn list of near-duplicate sections is gone.
+- **Continue follows the Path** by default (setting: Follow the Path / Mix all tracks), so it stays on your current
+  stage instead of hopping between tracks.
+- **Vocabulary woven into lessons**: Continue teaches the words of the sentences you are learning first (default 6),
+  then a small tail from the frequency list (default 2). The word list no longer needs unlocking. Sentences and their
+  words are linked at load (`engine/lessons.js`).
+- **Words screen**: Meanings (study, quick quiz, frequency list in pages), Forms, Look up. **Forms practice** drills the
+  endings of words you have met (genitive plural, 3rd person plural, ...), and **Use it in sentences** replays or
+  teaches sentences containing those words.
+- **Locked lessons explain themselves**: how many sentences, in which lesson, and a **Go there** button.
+- **Settings review**: each setting declares what it affects; word and sentence counts now apply to Continue and to
+  lessons; the Settings screen previews your next Continue and warns when due reviews hold new material back.
+- **Today** replaces Learn: one Continue button, a meter, the lesson you are on, and what is weak.
+- **Progress**: Practice button on any weak skill (a new `skill` mode); the sentence count no longer includes word cards.
+- **Framework**: `docs/FRAMEWORK.md` (extension points), `CLAUDE.md` (handoff for new sessions),
+  `tests/framework.test.mjs` (guards: settings declared and read, modes have presenters, routes have tabs, every lesson in
+  a stage, folders registered, start-up budget), `tools/coverage.mjs`.
+- **Delta releases**: `release-manifest.json` plus `dist/latin-app-<version>-changes.zip` (only changed files) and
+  `DELETE-<version>.txt`, so an update no longer means re-uploading the whole app.
+- Fix: a forms question whose word could not supply three different wrong answers is skipped instead of failing.
+
 ## 0.7.0
 - **Word trainer**: about 5,000 common Latin words as flashcards in 100 units, most frequent first (roughly: first
   2,000 ranked from a treebank plus a dictionary's tiers, the rest from the tiers). Choose, then type with a

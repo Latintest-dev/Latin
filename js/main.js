@@ -5,11 +5,8 @@ import { createStore } from './core/store.js';
 import { loadContent, browserFetchJson } from './core/content.js';
 import { PACKS } from './modules/registry.js';
 import { h, clear } from './ui/dom.js';
-import { renderHome } from './ui/home.js';
 import { renderSession } from './ui/session.js';
-import { renderProgress } from './ui/progress.js';
-import { renderSettings } from './ui/settings.js';
-import { renderWords } from './ui/words.js';
+import { ROUTES } from './ui/routes.js';
 
 const root = document.getElementById('app');
 const nav = document.getElementById('nav');
@@ -26,12 +23,9 @@ const app = {
 };
 window.__app = app; // handy for debugging in the browser console
 
-const routes = {
-  '': renderHome,
-  progress: renderProgress,
-  words: renderWords,
-  settings: renderSettings,
-};
+const routes = Object.fromEntries(ROUTES.map((r) => [r.path, r.render]));
+// the tab bar is drawn from the same table as the screens, so a screen and its tab cannot drift apart
+nav.replaceChildren(...ROUTES.map((r) => Object.assign(document.createElement('a'), { href: `#/${r.path}`, textContent: r.tab })));
 
 function render() {
   for (const fn of cleanups) fn();
@@ -51,7 +45,7 @@ function render() {
       pendingSession = null;
       renderSession(root, app, params);
     } else {
-      (routes[route] || renderHome)(root, app);
+      (routes[route] || routes[''])(root, app);
     }
   } catch (err) {
     console.error(err);

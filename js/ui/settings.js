@@ -1,6 +1,10 @@
 import { h } from './dom.js';
 import { fmtDate } from './format.js';
 import { APP_VERSION } from '../version.js';
+import { SETTINGS, settingValue } from '../core/settings.js';
+import { buildQueue } from '../core/modes.js';
+import { queueContext } from '../core/context.js';
+import { countKinds, dueItems, MAX_DUE } from '../core/scheduler.js';
 
 export { APP_VERSION };
 
@@ -54,15 +58,6 @@ export function renderSettings(root, app) {
   });
   const paste = h('textarea', { rows: 3, placeholder: 'Paste exported progress here', class: 'paste', 'aria-label': 'Paste exported progress' });
 
-  const newSel = h('select', { onchange: () => store.setSetting('newTotal', Number(newSel.value)), 'aria-label': 'New sentences per session' },
-    [3, 4, 6, 8, 10, 12].map((n) => h('option', { value: n, selected: n === s.settings.newTotal }, String(n))));
-
-  const wordsSel = h('select', { onchange: () => store.setSetting('newWords', Number(wordsSel.value)), 'aria-label': 'New words per session' },
-    [3, 4, 6, 8, 10, 15].map((n) => h('option', { value: n, selected: n === (s.settings.newWords ?? 6) }, String(n))));
-
-  const goalSel = h('select', { onchange: () => store.setSetting('dailyGoal', Number(goalSel.value)), 'aria-label': 'Daily goal in answers' },
-    [10, 20, 30, 50, 80].map((n) => h('option', { value: n, selected: n === (s.settings.dailyGoal || 20) }, String(n))));
-
   // which tracks bring in new sentences (reviews of anything already met always come up)
   const trackToggle = (pack) => {
     const input = h('input', {
@@ -70,31 +65,60 @@ export function renderSettings(root, app) {
       onchange: () => {
         const paused = new Set(store.state.settings.pausedPacks || []);
         if (input.checked) paused.delete(pack.id); else paused.add(pack.id);
-        store.setSetting('pausedPacks', [...paused]);
+        changed('pausedPacks', [...paused]);
       },
     });
     return h('label', { class: 'toggle' }, h('span', null, h('strong', null, pack.name), h('small', null, pack.blurb)), input);
   };
 
+  // What the next Continue would hold, recomputed whenever a setting changes, so every change has a visible effect.
+  const preview = h('div', { class: 'card preview' });
+  const drawPreview = () => {
+    const now = Date.now();
+    const q = buildQueue(queueContext(app, { mode: 'continue' }, now));
+    const k = countKinds(q);
+    const isWord = (e) => app.content.itemsById.get(e.itemId).word;
+    const newWords = q.filter((e) => e.kind === 'new' && isWord(e)).length;
+    const newSent = q.filter((e) => e.kind === 'new' && !isWord(e)).length;
+    const dueAll = app.content.packs.flatMap((p) => dueItems(p.units.flatMap((u) => u.items), store.state.items, now)).length;
+    preview.replaceChildren(
+      h('p', { class: 'eyebrow' }, 'Your next Continue'),
+      h('p', { class: 'preview-line' }, `${k.review} to review · ${newSent} new sentences · ${newWords} new words`),
+      ...(dueAll > MAX_DUE
+        ? [h('p', { class: 'hold' }, `New material is paused while ${dueAll} reviews are due, so the settings below cannot add anything yet. Catch up to ${MAX_DUE} or fewer and they apply.`)]
+        : []));
+  };
+  const changed = (key, value) => { store.setSetting(key, value); drawPreview(); };
+
+  const control = (def) => {
+    if (def.type === 'toggle') {
+      const input = h('input', { type: 'checkbox', checked: !!settingValue(s.settings, def.key), onchange: () => changed(def.key, input.checked) });
+      return h('label', { class: 'toggle' }, h('span', null, h('strong', null, def.label), h('small', null, def.help)), input);
+    }
+    if (def.type === 'choice') {
+      const opts = def.options.map((o) => (Array.isArray(o) ? o : [o, String(o)]));
+      const cur = settingValue(s.settings, def.key);
+      const sel = h('select', { 'aria-label': def.label, onchange: () => changed(def.key, typeof def.default === 'number' ? Number(sel.value) : sel.value) },
+        opts.map(([v, text]) => h('option', { value: v, selected: v === cur }, text)));
+      return h('label', { class: 'toggle' }, h('span', null, h('strong', null, def.label), h('small', null, def.help)), sel);
+    }
+    return null;
+  };
+  const groups = [...new Set(SETTINGS.map((d) => d.group))];
+
   root.append(
     h('header', { class: 'page-head' }, h('h1', null, 'Settings')),
-    h('div', { class: 'card' },
-      toggle('showMacrons', 'Show macrons', 'Display long vowels (ā ē ī ō ū) in Latin sentences. Explanations always show them.'),
-      toggle('strictMacrons', 'Require macrons in answers', 'When on, answers typed without the right macrons count as "almost".'),
-      h('label', { class: 'toggle' },
-        h('span', null, h('strong', null, 'New sentences per session'), h('small', null, 'Shared between your tracks, taking turns. Reviews always come first.')),
-        newSel),
-      h('label', { class: 'toggle' },
-        h('span', null, h('strong', null, 'New words per session'), h('small', null, 'From the word trainer, on top of the sentences. Each new word is asked about three times in the session.')),
-        wordsSel),
-      h('label', { class: 'toggle' },
-        h('span', null, h('strong', null, 'Daily goal'), h('small', null, 'Answers per day that make a full day. A little every day beats a lot once a week.')),
-        goalSel)),
-
-    h('h2', null, 'Tracks'),
-    h('div', { class: 'card' },
-      h('p', { class: 'sub' }, 'Untick a track to stop it adding new sentences to Continue while you focus on another. You still review what you have already met, and you can open any unit from the Learn page.'),
-      ...app.content.packs.map(trackToggle)),
+    preview,
+    ...groups.flatMap((g) => {
+      const defs = SETTINGS.filter((d) => d.group === g);
+      if (defs[0].type === 'tracks') {
+        return [h('h2', null, g),
+          h('div', { class: 'card' },
+            h('p', { class: 'sub' }, defs[0].help),
+            ...app.content.packs.filter((p) => p.budget !== 'words').map(trackToggle))];
+      }
+      return [h('h2', null, g), h('div', { class: 'card' }, defs.map(control))];
+    }),
 
     h('h2', null, 'Your data'),
     h('div', { class: 'card' },
@@ -123,4 +147,5 @@ export function renderSettings(root, app) {
         }
       } }, 'Erase progress')),
     h('p', { class: 'meta center' }, `Latin app v${APP_VERSION}`));
+  drawPreview();
 }

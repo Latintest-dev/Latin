@@ -36,7 +36,36 @@ function dialogueRecap({ queue, content, settings }) {
     h('p', { class: 'sub' }, 'Read both sides aloud. Then play it again and answer without looking.'));
 }
 
+/** The lexicon ids behind a drill queue's items (a form item or a sentence names its words). */
+const wordsPlayed = (queue, content) => {
+  const out = new Set();
+  for (const e of queue) {
+    for (const w of e.words || []) out.add(w);
+    const w = content.itemsById.get(e.itemId)?.word;
+    if (w) out.add(w);
+  }
+  return [...out];
+};
+
 export const PRESENT = {
+  forms: {
+    eyebrow: (e) => `Forms, ${e.step} of ${e.of}`,
+    done: 'Forms practice complete',
+    // after forms: meet the same words in sentences (only if some open lesson uses them)
+    next: ({ queue, content }) => {
+      const words = wordsPlayed(queue, content).filter((w) => content.lesson.wordItems.get(w)?.length);
+      return words.length ? { label: 'Use these words in sentences', params: { mode: 'inuse', scope: { words } } } : null;
+    },
+  },
+  wordquiz: {
+    eyebrow: (e) => `Word quiz, ${e.step} of ${e.of}`,
+    done: 'Word quiz complete',
+  },
+  inuse: {
+    eyebrow: (e) => (e.step ? `In a sentence, ${e.step} of ${e.of}` : 'New sentence'),
+    done: 'Sentences complete',
+    score: (ok, total) => `${ok} of ${total} right`,
+  },
   speed: {
     eyebrow: () => 'Speed round: write it',
     done: 'Speed round complete',

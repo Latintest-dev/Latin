@@ -165,3 +165,13 @@ def unlock(page, pack, unit):
 
 def start(page, **params):
     page.evaluate("(p) => window.__app.startSession(p)", params)
+    page.wait_for_url('**#/session')
+    page.wait_for_selector('.today, .page-head', state='detached')   # the previous screen is gone, the session is drawn
+
+
+def open_path(page):
+    """Go to the Path screen with every stage open, so all lessons are drawn (they are drawn lazily, when a stage opens)."""
+    page.goto(BASE + '#/path')
+    page.wait_for_selector('details.stage')
+    page.evaluate("() => document.querySelectorAll('details.stage').forEach(d => { d.open = true; })")
+    page.wait_for_function("() => document.querySelectorAll('details.stage .lesson').length >= 40")

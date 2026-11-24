@@ -19,15 +19,22 @@ function tagLabel(tag, content) {
   return `${kind}: ${labelOf(from)} instead of ${labelOf(to)}`;
 }
 
+/** How to practice one skill: form skills have their own drill; every other skill is practiced through its sentences. */
+const skillPractice = (id) => (id.startsWith('form.') ? { mode: 'forms', scope: { skill: id } } : { mode: 'skill', scope: { skill: id } });
+
 export function renderProgress(root, app) {
   const { store, content } = app;
   const s = store.state;
   const settings = s.settings;
-  const intro = Object.values(s.items).filter((x) => x.intro).length;
-  const strong = Object.values(s.items).filter((x) => x.box >= 3).length;
+  // sentences only: word cards (ids "vocab.*") and forms are counted on the Words screen
+  const sentences = Object.entries(s.items).filter(([id]) => !id.startsWith('vocab.'));
+  const intro = sentences.filter(([, x]) => x.intro).length;
+  const strong = sentences.filter(([, x]) => x.box >= 3).length;
+  let totalSentences = 0;
+  for (const p of content.packs) if (p.budget !== 'words') for (const u of p.units) totalSentences += u.items.length;
 
   root.append(h('header', { class: 'page-head' }, h('h1', null, 'Progress'),
-    h('p', { class: 'sub' }, `${intro} of ${content.itemsById.size} sentences met · ${strong} known well`)));
+    h('p', { class: 'sub' }, `${intro} of ${totalSentences} sentences met · ${strong} known well`)));
 
   root.append(h('div', { class: 'btn-row' },
     h('button', { class: 'btn', disabled: intro === 0, onclick: () => app.startSession({ mode: 'weak' }) }, 'Practice weak spots'),
@@ -45,10 +52,11 @@ export function renderProgress(root, app) {
     root.append(h('div', { class: 'card' }, rows.map((r) => h('div', { class: 'skill' },
       h('div', { class: 'skill-top' },
         h('span', null, rich(r.meta.name, settings)),
-        h('span', { class: 'meta' }, `${r.rec.c}/${r.rec.a}`)),
+        h('span', { class: 'meta' }, `${r.rec.c}/${r.rec.a}`),
+        r.str < 0.8 ? h('button', { class: 'btn small', onclick: () => app.startSession(skillPractice(r.id)) }, 'Practice') : null),
       h('div', { class: 'meter' },
         h('div', { class: `meter-fill ${r.str < 0.5 ? 'low' : r.str < 0.8 ? 'mid' : 'high'}`, style: `width:${Math.max(r.str * 100, 4)}%` }))))));
-    root.append(h('p', { class: 'sub' }, 'Bars show your last 12 answers for each skill, weakest first.'));
+    root.append(h('p', { class: 'sub' }, 'Bars show your last 12 answers for each skill, weakest first. Press Practice on a weak one to work on just that.'));
   }
 
   // mistake patterns

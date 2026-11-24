@@ -34,7 +34,7 @@ with sync_playwright() as p:
       for (const id of ['roman.3.09','roman.1.05','daily.4.02','roman.1.01']) s.putItem(id,{lvl:2,box:1,due:t,intro:true,seen:3,ok:3,bad:0,last:t,upd:t});
       s.putItem('roman.1.05',{lvl:1,box:0,due:t,intro:true,seen:2,ok:2,bad:0,last:t,upd:t});
       s.putItem('roman.3.01',{lvl:2,box:4,due:t+30*864e5,intro:true,seen:5,ok:5,bad:0,last:t,upd:t});}""")
-    page.evaluate("() => { const s = window.__app.store; s.setSetting('newWords', 0); s.setSetting('newTotal', 0); }")   # only the four due items: no new cards in this scenario
+    page.evaluate("() => { const s = window.__app.store; s.setSetting('newWords', 0); s.setSetting('tailWords', 0); s.setSetting('newTotal', 0); }")   # only the four due items: no new cards in this scenario
     start(page, mode='continue')
     seen = {}
     for _ in range(14):
@@ -58,6 +58,8 @@ with sync_playwright() as p:
     body = page.inner_text('body')
     check('progress lists tense and -ne slips', 'tense' in body.lower() and '-ne' in body)
     page.screenshot(path=f'{SHOTS}/progress-new.png', full_page=True)
+
+    page.evaluate("() => { const s = window.__app.store; s.setSetting('newWords', 6); s.setSetting('tailWords', 2); s.setSetting('newTotal', 6); }")
 
     # 3. a change-it item typed wrong: the slip names the right ending, and Progress shows what was asked
     open_app(page)

@@ -19,25 +19,33 @@ with sync_playwright() as p:
     page.reload(); page.wait_for_selector('h1')          # now controlled by the service worker
     ctx.set_offline(True)
     page.reload(); page.wait_for_selector('h1')
-    check('app loads fully offline', page.inner_text('h1') == 'Latin' and page.query_selector('.btn.big') is not None)
+    check('app loads fully offline', page.inner_text('h1') == 'Today' and page.query_selector('.btn.big') is not None)
     page.click('.btn.big')
     n = play(page, idx)
     check('session works offline', n > 10, f'{n} steps')
     ctx.set_offline(False)
 
     # --- home after progress
-    open_app(page); page.wait_for_selector('.unit')
-    metas = [e.inner_text() for e in page.query_selector_all('.unit .meta')]
-    check('home shows progress per unit', re.match(r'\d+/\d+ met', metas[0]) and not metas[0].startswith('0/'), metas[0])
-    check('unit 2 still locked after one session', 'locked' in page.query_selector_all('.unit')[1].get_attribute('class'))
+    open_path(page)
+    metas = [e.inner_text() for e in page.query_selector_all('.lesson .meta')]
+    check('the Path shows progress per lesson', re.match(r'\d+/\d+ met', metas[0]) and not metas[0].startswith('0/'), metas[0])
+    check('lesson 2 still locked after one session', 'locked' in page.query_selector_all('.lesson')[1].get_attribute('class'))
+    check('a locked lesson says what to do', 'Meet' in page.inner_text('.lesson.locked .lockline') and 'unlock' in page.inner_text('.lesson.locked .lockline'), page.inner_text('.lesson.locked .lockline'))
+    check('the Path has twelve stages', page.locator('details.stage').count() == 12)
 
     # --- many sessions: reviews are not due yet, new units unlock
     for _ in range(5):
         open_app(page); page.wait_for_selector('.btn.big')
         page.click('.btn.big'); play(page, idx)
-    open_app(page); page.wait_for_selector('.unit')
-    classes = [e.get_attribute('class') for e in page.query_selector_all('.unit')]
-    check('core unit 2 unlocked after unit 1 is mostly met', 'locked' not in classes[1], str([e.inner_text() for e in page.query_selector_all('.unit .meta')][:2]))
+    open_path(page)
+    classes = [e.get_attribute('class') for e in page.query_selector_all('.lesson')]
+    check('core unit 2 unlocked after unit 1 is mostly met', 'locked' not in classes[1], str([e.inner_text() for e in page.query_selector_all('.lesson .meta')][:2]))
+    # --- Continue follows the Path: its new sentences come from the stage you are on
+    stage_of_new = page.evaluate("""async () => { const m = await import('/js/core/modes.js'); const a = window.__app;
+      const q = m.buildQueue({content: a.content, itemStates: a.store.state.items, skills: a.store.state.skills, mistakes: [], now: Date.now(), mode: 'continue', newTotal: 6, newWords: 0, tailWords: 0, rng: () => 0.5});
+      const fresh = q.filter(e => e.kind === 'new');
+      return [...new Set(fresh.map(e => a.content.stages.findIndex(s => s.units.some(u => u.unit.items.some(i => i.id === e.itemId)))))]; }""")
+    check('Continue takes new sentences from one or two neighbouring stages', 1 <= len(stage_of_new) <= 2, str(stage_of_new))
 
     # --- macrons on: a teach card shows them
     page.goto(BASE + '#/settings'); page.wait_for_selector('.toggle')
@@ -116,7 +124,7 @@ with sync_playwright() as p:
 
     # --- desktop viewport
     page.set_viewport_size({'width': 1100, 'height': 800})
-    open_app(page); page.wait_for_selector('.unit')
+    open_app(page); page.wait_for_selector('.today')
     page.screenshot(path=f'{SHOTS}/desktop-home.png')
     check('no console/page errors', not errors, str(errors)[:300])
     browser.close()

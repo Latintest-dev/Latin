@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { compareIds } from '../tools/ids.mjs';
 import { analyze, whereToFix } from '../tools/flags.mjs';
-import { bumpVersion, uploadBatches } from '../tools/release.mjs';
+import { bumpVersion, uploadBatches, diffManifests } from '../tools/release.mjs';
 import { loadFromDisk } from '../tools/validate.mjs';
 
 test('id guard: a shipped id that disappears is reported, a retired one is not, new ones are listed', () => {
@@ -66,4 +66,12 @@ test('release: upload batches stay under GitHub\'s limit and lose no file', () =
   const big = Array.from({ length: 250 }, (_, i) => `content/a/f${i}.json`);
   const bb = uploadBatches(big, 90);
   assert.ok(bb.every((b) => b.files.length <= 90) && bb.flatMap((b) => b.files).length === 250);
+});
+
+test('release: the delta lists new and edited files, and files that were removed', () => {
+  const before = { 'a.js': '1', 'b.js': '2', 'gone.js': '3' };
+  const after = { 'a.js': '1', 'b.js': '9', 'new.js': '4' };
+  assert.deepEqual(diffManifests(before, after), { changed: ['b.js', 'new.js'], removed: ['gone.js'] });
+  assert.deepEqual(diffManifests({}, after).changed.length, 3, 'with no earlier manifest everything is new');
+  assert.deepEqual(diffManifests(after, after), { changed: [], removed: [] });
 });

@@ -1,0 +1,29 @@
+{
+  "note": "The plan. Every unit of every sentence track belongs to exactly one stage, in the order to learn them. A unit only opens when the unit before it in its own track is mostly met (and a track may wait for a unit of another track), so keep each track's units in order. Add a unit: put \"pack.unit\" in the stage where it belongs. tools/validate.mjs checks that no unit is missing or listed twice and that the order respects the unlock rules.",
+  "stages": [
+    { "id": "s01", "title": "First steps", "blurb": "Where things are, big and small, and the first greetings.",
+      "units": ["core.1", "core.2", "core.3", "roman.1", "roman.2", "daily.1"] },
+    { "id": "s02", "title": "I want, I do", "blurb": "Say what you want and what you do, and talk yourself through a morning.",
+      "units": ["daily.2", "daily.3", "day.1", "roman.3"] },
+    { "id": "s03", "title": "Yesterday and tomorrow", "blurb": "The past and the future of everyday verbs, and retelling your day.",
+      "units": ["daily.4", "daily.5", "day.2", "day.3", "day.4"] },
+    { "id": "s04", "title": "People and places", "blurb": "Family and friends, going to and from places, and your first real conversations.",
+      "units": ["core.4", "core.5", "core.6", "talk.1", "talk.2"] },
+    { "id": "s05", "title": "Who does what to whom", "blurb": "Subjects and objects, questions, and changing a sentence for I, you, we and they.",
+      "units": ["daily.6", "daily.7", "swap.1", "swap.2"] },
+    { "id": "s06", "title": "Past and future, automatic", "blurb": "More past and future, one or many, saying “not”, and a conversation at home.",
+      "units": ["daily.8", "daily.9", "swap.3", "swap.4", "talk.3"] },
+    { "id": "s07", "title": "Numbers, time and orders", "blurb": "Counting, telling the hour, giving and taking orders, saying what you like.",
+      "units": ["core.7", "core.8", "roman.4", "roman.5"] },
+    { "id": "s08", "title": "Roman life", "blurb": "Meals, hospitality, famous sayings, small talk, habits, and how Romans shouted and swore.",
+      "units": ["roman.6", "roman.7", "roman.8", "roman.9", "daily.10", "street.1"] },
+    { "id": "s09", "title": "Belonging and giving", "blurb": "Whose is it, giving and telling, and more verbs.",
+      "units": ["core.9", "core.10", "daily.11"] },
+    { "id": "s10", "title": "The genitive in depth", "blurb": "Of the whole, of quality and value, with adjectives, and with “remember”.",
+      "units": ["grammar.1", "grammar.2", "grammar.3", "grammar.4"] },
+    { "id": "s11", "title": "More declensions, more pronouns", "blurb": "The fourth and fifth declensions, and I, you and we in every case.",
+      "units": ["grammar.5", "grammar.6", "grammar.7"] },
+    { "id": "s12", "title": "Latin on the wall", "blurb": "Pompeii graffiti, tombstones and famous lines from the authors.",
+      "units": ["street.2", "street.3"] }
+  ]
+}

@@ -5,9 +5,14 @@
 //   node tools/release.mjs --e2e            also run the browser tests (needs Playwright and Chrome)
 //   node tools/release.mjs --check          only the checks; writes nothing except regenerated content
 //
+// Each release also writes dist/latin-app-<version>-changes*.zip: only the files that differ from the previous release
+// (tracked in release-manifest.json, which is part of the app and uploaded with it), plus DELETE.txt naming files to
+// remove from GitHub. After the first full upload, updates are usually a handful of files.
+//
 // Order matters: generate (append-only) -> validate content -> ids guard -> unit tests -> [browser tests] ->
 // version -> build sw.js -> record new ids -> zip. Any failure stops the release before anything is written.
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -37,6 +42,21 @@ function step(name, cmd, args, opts = {}) {
     console.error(`\nStopped: "${name}" failed. Nothing was released.`);
     process.exit(r.status || 1);
   }
+}
+
+const MANIFEST = 'release-manifest.json';
+
+/** Pure part, for tests: what changed between two { path: hash } maps. */
+export function diffManifests(previous = {}, next = {}) {
+  const changed = Object.keys(next).filter((f) => previous[f] !== next[f]).sort();
+  const removed = Object.keys(previous).filter((f) => !(f in next)).sort();
+  return { changed, removed };
+}
+
+async function hashFiles(files) {
+  const out = {};
+  for (const f of files.filter((x) => x !== MANIFEST).sort()) out[f] = createHash('sha256').update(await readFile(path.join(ROOT, f))).digest('hex').slice(0, 16);
+  return out;
 }
 
 const SKIP = new Set(['dist', 'node_modules', '.git', '__pycache__', '.cache']);   // .cache = downloaded vocabulary sources (large, re-creatable)
@@ -101,6 +121,12 @@ async function main() {
   step('Build service worker (and sync package.json version)', 'node', ['tools/build.mjs']);
   step('Record new sentence ids', 'node', ['tools/ids.mjs', 'update']);
 
+  // changes since the last release: new and edited files, and a list of files to delete
+  let previous = {};
+  try { previous = JSON.parse(await readFile(path.join(ROOT, MANIFEST), 'utf8')).files; } catch { /* first release with a manifest */ }
+  const next = await hashFiles(await listFiles());
+  const { changed, removed } = diffManifests(previous, next);
+  await writeFile(path.join(ROOT, MANIFEST), JSON.stringify({ version, files: next }, null, 1) + '\n');
   await mkdir(path.join(ROOT, 'dist'), { recursive: true });
   const zip = path.join('dist', `latin-app-${version}.zip`);
   step('Zip', 'zip', ['-rq', zip, '.', '-x', 'dist/*', 'node_modules/*', '.git/*', 'tests/e2e/__pycache__/*']);
@@ -114,6 +140,18 @@ async function main() {
     step(`Zip upload ${i + 1} of ${batches.length}`, 'zip', ['-q', name, ...b.files]);
     parts.push(`  ${name}  (${b.files.length} files: ${b.names.join(', ')})`);
   }
+  const send = [...new Set([...changed, MANIFEST])];
+  const deleteNote = removed.length > 0;
+  if (deleteNote) await writeFile(path.join(ROOT, 'dist', `DELETE-${version}.txt`), `Delete these files from the GitHub repository (they no longer exist in the app):\n${removed.join('\n')}\n`);
+  const changeParts = [];
+  const chunks = uploadBatches(send);
+  for (const [i, b] of chunks.entries()) {
+    const name = path.join('dist', `latin-app-${version}-changes${chunks.length > 1 ? `-${i + 1}-of-${chunks.length}` : ''}.zip`);
+    await rm(path.join(ROOT, name), { force: true });
+    step(`Zip changes ${i + 1} of ${chunks.length}`, 'zip', ['-q', name, ...b.files]);
+    changeParts.push(`  ${name}  (${b.files.length} files)`);
+  }
+  console.log(`\nChanged since the last release: ${changed.length} files${removed.length ? `, ${removed.length} to delete (see dist/DELETE-${version}.txt)` : ''}.\nIf your GitHub repo already has the previous release, upload only:\n${changeParts.join('\n')}`);
   console.log(`\nReady: ${zip} (everything, ${(await listFiles()).length} files)\nFor GitHub's web uploader (max 100 files at a time), upload these one after another, unzipped, keeping the folders:\n${parts.join('\n')}\nThen reload the app twice on each device to pick up the new version.`);
 }
 

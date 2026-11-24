@@ -31,7 +31,10 @@ test('a track can wait for a unit of another track, and says which', async () =>
   assert.ok(swap.gate, 'the swap track names a unit it waits for');
   assert.equal(unitUnlocked(swap, 0, store.state.items), false);
   const lock = summarize(content, store.state.items, clock).find((s) => s.pack.id === 'swap').units[0].lock;
-  assert.match(lock, new RegExp(swap.gate.unit.title));
+  assert.match(lock.text, new RegExp(swap.gate.unit.title));
+  assert.match(lock.text, /Meet \d+ more sentences? in /, 'it says how many sentences are left to meet');
+  assert.equal(lock.packId, swap.gate.pack);
+  assert.equal(lock.unitId, swap.gate.unit.id);
   meet(store, swap.gate.unit.items.slice(0, Math.ceil(swap.gate.unit.items.length * 0.8)));
   assert.equal(unitUnlocked(swap, 0, store.state.items), true);
   assert.equal(unitUnlocked(pack('talk'), 0, {}), false, 'conversations wait for the Latin-only unit');

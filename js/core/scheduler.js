@@ -62,7 +62,7 @@ export function shuffle(arr, rng = Math.random) {
 }
 
 export function makeEntry(itemId, lvl, learn, kind, rng = Math.random, item = null) {
-  return { itemId, lvl, learn, kind, type: exerciseTypeFor(lvl, rng, !!item?.q) };
+  return { itemId, lvl, learn, kind, type: exerciseTypeFor(lvl, rng, !!(item?.q || item?.form)) };
 }
 
 /** Share (0..1) of a list of items that the learner has met. */
@@ -77,14 +77,43 @@ export function introducedShare(items, itemStates) {
  * (`requires` in pack.json, resolved to `pack.gate` when the content is loaded).
  */
 export function unitUnlocked(pack, ui, itemStates) {
+  if (pack.open) return true;   // a track marked "open": true (the word list) has no lock; it is browsed, not walked through
   if (ui === 0) return !pack.gate || introducedShare(pack.gate.unit.items, itemStates) >= UNLOCK_RATIO;
   return introducedShare(pack.units[ui - 1].items, itemStates) >= UNLOCK_RATIO;
 }
 
+/** How many more items of `unit` must be met before the share required to unlock what follows it. */
+export function toUnlock(unit, itemStates) {
+  const need = Math.ceil(unit.items.length * UNLOCK_RATIO);
+  const have = unit.items.filter((it) => itemStates[it.id]?.intro).length;
+  return { need, have, left: Math.max(0, need - have) };
+}
+
+/**
+ * What blocks a locked unit and what to do about it: { text, packId, unitId, left }.
+ * `text` is a full sentence for the learner ("Meet 3 more sentences in “Latin only” ..."); the other fields let the
+ * screen offer a button that goes straight to the blocking unit.
+ */
+export function lockInfo(pack, ui, itemStates, packs = []) {
+  const blocker = ui === 0 ? pack.gate?.unit : pack.units[ui - 1];
+  if (!blocker) return null;
+  const owner = ui === 0 ? packs.find((p) => p.id === pack.gate.pack || p.id === pack.requires?.pack) : pack;
+  const { left } = toUnlock(blocker, itemStates);
+  const blockerUi = owner ? owner.units.findIndex((u) => u.id === blocker.id) : -1;
+  const where = ui === 0 ? ` (${pack.gate.packName})` : '';
+  return {
+    text: `Meet ${left} more sentence${left === 1 ? '' : 's'} in “${blocker.title}”${where} to unlock this.`,
+    packId: owner?.id ?? pack.requires?.pack ?? pack.id,
+    unitId: blocker.id,
+    left,
+    // can the blocking lesson be opened right now? (If it is locked too, the screen just explains.)
+    open: !!owner && blockerUi >= 0 && unitUnlocked(owner, blockerUi, itemStates),
+  };
+}
+
 /** What to tell the learner when a unit is locked. */
-export function lockReason(pack, ui) {
-  if (ui === 0 && pack.gate) return `Introduce most of “${pack.gate.unit.title}” (${pack.gate.packName}) first`;
-  return 'Introduce most of the previous unit first';
+export function lockReason(pack, ui, itemStates = {}, packs = []) {
+  return lockInfo(pack, ui, itemStates, packs)?.text ?? 'Not available yet';
 }
 
 /** Per-pack / per-unit progress numbers for the UI. */
@@ -101,7 +130,7 @@ export function summarize(content, itemStates, now) {
         strong: sts.filter((s) => s && s.box >= STRONG_BOX).length,
         due: sts.filter((s) => s?.intro && s.due <= now).length,
         unlocked: unitUnlocked(pack, ui, itemStates),
-        lock: unitUnlocked(pack, ui, itemStates) ? null : lockReason(pack, ui),
+        lock: unitUnlocked(pack, ui, itemStates) ? null : lockInfo(pack, ui, itemStates, content.packs),
       };
     }),
   }));

@@ -8,5 +8,6 @@
     "order": "order.json",
     "size": 50,
     "evidence": 2000
-  }
+  },
+  "open": true
 }

@@ -1,4 +1,4 @@
-# Latin: sentence-drill app (v0.7)
+# Latin: sentence-drill app (v0.8)
 
 A small, offline-capable web app for learning Latin by drilling whole sentences, aimed at reading, writing,
 thinking in and speaking Latin the way a Roman would. It runs in any modern browser on a phone or computer,
@@ -12,6 +12,8 @@ Where to look:
 | Use the app, put it on your phone            | this file                 |
 | Add or fix Latin content, run the generator  | `docs/CONTENT.md`         |
 | Change how the app works, add a mode or track| `docs/ARCHITECTURE.md`    |
+| Know where any new feature must go           | `docs/FRAMEWORK.md`       |
+| Start a new Claude session on the app        | `CLAUDE.md`               |
 | See what changed in each version             | `CHANGELOG.md`            |
 
 ## What it does
@@ -46,29 +48,49 @@ Review is spaced (1, 2, 4, 8, 16, 32 days) with per-skill strength, "practice we
   budget (default 6), separate from sentences. The ranking is evidence-based for roughly the first 2,000 words and
   approximate after that (see `docs/CONTENT.md`).
 
-### Ways to practice
+### The screens
 
-- **Continue**: reviews that are due, then new sentences (a shared budget, default 6 per session, taking turns
-  between tracks) and new words (their own budget, default 6). Reviews of every track always come up. When more
-  than ten reviews are due, no new material is added until you catch up.
-- **Speed round**: ten sentences you can already write, typed against a countdown. Never moves your review dates,
-  so it is safe to do as often as you like.
+- **Today**: one big **Continue** button, today's meter, the lesson Continue is on, what is due, and buttons for the
+  speed round, weak spots and your mistakes.
+- **Path**: the plan, in twelve stages (First steps, I want / I do, Yesterday and tomorrow, ... The genitive in depth,
+  Latin on the wall). You are here is open; each stage lists its lessons from every track in the order to study them.
+  A locked lesson says exactly what to do ("Meet 3 more sentences in "X" (Core grammar) to unlock this") with a
+  **Go there** button.
+- **Words**: *Meanings* (word cards: your lesson words first, then the frequency list, plus a quick quiz),
+  *Forms* (practice the genitive plural, the 3rd person plural and so on for words you have met, then use the same words
+  in sentences), and *Look up* (every verb in four tenses and six persons with English, nouns by case).
+- **Progress**: skills, your most common slips and recent mistakes, with a **Practice** button on any weak skill.
+- **Settings**: a live preview of what your next Continue will contain.
+
+### What Continue does
+
+1. Reviews that are due (at most 10; with more than 10 due, nothing new is added until you catch up).
+2. New sentences (default 6) from the **stage you are on**, so you follow the Path. (Setting: *Mix all tracks* takes turns
+   between tracks instead.)
+3. New words (default 6) taken from the sentences you are learning and have met, then a couple (default 2) of the most
+   common words from the frequency list.
+
+### Other ways to practice
+
+- **Study this stage / Start / Practice** on the Path (settings for new sentences apply).
+- **Speed round**: ten sentences you can already write, typed against a countdown. Never moves your review dates.
 - **Replay buttons** appear on a unit once you have met 80% of it. They never change your review schedule
-  (a wrong answer still counts as a mistake):
-  - **Narrate it**: retell a whole day in order, then read it back as one paragraph.
-  - **Run the drill**: the "Change it" sentences in rapid-fire, grouped by base sentence.
-  - **Play it**: the conversation from the top, at each line's own level.
-- **Daily goal and streak** on the Learn page. Many short days beat a few long ones.
-- **Words**: every verb in four tenses and six persons with English, nouns by case, for building sentences about
-  your real day.
+  (a wrong answer still counts as a mistake): **Narrate it**, **Run the drill**, **Play it**.
+- **Forms practice** and **Use it in sentences** (Words screen) are practice only: they update your skill bars and log
+  mistakes without scheduling every form.
+- **Daily goal and streak** on Today. Many short days beat a few long ones.
 
 ### Settings worth knowing
 
-- **Show macrons** (off by default) and **Require macrons**. Explanations always show macrons.
-- **New sentences per session**, **New words per session** and **Daily goal**.
+Each setting says what it affects, and the Settings screen previews your next Continue so you can see it work.
+
+- **Show macrons** (off by default) and **Require macrons** (typed answers).
+- **New sentences per session**, **New words from your lessons**, **Extra common words**, and **New sentences come from**
+  (Follow the Path / Mix all tracks). These change Continue; the first also sets the size of a lesson or stage session.
+- **Daily goal**.
 - **Tracks**: untick a track to stop it adding new sentences to Continue while you focus on another. You still
-  review what you have already met, and you can open any unit from the Learn page. Some tracks open only after a
-  unit of another (the lock icon says which).
+  review what you have already met, and you can open any lesson yourself from the Path. Some tracks open only after a
+  unit of another (the lock line says which).
 - **Export / Import**: import *merges*, so you can sync phone and computer by exporting from one and importing
   into the other.
 
@@ -91,15 +113,21 @@ home screen reminds you after a week.
 
 ## Updating (the routine)
 
-    node tools/release.mjs --bump minor     # or patch; checks everything, rebuilds sw.js, writes dist/latin-app-<version>.zip
+    node tools/release.mjs --bump minor     # or patch; checks everything, rebuilds sw.js, writes the zips in dist/
 
-GitHub's web upload accepts fewer than 100 files at a time, so the release also writes
-`dist/latin-app-<version>-upload-1.zip`, `-upload-2.zip`, ... of at most 90 files each. Upload them one after another
-(unzip each and drag its contents in, keeping folders), or use the full zip with git.
+Besides the full zip, the release writes:
 
-Then upload the contents (replace the files) and reload the app twice
-on each device. The release command stops before writing anything if content fails validation, a sentence id
-that was shipped before has disappeared (which would orphan your saved progress), or a test fails.
+- `dist/latin-app-<version>-changes.zip`: **only the files that changed since the last release**, plus
+  `release-manifest.json`. After the first full upload, this is all you upload (unzip, drag the contents into GitHub,
+  keeping folders). If files were removed, `dist/DELETE-<version>.txt` lists them to delete on GitHub.
+- `dist/latin-app-<version>-upload-N-of-M.zip`: the whole app in batches of at most 90 files, for a fresh upload
+  (GitHub's web uploader takes fewer than 100 files at a time).
+
+Then reload the app twice on each device. The release command stops before writing anything if content fails
+validation, a sentence id that was shipped before has disappeared (which would orphan your saved progress), a
+structure test fails (docs/FRAMEWORK.md), or any test fails.
+
+If you ever skip an upload, upload the full batches next time instead of the changes zip.
 
 Useful commands (`npm run <name>` works too):
 
@@ -107,6 +135,7 @@ Useful commands (`npm run <name>` works too):
     node tools/release.mjs --e2e            also run the browser tests (needs Python + Playwright + Chrome)
     node tools/flags.mjs my-progress.json   what you flagged and keep missing, with the file to fix each in
     node tools/generate.mjs --sample <id> 10   preview generated sentences without writing anything
+    node tools/coverage.mjs 1000            how many of the top 1,000 words appear in sentences yet
 
 ## Content review
 
@@ -118,6 +147,6 @@ an export into a fix list.
 
 ## Tests
 
-    node --test tests/*.test.mjs        # engine, scheduler, modes, storage, import/export, generator, tooling
+    node --test tests/*.test.mjs        # engine, scheduler, modes, storage, import/export, generator, tooling, framework
     node tools/validate.mjs             # content validation
     bash tests/e2e/run_all.sh           # every browser test (serves the app itself)

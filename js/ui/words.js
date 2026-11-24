@@ -1,9 +1,16 @@
-// "Words": look up any word you have met and see how it changes, so you can build your own sentences
-// (for example to narrate your real day). Verbs show every person in four tenses with English.
+// "Words": everything about single words, in three tabs.
+//   Meanings  learn what words mean (word cards come from your lessons first, then the frequency list)
+//   Forms     how words change (the genitive plural, the 3rd person plural...), then use them in sentences
+//   Look up   search any word and see its whole table
+// Verbs show every person in four tenses with English.
 
 import { h } from './dom.js';
 import { generateForms, stripMacrons } from '../engine/latin.js';
 import { partsOf, kindLabel } from '../engine/vocab.js';
+import { summarize, strength } from '../core/scheduler.js';
+import { lessonWordCards, studiedWords } from '../core/modes.js';
+import { cellsOf } from '../engine/forms.js';
+import { meter, lessonRow } from './parts.js';
 
 const PRON = ['I', 'you', 'he/she', 'we', 'you all', 'they'];
 const PERSONS = ['1sg', '2sg', '3sg', '1pl', '2pl', '3pl'];
@@ -97,7 +104,154 @@ function detail(e) {
   return h('p', { class: 'sub la' }, one);
 }
 
+let tab = 'meanings';   // remembered while the app is open, so coming back to Words lands where you were
+const TABS = [['meanings', 'Meanings'], ['forms', 'Forms'], ['lookup', 'Look up']];
+const UNITS_PER_PAGE = 20;
+
 export function renderWords(root, app) {
+  const body = h('div', { class: 'words-body' });
+  const pills = h('div', { class: 'pills tabs' }, TABS.map(([id, label]) => h('button', {
+    class: `pill${id === tab ? ' on' : ''}`,
+    onclick: () => { tab = id; pills.querySelectorAll('.pill').forEach((x, n) => x.classList.toggle('on', TABS[n][0] === id)); draw(); },
+  }, label)));
+  root.append(
+    h('header', { class: 'page-head' }, h('h1', null, 'Words'),
+      h('p', { class: 'sub' }, 'Learn what words mean, how they change, and how they sit in sentences.')),
+    pills, body);
+
+  function draw() {
+    body.replaceChildren();
+    if (tab === 'meanings') drawMeanings(body, app);
+    else if (tab === 'forms') drawForms(body, app);
+    else drawLookup(body, app);
+  }
+  draw();
+}
+
+// ---------- Meanings ----------
+
+function drawMeanings(root, app) {
+  const { store, content } = app;
+  const items = store.state.items;
+  const wordPack = content.packs.find((p) => p.budget === 'words');
+  if (!wordPack) { root.append(h('p', { class: 'sub' }, 'There is no word list in this build.')); return; }
+  let total = 0, met = 0, known = 0;
+  for (const unit of wordPack.units) {
+    for (const it of unit.items) {
+      total++;
+      const st = items[it.id];
+      if (st?.intro) met++;
+      if (st && st.box >= 3) known++;
+    }
+  }
+  const waiting = lessonWordCards(content, items, [], 100000).length;
+  const start = (mode) => app.startSession({ mode });
+
+  root.append(
+    h('div', { class: 'card' },
+      h('div', { class: 'skill-top' }, h('span', null, 'Words met'), h('span', { class: 'meta' }, `${met} of ${total} · ${known} known`)),
+      meter(met, known, total),
+      waiting
+        ? h('p', { class: 'meta' }, `${waiting} word${waiting === 1 ? '' : 's'} from sentences you have met are waiting to be learned. Study words takes those first.`)
+        : h('p', { class: 'meta' }, 'Words are taught from your lessons first, so this fills in as you go through the Path.')),
+    h('div', { class: 'btn-row' },
+      h('button', { class: 'btn primary', onclick: () => start('words') }, 'Study words'),
+      h('button', { class: 'btn', disabled: met === 0, onclick: () => start('wordquiz') }, 'Quick quiz')),
+    h('h2', null, 'The frequency list'),
+    h('p', { class: 'sub' }, 'The most common words first, in groups. You never need to work through it in order: lesson words arrive on their own.'));
+
+  const rows = new Map();
+  for (const { pack, units } of summarize(content, items, Date.now())) {
+    if (pack.id !== wordPack.id) continue;
+    for (const u of units) rows.set(u.unit.id, u);
+  }
+  const list = h('div', null);
+  const more = h('button', { class: 'btn', onclick: () => page() }, 'Show more');
+  let shown = 0;
+  const page = () => {
+    const next = wordPack.units.slice(shown, shown + UNITS_PER_PAGE);
+    list.append(...next.map((unit) => lessonRow(app, wordPack, rows.get(unit.id), { showTrack: false })));
+    shown += next.length;
+    more.hidden = shown >= wordPack.units.length;
+  };
+  root.append(list, more);
+  page();
+}
+
+// ---------- Forms ----------
+
+function drawForms(root, app) {
+  const { store, content } = app;
+  const s = store.state;
+  const studied = [...studiedWords(content, s.items)]
+    .filter((id) => cellsOf(content, id).length)
+    .sort((a, b) => (content.wordRank.get(a) ?? 1e9) - (content.wordRank.get(b) ?? 1e9));
+
+  root.append(
+    h('p', { class: 'sub' }, 'Practice how words change: the genitive plural of a noun, the 3rd person plural of a verb. Only words you have already met in lessons come up.'),
+    h('div', { class: 'btn-row' },
+      h('button', { class: 'btn primary', disabled: !studied.length, onclick: () => app.startSession({ mode: 'forms' }) }, 'Practice forms')));
+  if (!studied.length) {
+    root.append(h('p', { class: 'meta' }, 'Nothing to practice yet. Words with full tables appear here after you meet them in a lesson.'));
+    return;
+  }
+
+  const skillRows = Object.entries(content.skills)
+    .filter(([id]) => id.startsWith('form.') && s.skills[id])
+    .map(([id, meta]) => ({ id, meta, str: strength(s.skills[id]), rec: s.skills[id] }))
+    .sort((a, b) => a.str - b.str);
+  if (skillRows.length) {
+    root.append(h('h2', null, 'How your forms are going'),
+      h('div', { class: 'card' }, skillRows.map((r) => h('div', { class: 'skill' },
+        h('div', { class: 'skill-top' },
+          h('span', null, r.meta.name),
+          h('span', { class: 'meta' }, `${r.rec.c}/${r.rec.a}`),
+          r.str < 0.8 ? h('button', { class: 'btn small', onclick: () => app.startSession({ mode: 'forms', scope: { skill: r.id } }) }, 'Practice') : null),
+        h('div', { class: 'meter' }, h('div', { class: `meter-fill ${r.str < 0.5 ? 'low' : r.str < 0.8 ? 'mid' : 'high'}`, style: `width:${Math.max(r.str * 100, 4)}%` }))))));
+  }
+
+  root.append(h('h2', null, 'Pick a word'),
+    h('p', { class: 'sub' }, 'See its whole table, drill its forms, or meet it in sentences.'));
+  const list = h('div', { class: 'wordlist' });
+  const search = h('input', {
+    type: 'search', class: 'ans', placeholder: 'Search your words', 'aria-label': 'Search your words', autocomplete: 'off', autocapitalize: 'none',
+    oninput: () => drawList(),
+  });
+  const drawList = () => {
+    const q = stripMacrons(search.value.trim().toLowerCase());
+    list.replaceChildren();
+    const shown = studied.filter((id) => {
+      if (!q) return true;
+      const e = content.index.lex.get(id);
+      return `${stripMacrons(e.lemma)} ${e.gloss || ''}`.toLowerCase().includes(q);
+    });
+    for (const id of shown.slice(0, 40)) {
+      const e = content.index.lex.get(id);
+      const uses = content.lesson.wordItems.get(id)?.length || 0;
+      const d = h('details', { class: 'word' },
+        h('summary', null, h('span', { class: 'la lemma' }, e.lemma), h('span', { class: 'gloss-s' }, e.gloss || '')));
+      let built = false;
+      d.addEventListener('toggle', () => {
+        if (!d.open || built) return;
+        built = true;
+        const drillable = cellsOf(content, id).some((c) => content.itemsById.get(`form.${id}.${c}`));
+        d.append(detail(e), h('div', { class: 'btn-row' },
+          h('button', { class: 'btn small primary', disabled: !drillable, onclick: () => app.startSession({ mode: 'forms', scope: { words: [id] } }) }, 'Drill its forms'),
+          h('button', { class: 'btn small', disabled: !uses, onclick: () => app.startSession({ mode: 'inuse', scope: { words: [id] } }) },
+            uses ? `Use it in sentences (${uses})` : 'No sentences use it yet')));
+      });
+      list.append(d);
+    }
+    if (shown.length > 40) list.append(h('p', { class: 'meta' }, 'Keep typing to narrow the list.'));
+    if (!shown.length) list.append(h('p', { class: 'meta' }, 'No match.'));
+  };
+  root.append(search, list);
+  drawList();
+}
+
+// ---------- Look up ----------
+
+function drawLookup(root, app) {
   const lex = app.content.lexicon.filter((e) => e.lemma);
   const kinds = [['all', 'All'], ['verb', 'Verbs'], ['noun', 'Nouns'], ['other', 'Other']];
   let kind = 'all';
@@ -143,10 +297,6 @@ export function renderWords(root, app) {
     } }, label);
     return b;
   }));
-
-  root.append(
-    h('header', { class: 'page-head' }, h('h1', null, 'Words'),
-      h('p', { class: 'sub' }, 'Look up a word to see all its forms in every person and tense. Use them to tell yourself about your real day.')),
-    search, pills, count, list);
+  root.append(search, pills, count, list);
   draw();
 }

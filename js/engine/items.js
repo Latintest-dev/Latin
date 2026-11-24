@@ -92,14 +92,42 @@ export function blankSentence(item, blank = '_____') {
  *   question   item.q is a Latin question; answer in Latin (no Latin->English multiple choice)
  *   swap       item.swap = {from, change}: a Latin sentence and an instruction ("Say it for “we”"); answer in Latin
  *   word       item.word = the lexicon id of a single word; the English meaning is the prompt
+ *   form       item.form = {cell}: "the genitive plural of hospes"; made on the fly by engine/forms.js
  */
 export function promptKind(item) {
+  if (item.form) return 'form';
   if (item.word) return 'word';
   if (item.q) return 'question';
   if (item.swap) return 'swap';
   if (item.sit) return 'situation';
   return 'plain';
 }
+
+
+/**
+ * How each kind of item is worded and shown. A new kind of item is one entry here (plus its `promptKind` test above),
+ * not a new branch in the session screen.
+ *   teach        the label above a new item's teach card
+ *   mc, fill, write   the line above each exercise
+ *   placeholder  the hint inside the typing box for the fill and write exercises
+ *   teachPrompt  false = the teach card does not repeat the prompt (a word card is its own prompt)
+ *   teachAnswer  what the teach card shows as the answer (default: the Latin)
+ *   teachGloss   show the English under the answer on the teach card
+ */
+export const ITEM_KINDS = {
+  plain: { teach: 'New sentence', mc: 'Choose the Latin', fill: 'Fill in the blank', write: 'Write it in Latin',
+    placeholder: { fill: 'missing word', write: 'type the whole sentence' }, teachGloss: false },
+  situation: { teach: 'New situation', mc: 'What would you say?', fill: 'What would you say? Fill in the blank', write: 'What would you say? Write it in Latin',
+    placeholder: { fill: 'missing word', write: 'type the whole sentence' } },
+  question: { teach: 'New question and reply', mc: 'Choose the reply', fill: 'Reply in Latin: fill in the blank', write: 'Reply in Latin',
+    placeholder: { fill: 'missing word', write: 'type the whole sentence' } },
+  swap: { teach: 'New change', mc: 'Change it: choose the Latin', fill: 'Change it: fill in the blank', write: 'Change it: write it in Latin',
+    placeholder: { fill: 'missing word', write: 'type the whole sentence' } },
+  word: { teach: 'New word', mc: 'Choose the Latin word', fill: 'Type the Latin word (first letter given)', write: 'Type the Latin word',
+    placeholder: { fill: 'the Latin word', write: 'the Latin word' }, teachPrompt: false, teachAnswer: (item) => item.parts },
+  form: { teach: 'New form', mc: 'Choose the form', fill: 'Type the form (first letter given)', write: 'Type the form',
+    placeholder: { fill: 'the form', write: 'the form' } },
+};
 
 /** The text shown as the prompt (English for plain/situation items, Latin for questions and swaps). */
 export function promptText(item) {
@@ -126,6 +154,7 @@ export function cueText(item) {
  * the same English would be ambiguous); a swap is identified by its Latin sentence and its instruction instead.
  */
 export function promptKey(item) {
+  if (item.form) return `form:${item.word}.${item.form.cell}`;
   if (item.word) return `word:${item.word}`; // two words may share a meaning; the id tells them apart
   if (item.swap) return `${item.swap.from}|${item.swap.change}`.toLowerCase();
   return item.en.toLowerCase();
@@ -133,5 +162,5 @@ export function promptKey(item) {
 
 /** Can this item be asked as "what does this Latin mean?" */
 export function allowsL2E(item) {
-  return !item.q;
+  return !item.q && !item.form;
 }

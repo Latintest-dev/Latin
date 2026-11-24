@@ -14,7 +14,10 @@ with sync_playwright() as p:
     txt = page.inner_text('.today')
     check('home shows today strip', '0' in txt and 'answers today' in txt and 'No streak yet' in txt, txt.replace('\n', ' | '))
     check('speed round locked at first', page.is_disabled('.btn.speed'))
-    check('nine tracks listed', page.locator('section.pack').count() == 9, str(page.locator('section.pack h2').all_inner_texts()))
+    open_path(page)
+    check('the plan lists twelve stages', page.locator('details.stage').count() == 12)
+    check('every sentence track has lessons on the Path', len({c for c in page.locator('.lesson .track-chip').all_inner_texts()}) == 8, str(set(page.locator('.lesson .track-chip').all_inner_texts())))
+    open_app(page)
     replay_btns = '.unit-btns button:is(:has-text("Narrate it"), :has-text("Run the drill"), :has-text("Play it"))'
     check('no replay buttons before anything is learned', page.locator(replay_btns).count() == 0)
 
@@ -28,9 +31,11 @@ with sync_playwright() as p:
       await s.flush(); }""")
     open_app(page)
     check('speed round unlocked', not page.is_disabled('.btn.speed'))
+    open_path(page)
     check('Narrate it appears on the met script', page.locator('.unit-btns button:has-text("Narrate it")').count() == 1)
     check('Run the drill appears on the met change-it unit', page.locator('.unit-btns button:has-text("Run the drill")').count() == 1)
     check('Play it does not appear before its conversation is met', page.locator('.unit-btns button:has-text("Play it")').count() == 0)
+    open_app(page)
 
     # --- speed round: timer; correct answers do not move the schedule
     before = json.loads(page.evaluate(SNAP))
@@ -62,6 +67,7 @@ with sync_playwright() as p:
     check('streak starts at one day', '1-day streak' in page.inner_text('.today'), page.inner_text('.today').replace('\n', ' | '))
 
     # --- narrate the morning (capital letters at sentence starts are fine: the paragraph is read, not matched)
+    open_path(page)
     page.locator('.unit-btns button:has-text("Narrate it")').first.click()
     page.wait_for_selector('.eyebrow')
     check('narration starts at step 1 of 12', 'step 1 of 12' in page.inner_text('.eyebrow').lower(), page.inner_text('.eyebrow'))
@@ -78,7 +84,7 @@ with sync_playwright() as p:
     check('paragraph has all twelve sentences', sc.count('.') == 12, str(sc.count('.')))
 
     # --- the "Change it" drill: grouped by base sentence, follows each sentence's own level, no schedule changes
-    open_app(page)
+    open_path(page)
     before = json.loads(page.evaluate(SNAP))
     page.locator('.unit-btns button:has-text("Run the drill")').first.click()
     page.wait_for_selector('.eyebrow')
@@ -97,12 +103,12 @@ with sync_playwright() as p:
     check('drill left every box and due date alone', all(after[k] == before[k] for k in before))
 
     # --- conversations: locked behind the Roman track, then unlocked; transcript and bubbles; replay
-    open_app(page)
-    talk = page.locator('section.pack', has=page.locator('h2:has-text("Conversations")'))
-    check('conversation track is listed', talk.count() == 1)
-    lock_txt = talk.locator('.unit .lock').first.get_attribute('title') if talk.locator('.unit .lock').count() else ''
-    check('conversations start locked', talk.locator('.unit.locked').count() == 3, str(talk.locator('.unit.locked').count()))
-    check('the lock says what to finish first', 'Like a Roman' in lock_txt, lock_txt)
+    open_path(page)
+    talk = page.locator('.lesson', has=page.locator('.track-chip:has-text("Conversations")'))
+    check('conversation track is listed', talk.count() == 3, str(talk.count()))
+    lock_txt = talk.first.locator('.lockline').inner_text() if talk.first.locator('.lockline').count() else ''
+    check('conversations start locked', talk.locator('xpath=self::*[contains(@class, "locked")]').count() == 3)
+    check('the lock says what to finish first', 'Like a Roman' in lock_txt and 'Meet' in lock_txt, lock_txt)
     unlock(page, 'talk', '1')
     open_app(page)
     start(page, mode='unit', scope={'packId': 'talk', 'unitId': '1'})
@@ -116,7 +122,7 @@ with sync_playwright() as p:
     # play the conversation straight through: know the unit, then Play it
     open_app(page)
     know(page, "() => window.__app.content.packs.find(p => p.id === 'talk').units[0].items.map(i => i.id)")
-    open_app(page)
+    open_path(page)
     check('Play it appears once the conversation is met', page.locator('.unit-btns button:has-text("Play it")').count() >= 1)
     page.locator('.unit-btns button:has-text("Play it")').first.click()
     page.wait_for_selector('.eyebrow')
@@ -136,11 +142,11 @@ with sync_playwright() as p:
     page.evaluate("() => window.__app.store.flush()")
     paused = page.evaluate("() => window.__app.store.state.settings.pausedPacks")
     check('pausing a track is stored', paused == ['swap'], str(paused))
-    open_app(page)
-    check('paused track is badged on Learn', page.locator('.paused').count() >= 1)
+    page.goto(BASE + '#/settings'); page.wait_for_selector('.preview-line')
+    check('Settings previews the next Continue', 'new sentences' in page.inner_text('.preview-line'), page.inner_text('.preview-line'))
     new_packs = lambda paused: page.evaluate("""async (paused) => { const m = await import('/js/core/modes.js'); const a = window.__app;
       const q = m.buildQueue({content: a.content, itemStates: a.store.state.items, skills: a.store.state.skills, mistakes: a.store.state.mistakes,
-        now: Date.now(), mode: 'continue', newTotal: 30, paused, rng: () => 0.5});
+        now: Date.now(), mode: 'continue', follow: 'mix', newTotal: 30, paused, rng: () => 0.5});
       return [...new Set(q.filter(e => e.kind === 'new').map(e => a.content.packOf.get(e.itemId)))]; }""", paused)
     with_all, with_paused = new_packs([]), new_packs(paused)
     check('without pausing, the paused track offers new sentences', paused[0] in with_all, f'{with_all}')
@@ -148,7 +154,8 @@ with sync_playwright() as p:
     page.evaluate("() => window.__app.store.setSetting('pausedPacks', [])")
 
     # --- words page
-    page.goto(BASE + '#/words'); page.wait_for_selector('.wordlist')
+    page.goto(BASE + '#/words'); page.wait_for_selector('.tabs')
+    page.click('.pill:has-text("Look up")'); page.wait_for_selector('.wordlist')
     page.fill('input[type=search]', 'wash')
     page.wait_for_selector('.word'); page.click('.word summary'); page.wait_for_selector('table.forms')
     t = page.inner_text('table.forms')
@@ -161,7 +168,7 @@ with sync_playwright() as p:
 
     # --- settings goal and the export of activity
     page.goto(BASE + '#/settings'); page.wait_for_selector('select')
-    page.select_option('select[aria-label="Daily goal in answers"]', '10')
+    page.select_option('select[aria-label="Answers per day"]', '10')
     page.goto(BASE); page.wait_for_selector('.today')
     check('goal setting changes the home strip', 'of 10 answers today' in page.inner_text('.today'), page.inner_text('.today').replace('\n', ' | '))
     snap = page.evaluate("() => window.__app.store.snapshot()")

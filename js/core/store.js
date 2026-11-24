@@ -4,16 +4,9 @@
 
 import { buildExport, mergeData, MAX_MISTAKES } from './transfer.js';
 import { bump, trim } from './activity.js';
+import { DEFAULT_SETTINGS } from './settings.js';
 
-export const DEFAULT_SETTINGS = {
-  showMacrons: false,    // display macrons on Latin text
-  strictMacrons: false,  // require macrons in typed answers
-  newTotal: 6,           // new sentences introduced per session, shared between tracks
-  newWords: 6,           // new words introduced per session by the word trainer (it keeps a budget of its own)
-  dailyGoal: 20,         // answers per day that count as a full day of practice
-  pausedPacks: [],       // tracks left out of Continue's new sentences (their reviews still come up)
-  upd: 0,
-};
+export { DEFAULT_SETTINGS };   // declared in core/settings.js, with what each one affects
 
 let idCounter = 0;
 export function makeId(prefix, now) {

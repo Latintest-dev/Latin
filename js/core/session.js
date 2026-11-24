@@ -46,7 +46,7 @@ export class SessionRunner {
     const st1 = result === 'practiceok'
       ? { ...st0, intro: true, seen: st0.seen + 1, ok: st0.ok + 1, last: t, fast: (st0.fast || 0) + (outcome.fast ? 1 : 0) }
       : applyResult(st0, result, t);
-    this.store.putItem(entry.itemId, st1);
+    if (!entry.nostate) this.store.putItem(entry.itemId, st1);   // forms practice keeps no per-form schedule
     this.answered++;
 
     if (result !== 'close') {

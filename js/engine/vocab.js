@@ -11,6 +11,7 @@
 // The steps are: choose the meaning, or choose the Latin; then the Latin with its first letter given; then type it.
 
 import { generateForms } from './latin.js';
+import { prepareItem } from './items.js';
 
 const GENDER = { m: 'masculine', f: 'feminine', n: 'neuter', c: 'masculine or feminine' };
 const KIND = { noun: 'noun', verb: 'verb', adj: 'adjective', adv: 'adverb', prep: 'preposition', conj: 'conjunction', pron: 'pronoun', interj: 'interjection', num: 'number' };
@@ -85,6 +86,31 @@ export function wordItem(e, near, sameMeaning = []) {
   };
 }
 
+
+// What a word card holds besides its id, kind and skills; these are read through getters that build the card.
+const CARD_KEYS = ['la', 'en', 'parts', 'accept', 'accepted', 'fill', 'fillAlt', 'fillAccepted', 'tag', 'explain', 'distractors', 'review'];
+
+/**
+ * A word item whose card (its wrong options, accepted answers, explanation) is built the first time one of those is
+ * read. It behaves like an ordinary prepared item: `it.la`, `it.distractors`, `{ ...it }` and structuredClone all work,
+ * and properties that only sentences have (`it.swap`, `it.dlg`) are plainly absent and never cause a build.
+ */
+export function lazyWordItem(words, i, sameMeaning) {
+  const e = words[i];
+  let card = null;
+  const build = () => (card ??= prepareItem(wordItem(e, words.slice(Math.max(0, i - 150), i + 150), sameMeaning)));
+  const it = { id: `vocab.${e.id}`, word: e.id, pos: e.pos, skills: [skillOf(e.pos)] };
+  for (const k of CARD_KEYS) {
+    Object.defineProperty(it, k, {
+      enumerable: true,
+      configurable: true,
+      get: () => build()[k],
+      set(v) { Object.defineProperty(it, k, { value: v, enumerable: true, writable: true, configurable: true }); },
+    });
+  }
+  return it;
+}
+
 /**
  * Units of `size` words, in frequency order. Returns [{ id, title, blurb, intro, items }].
  * `evidence` is how many words at the top of the list are ranked by real counts; later units say their order is looser.
@@ -109,11 +135,9 @@ export function buildVocabUnits(lexicon, order, size = 50, evidence = Infinity) 
     const slice = words.slice(start, start === starts[starts.length - 1] ? words.length : start + size);
     const first = start + 1;
     const last = start + slice.length;
-    const items = slice.map((e, j) => {
-      const i = start + j;
-      const near = words.slice(Math.max(0, i - 150), i + 150);
-      return wordItem(e, near, groups.get(meaningKey(e)).filter((o) => o.id !== e.id));
-    });
+    // Cards are made on first use: building all ~5,000 (each draws wrong options from its neighbors) took seconds at
+    // start-up, and a session touches a few dozen of them.
+    const items = slice.map((e, j) => lazyWordItem(words, start + j, groups.get(meaningKey(e)).filter((o) => o.id !== e.id)));
     units.push({
       id: String(units.length + 1),
       title: `Words ${first}–${last}`,

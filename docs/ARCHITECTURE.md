@@ -10,7 +10,11 @@ for the app itself and no dependencies; Node is used only for tooling and tests.
     js/engine/               pure functions: Latin forms, form index, answer checker, prompt helpers (items.js),
                              word cards and word units (vocab.js)
     js/core/                 storage (store.js), scheduler, modes, session runner, content loader, export/import
-    js/ui/                   screens: home, session, progress, settings, words; modes.js = how drill modes talk
+    js/ui/                   screens (routes.js lists them): home (Today), path, words, progress, settings, session;
+                             parts.js = shared pieces; modes.js = how drill modes talk
+    js/core/path.js          the plan seen through your progress (current stage, next lesson, new sentences)
+    js/core/settings.js      every setting, declared once (what it affects, its default, its wording)
+    js/core/context.js       turns saved settings into the options a session is built with
     js/modules/registry.js   the list of tracks
     content/                 all Latin (see docs/CONTENT.md)
     tools/                   validate, generate, build, release, ids, flags
@@ -36,7 +40,7 @@ Rule of thumb: `engine/` and `core/` never touch the DOM, so they are tested in 
 
 `core/modes.js` has one table:
 
-    MODES = { continue, unit, weak, mistakes, speed, narrate, dialogue, swap }
+    MODES = { continue, unit, stage, words, weak, skill, mistakes, speed, wordquiz, forms, inuse, narrate, dialogue, swap }
 
 Each mode has `build(ctx)` returning queue entries. Modes that replay a unit (`drill: true`) also have
 `replay: 'Button label'`; a unit with `"play": "<mode>"` in its pack.json entry shows that button once 80% of it is
@@ -48,6 +52,14 @@ summary, an optional score line and an optional recap (the narration paragraph, 
 
 **To add a mode:** one builder and one table entry in `core/modes.js`, one presenter in `ui/modes.js`. If it needs a
 button on a unit, set `replay` and give units `"play"`. Add a test in `tests/modes.test.mjs`.
+
+## The plan, lessons and words
+
+`content/curriculum.json` places every lesson of every sentence track into one of 12 stages (the validator fails if a
+lesson is missing or doubled, or if the order breaks a track's own order or its gates). `core/path.js` turns that into
+"the stage you are on" and the new sentences Continue teaches. `engine/lessons.js` links sentences and words (derived at
+load), so `lessonWordCards` can teach the words of your lessons first. Forms practice builds items on demand
+(`engine/forms.js`, ids `form.<word>.<cell>`, practice only). See `docs/FRAMEWORK.md` for the full extension-point table.
 
 ## Tracks and gates
 
@@ -81,9 +93,10 @@ does it for you. It also copies `js/version.js` into `package.json`.
 | `tools/validate.mjs`              | every word is in the lexicon, distractors are wrong, prompts unique, modes known  |
 | `tools/ids.mjs check`             | no shipped sentence id disappears (progress is keyed by id)                       |
 | `tools/generate.mjs`              | templates to unit files, append-only                                             |
-| `tools/release.mjs`               | all of the above plus tests, build, version bump and zip, in a safe order         |
+| `tools/release.mjs`               | all of the above plus tests, build, version bump, full zip, upload batches and changes zip |
 | `tools/flags.mjs <export>`        | turns your flags and repeat mistakes into a fix list                              |
-| `tests/*.test.mjs`                | engine, scheduler, modes, storage, generator, tooling                             |
+| `tests/*.test.mjs`                | engine, scheduler, modes, storage, generator, tooling, and the framework guards    |
+| `tools/coverage.mjs`              | how many common words appear in sentences; plan size                              |
 | `tests/e2e/*_test.py`             | the real app in Chrome at phone size: every unit played, offline, import/export   |
 
 ## Known limits

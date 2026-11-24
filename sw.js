@@ -2,7 +2,7 @@
 // writes sw.js. Every file is precached on install, so after the first load the whole app
 // works offline. Changing any file changes the cache name, which installs an updated copy.
 
-const CACHE = 'latin-b98e49d3fa';
+const CACHE = 'latin-898b0124c7';
 const ASSETS = [
   "./",
   "content/core/pack.json",
@@ -16,6 +16,7 @@ const ASSETS = [
   "content/core/u7.json",
   "content/core/u8.json",
   "content/core/u9.json",
+  "content/curriculum.json",
   "content/daily/pack.json",
   "content/daily/u1.json",
   "content/daily/u10.json",
@@ -87,15 +88,20 @@ const ASSETS = [
   "index.html",
   "js/core/activity.js",
   "js/core/content.js",
+  "js/core/context.js",
   "js/core/modes.js",
+  "js/core/path.js",
   "js/core/scheduler.js",
   "js/core/session.js",
+  "js/core/settings.js",
   "js/core/storage.js",
   "js/core/store.js",
   "js/core/transfer.js",
   "js/engine/checker.js",
+  "js/engine/forms.js",
   "js/engine/items.js",
   "js/engine/latin.js",
+  "js/engine/lessons.js",
   "js/engine/vocab.js",
   "js/main.js",
   "js/modules/registry.js",
@@ -103,7 +109,10 @@ const ASSETS = [
   "js/ui/format.js",
   "js/ui/home.js",
   "js/ui/modes.js",
+  "js/ui/parts.js",
+  "js/ui/path.js",
   "js/ui/progress.js",
+  "js/ui/routes.js",
   "js/ui/session.js",
   "js/ui/settings.js",
   "js/ui/words.js",

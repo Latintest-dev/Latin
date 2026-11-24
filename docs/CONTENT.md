@@ -147,8 +147,24 @@ retire it deliberately (below) if it must go.
 Flashcards for the most common Latin words, most frequent first, 50 to a unit. Each card climbs the same ladder as a
 sentence: choose the Latin word, then type it with the first letter given, then type it. The wrong options are words
 of nearby rank and the same part of speech, never with the same meaning. New words have their **own daily budget**
-(Settings: "New words per session", default 6) so they do not crowd out sentences; both budgets stop when more than 10
-reviews are due. Word cards are left out of the speed round, which is for sentences.
+(Settings: "New words from your lessons", default 6, plus "Extra common words", default 2) so they do not crowd out
+sentences; both budgets stop when more than 10 reviews are due. Word cards are left out of the speed round, which is
+for sentences.
+
+**Woven into lessons.** Continue teaches the words *of your sentences* first: the words in the sentences it is about to
+teach, then words in sentences you have already met, each group in frequency order. Only then does it take a couple of
+the most common words from the list that no lesson of yours uses. The link between a sentence and its words is derived
+when the app loads (`engine/lessons.js`), so a new sentence needs nothing extra: write it with words from the lexicon
+and its words join the lesson-word stream. `node tools/coverage.mjs 1000` shows which of the top words no sentence uses
+yet (those are the best to promote and write sentences for). The word list needs no unlocking (`"open": true`).
+
+## The plan (`content/curriculum.json`)
+
+Twelve stages, each a title, a short blurb and a list of lessons (`"core.1"` is unit 1 of the track `core`) taken from
+all the sentence tracks, so the Path shows the lessons to study together in one place. **Every lesson of every sentence
+track appears in exactly one stage** (the validator and a framework test fail otherwise), in its track's own order, and
+never before the lesson that gates its track. To add a lesson: unit file, a line in the track's `pack.json`, and a line
+in a stage here. To add a stage: a new object in `stages`, placed where it belongs in the sequence.
 
 ### How the list is made
 

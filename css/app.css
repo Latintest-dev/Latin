@@ -255,6 +255,34 @@ table.forms td.en { color: var(--muted); }
 
 .swap-ask small { color: var(--muted); }
 
-/* the word trainer's folded list of units */
-.all-units { margin-top: 10px; }
-.all-units > .card { margin-top: 8px; }
+/* v0.8: Path (stages and lessons), lock lines, Today, Words tabs */
+.stage { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 12px 14px; margin: 0 0 10px; }
+.stage.here { border-color: var(--accent); }
+.stage.locked { opacity: .75; }
+.stage > summary { list-style: none; cursor: pointer; }
+.stage > summary::-webkit-details-marker { display: none; }
+.stage-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.stage-title { display: flex; align-items: center; gap: 10px; font: 600 18px var(--serif); }
+.stage-n { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--line); font: 600 13px var(--sans); flex: none; }
+.stage.here .stage-n { background: var(--accent); color: var(--accent-ink); }
+.stage-state { font: 13px var(--sans); color: var(--muted); white-space: nowrap; }
+.stage-state.here { color: var(--accent); font-weight: 600; }
+.lesson { padding: 10px 0; border-top: 1px solid var(--line); }
+.lesson:first-of-type { margin-top: 8px; }
+.lesson-main { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+.lesson-title { font: 600 16px var(--sans); }
+.lesson.locked .lesson-title { color: var(--muted); }
+.lesson .meter { margin-top: 8px; height: 6px; }
+.lesson .meta { flex-basis: 100%; }
+.track-chip { margin-left: 8px; padding: 1px 8px; border-radius: 10px; font: 12px/1.6 var(--sans); background: var(--line); color: var(--muted); vertical-align: middle; font-weight: 400; }
+.lockline { display: flex; align-items: center; gap: 8px; margin-top: 6px; font: 14px/1.4 var(--sans); color: var(--muted); flex-wrap: wrap; }
+.lockline .btn { margin-left: auto; }
+.hold { padding: 10px 12px; border-radius: 12px; background: var(--warn-bg); color: var(--warn); font: 14px/1.4 var(--sans); margin: 0 0 12px; }
+.card.next { margin: 0 0 14px; }
+.card.next .eyebrow { margin: 0 0 4px; }
+.preview { background: var(--warn-bg); border-color: transparent; }
+.preview-line { margin: 4px 0; font: 15px/1.4 var(--sans); }
+.tabs { margin: 6px 0 14px; }
+.tabs .pill { flex: 1; text-align: center; padding: 8px 10px; }
+.words-body .card { margin-bottom: 12px; }
+.skill-top .btn.small { min-height: 30px; padding: 2px 10px; }

@@ -10,7 +10,8 @@ import { SessionRunner } from '../core/session.js';
 import { checkText } from '../engine/checker.js';
 import { today as todayCount0 } from '../core/activity.js';
 const todayCount = (activity, now) => todayCount0(activity, now).n;
-import { blankSentence, promptKind, promptText, allowsL2E, cueText } from '../engine/items.js';
+import { blankSentence, promptKind, promptText, allowsL2E, cueText, ITEM_KINDS } from '../engine/items.js';
+import { queueContext } from '../core/context.js';
 
 function shuffle(arr, rng = Math.random) {
   const a = [...arr];
@@ -42,7 +43,7 @@ export function mcOptions(entry, item, content, rng = Math.random) {
     const packId = content.packOf.get(item.id);
     const unitId = content.unitOf.get(item.id);
     const sibs = [...content.itemsById.values()].filter(
-      (o) => o.id !== item.id && allowsL2E(o) && content.packOf.get(o.id) === packId && o.en.toLowerCase() !== item.en.toLowerCase(),
+      (o) => o.id !== item.id && content.packOf.get(o.id) === packId && !o.word && allowsL2E(o) && o.en.toLowerCase() !== item.en.toLowerCase(),
     );
     const sameUnit = sibs.filter((o) => content.unitOf.get(o.id) === unitId);
     const pool = sameUnit.length >= 3 ? sameUnit : sibs;
@@ -65,18 +66,7 @@ export function renderSession(root, app, params) {
   const { store, content } = app;
   const st = () => store.state.settings;
 
-  const queue = buildQueue({
-    content,
-    itemStates: store.state.items,
-    skills: store.state.skills,
-    mistakes: store.state.mistakes,
-    now: Date.now(),
-    mode: params.mode,
-    scope: params.scope,
-    newTotal: st().newTotal,
-    newWords: st().newWords,
-    paused: st().pausedPacks || [],
-  });
+  const queue = buildQueue(queueContext(app, params));
 
   if (!queue.length) {
     root.append(h('div', { class: 'card center' },
@@ -138,9 +128,9 @@ export function renderSession(root, app, params) {
   };
   const promptBlock = (item) => [transcript(item), promptNode(item)].filter(Boolean);
   const EYEBROW = {
-    mc_e2l: { plain: 'Choose the Latin', situation: 'What would you say?', question: 'Choose the reply', swap: 'Change it: choose the Latin', word: 'Choose the Latin word' },
-    fill: { word: 'Type the Latin word (first letter given)', plain: 'Fill in the blank', situation: 'What would you say? Fill in the blank', question: 'Reply in Latin: fill in the blank', swap: 'Change it: fill in the blank' },
-    write: { word: 'Type the Latin word', plain: 'Write it in Latin', situation: 'What would you say? Write it in Latin', question: 'Reply in Latin', swap: 'Change it: write it in Latin' },
+    mc_e2l: Object.fromEntries(Object.entries(ITEM_KINDS).map(([k, v]) => [k, v.mc])),
+    fill: Object.fromEntries(Object.entries(ITEM_KINDS).map(([k, v]) => [k, v.fill])),
+    write: Object.fromEntries(Object.entries(ITEM_KINDS).map(([k, v]) => [k, v.write])),
   };
 
   function header() {
@@ -183,13 +173,14 @@ export function renderSession(root, app, params) {
 
   function teach(body, entry, item) {
     const kind = promptKind(item);
+    const spec = ITEM_KINDS[kind];
     // (native append() would print the word "null" for a missing piece, so filter first)
     body.append(...[
-      h('p', { class: 'eyebrow' }, { question: 'New question and reply', situation: 'New situation', swap: 'New change', word: 'New word' }[kind] || 'New sentence'),
-      ...(kind === 'word' ? [] : promptBlock(item)),
+      h('p', { class: 'eyebrow' }, spec.teach),
+      ...(spec.teachPrompt === false ? [] : promptBlock(item)),
       // a new word is shown with its principal parts (or its genitive): you need them to use the word
-      h('div', { class: 'answer la' }, latin(kind === 'word' ? item.parts : item.la, st())),
-      kind === 'plain' ? null : h('div', { class: 'gloss' }, item.en),
+      h('div', { class: 'answer la' }, latin(spec.teachAnswer ? spec.teachAnswer(item) : item.la, st())),
+      spec.teachGloss === false ? null : h('div', { class: 'gloss' }, item.en),
       chips(item),
       item.modern && item.modernNote ? h('p', { class: 'note' }, rich(item.modernNote, st(), { macrons: true })) : null,
       h('p', { class: 'explain' }, rich(item.explain, st(), { macrons: true })),
@@ -248,7 +239,7 @@ export function renderSession(root, app, params) {
 
     const input = h('input', {
       type: 'text', class: 'ans', autocomplete: 'off', autocapitalize: 'none', autocorrect: 'off',
-      spellcheck: false, lang: 'la', placeholder: item.word ? 'the Latin word' : fill ? 'missing word' : 'type the whole sentence',
+      spellcheck: false, lang: 'la', placeholder: ITEM_KINDS[promptKind(item)].placeholder[fill ? 'fill' : 'write'],
       'aria-label': 'Your answer',
     });
     const go = h('button', { class: 'btn primary', disabled: true, onclick: submit }, 'Check');
@@ -369,6 +360,7 @@ export function renderSession(root, app, params) {
     const s = st();
     const present = PRESENT[params.mode];
     const recap = present?.recap?.({ queue, content, settings: s });
+    const followUp = present?.next?.({ queue, content });
     const goal = s.dailyGoal;
     const doneToday = todayCount(store.state.activity, Date.now());
     root.append(h('div', { class: 'card center' },
@@ -385,7 +377,8 @@ export function renderSession(root, app, params) {
           }))
         : h('p', null, 'No slips this time.'),
       h('div', { class: 'btn-row center' },
-        h('button', { class: 'btn primary', onclick: () => app.startSession({ mode: 'continue' }) }, 'Keep going'),
+        followUp ? h('button', { class: 'btn primary', onclick: () => app.startSession(followUp.params) }, followUp.label) : null,
+        h('button', { class: followUp ? 'btn' : 'btn primary', onclick: () => app.startSession({ mode: 'continue' }) }, 'Keep going'),
         h('a', { class: 'btn', href: '#/' }, 'Home'))));
   }
 
